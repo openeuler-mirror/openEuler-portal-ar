@@ -63,14 +63,14 @@ const isHome = computed(() =>
   ['/', '/ar/', '/ar'].includes(router.route.path)
 );
 
-const langShow = ref(['ar']);
+const langShow = ref(['ar', 'en']);
 
 watch(
   () => router.route.path,
   (val: string) => {
     // TODO:需优化代码复杂度
     routerPath.value = val;
-    langShow.value = ['ar'];
+    langShow.value = ['ar', 'en'];
 
     // 首页
     if (isHome.value) {
