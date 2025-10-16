@@ -22,26 +22,31 @@ import otherIllustration from '~@/assets/category/home/case/other.png';
 export const casesAr = [
   {
     label: 'الخدمات المالية',
+    enlabel: 'Finance',
     icon: finance,
     img: financeIllustration,
   },
   {
     label: 'شركة الاتصالات',
+    enlabel: 'Carrier',
     icon: operator,
     img: operatorIllustration,
   },
   {
     label: 'الطاقة',
+    enlabel: 'Energy',
     icon: energy,
     img: energyIllustration,
   },
   {
     label: 'الخدمات اللوجستية',
+    enlabel: 'Logistics',
     icon: logistics,
     img: logisticsIllustration,
   },
   {
     label: 'أخرى',
+    enlabel: 'Others',
     icon: other,
     img: otherIllustration,
   },

@@ -156,10 +156,12 @@ const onClickNav = (item: any) => {
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
 
   .content-item {
     width: 200px;
     margin-top: 24px;
+    text-align: right;
     &:nth-of-type(1) {
       margin-top: 0;
     }
@@ -178,6 +180,7 @@ const onClickNav = (item: any) => {
   .item-title {
     margin-bottom: var(--o-gap-1);
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
 
     .item-name {

@@ -17,7 +17,7 @@ import { useScreen } from '~@/composables/useScreen';
 
 import AppSection from '~@/components/AppSection.vue';
 
-import IconChevronRight from '~icons/app-new/icon-chevron-right.svg';
+import IconChevronLeft from '~icons/app-new/icon-chevron-left.svg';
 
 import { casesAr } from '~@/data/home/case';
 
@@ -46,7 +46,8 @@ cases.value = casesAr;
 
 const params = {
   category: 'showcase',
-  lang: locale.value,
+  lang: 'en',
+  // lang: locale.value,
   page: 1,
   pageSize: 4,
   industry: '',
@@ -68,13 +69,13 @@ const caseData = ref({});
 const getCases = () => {
   const promiseArr = [];
   cases.value.forEach((item) => {
-    params.industry = item.label;
+    params.industry = item.enlabel || item.label;
     promiseArr.push(getHomeShowCases(params));
-    caseData.value[item.label] = [];
+    caseData.value[item.enlabel] = [];
   });
   Promise.all(promiseArr).then((res) => {
     res.forEach((item, index) => {
-      caseData.value[cases.value[index].label] = item.obj?.records;
+      caseData.value[cases.value[index].enlabel] = item.obj?.records;
     });
   });
 };
@@ -195,10 +196,10 @@ useInViewDuration(
               @click="changeTab(i)"
               v-analytics.bubble="{ target: tab.label }"
             >
+              <span>{{ tab.label }}</span>
               <OIcon class="nav-item-icon">
                 <component :is="tab.icon"> </component>
               </OIcon>
-              <span>{{ tab.label }}</span>
             </li>
             <div
               class="item-tab-active"
@@ -213,7 +214,7 @@ useInViewDuration(
             <ORow gap="0" wrap="wrap">
               <OCol
                 flex="0 0 100%"
-                v-for="(item, i) in caseData[cases[activeTab].label]"
+                v-for="(item, i) in caseData[cases[activeTab].enlabel]"
                 :key="i"
                 class="item-case"
               >
@@ -225,7 +226,7 @@ useInViewDuration(
                 >
                   <div class="item-title">
                     <p class="company">{{ item.company }}</p>
-                    <OIcon class="company-icon"><IconChevronRight /></OIcon>
+                    <OIcon class="company-icon"><IconChevronLeft /></OIcon>
                   </div>
                   <p class="summary">{{ item.summary }}</p>
                 </OLink>
@@ -270,7 +271,7 @@ useInViewDuration(
   }
 }
 .nav-item-icon {
-  margin-right: 8px;
+  margin-left: 8px;
   @include h2;
 }
 .item-tab-active {
@@ -298,12 +299,13 @@ useInViewDuration(
   margin-top: 32px;
   position: relative;
   display: flex;
+  flex-direction: row-reverse;
   &::after {
     content: '';
     position: absolute;
     width: 16px;
     height: 100%;
-    left: 0;
+    right: 0;
     top: 0;
     z-index: 9;
     background-image: linear-gradient(178deg, #3888ef 0%, #002fa7 100%);
@@ -312,7 +314,7 @@ useInViewDuration(
 }
 .case-list {
   width: 52%;
-  margin-left: 48px;
+  margin-right: 48px;
   padding: 32px 0 40px;
   .o-divider {
     --o-divider-gap: 24px 0 24px;
@@ -336,6 +338,7 @@ useInViewDuration(
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row-reverse;
   .company {
     @include h2;
     color: var(--o-color-info1);
@@ -350,12 +353,13 @@ useInViewDuration(
   @include text1;
   color: var(--o-color-info2);
   margin-top: 12px;
+  text-align: right;
   @include text-truncate(1);
 }
 
 .case-img {
   width: 48%;
-  margin-left: 72px;
+  margin-right: 72px;
   text-align: center;
 }
 .right-img {
@@ -393,7 +397,7 @@ useInViewDuration(
   }
   .case-img {
     width: 38%;
-    margin-left: auto;
+    margin-right: auto;
   }
   .right-img {
     width: 100%;
@@ -420,7 +424,7 @@ useInViewDuration(
   }
   .case-img {
     width: 40%;
-    margin-left: auto;
+    margin-right: auto;
   }
   .right-img {
     width: 100%;

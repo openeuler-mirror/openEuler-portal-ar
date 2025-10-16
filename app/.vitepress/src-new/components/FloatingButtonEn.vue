@@ -397,7 +397,7 @@ onUnmounted(() => {
 
           <OPopup
             :visible="showPopup"
-            position="rb"
+            position="lb"
             :target="feedbackRef"
             wrapper="#feedback"
             body-class="popup-feedback o-popup1"
@@ -485,7 +485,7 @@ onUnmounted(() => {
           </OIcon>
 
           <OPopup
-            position="rt"
+            position="lt"
             :target="issuebackRef"
             wrapper="#issueback"
             body-class="popup-issueback"
@@ -615,7 +615,7 @@ onUnmounted(() => {
 .feedback {
   position: fixed;
   bottom: 200px;
-  right: 80px;
+  left: 80px;
   z-index: 10;
 
   @include respond-to('<=pad') {
@@ -623,17 +623,17 @@ onUnmounted(() => {
   }
 
   @media (max-width: 1700px) {
-    right: 20px;
+    left: 20px;
   }
   @media (max-width: 1560px) {
-    right: 2px;
+    left: 2px;
   }
   @media (max-width: 1526px) {
-    right: 44px;
+    left: 44px;
   }
 
   @include respond-to('laptop') {
-    right: 24px;
+    left: 24px;
   }
 
   .dark-nav {
@@ -649,7 +649,7 @@ onUnmounted(() => {
       position: absolute;
       width: 180px;
       top: 0;
-      right: 0;
+      left: 0;
       background-color: var(--o-color-fill2);
       padding: 16px;
       transform: translate(34%, -110%);

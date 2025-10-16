@@ -176,10 +176,10 @@ const onClickShortCutLink = (item: any) => {
                                   () => onClickShortCutLink(shortcut)
                                 "
                               >
-                                <span>{{ shortcut.NAME }}</span>
                                 <OIcon v-if="shortcut.ICON">
                                   <component :is="shortcut.ICON" class="icon" />
                                 </OIcon>
+                                <span>{{ shortcut.NAME }}</span>
                               </NavLink>
                             </div>
                           </div>
@@ -222,7 +222,7 @@ const onClickShortCutLink = (item: any) => {
   </div>
 
   <div class="header-tool">
-    <HeaderSearch />
+    <!-- <HeaderSearch /> -->
     <div id="tour_headerNav_tool" class="header-right">
       <HeaderCode />
       <HeaderLanguage :show="langOptions" />
@@ -245,7 +245,7 @@ const onClickShortCutLink = (item: any) => {
     height: 100%;
     display: flex;
     flex: 1;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 }
 
@@ -257,10 +257,11 @@ const onClickShortCutLink = (item: any) => {
 .header-right {
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
   gap: 20px;
   height: calc(100% - 10px);
   margin: 5px 0;
-  margin-left: 20px;
+  margin-right: 20px;
 
   @include respond-to('pad_v-laptop') {
     gap: var(--o-gap-4);
@@ -289,6 +290,8 @@ const onClickShortCutLink = (item: any) => {
     overflow: hidden;
     white-space: nowrap;
     position: relative;
+    display: flex;
+    flex-direction: row-reverse;
     &::after {
       content: '';
       position: absolute;
@@ -444,18 +447,19 @@ const onClickShortCutLink = (item: any) => {
 
   .nav-sub-content {
     display: flex;
+    flex-direction: row-reverse;
     flex: 1;
     position: relative;
 
     .content-left {
       flex: 1;
-      padding: 32px 24px 40px 0;
+      padding: 32px 0 40px 24px;
       display: flex;
-
+      flex-direction: row-reverse;
       width: 100%;
 
       @include respond-to('laptop') {
-        padding: var(--o-gap-5) var(--o-gap-4) var(--o-gap-5) 0;
+        padding: var(--o-gap-5) 0 var(--o-gap-5) var(--o-gap-4);
       }
 
       @include respond-to('<=pad') {
@@ -472,11 +476,12 @@ const onClickShortCutLink = (item: any) => {
       width: 358px;
       padding-top: var(--o-gap-6);
       padding-bottom: var(--o-gap-6);
-      padding-left: var(--o-gap-4);
+      padding-right: var(--o-gap-4);
+      text-align: right;
 
       @include respond-to('laptop') {
         width: 261px;
-        padding: var(--o-gap-5) 0 var(--o-gap-5) var(--o-gap-4);
+        padding: var(--o-gap-5) var(--o-gap-4) var(--o-gap-5) 0;
       }
 
       @include respond-to('pad_h') {
@@ -494,6 +499,8 @@ const onClickShortCutLink = (item: any) => {
         border-radius: var(--o-radius_control-xs);
         padding: 10px 24px;
         display: flex;
+        justify-content: flex-end;
+        text-align: right;
         align-items: center;
         gap: var(--o-gap-3);
         cursor: pointer;
@@ -616,6 +623,9 @@ const onClickShortCutLink = (item: any) => {
         }
       }
     }
+    .item-sub {
+      text-align: right;
+    }
     .split-line {
       background: var(--o-color-control4);
       width: 1px;
@@ -644,15 +654,15 @@ const onClickShortCutLink = (item: any) => {
 
   &.download {
     .item-sub {
-      margin-left: 80px;
+      margin-right: 80px;
       &:nth-of-type(1) {
-        margin-left: 0;
+        margin-right: 0;
         .content-container {
           width: 464px;
           :deep(.content-item) {
-            margin-left: 64px;
+            margin-right: 64px;
             &:nth-child(2n + 1) {
-              margin-left: 0;
+              margin-right: 0;
             }
             &:nth-of-type(2) {
               margin-top: 0;
@@ -662,12 +672,12 @@ const onClickShortCutLink = (item: any) => {
       }
 
       @include respond-to('<=laptop') {
-        margin-left: 24px;
+        margin-right: 24px;
         &:nth-of-type(1) {
           .content-container {
             width: 364px;
             :deep(.content-item) {
-              margin-left: 24px;
+              margin-right: 24px;
             }
           }
         }
@@ -713,9 +723,9 @@ const onClickShortCutLink = (item: any) => {
 
   &.development {
     .item-sub {
-      margin-left: 24px;
+      margin-right: 24px;
       &:nth-of-type(1) {
-        margin-left: 0;
+        margin-right: 0;
       }
 
       @include respond-to('>laptop') {
@@ -754,21 +764,21 @@ const onClickShortCutLink = (item: any) => {
       &:nth-of-type(1) {
         .content-container {
           :deep(.content-item) {
-            margin-right: 64px;
+            margin-left: 64px;
             &:nth-child(-n + 4) {
               margin-top: 0;
             }
             &:nth-of-type(4) {
-              margin-right: 0;
+              margin-left: 0;
             }
 
             @include respond-to('<=laptop') {
-              margin-right: 24px;
+              margin-left: 24px;
             }
           }
           @media (min-width: 1441px) and (max-width: 1505px) {
             :deep(.content-item) {
-              margin-right: 40px;
+              margin-left: 40px;
             }
           }
           @include respond-to('>laptop') {
@@ -801,17 +811,17 @@ const onClickShortCutLink = (item: any) => {
 
   &.learn {
     .item-sub {
-      margin-left: 48px;
+      margin-right: 48px;
       &:nth-of-type(1) {
-        margin-left: 0;
+        margin-right: 0;
       }
       &:nth-of-type(2) {
         .content-container {
           width: 448px;
           :deep(.content-item) {
-            margin-left: 48px;
+            margin-right: 48px;
             &:nth-child(2n + 1) {
-              margin-left: 0;
+              margin-right: 0;
             }
             &:nth-of-type(2) {
               margin-top: 0;
@@ -821,12 +831,12 @@ const onClickShortCutLink = (item: any) => {
       }
 
       @include respond-to('<=laptop') {
-        margin-left: 24px;
+        margin-right: 24px;
         &:nth-of-type(2) {
           .content-container {
             width: 364px;
             :deep(.content-item) {
-              margin-left: 24px;
+              margin-right: 24px;
             }
           }
         }
@@ -867,15 +877,15 @@ const onClickShortCutLink = (item: any) => {
 
   &.approve {
     .item-sub {
-      margin-left: 80px;
+      margin-right: 80px;
       &:nth-of-type(1) {
-        margin-left: 0;
+        margin-right: 0;
         .content-container {
           width: 440px;
           :deep(.content-item) {
-            margin-left: 40px;
+            margin-right: 40px;
             &:nth-child(2n + 1) {
-              margin-left: 0;
+              margin-right: 0;
             }
             &:nth-of-type(2) {
               margin-top: 0;
@@ -885,12 +895,12 @@ const onClickShortCutLink = (item: any) => {
       }
 
       @include respond-to('<=laptop') {
-        margin-left: 24px;
+        margin-right: 24px;
         &:nth-of-type(1) {
           .content-container {
             width: 364px;
             :deep(.content-item) {
-              margin-left: 24px;
+              margin-right: 24px;
             }
           }
         }
@@ -980,15 +990,15 @@ const onClickShortCutLink = (item: any) => {
 
   &.community {
     .item-sub {
-      margin-left: 48px;
+      margin-right: 48px;
       &:nth-of-type(1) {
-        margin-left: 0;
+        margin-right: 0;
         .content-container {
           width: 696px;
           :deep(.content-item) {
-            margin-left: 48px;
+            margin-right: 48px;
             &:nth-child(3n + 1) {
-              margin-left: 0;
+              margin-right: 0;
             }
             &:nth-child(-n + 3) {
               margin-top: 0;
@@ -1004,11 +1014,11 @@ const onClickShortCutLink = (item: any) => {
       }
 
       @include respond-to('<=laptop') {
-        margin-left: 24px;
+        margin-right: 24px;
         &:nth-of-type(1) {
           .content-container {
             :deep(.content-item) {
-              margin-left: 24px;
+              margin-right: 24px;
             }
           }
         }
@@ -1067,13 +1077,13 @@ const onClickShortCutLink = (item: any) => {
 
   &.update {
     .item-sub {
-      margin-left: 48px;
+      margin-right: 48px;
       .content-container {
         width: 448px;
         :deep(.content-item) {
-          margin-left: 48px;
+          margin-right: 48px;
           &:nth-child(2n + 1) {
-            margin-left: 0;
+            margin-right: 0;
           }
           &:nth-child(-n + 2) {
             margin-top: 0;
@@ -1081,14 +1091,14 @@ const onClickShortCutLink = (item: any) => {
         }
       }
       &:nth-of-type(1) {
-        margin-left: 0;
+        margin-right: 0;
       }
 
       @include respond-to('<=laptop') {
-        margin-left: 24px;
+        margin-right: 24px;
         .content-container {
           :deep(.content-item) {
-            margin-left: 24px;
+            margin-right: 24px;
           }
         }
       }

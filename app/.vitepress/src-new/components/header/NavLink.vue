@@ -32,7 +32,8 @@ const linkClick = () => {
     getDownloadQuery(props.url);
   }
 
-  router.go(`/${lang.value}${props.url}`);
+  router.go(`${props.url}`);
+  // router.go(`/${lang.value}${props.url}`);
 };
 
 const getDownloadQuery = (url: string) => {
@@ -65,6 +66,7 @@ const getDownloadQuery = (url: string) => {
 .link {
   color: var(--o-color-info1);
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 
   @include hover {

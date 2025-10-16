@@ -2,7 +2,7 @@
 import { isArray, OLink } from '@opensig/opendesign';
 
 import OIcon from 'opendesign/icon/OIcon.vue';
-import IconChevronRight from '~icons/app-new/icon-chevron-right.svg';
+import IconChevronLeft from '~icons/app-new/icon-chevron-left.svg';
 import { vAnalytics } from '~@/directive/analytics';
 
 interface SectionPropsT {
@@ -67,7 +67,7 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
             <OLink :href="props.footerHref" target="_blank" v-analytics.bubble="{ target: props.footer }">
               {{ props.footer }}
               <template #suffix>
-                <OIcon class="footer-icon"><IconChevronRight /> </OIcon>
+                <OIcon class="footer-icon"><IconChevronLeft /> </OIcon>
               </template>
             </OLink>
           </slot>
@@ -165,6 +165,9 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
 
     @include respond-to('phone') {
       margin-top: 12px;
+    }
+    :deep(.o-link) {
+      flex-direction: row-reverse;
     }
   }
 
