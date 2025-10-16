@@ -49,6 +49,7 @@ const { theme } = storeToRefs(useCommon());
   background: var(--o-color-fill2);
   border-radius: var(--o-radius-xs);
   z-index: 1;
+  direction: rtl;
   @include respond-to('laptop') {
     padding: 16px 54px;
   }
@@ -99,11 +100,11 @@ const { theme } = storeToRefs(useCommon());
       }
     }
     .display-zone-text {
-      margin-left: 12px;
+      margin-right: 12px;
       @include respond-to('<=pad_v') {
         text-align: center;
         margin-top: 8px;
-        margin-left: 0;
+        margin-right: 0;
       }
       .display-zone-title {
         color: var(--o-color-info1);
@@ -113,7 +114,7 @@ const { theme } = storeToRefs(useCommon());
       .display-zone-description {
         color: var(--o-color-info2);
         @include tip1;
-        text-align: left;
+        text-align: right;
         @include respond-to('<=pad_v') {
           display: none;
         }

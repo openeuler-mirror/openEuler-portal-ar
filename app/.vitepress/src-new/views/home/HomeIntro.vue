@@ -160,15 +160,17 @@ useInViewDuration(
     display: block;
     .intro-content-pc {
       display: flex;
+      flex-direction: row-reverse;
     }
 
     .intro-list-pc {
       position: relative;
       display: flex;
       flex-flow: column;
-      margin: 32px 32px 32px 18px;
+      margin: 32px 18px 32px 32px;
       .intro-list-item {
         display: flex;
+        flex-direction: row-reverse;
         align-items: center;
         // 左侧icon宽度
         --intro-gap: 72px;
@@ -229,10 +231,9 @@ useInViewDuration(
         }
         .line {
           position: absolute;
-          left: 29px;
           width: 1px;
           z-index: -1;
-          left: calc(var(--icon-width) / 2);
+          right: calc(var(--icon-width) / 2);
         }
       }
       @include respond-to('pad_h') {
@@ -278,8 +279,8 @@ useInViewDuration(
 
     .intro-info-pc {
       cursor: pointer;
-      text-align: left;
-      margin-left: 24px;
+      text-align: right;
+      margin-right: 24px;
 
       .title {
         @include h3;
@@ -293,6 +294,7 @@ useInViewDuration(
       }
       .en-title {
         display: flex;
+        justify-content: flex-end;
         align-items: center;
         height: var(--icon-width);
       }

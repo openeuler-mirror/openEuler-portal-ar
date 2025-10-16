@@ -190,7 +190,7 @@ const navItemClick = () => {
           </div>
         </div>
         <!-- 搜索 -->
-        <HeaderSearch @search-click="searchControl" />
+        <!-- <HeaderSearch @search-click="searchControl" /> -->
         <!-- 切换语言、网站风格 -->
         <div v-if="!isMobile" class="header-tool">
           <AppLanguage :show="langShow" />
@@ -228,6 +228,7 @@ const navItemClick = () => {
     padding: 0 44px;
     margin: 0 auto;
     height: 80px;
+    flex-direction: row-reverse;
     @media (max-width: 1439px) {
       padding: 0 24px;
     }

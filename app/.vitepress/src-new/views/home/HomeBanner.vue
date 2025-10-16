@@ -219,6 +219,7 @@ const onClick = (href: string, hasBtn: boolean | undefined) => {
   :deep(.o-figure-img) {
     width: 100%;
     height: 100%;
+    transform: scaleX(-1);
   }
 
   @include respond-to('phone') {
@@ -228,6 +229,7 @@ const onClick = (href: string, hasBtn: boolean | undefined) => {
 
 .banner-wrapper {
   height: 100%;
+  text-align: right;
 }
 
 .banner-content {

@@ -58,11 +58,13 @@ const calcBlogStyle = (idx: number) => {
 const newsArr = ref([]);
 const blogArr = ref([]);
 const getData = () => {
-  getHomeBlog(locale.value).then((blogRes) => {
+  // getHomeBlog(locale.value).then((blogRes) => {
+  getHomeBlog('en').then((blogRes) => {
     if (blogRes && blogRes.obj && blogRes.obj.records) {
       blogArr.value = normalizeData(blogRes.obj.records);
 
-      getHomeNews(locale.value).then((newsRes) => {
+      getHomeNews('en').then((newsRes) => {
+      // getHomeNews(locale.value).then((newsRes) => {
         if (newsRes && newsRes.obj && newsRes.obj.records) {
           newsArr.value = normalizeData(newsRes.obj.records);
         }

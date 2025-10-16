@@ -107,7 +107,8 @@ const isSimpleHeader = computed(() => {
 
 // 搜索页移动端布局
 const isSearchPage = computed(() => {
-  return frontmatter.value.searchPage;
+  // return frontmatter.value.searchPage;
+  return false;
 });
 const mobileNav = ref();
 const menuShow = ref(false);
@@ -226,6 +227,7 @@ const mobileClick = () => {
   .app-header-wrap {
     display: flex;
     align-items: center;
+    flex-direction: row-reverse;
     @include respond-to('>pad_v') {
       height: 80px;
     }
@@ -246,13 +248,13 @@ const mobileClick = () => {
   @include respond-to('>pad_v') {
     height: 32px;
     width: 136px;
-    margin-right: var(--o-gap-7);
+    margin-left: var(--o-gap-7);
 
     @include respond-to('laptop') {
-      margin-right: 28px;
+      margin-left: 28px;
     }
     @include respond-to('pad_h') {
-      margin-right: var(--o-gap-2);
+      margin-left: var(--o-gap-2);
     }
   }
   @include respond-to('<=pad_v') {

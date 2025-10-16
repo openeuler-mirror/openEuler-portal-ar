@@ -22,7 +22,7 @@ import click from '~@/assets/category/home/play-community/click.png';
 import vitality from '~@/assets/category/home/play-community/vitality.svg';
 import blue from '~@/assets/category/home/play-community/blue_light.png';
 import blueDark from '~@/assets/category/home/play-community/blue_dark.png';
-import IconChevronRight from '~icons/app-new/icon-chevron-right.svg';
+import IconChevronLeft from '~icons/app-new/icon-chevron-left.svg';
 import { vAnalytics } from '~@/directive/analytics';
 
 import { type VitalityValueT } from '~@/@type/type-home';
@@ -105,6 +105,21 @@ useInViewDuration(container, (duration) => {
             {{ card.intro }}
           </p>
           <div class="btn-box">
+            <OLink
+              v-if="card.textBtn"
+              :href="card.textBtn.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              v-analytics.bubble="{
+                level2: card.title,
+                target: card.textBtn.label,
+              }"
+            >
+              <OIcon>
+                <IconChevronLeft></IconChevronLeft>
+              </OIcon>
+              {{ card.textBtn.label }}
+            </OLink>
             <a :href="card.btn.link" target="_blank" rel="noopener noreferrer">
               <OButton
                 :size="lePadV ? 'medium' : 'large'"
@@ -117,23 +132,6 @@ useInViewDuration(container, (duration) => {
                 {{ card.btn.label }}
               </OButton>
             </a>
-            <OLink
-              v-if="card.textBtn"
-              :href="card.textBtn.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              v-analytics.bubble="{
-                level2: card.title,
-                target: card.textBtn.label,
-              }"
-            >
-              {{ card.textBtn.label }}
-              <template #suffix>
-                <OIcon>
-                  <IconChevronRight></IconChevronRight>
-                </OIcon>
-              </template>
-            </OLink>
           </div>
         </div>
       </div>
@@ -169,12 +167,12 @@ useInViewDuration(container, (duration) => {
           target: t('home.viewDetails'),
         }"
       >
+        <OIcon>
+          <IconChevronLeft></IconChevronLeft>
+        </OIcon>
         {{ $t('home.viewDetails') }}
-        <template #suffix>
-          <OIcon>
-            <IconChevronRight></IconChevronRight>
-          </OIcon>
-        </template>
+        <!-- <template #suffix>
+        </template> -->
       </OLink>
     </div>
     <img class="cube" :src="theme === 'light' ? cube : cubeDark" />
@@ -190,8 +188,9 @@ useInViewDuration(container, (duration) => {
     position: relative;
     display: flex;
     align-items: center;
-    text-align: left;
-    width: fit-content;
+    text-align: right;
+    // width: fit-content;
+    flex-direction: row-reverse;
     .logo {
       padding: 0 16px;
       height: 100%;
@@ -205,10 +204,10 @@ useInViewDuration(container, (duration) => {
       }
     }
     .click {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      transform: translateX(calc(100% + 40px));
+      // position: absolute;
+      // right: 0;
+      // bottom: 0;
+      transform: translateX(calc(100% - 70px)) scaleX(-1);
       img {
         height: 66px;
       }
@@ -222,13 +221,13 @@ useInViewDuration(container, (duration) => {
         filter: blur(50px);
       }
       @include respond-to('<=laptop') {
-        transform: translateX(calc(100% + 24px));
+        transform: translateX(calc(100% - 40px)) scaleX(-1);
         img {
           height: 44px;
         }
       }
       @include respond-to('phone') {
-        transform: translateX(calc(100% + 12px));
+        transform: translateX(calc(100% - 24px)) scaleX(-1);
         img {
           height: 38px;
         }
@@ -238,14 +237,15 @@ useInViewDuration(container, (duration) => {
   .play-intro {
     position: relative;
     display: flex;
-    align-items: flex-end;
+    // align-items: flex-end;
     justify-content: space-between;
+    flex-direction: row-reverse;
     margin-top: 8px;
     color: var(--o-color-info2);
     @include text1;
     border-bottom: 4px solid transparent;
     padding-bottom: 24px;
-    border-image: linear-gradient(90deg, #95b2fb 0%, #002fa7 100%) 1;
+    border-image: linear-gradient(90deg, #002fa7 0%, #95b2fb 100%) 1;
 
     @include respond-to('<=laptop') {
       .o-btn {
@@ -317,6 +317,7 @@ useInViewDuration(container, (duration) => {
         background-repeat: no-repeat;
         padding: 54px 32px 44px;
         color: var(--o-color-white);
+        text-align: right;
         @include h1;
         @include respond-to('<=laptop') {
           padding: 32px 24px;
@@ -334,6 +335,7 @@ useInViewDuration(container, (duration) => {
         justify-content: space-between;
         padding: 32px;
         height: 100%;
+        text-align: right;
         @include respond-to('<=laptop') {
           padding: 24px;
         }
@@ -378,6 +380,7 @@ useInViewDuration(container, (duration) => {
   .vitality {
     margin-top: 32px;
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     padding: 22px 32px;
     width: 100%;
@@ -435,24 +438,25 @@ useInViewDuration(container, (duration) => {
       flex: 1;
       align-items: center;
       justify-content: space-around;
-      margin-left: 52px;
+      margin-right: 52px;
       @include respond-to('<=laptop') {
-        margin-left: 16px;
+        margin-right: 16px;
       }
       @include respond-to('<=pad_v') {
         justify-content: flex-start;
-        margin-left: 0;
+        margin-right: 0;
         margin-top: 12px;
         flex-wrap: wrap;
       }
       .data-item {
         display: block;
         position: relative;
+        text-align: right;
 
         &::before {
           content: '';
           position: absolute;
-          left: -8px;
+          right: -8px;
           width: 2px;
           height: 100%;
           background-image: linear-gradient(
@@ -462,33 +466,33 @@ useInViewDuration(container, (duration) => {
           );
         }
         @include respond-to('<=pad_v') {
-          padding-left: 16px;
-          margin-left: 32px;
+          padding-right: 16px;
+          margin-right: 32px;
           &:nth-child(1) {
-            margin-left: 0;
-            padding-left: 0;
+            margin-right: 0;
+            padding-right: 0;
             &::before {
               display: none;
             }
           }
           &::before {
-            left: -2px;
+            right: -2px;
           }
         }
         @media screen and (max-width: 630px) {
-          margin-left: 24px;
+          margin-right: 24px;
         }
         @media (min-width: 520px) and (max-width: 530px) {
           &:nth-child(4) {
-            margin-right: 50px;
+            margin-left: 50px;
           }
           &:nth-child(5) {
             margin-top: 12px;
           }
           &:nth-child(1),
           &:nth-child(5) {
-            margin-left: 0;
-            padding-left: 0;
+            margin-right: 0;
+            padding-right: 0;
             &::before {
               display: none;
             }
@@ -496,15 +500,15 @@ useInViewDuration(container, (duration) => {
         }
         @media (min-width: 470px) and (max-width: 519px) {
           &:nth-child(4) {
-            margin-right: 30px;
+            margin-left: 30px;
           }
           &:nth-child(5) {
             margin-top: 12px;
           }
           &:nth-child(1),
           &:nth-child(5) {
-            margin-left: 0;
-            padding-left: 0;
+            margin-right: 0;
+            padding-right: 0;
             &::before {
               display: none;
             }
@@ -512,15 +516,15 @@ useInViewDuration(container, (duration) => {
         }
         @media (min-width: 441px) and (max-width: 469px) {
           &:nth-child(4) {
-            margin-right: 0;
+            margin-left: 0;
           }
           &:nth-child(5) {
             margin-top: 12px;
           }
           &:nth-child(1),
           &:nth-child(5) {
-            margin-left: 0;
-            padding-left: 0;
+            margin-right: 0;
+            padding-right: 0;
             &::before {
               display: none;
             }
@@ -532,11 +536,11 @@ useInViewDuration(container, (duration) => {
             margin-top: 12px;
           }
           &:nth-child(3) {
-            margin-right: 40px;
+            margin-left: 40px;
           }
           &:nth-child(4) {
-            margin-left: 0;
-            padding-left: 0;
+            margin-right: 0;
+            padding-right: 0;
             &::before {
               display: none;
             }
@@ -548,8 +552,8 @@ useInViewDuration(container, (duration) => {
             margin-top: 12px;
           }
           &:nth-child(4) {
-            margin-left: 0;
-            padding-left: 0;
+            margin-right: 0;
+            padding-right: 0;
             &::before {
               display: none;
             }
@@ -570,7 +574,7 @@ useInViewDuration(container, (duration) => {
       }
     }
     .vitality-btn {
-      margin-left: 32px;
+      margin-right: 32px;
       display: flex;
       align-items: center;
       @include text1;
@@ -588,34 +592,34 @@ useInViewDuration(container, (duration) => {
   .cube {
     position: absolute;
     top: -47px;
-    left: -35px;
+    right: -35px;
     width: 145px;
     z-index: -1;
     @include respond-to('laptop') {
       width: 145px;
       top: -47px;
-      left: -30px;
+      right: -30px;
     }
     @include respond-to('<=pad_v') {
       width: 46px;
       top: -20px;
-      left: -12px;
+      right: -12px;
     }
     @include respond-to('phone') {
       width: 46px;
       top: -20px;
-      left: -12px;
+      right: -12px;
     }
   }
   .floor-bg {
     position: absolute;
     top: calc(-1 * var(--o-gap-section));
-    left: -185px;
+    right: -185px;
     width: 900px;
     z-index: -1;
     @include respond-to('<=laptop') {
       width: 60%;
-      left: 0;
+      right: 0;
     }
   }
 }

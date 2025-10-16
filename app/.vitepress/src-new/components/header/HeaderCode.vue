@@ -33,10 +33,10 @@ const itemChange = (data: any) => {
           :key="item.PATH"
           class="list"
         >
-          {{ item.NAME }}
           <OIcon v-if="item.ICON">
             <component :is="item.ICON" class="icon" />
           </OIcon>
+          {{ item.NAME }}
         </ODropdownItem>
       </template>
     </ODropdown>
@@ -57,6 +57,7 @@ const itemChange = (data: any) => {
   .info-wrap {
     height: 100%;
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     color: var(--o-color-info1);
     cursor: pointer;
