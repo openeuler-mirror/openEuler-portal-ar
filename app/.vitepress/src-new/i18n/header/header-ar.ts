@@ -24,18 +24,18 @@ export default {
           NAME: 'الحصول على openEuler',
           CHILDREN: [
             {
+              NAME: 'openEuler 25.09',
+              DESCRIPTION:
+                'جرب الابتكارات المضمنة للخادم والسحابة والحافة القائمة على نظام Linux kernel 6.6.',
+              TAG: TAG_TYPE.NEW,
+              URL: '/ar/download/#openEuler 25.09',
+            },
+            {
               NAME: 'openEuler 24.03 LTS SP2',
               DESCRIPTION:
                 'إصدار 24.03 LTS SP2 المحسن على نظام kernel 6.6. تجربة أفضل للمستخدمين والمطورين.',
               TAG: TAG_TYPE.NEW,
               URL: '/ar/download/#openEuler 24.03 LTS SP2',
-            },
-            {
-              NAME: 'openEuler 25.03',
-              DESCRIPTION:
-                'جرب الابتكارات المضمنة للخادم والسحابة والحافة القائمة على نظام Linux kernel 6.6.',
-              TAG: null,
-              URL: '/ar/download/#openEuler 25.03',
             },
             {
               NAME: 'openEuler 24.03 LTS SP1',

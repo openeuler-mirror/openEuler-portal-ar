@@ -28,11 +28,10 @@ const router = useRouter();
 const linkClick = () => {
   emits('link-click');
   // 解决下载tag 高亮问题
-  if (props.url.startsWith('/download/')) {
+  if (props.url.startsWith('/ar/download/')) {
     getDownloadQuery(props.url);
   }
-
-  router.go(`/${props.url}`);
+  router.go(`${props.url}`);
   // router.go(`/${lang.value}${props.url}`);
 };
 

@@ -175,6 +175,10 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+:deep(.o-tab-nav) {
+  margin-right: 0;
+  margin-left: var(--tab-nav-gap);
+}
 .trend-scroller {
   :deep(.o-scrollbar) {
     --scrollbar-height: 100%;

@@ -297,7 +297,7 @@ const onClickShortCutLink = (item: any) => {
       position: absolute;
       width: 50px;
       height: 100%;
-      right: 0;
+      left: 0;
       top: 0;
       background-image: linear-gradient(
         90deg,

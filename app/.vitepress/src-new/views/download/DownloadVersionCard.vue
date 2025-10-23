@@ -654,12 +654,12 @@ const onClickDownload = (row: any) => {
     font-weight: 500;
     .o-tag {
       color: var(--o-color-white);
-      margin-left: 16px;
+      margin-right: 16px;
       --tag-padding: 3px 12px;
       @include tip2;
       border: none;
       @include respond-to('<=pad_v') {
-        margin-left: 8px;
+        margin-right: 8px;
       }
     }
   }
@@ -704,9 +704,11 @@ const onClickDownload = (row: any) => {
       }
       .o-radio-group {
         .o-radio + .o-radio {
-          margin-left: 8px;
+          margin-left: 0;
+          margin-right: 8px;
           @include respond-to('<=pad_v') {
             margin-left: 0;
+            margin-right: 0;
           }
         }
         @include respond-to('<=pad_v') {
@@ -746,6 +748,9 @@ const onClickDownload = (row: any) => {
           color: var(--o-color-primary1);
         }
       }
+    }
+    :deep(th) {
+      text-align: right;
     }
     :deep(.o-select) {
       max-width: 267px;
@@ -833,8 +838,19 @@ html[lang='en'],html[lang='ar'] {
     }
   }
 }
+.download-link .o-btn-prefix {
+  margin-right: 0;
+  margin-left: 8px;
+}
+.down-action .o-btn-suffix {
+  margin-right: 8px;
+  margin-left: 0px;
+}
 .popup-tip {
   max-width: 230px;
   --popup-padding: 18px 8px;
+}
+.o-popup {
+  direction: rtl;
 }
 </style>

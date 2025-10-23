@@ -10,7 +10,7 @@
 .sidebar {
   position: fixed;
   right: 0;
-  left: 0;
+  right: 0;
   top: 80px;
   bottom: 0;
   padding: 40px 0;

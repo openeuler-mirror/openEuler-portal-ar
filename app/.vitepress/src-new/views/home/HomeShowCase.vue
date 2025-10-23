@@ -17,7 +17,7 @@ import { useScreen } from '~@/composables/useScreen';
 
 import AppSection from '~@/components/AppSection.vue';
 
-import IconChevronLeft from '~icons/app-new/icon-chevron-left.svg';
+import IconChevronRight from '~icons/app-new/icon-chevron-right.svg';
 
 import { casesAr } from '~@/data/home/case';
 
@@ -226,7 +226,7 @@ useInViewDuration(
                 >
                   <div class="item-title">
                     <p class="company">{{ item.company }}</p>
-                    <OIcon class="company-icon"><IconChevronLeft /></OIcon>
+                    <OIcon class="company-icon"><IconChevronRight /></OIcon>
                   </div>
                   <p class="summary">{{ item.summary }}</p>
                 </OLink>
@@ -271,7 +271,7 @@ useInViewDuration(
   }
 }
 .nav-item-icon {
-  margin-left: 8px;
+  margin-right: 8px;
   @include h2;
 }
 .item-tab-active {
@@ -299,13 +299,13 @@ useInViewDuration(
   margin-top: 32px;
   position: relative;
   display: flex;
-  flex-direction: row-reverse;
+  direction: ltr;
   &::after {
     content: '';
     position: absolute;
     width: 16px;
     height: 100%;
-    right: 0;
+    left: 0;
     top: 0;
     z-index: 9;
     background-image: linear-gradient(178deg, #3888ef 0%, #002fa7 100%);
@@ -314,7 +314,7 @@ useInViewDuration(
 }
 .case-list {
   width: 52%;
-  margin-right: 48px;
+  margin-left: 48px;
   padding: 32px 0 40px;
   .o-divider {
     --o-divider-gap: 24px 0 24px;
@@ -353,13 +353,13 @@ useInViewDuration(
   @include text1;
   color: var(--o-color-info2);
   margin-top: 12px;
-  text-align: right;
+  text-align: left;
   @include text-truncate(1);
 }
 
 .case-img {
   width: 48%;
-  margin-right: 72px;
+  margin-left: 72px;
   text-align: center;
 }
 .right-img {
@@ -397,7 +397,7 @@ useInViewDuration(
   }
   .case-img {
     width: 38%;
-    margin-right: auto;
+    margin-left: auto;
   }
   .right-img {
     width: 100%;
@@ -498,9 +498,9 @@ useInViewDuration(
     color: var(--o-color-info2);
     padding: 0;
     cursor: pointer;
-    margin-right: 16px;
+    margin-left: 16px;
     &:first-of-type {
-      margin-right: 0;
+      margin-left: 0;
     }
   }
   .nav-item-icon {

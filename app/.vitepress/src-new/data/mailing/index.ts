@@ -7,7 +7,7 @@ export const subscriptionProcess = [
   {
     img: step1,
     title: {
-      ar: 'Select Your SIG',
+      ar: 'تحديد SIG الخاص بك',
     },
     detail: {
       ar: 'Select the mailing list to be subscribed to on the Mailing Lists page.',
@@ -16,7 +16,7 @@ export const subscriptionProcess = [
   {
     img: step2,
     title: {
-      ar: 'Enter Details',
+      ar: 'إدخال التفاصيل',
     },
     detail: {
       ar: 'Enter the e-mail address and name (optional), and click Subscribe.',
@@ -25,7 +25,7 @@ export const subscriptionProcess = [
   {
     img: step3,
     title: {
-      ar: 'Review & Confirm',
+      ar: 'المراجعة والتأكيد',
     },
     detail: {
       ar: 'Your mailbox will receive an e-mail from the mailing list, asking you to confirm that you have subscribed to the mailing list. Click the confirmation link to confirm the subscription.',
@@ -34,7 +34,7 @@ export const subscriptionProcess = [
   {
     img: step4,
     title: {
-      ar: 'You\'re Subscribed!',
+      ar: 'نجاح الاشتراك!',
     },
     detail: {
       ar: 'Your mailbox receives a welcome e-mail from the mailing list, indicating that you have subscribed to the mailing list successfully.',

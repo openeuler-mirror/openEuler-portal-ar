@@ -26,8 +26,8 @@ const { locale, t } = useLocale();
 const activeTab = ref('latest');
 // TODO:从 导航配置取数据
 const shownNameList: string[] = [
+  'openEuler-25.09',
   'openEuler-24.03-LTS-SP2',
-  'openEuler-25.03',
   'openEuler-24.03-LTS-SP1',
 ];
 
@@ -168,6 +168,10 @@ onMounted(() => {
   :deep(.section-body) {
     margin-top: 16px;
   }
+}
+:deep(.o-tab-nav) {
+  margin-left: var(--tab-nav-gap);
+  margin-right: 0px;
 }
 .o-tab {
   margin-top: 32px;

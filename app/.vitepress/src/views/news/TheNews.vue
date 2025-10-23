@@ -21,7 +21,8 @@ let lang = ref("ar")
 const sortParams = reactive({
   page: 1,
   pageSize: 9,
-  lang: lang.value,
+  lang: 'en',
+  // lang: lang.value,
   category: 'news',
 });
 // 新闻列表数据
@@ -36,7 +37,8 @@ const paginationData = ref({
 
 // 获取标签数据
 const tagsParams = reactive({
-  lang: lang.value,
+  lang: 'en',
+  // lang: lang.value,
   category: 'news',
   want: '',
 });
@@ -73,7 +75,8 @@ const selectMethod = () => {
   const params = {
     page: 1,
     pageSize: 9,
-    lang: lang.value,
+    lang: 'en',
+    // lang: lang.value,
     category: 'news',
     archives: selectTimeVal.value === '' ? undefined : selectTimeVal.value,
     author: selectAuthorVal.value === '' ? undefined : selectAuthorVal.value,
@@ -85,7 +88,8 @@ const changeTime = () => {
   selectMethod();
   if (selectTimeVal.value !== '') {
     const wantauthor = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'news',
       want: 'author',
       condition: {
@@ -94,7 +98,8 @@ const changeTime = () => {
       },
     };
     const wanttags = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'news',
       want: 'tags',
       condition: {
@@ -127,7 +132,8 @@ const changeTime = () => {
     getTagsList();
   } else {
     const params = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'news',
       want: 'archives',
       condition: {
@@ -148,7 +154,8 @@ const changeAuthor = () => {
   selectMethod();
   if (selectAuthorVal.value !== '') {
     const wantarchive = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'news',
       want: 'archives',
       condition: {
@@ -157,7 +164,8 @@ const changeAuthor = () => {
       },
     };
     const wanttags = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'news',
       want: 'tags',
       condition: {
@@ -189,7 +197,8 @@ const changeAuthor = () => {
     getTagsList();
   } else {
     const params = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'news',
       want: 'author',
       condition: {
@@ -209,7 +218,8 @@ const changeTags = () => {
   selectMethod();
   if (selectTagsVal.value !== '') {
     const wantarchive = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'news',
       want: 'archives',
       condition: {
@@ -219,7 +229,8 @@ const changeTags = () => {
       },
     };
     const wantauthor = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'news',
       want: 'author',
       condition: {
@@ -251,7 +262,8 @@ const changeTags = () => {
     getTagsList();
   } else {
     const params = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'news',
       want: 'tags',
       condition: {
@@ -329,7 +341,8 @@ onMounted(() => {
 const changeCurrent = (val: number) => {
   const params: ParamsTypeT = {
     category: 'news',
-    lang: lang.value,
+    lang: 'en',
+    // lang: lang.value,
     page: val,
     pageSize: paginationData.value.pagesize,
   };
@@ -345,139 +358,144 @@ const pageTotal = computed(() =>
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="banner"
-    background-text="CONNECT"
-    :title="userCaseData.NEWS"
-    :illustration="illustration"
-  />
-  <AppContent :mobile-top="16">
-    <div class="news-select">
-      <div class="news-select-item">
-        <span class="news-select-item-title">{{ userCaseData.TIME }}</span>
-        <ClientOnly>
-          <OSelect
-            v-model="selectTimeVal"
-            filterable
-            clearable
-            :placeholder="userCaseData.ALL"
-            @change="changeTime"
-          >
-            <template #prefix>
-              <OIcon>
-                <IconSearch />
-              </OIcon>
-            </template>
-            <OOption
-              v-for="item in selectData[0].select"
-              :key="item"
-              :label="item"
-              :value="item"
-            />
-          </OSelect>
-        </ClientOnly>
-      </div>
-      <div class="news-select-item">
-        <span class="news-select-item-title">{{ userCaseData.AUTHOR }}</span>
-        <ClientOnly>
-          <OSelect
-            v-model="selectAuthorVal"
-            filterable
-            clearable
-            :placeholder="userCaseData.ALL"
-            @change="changeAuthor"
-          >
-            <template #prefix>
-              <OIcon>
-                <IconSearch />
-              </OIcon>
-            </template>
-            <OOption
-              v-for="item in selectData[1].select"
-              :key="item"
-              :label="item"
-              :value="item"
-            />
-          </OSelect>
-        </ClientOnly>
-      </div>
-      <div class="news-select-item">
-        <span class="news-select-item-title">{{ userCaseData.TAGS }}</span>
-        <ClientOnly>
-          <OSelect
-            v-model="selectTagsVal"
-            filterable
-            clearable
-            :placeholder="userCaseData.ALL"
-            @change="changeTags"
-          >
-            <template #prefix>
-              <OIcon>
-                <IconSearch />
-              </OIcon>
-            </template>
-            <OOption
-              v-for="item in selectData[2].select"
-              :key="item"
-              :label="item"
-              :value="item"
-            />
-          </OSelect>
-        </ClientOnly>
-      </div>
-    </div>
-    <div
-      v-loading="loading"
-      element-loading-background="transparent"
-      class="news-body"
-    >
-      <template v-if="newsCardData.length">
-        <div class="news-list">
-          <OCard
-            v-for="item in newsCardData"
-            :key="item.path"
-            class="news-list-item"
-            shadow="hover"
-            @click="toNewsContent(item.path)"
-          >
-            <div class="news-img">
-              <img :src="item.banner" :alt="item.banner" />
-            </div>
-            <div class="news-info">
-              <p class="news-title">{{ item.title }}</p>
-              <p class="news-time">{{ item.date }}</p>
-              <p class="news-content">
-                {{ item.summary }}
-              </p>
-            </div>
-          </OCard>
-        </div>
-        <div class="news-pagination">
+  <div class="the-news">
+    <BannerLevel2
+      :background-image="banner"
+      background-text="CONNECT"
+      :title="userCaseData.NEWS"
+      :illustration="illustration"
+    />
+    <AppContent :mobile-top="16">
+      <div class="news-select">
+        <div class="news-select-item">
+          <span class="news-select-item-title">{{ userCaseData.TIME }}</span>
           <ClientOnly>
-            <OPagination
-              v-model:current-page="paginationData.currentpage"
-              v-model:page-size="paginationData.pagesize"
-              :background="true"
-              layout="sizes, prev, pager, next, slot, jumper"
-              :total="paginationData.total"
-              :page-sizes="[3, 6, 9]"
-              @current-change="changeCurrent"
-              @size-change="changeCurrent(1)"
-              @jump-page="changeCurrent"
+            <OSelect
+              v-model="selectTimeVal"
+              filterable
+              clearable
+              :placeholder="userCaseData.ALL"
+              @change="changeTime"
             >
-              <span class="pagination-slot"
-                >{{ paginationData.currentpage }}/{{ pageTotal }}</span
-              >
-            </OPagination>
+              <template #prefix>
+                <OIcon>
+                  <IconSearch />
+                </OIcon>
+              </template>
+              <OOption
+                v-for="item in selectData[0].select"
+                :key="item"
+                :label="item"
+                :value="item"
+              />
+            </OSelect>
           </ClientOnly>
         </div>
-      </template>
-      <NotFound v-else-if="!loading" />
-    </div>
-  </AppContent>
+        <div class="news-select-item">
+          <span class="news-select-item-title">{{ userCaseData.AUTHOR }}</span>
+          <ClientOnly>
+            <OSelect
+              v-model="selectAuthorVal"
+              filterable
+              clearable
+              :placeholder="userCaseData.ALL"
+              @change="changeAuthor"
+            >
+              <template #prefix>
+                <OIcon>
+                  <IconSearch />
+                </OIcon>
+              </template>
+              <OOption
+                v-for="item in selectData[1].select"
+                :key="item"
+                :label="item"
+                :value="item"
+              />
+            </OSelect>
+          </ClientOnly>
+        </div>
+        <div class="news-select-item">
+          <span class="news-select-item-title">{{ userCaseData.TAGS }}</span>
+          <ClientOnly>
+            <OSelect
+              v-model="selectTagsVal"
+              filterable
+              clearable
+              :placeholder="userCaseData.ALL"
+              @change="changeTags"
+            >
+              <template #prefix>
+                <OIcon>
+                  <IconSearch />
+                </OIcon>
+              </template>
+              <OOption
+                v-for="item in selectData[2].select"
+                :key="item"
+                :label="item"
+                :value="item"
+              />
+            </OSelect>
+          </ClientOnly>
+        </div>
+      </div>
+      <div
+        v-loading="loading"
+        element-loading-background="transparent"
+        class="news-body"
+      >
+        <template v-if="newsCardData.length">
+          <div class="news-list">
+            <OCard
+              v-for="item in newsCardData"
+              :key="item.path"
+              class="news-list-item"
+              shadow="hover"
+              @click="toNewsContent(item.path)"
+            >
+              <div class="news-img">
+                <img :src="item.banner.startsWith('http') ? item.banner : '/ar'+item.banner" :alt="item.banner" />
+              </div>
+              <div class="news-info">
+                <p class="news-title">{{ item.title }}</p>
+                <p class="news-time">{{ item.date }}</p>
+                <p class="news-content">
+                  {{ item.summary }}
+                </p>
+              </div>
+            </OCard>
+          </div>
+          <div class="news-pagination">
+            <ClientOnly>
+              <OPagination
+                v-model:current-page="paginationData.currentpage"
+                v-model:page-size="paginationData.pagesize"
+                :background="true"
+                layout="sizes, prev, pager, next, slot, jumper"
+                :total="paginationData.total"
+                :page-sizes="[3, 6, 9]"
+                @current-change="changeCurrent"
+                @size-change="changeCurrent(1)"
+                @jump-page="changeCurrent"
+              >
+                <span class="pagination-slot"
+                  >{{ paginationData.currentpage }}/{{ pageTotal }}</span
+                >
+              </OPagination>
+            </ClientOnly>
+          </div>
+        </template>
+        <NotFound v-else-if="!loading" />
+      </div>
+    </AppContent>
+  </div>
 </template>
 
 <style lang="scss" scoped>
+.the-news {
+  direction: rtl;
+}
 .el-select {
   min-width: 227px;
 }
@@ -535,7 +553,7 @@ const pageTotal = computed(() =>
   .news-select-item {
     display: flex;
     align-items: center;
-    margin-right: var(--e-spacing-h1);
+    margin-left: var(--e-spacing-h1);
     @media (max-width: 1100px) {
       margin: 0;
       display: flex;
@@ -555,7 +573,7 @@ const pageTotal = computed(() =>
     }
     .news-select-item-title {
       white-space: nowrap;
-      margin-right: var(--e-spacing-h5);
+      margin-left: var(--e-spacing-h5);
       color: var(--e-color-text1);
       font-size: var(--e-font-size-h7);
       @media (max-width: 1100px) {

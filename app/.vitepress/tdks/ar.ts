@@ -1228,6 +1228,12 @@ const tdks: {
       'Discover how to set up openEuler on WSL, connect via remote desktop, and utilize user-contributed packages.',
     keywords: 'openEuler, WSL, Linux, Windows, operating system',
   },
+  'docs': {
+    title: 'Docs | openEuler',
+    description:
+      'openEuler docs',
+    keywords: 'openEuler docs',
+  },
 };
 
 export default tdks;

@@ -31,7 +31,7 @@ const { isEn } = useLocale();
             <OFigure :src="community.logo[theme]" />
           </div>
         </OLink>
-        <p class="community-desc">{{ isEn ? community.desc_en : community.desc }}</p>
+        <!-- <p class="community-desc">{{ community.desc }}</p> -->
       </div>
     </div>
     <template #footer>
