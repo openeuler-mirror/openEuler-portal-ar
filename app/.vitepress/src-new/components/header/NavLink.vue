@@ -32,7 +32,7 @@ const linkClick = () => {
     getDownloadQuery(props.url);
   }
 
-  router.go(`${props.url}`);
+  router.go(`/${props.url}`);
   // router.go(`/${lang.value}${props.url}`);
 };
 

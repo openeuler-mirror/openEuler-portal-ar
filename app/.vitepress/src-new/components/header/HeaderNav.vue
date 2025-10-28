@@ -477,7 +477,6 @@ const onClickShortCutLink = (item: any) => {
       padding-top: var(--o-gap-6);
       padding-bottom: var(--o-gap-6);
       padding-right: var(--o-gap-4);
-      text-align: right;
 
       @include respond-to('laptop') {
         width: 261px;
@@ -499,7 +498,6 @@ const onClickShortCutLink = (item: any) => {
         border-radius: var(--o-radius_control-xs);
         padding: 10px 24px;
         display: flex;
-        justify-content: flex-end;
         text-align: right;
         align-items: center;
         gap: var(--o-gap-3);

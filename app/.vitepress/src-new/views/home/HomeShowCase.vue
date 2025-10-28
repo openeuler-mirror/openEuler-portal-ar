@@ -498,9 +498,9 @@ useInViewDuration(
     color: var(--o-color-info2);
     padding: 0;
     cursor: pointer;
-    margin-left: 16px;
+    margin-right: 16px;
     &:first-of-type {
-      margin-left: 0;
+      margin-right: 0;
     }
   }
   .nav-item-icon {

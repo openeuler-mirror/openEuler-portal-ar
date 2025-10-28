@@ -331,7 +331,7 @@ useInViewDuration(
       display: flex;
       align-items: center;
       img {
-        margin-right: 12px;
+        margin-left: 12px;
         width: 30px;
       }
     }

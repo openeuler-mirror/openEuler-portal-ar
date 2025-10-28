@@ -13,9 +13,9 @@ export default {
   news: 'الأخبار',
   case: 'قصص النجاح',
   more: 'عرض المزيد',
-  publisher: 'Vالموردون الذين لديهم إصدارات تجارية مستندة إلى openEuler',
+  publisher: 'الموردون الذين لديهم إصدارات تجارية مستندة إلى openEuler',
   publisherTips: 'تم السرد من دون ترتيب معين',
-  friendlyCommunity: 'Ecosystem Partners',
-  friendlyCommunityDesc: 'As a key force in foundational open source software, openEuler actively engages with international open source organizations to co-develop standards, share technologies, and foster sustainable ecosystem growth.',
-  sortTips: 'Listed alphabetically',
+  friendlyCommunity: 'شركاء المنظومة',
+  friendlyCommunityDesc: 'openEuler واحد من القوى الرئيسية في مجال برمجيات المصدر المفتوح التأسيسية. ينخرط هذا المجتمع بنشاط مع مؤسسات المصدر المفتوح الدولية في التطوير المشترك للمعايير، ومشاركة التقنيات، وتعزيز النمو المستدام للمنظومة.',
+  sortTips: 'قائمة بترتيب أبجدي',
 };

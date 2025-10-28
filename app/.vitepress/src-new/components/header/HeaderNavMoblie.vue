@@ -190,7 +190,7 @@ const linkClick = () => {
     </div>
   </div>
   <!-- 搜索 -->
-  <HeaderSearch />
+  <!-- <HeaderSearch /> -->
   <HeaderLogin />
 </template>
 
@@ -245,7 +245,7 @@ const linkClick = () => {
 .header-tool {
   position: absolute;
   bottom: 36px;
-  left: 0;
+  right: 0;
   width: 99px;
 
   display: flex;
@@ -272,7 +272,7 @@ const linkClick = () => {
   top: 0;
   left: 0;
   width: calc(100% - 99px);
-  transform: translateX(99px);
+  transform: translateX(0);
   height: 100%;
   z-index: 190;
 
