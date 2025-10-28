@@ -317,6 +317,9 @@ const pageTotal = computed(() =>
         line-height: var(--e-line-height-h8);
       }
     }
+    :deep(.el-select__selected-item) {
+      text-align: right;
+    }
   }
 }
 .news-list {

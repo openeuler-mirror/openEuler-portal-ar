@@ -61,15 +61,15 @@ const tabsData = reactive({
   tabPane: [
     {
       label: computed(() => {
-        return i18n.value.cve.SECURITY_ADVISORIES;
-      }),
-      name: 'security-bulletins',
-    },
-    {
-      label: computed(() => {
         return i18n.value.cve.CVE;
       }),
       name: 'cve',
+    },
+    {
+      label: computed(() => {
+        return i18n.value.cve.SECURITY_ADVISORIES;
+      }),
+      name: 'security-bulletins',
     },
   ],
 });
@@ -169,7 +169,7 @@ onMounted(() => {
 }
 
 .certificate-btn {
-  margin-left: 24px;
+  margin-right: 24px;
 }
 
 :deep(.o-tab) {

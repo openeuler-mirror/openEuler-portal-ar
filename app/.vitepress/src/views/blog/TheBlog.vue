@@ -639,7 +639,7 @@ const changeCurrentPageMoblie = (val: number) => {
     }
     .blog-select-item-title {
       white-space: nowrap;
-      margin-right: var(--e-spacing-h5);
+      margin-left: var(--e-spacing-h5);
       color: var(--e-color-text1);
       font-size: var(--e-font-size-h7);
       @media (max-width: 1100px) {
@@ -647,6 +647,9 @@ const changeCurrentPageMoblie = (val: number) => {
         font-size: var(--e-font-size-h8);
         line-height: var(--e-line-height-h8);
       }
+    }
+    :deep(.el-select__selected-item) {
+      text-align: right;
     }
   }
 }

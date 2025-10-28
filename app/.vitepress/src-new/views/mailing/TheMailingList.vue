@@ -328,6 +328,9 @@ const colFlex = computed(() => {
 .o-table + .o-pagination {
   margin-top: 24px;
 }
+:deep(.o-table) th {
+  text-align: right
+}
 
 .mail-list {
   .mail-item + .mail-item {

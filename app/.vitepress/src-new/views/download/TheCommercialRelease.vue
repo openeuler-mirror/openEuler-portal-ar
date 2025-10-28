@@ -573,6 +573,10 @@ const COUNT_PER_PAGE = [12, 18, 24, 36];
         }
         border-radius: var(--o-radius-xs);
       }
+      :deep(.o_input-prefix) {
+        margin-right: 0;
+        margin-left: 8px;
+      }
     }
   }
 }
@@ -680,6 +684,10 @@ html[lang='en'],html[lang='ar'] {
           @include respond-to('<=pad_v') {
             display: none;
           }
+        }
+        :deep(.o-btn-prefix) {
+          margin-left: var(--btn-gap);
+          margin-right: 0;
         }
         .btn-mo {
           display: none;

@@ -121,7 +121,7 @@ export default {
             {
               NAME: 'Documentation',
               LABEL: '',
-              PATH: 'https://docs.openeuler.org/en/',
+              PATH: '/ar/docs/',
             },
             {
               NAME: 'MOOCs',
@@ -176,7 +176,7 @@ export default {
             {
               NAME: 'Documentation',
               LABEL: '',
-              PATH: 'https://docs.openeuler.org/en/',
+              PATH: '/ar/docs/',
             },
             {
               NAME: 'MOOCs',
@@ -331,7 +331,7 @@ export default {
             {
               NAME: 'Documentation',
               LABEL: '',
-              PATH: 'https://docs.openeuler.org/en/',
+              PATH: '/ar/docs/',
             },
             {
               NAME: 'MOOCs',
