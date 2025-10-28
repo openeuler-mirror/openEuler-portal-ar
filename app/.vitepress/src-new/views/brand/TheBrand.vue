@@ -50,139 +50,138 @@ const gap = computed(() => {
 </script>
 
 <template>
-  <div class="the-brand">
-    <BannerLevel2 v-if="!lePadV" class="brand-banner" :title="t('brand.title')" :background-image="banner" />
-    <AppSection :title="t('brand.useTitle')" class="use-title">
+  <BannerLevel2 v-if="!lePadV" class="brand-banner" :title="t('brand.title')" :background-image="banner" />
+  <AppSection :title="t('brand.useTitle')" class="use-title">
+    <ORow :gap="gap" wrap="wrap">
+      <OCol flex="0 0 100%">
+        <div class="item-col desc-col">
+          <div class="text">{{ t('brand.useDesc') }}</div>
+          <div class="text">
+            <span>{{ t('brand.desc1') }}</span>
+            <OLink color="primary" variant="text" :href="guide" target="_blank" hover-underline>{{ t('brand.guide') }}</OLink>
+            <span v-if="locale === 'ar'"> and </span>
+            <OLink color="primary" variant="text" :href="`/${locale}/other/brand/specification/`" target="_blank" hover-underline>{{ t('brand.specification') }}</OLink>
+            <span>{{ t('brand.desc2') }}</span>
+          </div>
+          <div class="text">
+            <span>{{ t('brand.desc3') }}</span>
+            <OLink color="primary" variant="text" href="mailto:trademarks@openeuler.sh" target="_blank" hover-underline>trademarks@openeuler.sh</OLink>
+          </div>
+        </div>
+      </OCol>
+      <OCol :flex="lePadV ? '0 0 100%' : '0 0 50%'">
+        <div class="item-col brand-col">
+          <div class="item-text">
+            <span class="title">{{ t('brand.brandTitle') }}</span>
+            <span class="tip">{{ t('brand.brandTitleTip') }}</span>
+          </div>
+          <div class="item-text">
+            <span class="label">{{ t('brand.titleEn') }}</span>
+            <span class="brand-name">{{ t('brand.brandName') }}</span>
+            <div class="gender-box">
+              <p class="gender-box-item">{{ t('brand.man') }}</p>
+              <audio ref="audioRef1" src="/mp3/openEuler-man.m4a"></audio>
+              <OIcon @click="handleMaleClick">
+                <IconBrandPlay />
+              </OIcon>
+            </div>
+            <div class="gender-box">
+              <p class="gender-box-item">{{ t('brand.woman') }}</p>
+              <audio ref="audioRef2" src="/mp3/openEuler-woman.m4a"></audio>
+              <OIcon @click="handleFamaleClick">
+                <IconBrandPlay />
+              </OIcon>
+            </div>
+          </div>
+          <div v-if="locale === 'zh'" class="item-text">
+            <span class="label">{{ t('brand.titleZh') }}</span>
+            <span>{{ t('brand.brandNameZh') }}</span>
+          </div>
+          <div class="item-text">
+            <span class="label">{{ t('brand.logo') }}</span>
+            <img :src="isDark ? logoDark : logo" />
+          </div>
+        </div>
+      </OCol>
+      <OCol :flex="lePadV ? '0 0 100%' : '0 0 50%'">
+        <div class="item-col brand-innovation-col">
+          <p class="title">{{ t('brand.brandInnovationTitle') }}</p>
+          <div class="innovation-box">
+            <div v-if="!isPhone" class="item-text">
+              <p>{{ t('brand.innovationName') }}</p>
+              <div class="item-bottom">
+                <p>{{ t('brand.logo') }}</p>
+              </div>
+            </div>
+            <div class="aTune-img item-img">
+              <p>{{ t('brand.aTune') }}</p>
+              <div class="item-bottom">
+                <OFigure src="/img/other/brand/A-Tune-logo-png.png" />
+              </div>
+            </div>
+            <ODivider direction="v" />
+            <div class="stratoVirt-img item-img">
+              <p>{{ t('brand.stratoVirt') }}</p>
+              <div class="item-bottom">
+                <OFigure :src="isDark ? stratoVirtLogoDark : stratoVirtLogo" />
+              </div>
+            </div>
+            <ODivider direction="v" />
+            <div class="secGear-img item-img">
+              <p>{{ t('brand.secGear') }}</p>
+              <div class="item-bottom">
+                <OFigure src="/img/other/brand/secGear-logo-png.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </OCol>
+    </ORow>
+  </AppSection>
+  <AppSection :title="t('brand.logoDownloadTitle')" class="download">
+    <div class="logo-download">
+      <p class="subtitle">{{ t('brand.logoDownload') }}</p>
       <ORow :gap="gap" wrap="wrap">
-        <OCol flex="0 0 100%">
-          <div class="item-col desc-col">
-            <div class="text">{{ t('brand.useDesc') }}</div>
-            <div class="text">
-              <span>{{ t('brand.desc1') }}</span>
-              <OLink color="primary" variant="text" :href="guide" target="_blank" hover-underline>{{ t('brand.guide') }}</OLink>
-              <span v-if="locale === 'ar'"> and </span>
-              <OLink color="primary" variant="text" :href="`/${locale}/other/brand/specification/`" target="_blank" hover-underline>{{ t('brand.specification') }}</OLink>
-              <span>{{ t('brand.desc2') }}</span>
+        <OCol v-for="(item, i) in LOGO_DOWNLOAD" :key="i" :flex="lePadV ? '0 0 100%' : '0 0 33.33%'">
+          <div class="card">
+            <div class="top" :class="{'top-dark': isDark}">
+              <OFigure :src="item.img" />
             </div>
-            <div class="text">
-              <span>{{ t('brand.desc3') }}</span>
-              <OLink color="primary" variant="text" href="mailto:trademarks@openeuler.sh" target="_blank" hover-underline>trademarks@openeuler.sh</OLink>
-            </div>
-          </div>
-        </OCol>
-        <OCol :flex="lePadV ? '0 0 100%' : '0 0 50%'">
-          <div class="item-col brand-col">
-            <div class="item-text">
-              <span class="title">{{ t('brand.brandTitle') }}</span>
-              <span class="tip">{{ t('brand.brandTitleTip') }}</span>
-            </div>
-            <div class="item-text">
-              <span class="label">{{ t('brand.titleEn') }}</span>
-              <span class="brand-name">{{ t('brand.brandName') }}</span>
-              <div class="gender-box">
-                <p class="gender-box-item">{{ t('brand.man') }}</p>
-                <audio ref="audioRef1" src="/ar/mp3/openEuler-man.m4a"></audio>
-                <OIcon @click="handleMaleClick">
-                  <IconBrandPlay />
-                </OIcon>
-              </div>
-              <div class="gender-box">
-                <p class="gender-box-item">{{ t('brand.woman') }}</p>
-                <audio ref="audioRef2" src="/ar/mp3/openEuler-woman.m4a"></audio>
-                <OIcon @click="handleFamaleClick">
-                  <IconBrandPlay />
-                </OIcon>
-              </div>
-            </div>
-            <div class="item-text">
-              <span class="label">{{ t('brand.logo') }}</span>
-              <img :src="isDark ? logoDark : logo" />
-            </div>
-          </div>
-        </OCol>
-        <OCol :flex="lePadV ? '0 0 100%' : '0 0 50%'">
-          <div class="item-col brand-innovation-col">
-            <p class="title">{{ t('brand.brandInnovationTitle') }}</p>
-            <div class="innovation-box">
-              <div v-if="!isPhone" class="item-text">
-                <p>{{ t('brand.innovationName') }}</p>
-                <div class="item-bottom">
-                  <p>{{ t('brand.logo') }}</p>
-                </div>
-              </div>
-              <div class="aTune-img item-img">
-                <p>{{ t('brand.aTune') }}</p>
-                <div class="item-bottom">
-                  <OFigure src="/ar/img/other/brand/A-Tune-logo-png.png" />
-                </div>
-              </div>
-              <ODivider direction="v" />
-              <div class="stratoVirt-img item-img">
-                <p>{{ t('brand.stratoVirt') }}</p>
-                <div class="item-bottom">
-                  <OFigure :src="isDark ? stratoVirtLogoDark : stratoVirtLogo" />
-                </div>
-              </div>
-              <ODivider direction="v" />
-              <div class="secGear-img item-img">
-                <p>{{ t('brand.secGear') }}</p>
-                <div class="item-bottom">
-                  <OFigure src="/ar/img/other/brand/secGear-logo-png.png" />
-                </div>
-              </div>
+            <p class="title">{{ item.title }}</p>
+            <div class="bottom">
+              <OButton v-for="btn in item.list" :key="btn.title" color="primary" variant="outline" size="medium" tag="a" :href="btn.url" download>{{ btn.title }}</OButton>
             </div>
           </div>
         </OCol>
       </ORow>
-    </AppSection>
-    <AppSection :title="t('brand.logoDownloadTitle')" class="download">
-      <div class="logo-download">
-        <p class="subtitle">{{ t('brand.logoDownload') }}</p>
-        <ORow :gap="gap" wrap="wrap">
-          <OCol v-for="(item, i) in LOGO_DOWNLOAD" :key="i" :flex="lePadV ? '0 0 100%' : '0 0 33.33%'">
-            <div class="card">
-              <div class="top" :class="{'top-dark': isDark}">
-                <OFigure :src="item.img" />
-              </div>
-              <p class="title">{{ item.title }}</p>
-              <div class="bottom">
-                <OButton v-for="btn in item.list" :key="btn.title" color="primary" variant="outline" size="medium" tag="a" :href="btn.url" download>{{ btn.title }}</OButton>
-              </div>
-            </div>
-          </OCol>
-        </ORow>
-      </div>
-      <div class="innovation-download logo-download">
-        <p class="subtitle">{{ t('brand.innovationLogoDownload') }}</p>
-        <ORow :gap="gap" wrap="wrap">
-          <OCol v-for="(item, i) in INNOVATION_LOGO_DOWNLOAD" :key="i" :flex="lePadV ? '0 0 100%' : '0 0 33.33%'">
-            <div class="card">
-              <div class="top" :class="{'top-dark': isDark}">
-                <OFigure :src="item.img" />
-              </div>
-              <p class="title">{{ item.title }}</p>
-              <div class="bottom">
-                <OButton v-for="btn in item.list" :key="btn.title" color="primary" variant="outline" size="medium" tag="a" :href="btn.url" download>{{ btn.title }}</OButton>
-              </div>
-            </div>
-          </OCol>
-        </ORow>
-      </div>
-    </AppSection>
-    <AppSection :title="t('brand.pptDownload')" class="ppt-download">
+    </div>
+    <div class="innovation-download logo-download">
+      <p class="subtitle">{{ t('brand.innovationLogoDownload') }}</p>
       <ORow :gap="gap" wrap="wrap">
-        <OCol v-for="(item, i) in PPT_LIST_AR" :key="i" :flex="lePadV ? '0 0 100%' : '0 0 33.33%'">
-          <OCard hoverable :title="item.title" :cover="item.img" :href="item.url" download></OCard>
+        <OCol v-for="(item, i) in INNOVATION_LOGO_DOWNLOAD" :key="i" :flex="lePadV ? '0 0 100%' : '0 0 33.33%'">
+          <div class="card">
+            <div class="top" :class="{'top-dark': isDark}">
+              <OFigure :src="item.img" />
+            </div>
+            <p class="title">{{ item.title }}</p>
+            <div class="bottom">
+              <OButton v-for="btn in item.list" :key="btn.title" color="primary" variant="outline" size="medium" tag="a" :href="btn.url" download>{{ btn.title }}</OButton>
+            </div>
+          </div>
         </OCol>
       </ORow>
-    </AppSection>
-  </div>
+    </div>
+  </AppSection>
+  <AppSection :title="t('brand.pptDownload')" class="ppt-download">
+    <ORow :gap="gap" wrap="wrap">
+      <OCol v-for="(item, i) in PPT_LIST_AR" :key="i" :flex="lePadV ? '0 0 100%' : '0 0 33.33%'">
+        <OCard hoverable :title="item.title" :cover="item.img" :href="item.url" download></OCard>
+      </OCol>
+    </ORow>
+  </AppSection>
 </template>
 
 <style lang="scss" scoped>
-.the-brand {
-  direction: rtl;
-}
 .brand-banner {
   :deep(.wrap) {
     .banner-text {
@@ -399,7 +398,7 @@ const gap = computed(() => {
     justify-content: flex-start;
   }
   .o-btn + .o-btn {
-    margin-right: 40px;
+    margin-left: 40px;
   }
 }
 .ppt-download {
@@ -438,7 +437,7 @@ const gap = computed(() => {
   }
   .innovation-download {
     .o-btn + .o-btn {
-      margin-right: 24px;
+      margin-left: 24px;
     }
   }
 }
@@ -480,7 +479,7 @@ const gap = computed(() => {
   }
   .innovation-download {
     .o-btn + .o-btn {
-      margin-right: 4px;
+      margin-left: 4px;
     }
   }
 }
@@ -495,7 +494,7 @@ const gap = computed(() => {
     .bottom {
       justify-content: flex-start;
       .o-btn + .o-btn {
-        margin-right: 12px;
+        margin-left: 12px;
       }
     }
   }
@@ -510,7 +509,7 @@ const gap = computed(() => {
   }
   .innovation-download {
     .o-btn + .o-btn {
-      margin-right: 12px;
+      margin-left: 12px;
     }
   }
 }

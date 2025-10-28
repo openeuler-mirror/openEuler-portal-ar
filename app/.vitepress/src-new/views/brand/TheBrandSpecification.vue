@@ -7,7 +7,7 @@ import AppSection from '~@/components/AppSection.vue';
 
 import bannerEn from '~@/assets/category/brand/en/brand-banner.png';
 
-import { brandSpecificationAr } from '~@/data/brand';
+import { brandSpecification, brandSpecificationEn } from '~@/data/brand';
 
 import { useLocale } from '~@/composables/useLocale';
 import { useScreen } from '~@/composables/useScreen';
@@ -24,7 +24,7 @@ const isDark = computed(() => {
 
 <template>
   <BannerLevel2 v-if="!lePadV" class="specification-banner" :background-image="bannerEn" />
-  <AppSection v-for="(item, i) in brandSpecificationAr" :key="i" :title="item.title" :class="`specification-box${i}`">
+  <AppSection v-for="(item, i) in locale === 'zh' ? brandSpecification : brandSpecificationEn" :key="i" :title="item.title" :class="`specification-box${i}`">
     <div class="item-box" :class="{'item-box-dark': isDark}">
       <ORow gap="0 12px" wrap="wrap">
         <OCol v-for="(val, k) in item.desc" :key="k" flex="0 0 100%">

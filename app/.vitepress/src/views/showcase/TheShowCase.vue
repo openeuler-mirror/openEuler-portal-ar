@@ -35,8 +35,7 @@ const loading = ref(true);
 const activeIndex = ref(0);
 const selectTypeTag = (i: number, type: string) => {
   activeIndex.value = i;
-  parmes.industry = userCaseData.value.tagsEn[i];
-  // parmes.industry = type;
+  parmes.industry = type;
 };
 
 // 接收所有案例
@@ -48,10 +47,9 @@ const parmes = reactive({
   page: 1,
   pageSize: 12,
   keyword: '',
-  // lang: lang.value,
-  lang: 'en',
+  lang: lang.value,
   category: 'showcase',
-  industry: userCaseData.value.tagsEn[0],
+  industry: userCaseData.value.tags[0],
 });
 
 const handleSearchChange = (val: string) => {
@@ -217,136 +215,131 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="showcase">
-    <BannerLevel2
-      :background-image="banner"
-      background-text="COMMNUNITY"
-      :title="userCaseData.bannerTitle"
-      :illustration="search"
-    >
-      <template #default>
-        <a
-          v-if="userCaseData.guideline"
-          href="https://gitee.com/openeuler/community/blob/master/zh/contributors/user-story-guideline.md"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <OButton type="outline" animation size="nomral">
-            {{ userCaseData.guideline }}
-            <template #suffixIcon>
-              <OIcon class="right-icon"><IconRight /></OIcon>
-            </template>
-          </OButton>
-        </a>
-      </template>
-    </BannerLevel2>
-    <div class="user-case">
-      <div class="contribute">
-        {{ userCaseData.contribute }}
-        <a :href="`mailto:${userCaseData.contributeLink}`">{{
-          userCaseData.contributeLink
-        }}</a>
-      </div>
-      <OSearch
-        v-model.lazy.trim="searchVal"
-        :placeholder="userCaseData.placeHolder"
-        :clearable="true"
-        @change="handleSearchChange"
-      ></OSearch>
-      <div class="tag-box" :class="isTopNavMo ? 'tag-top' : ''">
-        <TagFilter :label="userCaseData.type" class="tag-pc">
-          <OTag
-            v-for="(item, index) in userCaseData.tags"
-            :key="'tag' + index"
-            checkable
-            :type="activeIndex === index ? 'primary' : 'text'"
-            @click="selectTypeTag(index, item)"
-          >
-            {{ item }}
-          </OTag>
-        </TagFilter>
-        <TagFilter class="tag-h5">
-          <OTag
-            v-for="(item, index) in userCaseData.tags"
-            :key="'tag' + index"
-            checkable
-            :type="activeIndex === index ? 'primary' : 'text'"
-            @click="selectTypeTag(index, item)"
-          >
-            {{ item }}
-          </OTag>
-        </TagFilter>
-      </div>
-
-      <div class="case-header">
-        <p class="case-number">
-          {{ userCaseData.find1 }} <span>{{ total }}</span>
-          {{ userCaseData.find2 }}
-        </p>
-        <a v-if="userCaseData.caseLink" :href="userCaseData.caseLink">
-          <OButton class="case-download" type="outline" size="mini">
-            {{ userCaseData.downloadCase }}
-            <template #suffixIcon>
-              <OIcon><IconDownload /></OIcon>
-            </template>
-          </OButton>
-        </a>
-      </div>
-      <div
-        v-loading="loading"
-        element-loading-background="transparent"
-        class="case-body"
+  <BannerLevel2
+    :background-image="banner"
+    background-text="COMMNUNITY"
+    :title="userCaseData.bannerTitle"
+    :illustration="search"
+  >
+    <template #default>
+      <a
+        v-if="userCaseData.guideline"
+        href="https://gitee.com/openeuler/community/blob/master/zh/contributors/user-story-guideline.md"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <div class="case-list">
-          <OCard
-            v-for="(item, index) in caseData"
-            :key="item.path"
-            shadow="hover"
-            class="case-card"
-          >
-            <div class="card-content-text">
-              <h4>{{ item.title }}</h4>
-              <p class="detail">
-                {{ item.summary }}
-              </p>
-              <a @click="goDetail(item.path, item, index)">
-                <OButton type="primary" size="mini" class="confirm-btn">{{
-                  userCaseData.button
-                }}</OButton>
-              </a>
-            </div>
-            <div class="card-type-img">
-              <img :src="item.img" alt="" />
-              <p class="type">{{ item.industry }}</p>
-            </div>
-          </OCard>
-        </div>
-        <NotFound v-if="!total && !loading" />
+        <OButton type="outline" animation size="nomral">
+          {{ userCaseData.guideline }}
+          <template #suffixIcon>
+            <OIcon class="right-icon"><IconRight /></OIcon>
+          </template>
+        </OButton>
+      </a>
+    </template>
+  </BannerLevel2>
+  <div class="user-case">
+    <div class="contribute">
+      {{ userCaseData.contribute }}
+      <a :href="`mailto:${userCaseData.contributeLink}`">{{
+        userCaseData.contributeLink
+      }}</a>
+    </div>
+    <OSearch
+      v-model.lazy.trim="searchVal"
+      :placeholder="userCaseData.placeHolder"
+      :clearable="true"
+      @change="handleSearchChange"
+    ></OSearch>
+    <div class="tag-box" :class="isTopNavMo ? 'tag-top' : ''">
+      <TagFilter :label="userCaseData.type" class="tag-pc">
+        <OTag
+          v-for="(item, index) in userCaseData.tags"
+          :key="'tag' + index"
+          checkable
+          :type="activeIndex === index ? 'primary' : 'text'"
+          @click="selectTypeTag(index, item)"
+        >
+          {{ item }}
+        </OTag>
+      </TagFilter>
+      <TagFilter class="tag-h5">
+        <OTag
+          v-for="(item, index) in userCaseData.tags"
+          :key="'tag' + index"
+          checkable
+          :type="activeIndex === index ? 'primary' : 'text'"
+          @click="selectTypeTag(index, item)"
+        >
+          {{ item }}
+        </OTag>
+      </TagFilter>
+    </div>
+
+    <div class="case-header">
+      <p class="case-number">
+        {{ userCaseData.find1 }} <span>{{ total }}</span>
+        {{ userCaseData.find2 }}
+      </p>
+      <a v-if="userCaseData.caseLink" :href="userCaseData.caseLink">
+        <OButton class="case-download" type="outline" size="mini">
+          {{ userCaseData.downloadCase }}
+          <template #suffixIcon>
+            <OIcon><IconDownload /></OIcon>
+          </template>
+        </OButton>
+      </a>
+    </div>
+    <div
+      v-loading="loading"
+      element-loading-background="transparent"
+      class="case-body"
+    >
+      <div class="case-list">
+        <OCard
+          v-for="(item, index) in caseData"
+          :key="item.path"
+          shadow="hover"
+          class="case-card"
+        >
+          <div class="card-content-text">
+            <h4>{{ item.title }}</h4>
+            <p class="detail">
+              {{ item.summary }}
+            </p>
+            <a @click="goDetail(item.path, item, index)">
+              <OButton type="primary" size="mini" class="confirm-btn">{{
+                userCaseData.button
+              }}</OButton>
+            </a>
+          </div>
+          <div class="card-type-img">
+            <img :src="item.img" alt="" />
+            <p class="type">{{ item.industry }}</p>
+          </div>
+        </OCard>
       </div>
-      <div v-if="isShow" class="page-box">
-        <ClientOnly>
-          <OPagination
-            v-model:current-page="parmes.page"
-            v-model:page-size="parmes.pageSize"
-            :hide-on-single-page="true"
-            :page-sizes="[12, 18, 24, 36]"
-            :background="true"
-            layout="sizes, prev, pager, next, slot, jumper"
-            :total="total"
-            @jump-page="jumpPage"
-          >
-            <span class="pagination-slot">{{ parmes.page }}/{{ totalPage }}</span>
-          </OPagination>
-        </ClientOnly>
-      </div>
+      <NotFound v-if="!total && !loading" />
+    </div>
+    <div v-if="isShow" class="page-box">
+      <ClientOnly>
+        <OPagination
+          v-model:current-page="parmes.page"
+          v-model:page-size="parmes.pageSize"
+          :hide-on-single-page="true"
+          :page-sizes="[12, 18, 24, 36]"
+          :background="true"
+          layout="sizes, prev, pager, next, slot, jumper"
+          :total="total"
+          @jump-page="jumpPage"
+        >
+          <span class="pagination-slot">{{ parmes.page }}/{{ totalPage }}</span>
+        </OPagination>
+      </ClientOnly>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.showcase {
-  direction: rtl;
-}
 .banner-level2 {
   .o-button {
     color: var(--e-color-white);
@@ -436,10 +429,6 @@ onMounted(() => {
     @media (max-width: 768px) {
       display: none;
     }
-    .el-input__prefix-inner > :last-child{
-      margin-right: 0;
-      margin-left: 8px;
-    }
   }
   .tag-top {
     @media (max-width: 768px) {
@@ -488,7 +477,6 @@ onMounted(() => {
       background-size: cover;
       position: relative;
       display: flex;
-      direction: ltr;
       @media (max-width: 768px) {
         height: 144px;
         padding: 16px 16px 14px 12px;

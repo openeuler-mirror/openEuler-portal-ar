@@ -73,74 +73,69 @@ const colFlex = computed(() => {
 </script>
 
 <template>
-  <div class="the-mailing-list">
-    <BannerLevel2 v-if="!lePadV" class="mail-banner" :title="t('mailing.title')" :background-image="banner" />
-    <div v-else class="mo-banner">
-      <p class="mo-title">{{ $t('mailing.title') }}</p>
-    </div>
-    <AppSection :title="t('mailing.subscriptionProcessTitle')" class="subscription-process">
-      <div class="mail-process">
-        <ORow gap="80px 0" :wrap="lePadV ? 'wrap' : 'nowrap'">
-          <OCol v-for="(item, i) in subscriptionProcess" :key="i" :flex="colFlex">
-            <div class="step-item">
-              <p class="num">
-                {{ (i + 1).toString().padStart(2, '0') }}
-              </p>
-              <p class="title">{{ item.title[locale] }}</p>
-              <p v-dompurify-html="item.detail[locale]" class="desc"></p>
-              <OFigure :src="item.img" />
-            </div>
-          </OCol>
-        </ORow>
-      </div>
-    </AppSection>
-    <AppSection :title="t('mailing.title')" class="mailing-list-section">
-      <OTable v-if="!isPhone" :columns="columns" :data="tableData" class="mailing-list">
-        <template #td_display_name="{ row }">{{ row.display_name }}</template>
-        <template #td_description="{ row }">
-          <div class="description-td">{{ row.description || '-' }}</div>
-        </template>
-        <template #td_fqdn_listname="{ row }">
-          <OLink color="primary" size="small" variant="text" :href="`mailto:${row.fqdn_listname}`" target="_blank" hover-underline>{{ row.fqdn_listname }}</OLink>
-        </template>
-        <template #td_mail_file="{ row }">
-          <OLink color="primary" size="small" variant="text" :href="`https://mailweb.openeuler.org/hyperkitty/list/${row.display_name.toLowerCase()}@openeuler.org/`" target="_blank" hover-underline class="view-archive">{{ t('mailing.viewArchive') }}</OLink>
-        </template>
-        <template #td_subscribe_mail="{ row }">
-          <OButton color="primary" variant="outline" :href="`https://mailweb.openeuler.org/postorius/lists/${row.fqdn_listname}/`" target="_blank">{{ t('mailing.subscriptionEmail') }}</OButton>
-        </template>
-      </OTable>
-      <div class="mail-list" v-else>
-        <div class="mail-item" v-for="(row, idx) in tableData" :key="idx">
-          <div class="item-title">{{ row.display_name }}</div>
-          <div class="item-desc">{{ row.description }}</div>
-          <OLink color="primary" size="small" variant="text" :href="`mailto:${row.fqdn_listname}`" target="_blank" hover-underline class="item-mail">{{ row.fqdn_listname }}</OLink>
-          <div class="item-btns">
-            <OLink color="primary" size="small" variant="text" :href="`https://mailweb.openeuler.org/hyperkitty/list/${row.display_name.toLowerCase()}@openeuler.org/`" target="_blank" hover-underline class="view-archive">{{ t('mailing.viewArchive') }}</OLink>
-            <OButton color="primary" variant="outline" :href="`https://mailweb.openeuler.org/postorius/lists/${row.fqdn_listname}/`" target="_blank">{{ t('mailing.subscriptionEmail') }}</OButton>
+  <BannerLevel2 v-if="!lePadV" class="mail-banner" :title="t('mailing.title')" :background-image="banner" />
+  <div v-else class="mo-banner">
+    <p class="mo-title">{{ $t('mailing.title') }}</p>
+  </div>
+  <AppSection :title="t('mailing.subscriptionProcessTitle')" class="subscription-process">
+    <div class="mail-process">
+      <ORow gap="80px 0" :wrap="lePadV ? 'wrap' : 'nowrap'">
+        <OCol v-for="(item, i) in subscriptionProcess" :key="i" :flex="colFlex">
+          <div class="step-item">
+            <p class="num">
+              {{ (i + 1).toString().padStart(2, '0') }}
+            </p>
+            <p class="title">{{ item.title[locale] }}</p>
+            <p v-dompurify-html="item.detail[locale]" class="desc"></p>
+            <OFigure :src="item.img" />
           </div>
+        </OCol>
+      </ORow>
+    </div>
+  </AppSection>
+  <AppSection :title="t('mailing.title')" class="mailing-list-section">
+    <OTable v-if="!isPhone" :columns="columns" :data="tableData" class="mailing-list">
+      <template #td_display_name="{ row }">{{ row.display_name }}</template>
+      <template #td_description="{ row }">
+        <div class="description-td">{{ row.description || '-' }}</div>
+      </template>
+      <template #td_fqdn_listname="{ row }">
+        <OLink color="primary" size="small" variant="text" :href="`mailto:${row.fqdn_listname}`" target="_blank" hover-underline>{{ row.fqdn_listname }}</OLink>
+      </template>
+      <template #td_mail_file="{ row }">
+        <OLink color="primary" size="small" variant="text" :href="`https://mailweb.openeuler.org/hyperkitty/list/${row.display_name.toLowerCase()}@openeuler.org/`" target="_blank" hover-underline class="view-archive">{{ t('mailing.viewArchive') }}</OLink>
+      </template>
+      <template #td_subscribe_mail="{ row }">
+        <OButton color="primary" variant="outline" :href="`https://mailweb.openeuler.org/postorius/lists/${row.fqdn_listname}/`" target="_blank">{{ t('mailing.subscriptionEmail') }}</OButton>
+      </template>
+    </OTable>
+    <div class="mail-list" v-else>
+      <div class="mail-item" v-for="(row, idx) in tableData" :key="idx">
+        <div class="item-title">{{ row.display_name }}</div>
+        <div class="item-desc">{{ row.description }}</div>
+        <OLink color="primary" size="small" variant="text" :href="`mailto:${row.fqdn_listname}`" target="_blank" hover-underline class="item-mail">{{ row.fqdn_listname }}</OLink>
+        <div class="item-btns">
+          <OLink color="primary" size="small" variant="text" :href="`https://mailweb.openeuler.org/hyperkitty/list/${row.display_name.toLowerCase()}@openeuler.org/`" target="_blank" hover-underline class="view-archive">{{ t('mailing.viewArchive') }}</OLink>
+          <OButton color="primary" variant="outline" :href="`https://mailweb.openeuler.org/postorius/lists/${row.fqdn_listname}/`" target="_blank">{{ t('mailing.subscriptionEmail') }}</OButton>
         </div>
       </div>
-      <OPagination
-        v-if="total > 0"
-        :key="total"
-        :total="total"
-        :page="pageConf.currentPage"
-        :page-size="pageConf.pageSize"
-        :page-sizes="pageConf.pageSizes"
-        :layout="['total', 'jumper', 'pager', 'pagesize']"
-        :show-more="false"
-        :simple="lePadV"
-        @change="onPageChange"
-      />
-    </AppSection>
-  </div>
+    </div>
+    <OPagination
+      v-if="total > 0"
+      :key="total"
+      :total="total"
+      :page="pageConf.currentPage"
+      :page-size="pageConf.pageSize"
+      :page-sizes="pageConf.pageSizes"
+      :layout="['total', 'jumper', 'pager', 'pagesize']"
+      :show-more="false"
+      :simple="lePadV"
+      @change="onPageChange"
+    />
+  </AppSection>
 </template>
 
 <style scoped lang="scss">
-.the-mailing-list {
-  direction: rtl;
-}
 .mail-banner {
   :deep(.wrap) {
     .banner-text {
@@ -327,9 +322,6 @@ const colFlex = computed(() => {
 }
 .o-table + .o-pagination {
   margin-top: 24px;
-}
-:deep(.o-table) th {
-  text-align: right
 }
 
 .mail-list {

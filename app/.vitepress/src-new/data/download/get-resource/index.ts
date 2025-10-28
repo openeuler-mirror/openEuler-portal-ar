@@ -22,7 +22,7 @@ export default [
       title: 'الوثائق',
       label:
         "استكشف ملاحظات إصدار openEuler ودليل التثبيت ودليل المسؤول وأدلة استخدام المشروع والمزيد.",
-      href: '/ar/docs/',
+      href: 'https://docs.openeuler.org/en/',
     },
   },
 ];

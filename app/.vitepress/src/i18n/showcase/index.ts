@@ -16,6 +16,5 @@ export default {
     prev: 'Prev',
     next: 'Next',
     tags: ['الكل', 'الخدمات المالية', 'شركة الاتصالات', 'الطاقة', 'الخدمات اللوجستية', 'أخرى'],
-    tagsEn: ['All', 'Finance', 'Carrier', 'Energy', 'Logistics', 'Others'],
   },
 };

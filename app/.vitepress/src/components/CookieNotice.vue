@@ -280,7 +280,6 @@ watch(
   bottom: 0;
   z-index: 999;
   width: 100%;
-  direction: rtl;
   .o-button {
     --e-button-font-size-mini: 14px;
   }

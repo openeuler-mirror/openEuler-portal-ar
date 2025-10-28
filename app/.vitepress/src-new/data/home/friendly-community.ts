@@ -28,7 +28,8 @@ export const friendlyCommunityConfig = [
       dark: linuxFoundation_dark,
     },
     url: 'https://www.linuxfoundation.org/',
-    // desc: '* openEuler is an Associate Member of the Linux Foundation.',
+    desc: '* openEuler是Linux Foundation的Associate Member',
+    desc_en: '* openEuler is an Associate Member of the Linux Foundation.',
   },
   {
     logo: {

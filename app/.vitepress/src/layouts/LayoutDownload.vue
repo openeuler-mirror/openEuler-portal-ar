@@ -62,7 +62,7 @@ watch(
 );
 </script>
 <template>
-  <div class="layout-download">
+  <div>
     <SeoBox :seo-data="seoConfig[lang]?.download" />
     <component
       :is="lePadV ? AppRouterTemplateMo : AppRouterTemplate"
@@ -73,8 +73,4 @@ watch(
   </div>
 </template>
 
-<style scoped lang="scss">
-.layout-download {
-  direction: rtl;
-}
-</style>
+<style scoped lang="scss"></style>

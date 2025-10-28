@@ -25,8 +25,7 @@ const tags = computed(() => {
 const sortParams = reactive({
   page: 1,
   pageSize: 9,
-  // lang: lang.value,
-  lang: 'en',
+  lang: lang.value,
   category: 'news',
   tags: tags.value,
 });
@@ -42,8 +41,7 @@ const paginationData = ref({
 
 // 获取标签数据
 const tagsParams = reactive({
-  // lang: lang.value,
-  lang: 'en',
+  lang: lang.value,
   category: 'news',
   want: 'archives',
   condition: {
@@ -70,8 +68,7 @@ const changeTime = () => {
   const params = {
     page: 1,
     pageSize: 9,
-    // lang: lang.value,
-    lang: 'en',
+    lang: lang.value,
     category: 'news',
     tags: tags.value,
     archives: selectTimeVal.value === '' ? undefined : selectTimeVal.value,
@@ -139,97 +136,92 @@ const pageTotal = computed(() =>
 </script>
 
 <template>
-  <div class="the-mounthly">
-    <BannerLevel2
-      :background-image="banner"
-      background-text="CONNECT"
-      :title="i18n.interaction.monthly"
-      :illustration="illustration"
-    />
-    <AppContent :mobile-top="16">
-      <div class="news-select">
-        <div class="news-select-item">
-          <span class="news-select-item-title">{{ userCaseData.TIME }}</span>
+  <BannerLevel2
+    :background-image="banner"
+    background-text="CONNECT"
+    :title="i18n.interaction.monthly"
+    :illustration="illustration"
+  />
+  <AppContent :mobile-top="16">
+    <div class="news-select">
+      <div class="news-select-item">
+        <span class="news-select-item-title">{{ userCaseData.TIME }}</span>
+        <ClientOnly>
+          <OSelect
+            v-model="selectTimeVal"
+            filterable
+            clearable
+            :placeholder="userCaseData.ALL"
+            @change="changeTime"
+          >
+            <template #prefix>
+              <OIcon>
+                <IconSearch />
+              </OIcon>
+            </template>
+            <OOption
+              v-for="item in selectData.select"
+              :key="item"
+              :label="item"
+              :value="item"
+            />
+          </OSelect>
+        </ClientOnly>
+      </div>
+    </div>
+    <div
+      v-loading="loading"
+      element-loading-background="transparent"
+      class="monthly-body"
+    >
+      <template v-if="newsCardData.length">
+        <div class="news-list">
+          <OCard
+            v-for="item in newsCardData.slice(0,9)"
+            :key="item.path"
+            class="news-list-item"
+            shadow="hover"
+            @click="toNewsContent(item.path)"
+          >
+            <div class="news-img">
+              <img :src="item.banner" :alt="item.banner" />
+            </div>
+            <div class="news-info">
+              <p class="news-title">{{ item.title }}</p>
+              <p class="news-time">{{ item.date }}</p>
+              <p class="news-content">
+                {{ item.summary }}
+              </p>
+            </div>
+          </OCard>
+        </div>
+        <div class="news-pagination">
           <ClientOnly>
-            <OSelect
-              v-model="selectTimeVal"
-              filterable
-              clearable
-              :placeholder="userCaseData.ALL"
-              @change="changeTime"
+            <OPagination
+              v-model:current-page="paginationData.currentpage"
+              v-model:page-size="paginationData.pagesize"
+              :background="true"
+              :hide-on-single-page="true"
+              layout="sizes, prev, pager, next, slot, jumper"
+              :total="paginationData.total"
+              :page-sizes="[3, 6, 9]"
+              @current-change="changeCurrent"
+              @size-change="changeCurrent(1)"
+              @jump-page="changeCurrent"
             >
-              <template #prefix>
-                <OIcon>
-                  <IconSearch />
-                </OIcon>
-              </template>
-              <OOption
-                v-for="item in selectData.select"
-                :key="item"
-                :label="item"
-                :value="item"
-              />
-            </OSelect>
+              <span class="pagination-slot"
+                >{{ paginationData.currentpage }}/{{ pageTotal }}</span
+              >
+            </OPagination>
           </ClientOnly>
         </div>
-      </div>
-      <div
-        v-loading="loading"
-        element-loading-background="transparent"
-        class="monthly-body"
-      >
-        <template v-if="newsCardData.length">
-          <div class="news-list">
-            <OCard
-              v-for="item in newsCardData.slice(0,9)"
-              :key="item.path"
-              class="news-list-item"
-              shadow="hover"
-              @click="toNewsContent(item.path)"
-            >
-              <div class="news-img">
-                <img :src="item.banner.startsWith('http') ? item.banner : '/ar' + item.banner" :alt="item.banner" />
-              </div>
-              <div class="news-info">
-                <p class="news-title">{{ item.title }}</p>
-                <p class="news-time">{{ item.date }}</p>
-                <p class="news-content">
-                  {{ item.summary }}
-                </p>
-              </div>
-            </OCard>
-          </div>
-          <div class="news-pagination">
-            <ClientOnly>
-              <OPagination
-                v-model:current-page="paginationData.currentpage"
-                v-model:page-size="paginationData.pagesize"
-                :background="true"
-                :hide-on-single-page="true"
-                layout="sizes, prev, pager, next, slot, jumper"
-                :total="paginationData.total"
-                :page-sizes="[3, 6, 9]"
-                @current-change="changeCurrent"
-                @size-change="changeCurrent(1)"
-                @jump-page="changeCurrent"
-              >
-                <span class="pagination-slot"
-                  >{{ paginationData.currentpage }}/{{ pageTotal }}</span
-                >
-              </OPagination>
-            </ClientOnly>
-          </div>
-        </template>
-        <NotFound v-else-if="!loading" />
-      </div>
-    </AppContent>
-  </div>
+      </template>
+      <NotFound v-else-if="!loading" />
+    </div>
+  </AppContent>
 </template>
 
 <style lang="scss" scoped>
-.the-mounthly {
-  direction: rtl;
-}
 .el-select {
   min-width: 227px;
 }
@@ -288,7 +280,7 @@ const pageTotal = computed(() =>
   .news-select-item {
     display: flex;
     align-items: center;
-    margin-left: var(--e-spacing-h1);
+    margin-right: var(--e-spacing-h1);
     @media (max-width: 1100px) {
       margin: 0;
       display: flex;
@@ -308,7 +300,7 @@ const pageTotal = computed(() =>
     }
     .news-select-item-title {
       white-space: nowrap;
-      margin-left: var(--e-spacing-h5);
+      margin-right: var(--e-spacing-h5);
       color: var(--e-color-text1);
       font-size: var(--e-font-size-h7);
       @media (max-width: 1100px) {
@@ -316,9 +308,6 @@ const pageTotal = computed(() =>
         font-size: var(--e-font-size-h8);
         line-height: var(--e-line-height-h8);
       }
-    }
-    :deep(.el-select__selected-item) {
-      text-align: right;
     }
   }
 }

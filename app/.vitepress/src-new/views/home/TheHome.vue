@@ -145,9 +145,6 @@ if (typeof document !== 'undefined') {
 </template>
 
 <style scoped lang="scss">
-.home {
-  direction: rtl;
-}
 .home-display-zone {
   margin-top: -41px;
   @include respond-to('<=pad_v') {

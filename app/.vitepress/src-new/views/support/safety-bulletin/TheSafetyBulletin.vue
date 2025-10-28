@@ -950,11 +950,6 @@ onUnmounted(() => {
     @include text1;
   }
 }
-.input-search :deep(.o_input-prefix) {
-  margin-right: 0px;
-  margin-left: 8px;
-}
-
 </style>
 <style lang="scss">
 .type-dropdown-dark {

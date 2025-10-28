@@ -210,14 +210,14 @@ onMounted(() => {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: 44px;
+      right: 44px;
       object-fit: fill;
 
       @media screen and (max-width: 1439px) {
-        left: 24px;
+        right: 24px;
       }
       @media screen and (max-width: 1439px) {
-        left: 16px;
+        right: 16px;
       }
 
       img {

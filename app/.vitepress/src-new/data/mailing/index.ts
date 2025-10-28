@@ -7,37 +7,37 @@ export const subscriptionProcess = [
   {
     img: step1,
     title: {
-      ar: 'تحديد SIG الخاص بك',
+      ar: 'Select Your SIG',
     },
     detail: {
-      ar: 'حدد القائمة البريدية التي سيتم الاشتراك فيها في صفحة القوائم البريدية.',
+      ar: 'Select the mailing list to be subscribed to on the Mailing Lists page.',
     },
   },
   {
     img: step2,
     title: {
-      ar: 'إدخال التفاصيل',
+      ar: 'Enter Details',
     },
     detail: {
-      ar: 'أدخل عنوان البريد الإلكتروني والاسم (اختياري)، وانقر على اشتراك.',
+      ar: 'Enter the e-mail address and name (optional), and click Subscribe.',
     },
   },
   {
     img: step3,
     title: {
-      ar: 'المراجعة والتأكيد',
+      ar: 'Review & Confirm',
     },
     detail: {
-      ar: 'سيتلقى صندوق البريد الخاص بك بريدًا إلكترونيًا من القائمة البريدية، يطلب منك تأكيد اشتراكك في القائمة البريدية. انقر على رابط التأكيد لتأكيد الاشتراك.',
+      ar: 'Your mailbox will receive an e-mail from the mailing list, asking you to confirm that you have subscribed to the mailing list. Click the confirmation link to confirm the subscription.',
     },
   },
   {
     img: step4,
     title: {
-      ar: 'نجاح الاشتراك!',
+      ar: 'You\'re Subscribed!',
     },
     detail: {
-      ar: 'سيتلقى صندوق البريد الخاص بك رسالة بريد إلكتروني ترحيبية من القائمة البريدية، تشير إلى أنك اشتركت في القائمة البريدية بنجاح.',
+      ar: 'Your mailbox receives a welcome e-mail from the mailing list, indicating that you have subscribed to the mailing list successfully.',
     },
   },
 ];

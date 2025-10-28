@@ -572,20 +572,12 @@ onUnmounted(() => {
   --btn-bg-color-active: var(--o-color-control2-light);
   --btn-bd-color-active: var(--o-color-control4);
   --btn-color-active: var(--o-color-info1);
-  :deep(.o-btn-prefix) {
-    margin-left: 8px;
-    margin-right: 0;
-  }
 }
 .o-btn {
   --btn-radius: var(--o-radius-xs);
 }
 .o-input {
-  margin-right: 24px;
-  :deep(.o_input-prefix) {
-    margin-left: 8px;
-    margin-right: 0;
-  }
+  margin-left: 24px;
 }
 .input-search {
   :deep(.o_box) {
@@ -608,7 +600,6 @@ onUnmounted(() => {
   }
 
   th {
-    text-align: right;
     width: 10%;
     &:nth-of-type(1) {
       width: 14%;
@@ -752,14 +743,6 @@ onUnmounted(() => {
 ul {
   list-style-type: disc;
   padding-left: 16px;
-}
-:deep(.o-pagination-wrap) > *:not(:first-child) {
-  margin-right: var(--pagination-item-gap);
-  margin-left: 0;
-  .o-pagination-input {
-    margin-left: 0;
-    margin-right: 8px;
-  }
 }
 @include respond-to('<=pad_v') {
   .app-section {

@@ -189,7 +189,7 @@ const onClickNav = (item: any) => {
       @include text1;
     }
     .content-tag {
-      margin-right: var(--o-gap-2);
+      margin-left: var(--o-gap-2);
       @include respond-to('<=laptop') {
         display: none;
       }
@@ -249,7 +249,7 @@ const onClickNav = (item: any) => {
   }
 
   .content-tag {
-    margin-right: var(--o-gap-2);
+    margin-left: var(--o-gap-2);
   }
 
   .desc-container {

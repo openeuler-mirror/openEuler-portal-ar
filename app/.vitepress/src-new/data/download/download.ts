@@ -6,24 +6,6 @@ export default {
   ar: {
     COMMUNITY_LIST: [
       {
-        NAME: 'openEuler 25.09',
-        DOWNLOAD_URL: 'https://repo.openeuler.org/25.09/',
-        DESC: 'openEuler 25.09، المبني على Linux kernel 6.6، هو إصدار مبتكر مزود بميزات جديدة تشمل الخادم والسحابة والحافة والسيناريوهات المضمنة لتحسين تجربة المطور والمستخدم.',
-        RELEASE_DESC_URL:
-          `${import.meta.env.VITE_SERVICE_DOCS_URL}/en/docs/25.09/server/quickstart/releasenotes/introduction.html`,
-        INSTALL_GUIDENCE_URL:
-          `${import.meta.env.VITE_SERVICE_DOCS_URL}/en/docs/25.09/server/installation_upgrade/installation/installation_preparations.html`,
-        SEEK_HELP_URL: 'https://gitee.com/openeuler/community-issue',
-        GET_ISO_URL: 'https://repo.openeuler.org/',
-        LIFE_CYCLE_URL: '/en/other/lifecycle/',
-        WEBSITE_SELECT: '/en/mirror/select/?version=25.09',
-        WHITE_PAPER: '',
-        PUBLISH_DATE: '2025/09',
-        LTS: false,
-        VERSION: '25.09',
-        PLANNED_EOL: '2026/03',
-      },
-      {
         NAME: 'openEuler 24.03 LTS SP2',
         DOWNLOAD_URL: 'https://repo.openeuler.org/24.03 LTS SP2/',
         DESC: 'إن openEuler 24.03 LTS SP2، القائم على Linux kernel 6.6، مناسب لسيناريوهات الخادم والسحابة والحافة وعمليات النشر المضمنة. وبفضل الميزات الأفضل في فئتها، يوفر هذا الطراز تجربة جديدة تمامًا للمطورين والمستخدمين الذين ينتمون إلى صناعات متنوعة.',

@@ -24,7 +24,6 @@ import mailing from './mailing';
 import onlineMeeting from './online-meeting';
 import defectCenter from './defect-center';
 import brand from './brand'
-import docs from './docs'
 
 import { getCurrentLocale } from '~@/utils/locale';
 
@@ -71,7 +70,6 @@ const messages = {
     onlineMeeting: onlineMeeting.ar,
     defectCenter: defectCenter.ar,
     brand: brand.ar,
-    docs: docs.ar,
   }
 };
 

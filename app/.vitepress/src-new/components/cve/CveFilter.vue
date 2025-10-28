@@ -85,7 +85,7 @@ const onChange = (option: FilterOptionT) => {
   min-width: 64px;
   color: var(--o-color-info1);
   font-weight: 500;
-  margin-left: 32px;
+  margin-right: 32px;
   margin-top: 4px;
   @include text1;
 }

@@ -128,7 +128,7 @@ export default {
   GET_OPENEULER_OS1: 'Get openEuler OS',
   GET_OPENEULER_OS2: 'Get openEuler OS',
   GET_OPENEULER_OS_DOC: 'View the openEuler documentation',
-  GET_OPENEULER_OS_DOC_LINK: '/ar/docs/',
+  GET_OPENEULER_OS_DOC_LINK: 'https://docs.openeuler.org/en/',
   TABLE_HEAD_0: 'النوع',
   TABLE_HEAD_1: 'المقاس',
   TABLE_HEAD_2: 'موقع النسخ الاحتياطية',

@@ -47,34 +47,6 @@ export const useCookieStore = defineStore('cookie', {
     },
   },
 });
-/**
- * 搜索状态
- */
-export const useSearchingStore = defineStore('isSearching', {
-  state: () => {
-    return {
-      isSearching: false,
-      keyword: '',
-      isLoading: false,
-      currentPage: 1,
-      version: '25.09', // 文档当前版本
-    };
-  },
-  actions: {
-    setIsSearching(value: boolean) {
-      this.isSearching = value;
-    },
-    setKeyword(value: string) {
-      this.keyword = value;
-    },
-    setIsLoading(value: boolean) {
-      this.isLoading = value;
-    },
-    setCurrentPage(value: number) {
-      this.currentPage = value;
-    },
-  },
-});
 
 // -------------------- 移动端 --------------------
 export const useHeaderTitle = defineStore('headerTitle', {
@@ -84,4 +56,3 @@ export const useHeaderTitle = defineStore('headerTitle', {
     }
   },
 });
-

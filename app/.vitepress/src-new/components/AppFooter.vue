@@ -187,7 +187,6 @@ $color: #fff;
   @include tip2;
 }
 .footer {
-  direction: rtl;
   &.is-doc {
     margin-left: 300px;
     @media (max-width: 1100px) {
@@ -231,6 +230,7 @@ $color: #fff;
       display: flex;
       justify-content: space-between;
       max-width: 1140px;
+      flex-direction: row-reverse;
       text-align: right;
       @include respond-to('<=pad_v') {
         display: none;

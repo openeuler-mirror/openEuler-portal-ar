@@ -111,7 +111,7 @@ onMounted(() => {
     <OConfigProvider :locale="AR">
       <el-config-provider :locale="elLocale">
         <main :class="frontmatter.class ? frontmatter.class : ''">
-          <component :is="comp" v-if="isCustomLayout" ></component>
+          <component :is="comp" v-if="isCustomLayout"></component>
           <Content v-else />
           <FloatingButtonEn v-if="!isReport && showNss" />
         </main>
@@ -163,9 +163,9 @@ main {
   }
 }
 .is-docs {
-  margin-right: 300px;
+  margin-left: 300px;
   @media (max-width: 1100px) {
-    margin-right: 0;
+    margin-left: 0;
   }
 }
 </style>

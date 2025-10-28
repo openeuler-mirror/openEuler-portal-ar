@@ -132,21 +132,6 @@ useInViewDuration(container, (duration) => {
                 {{ card.btn.label }}
               </OButton>
             </a>
-            <OLink
-              v-if="card.textBtn"
-              :href="card.textBtn.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              v-analytics.bubble="{
-                level2: card.title,
-                target: card.textBtn.label,
-              }"
-            >
-              {{ card.textBtn.label }}
-              <OIcon>
-                <IconChevronLeft></IconChevronLeft>
-              </OIcon>
-            </OLink>
           </div>
         </div>
       </div>
@@ -186,11 +171,8 @@ useInViewDuration(container, (duration) => {
           <IconChevronLeft></IconChevronLeft>
         </OIcon>
         {{ $t('home.viewDetails') }}
-        <template #suffix>
-          <OIcon>
-            <IconChevronLeft></IconChevronLeft>
-          </OIcon>
-        </template>
+        <!-- <template #suffix>
+        </template> -->
       </OLink>
     </div>
     <img class="cube" :src="theme === 'light' ? cube : cubeDark" />
@@ -207,7 +189,8 @@ useInViewDuration(container, (duration) => {
     display: flex;
     align-items: center;
     text-align: right;
-    width: fit-content;
+    // width: fit-content;
+    flex-direction: row-reverse;
     .logo {
       padding: 0 16px;
       height: 100%;
@@ -224,7 +207,6 @@ useInViewDuration(container, (duration) => {
       // position: absolute;
       // right: 0;
       // bottom: 0;
-      // transform: translateX(calc(100% + 40px));
       transform: translateX(calc(100% - 70px)) scaleX(-1);
       img {
         height: 66px;
@@ -374,7 +356,7 @@ useInViewDuration(container, (duration) => {
           @include text1;
           a {
             & + a {
-              margin-right: 16px;
+              margin-left: 16px;
             }
           }
           @include respond-to('<=laptop') {
@@ -387,7 +369,7 @@ useInViewDuration(container, (duration) => {
             margin-top: 12px;
             a {
               & + a {
-                margin-right: 12px;
+                margin-left: 12px;
               }
             }
           }

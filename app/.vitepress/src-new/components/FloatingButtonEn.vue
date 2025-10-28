@@ -296,7 +296,7 @@ onMounted(() => {
         isFloatTipShow.value = true;
         setTimeout(() => {
           isFloatTipShow.value = false;
-        }, 15000);
+        }, 5000);
       } else {
         isFloatTipShow.value = false;
       }
@@ -691,9 +691,9 @@ onUnmounted(() => {
         border-bottom: 8px solid transparent;
         position: absolute;
         bottom: -14px;
-        right: 50%;
+        left: 50%;
         @media (max-width: 1700px) {
-          right: 84%;
+          left: 84%;
         }
       }
     }
