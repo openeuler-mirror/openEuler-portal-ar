@@ -4,9 +4,9 @@ import computingArch_ar_pc from '~@/assets/category/home/intro/computing-arch_ar
 import coverAll_ar_pc from '~@/assets/category/home/intro/cover-all_ar_pc.png';
 import developmentTool_ar_pc from '~@/assets/category/home/intro/development-tool_ar_pc.png';
 
-import computingArch_en_mo from '~@/assets/category/home/intro/computing-arch_en_mo.png';
-import coverAll_en_mo from '~@/assets/category/home/intro/cover-all_en_mo.png';
-import developmentTool_en_mo from '~@/assets/category/home/intro/development-tool_en_mo.png';
+import computingArch_ar_mo from '~@/assets/category/home/intro/computing-arch_ar_mo.png';
+import coverAll_ar_mo from '~@/assets/category/home/intro/cover-all_ar_mo.png';
+import developmentTool_ar_mo from '~@/assets/category/home/intro/development-tool_ar_mo.png';
 
 // 左侧icon
 import computingArch_icon_light from '~@/assets/category/home/intro/computing-arch_light.png';
@@ -24,7 +24,7 @@ export default [
     img: {
       ar: {
         pc: computingArch_ar_pc,
-        mo: computingArch_en_mo,
+        mo: computingArch_ar_mo,
       },
     },
     icon: {
@@ -40,7 +40,7 @@ export default [
     img: {
       ar: {
         pc: coverAll_ar_pc,
-        mo: coverAll_en_mo,
+        mo: coverAll_ar_mo,
       },
     },
     icon: {
@@ -56,7 +56,7 @@ export default [
     img: {
       ar: {
         pc: developmentTool_ar_pc,
-        mo: developmentTool_en_mo,
+        mo: developmentTool_ar_mo,
       },
     },
     icon: {
