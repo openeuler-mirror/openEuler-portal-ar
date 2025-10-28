@@ -61,15 +61,15 @@ const tabsData = reactive({
   tabPane: [
     {
       label: computed(() => {
-        return i18n.value.cve.SECURITY_ADVISORIES;
-      }),
-      name: 'security-bulletins',
-    },
-    {
-      label: computed(() => {
         return i18n.value.cve.CVE;
       }),
       name: 'cve',
+    },
+    {
+      label: computed(() => {
+        return i18n.value.cve.SECURITY_ADVISORIES;
+      }),
+      name: 'security-bulletins',
     },
   ],
 });
@@ -85,49 +85,37 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div v-if="!lePadV">
-    <BannerLevel2
-      :background-image="bannerData.bannerImg"
-      :background-text="bannerData.bannerText"
-      :title="bannerData.bannerTitle.value"
-      :subtitle="bannerData.subtitle.value"
-    >
-      <div class="btn">
-        <OButton
-          variant="solid"
-          color="primary"
-          size="large"
-          :href="btnDatas[0].link.value"
-          target="_blank"
-        >
-          {{ btnDatas[0].text }}
-        </OButton>
-        <OButton
-          variant="outline"
-          color="primary"
-          size="large"
-          class="certificate-btn"
-          :href="btnDatas[1].link.value"
-          target="_blank"
-        >
-          {{ btnDatas[1].text }}
-        </OButton>
-      </div>
-    </BannerLevel2>
-    <OTab v-model="activeTab" :line="false" :key="lang" @change="clickTab">
-      <OTabPane
-        v-for="item in tabsData.tabPane"
-        :key="item.name"
-        :label="item.label"
-        :value="item.name"
-      ></OTabPane>
-    </OTab>
-  </div>
-  <div v-else>
-    <div class="banner-mb">
-      <p class="title">{{ i18n.cve.SAFETY_CENTER }}</p>
-      <p class="desc">{{ i18n.cve.SAFETY_CENTER_DESC }}</p>
-      <OTab v-model="activeTab" :line="false" @change="clickTab">
+  <div class="layout-security">
+    <div v-if="!lePadV">
+      <BannerLevel2
+        :background-image="bannerData.bannerImg"
+        :background-text="bannerData.bannerText"
+        :title="bannerData.bannerTitle.value"
+        :subtitle="bannerData.subtitle.value"
+      >
+        <div class="btn">
+          <OButton
+            variant="solid"
+            color="primary"
+            size="large"
+            :href="btnDatas[0].link.value"
+            target="_blank"
+          >
+            {{ btnDatas[0].text }}
+          </OButton>
+          <OButton
+            variant="outline"
+            color="primary"
+            size="large"
+            class="certificate-btn"
+            :href="btnDatas[1].link.value"
+            target="_blank"
+          >
+            {{ btnDatas[1].text }}
+          </OButton>
+        </div>
+      </BannerLevel2>
+      <OTab v-model="activeTab" :line="false" :key="lang" @change="clickTab">
         <OTabPane
           v-for="item in tabsData.tabPane"
           :key="item.name"
@@ -135,35 +123,53 @@ onMounted(() => {
           :value="item.name"
         ></OTabPane>
       </OTab>
-      <p class="title title-page">{{ title }}</p>
-      <div class="btn-mb">
-        <OButton
-          variant="solid"
-          color="primary"
-          size="medium"
-          :href="btnDatas[0].link.value"
-          target="_blank"
-        >
-          {{ btnDatas[0].text }}
-        </OButton>
-        <OButton
-          variant="outline"
-          color="primary"
-          size="medium"
-          :href="btnDatas[0].link.value"
-          target="_blank"
-        >
-          {{ btnDatas[1].text }}
-        </OButton>
+    </div>
+    <div v-else>
+      <div class="banner-mb">
+        <p class="title">{{ i18n.cve.SAFETY_CENTER }}</p>
+        <p class="desc">{{ i18n.cve.SAFETY_CENTER_DESC }}</p>
+        <OTab v-model="activeTab" :line="false" @change="clickTab">
+          <OTabPane
+            v-for="item in tabsData.tabPane"
+            :key="item.name"
+            :label="item.label"
+            :value="item.name"
+          ></OTabPane>
+        </OTab>
+        <p class="title title-page">{{ title }}</p>
+        <div class="btn-mb">
+          <OButton
+            variant="solid"
+            color="primary"
+            size="medium"
+            :href="btnDatas[0].link.value"
+            target="_blank"
+          >
+            {{ btnDatas[0].text }}
+          </OButton>
+          <OButton
+            variant="outline"
+            color="primary"
+            size="medium"
+            :href="btnDatas[0].link.value"
+            target="_blank"
+          >
+            {{ btnDatas[1].text }}
+          </OButton>
+        </div>
       </div>
     </div>
+    <Content />
   </div>
-  <Content />
 </template>
 
 <style scoped lang="scss">
+.layout-security {
+  direction: rtl;
+}
+
 .certificate-btn {
-  margin-left: 24px;
+  margin-right: 24px;
 }
 
 :deep(.o-tab) {
@@ -256,5 +262,8 @@ onMounted(() => {
   .o-btn + .o-btn {
     margin-left: 8px;
   }
+}
+:deep(.o-tab) {
+  direction: ltr;
 }
 </style>

@@ -1,3 +1,4 @@
+import type { CancelToken } from 'axios';
 import { request, AxiosResponse } from '~@/shared/axios';
 
 import {
@@ -8,6 +9,8 @@ import {
   SearchCountResT,
   RelevantQueryT,
   SearchDocsQueryT,
+  SearchDocQueryT,
+  SearchRecommendT
 } from '~@/@types/type-search';
 /**
  * es搜索获取首页新闻
@@ -129,4 +132,34 @@ export function getRelevant(params: RelevantQueryT): Promise<{
 }> {
   const url = `/api-search/search/sugg`;
   return request.post(url, params).then((res: AxiosResponse) => res.data);
+}
+
+
+/**
+ * 关联搜索
+ * @param {Object} params 申请表格数据
+ * @return  {Object}
+ */
+export function getSearchRecommend(params: { query: string }, cancelToken?: CancelToken): Promise<{
+  status: number;
+  obj: {
+    word: SearchRecommendT[];
+  };
+  msg: string;
+}> {
+  const url = `/api-search/search/word?query=${params.query}`;
+  return request.post(url, params, { 
+    showError: false,
+    cancelToken,
+  }).then((res: AxiosResponse) => res.data);
+}
+
+/**
+ * 获取文档搜索结果
+ * @param {SearchDocQueryT} params 搜索参数对象
+ * @returns {Promise<ResponseT>}  搜索结果
+ */
+export function getSearchDocs(params: SearchDocQueryT) {
+  const url = '/api-search/search/sort/docs';
+  return request.post(url, params, { showError: false }).then((res: AxiosResponse) => res.data);
 }

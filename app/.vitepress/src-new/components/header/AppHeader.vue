@@ -107,8 +107,8 @@ const isSimpleHeader = computed(() => {
 
 // 搜索页移动端布局
 const isSearchPage = computed(() => {
+  return false
   // return frontmatter.value.searchPage;
-  return false;
 });
 const mobileNav = ref();
 const menuShow = ref(false);
@@ -185,6 +185,7 @@ const mobileClick = () => {
   z-index: 98;
   box-shadow: var(--o-shadow-1);
   backdrop-filter: blur(5px);
+  direction: rtl;
 
   @include respond-to('>pad_v') {
     &.dark {
@@ -227,7 +228,6 @@ const mobileClick = () => {
   .app-header-wrap {
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
     @include respond-to('>pad_v') {
       height: 80px;
     }

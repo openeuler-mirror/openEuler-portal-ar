@@ -2,7 +2,7 @@ import meetupsdata from './meetups/meetups';
 export default {
   BLOG: 'المدونة',
   TAG: 'Tag filter',
-  NEWS: 'News',
+  NEWS: 'الأخبار',
   BROWSE: 'Browse',
   TIMES: 'times',
   TIME: 'المدة',

@@ -294,6 +294,7 @@ watch(
   bottom: 0;
   z-index: 100;
   width: 100%;
+  direction: rtl;
 }
 
 .cookie-notice-content {
@@ -367,10 +368,10 @@ watch(
   }
 
   .o-btn + .o-btn {
-    margin-left: 16px;
+    margin-right: 16px;
 
     @include respond-to('<=pad_v') {
-      margin-left: 0;
+      margin-right: 0;
       margin-top: 12px;
     }
   }
@@ -379,7 +380,7 @@ watch(
 .cookie-notice-close {
   position: absolute;
   top: 12px;
-  right: var(--layout-content-padding);
+  left: var(--layout-content-padding);
   @include x-hover;
   cursor: pointer;
   color: var(--o-color-info1);
