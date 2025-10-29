@@ -228,7 +228,6 @@ const navItemClick = () => {
     padding: 0 44px;
     margin: 0 auto;
     height: 80px;
-    flex-direction: row-reverse;
     @media (max-width: 1439px) {
       padding: 0 24px;
     }

@@ -130,7 +130,8 @@ export default defineConfig({
         rewrite: (url) => url.replace(/^\/api-certification/, ''),
       },
       '/api-search/': {
-        target: 'https://www.openeuler.org',
+        target: 'https://openeuler-ar.test.osinfra.cn',
+        // target: 'https://www.openeuler.org',
         // target: 'https://doc-search.test.osinfra.cn',
         changeOrigin: true,
         headers: {

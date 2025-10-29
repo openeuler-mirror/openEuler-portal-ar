@@ -160,7 +160,6 @@ useInViewDuration(
     display: block;
     .intro-content-pc {
       display: flex;
-      flex-direction: row-reverse;
     }
 
     .intro-list-pc {
@@ -170,7 +169,6 @@ useInViewDuration(
       margin: 32px 18px 32px 32px;
       .intro-list-item {
         display: flex;
-        flex-direction: row-reverse;
         align-items: center;
         // 左侧icon宽度
         --intro-gap: 72px;
@@ -294,7 +292,6 @@ useInViewDuration(
       }
       .en-title {
         display: flex;
-        justify-content: flex-end;
         align-items: center;
         height: var(--icon-width);
       }
@@ -331,7 +328,7 @@ useInViewDuration(
       display: flex;
       align-items: center;
       img {
-        margin-right: 12px;
+        margin-left: 12px;
         width: 30px;
       }
     }

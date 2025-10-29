@@ -14,7 +14,7 @@ import blogIllustration from '@/assets/illustrations/blog.png';
 import IconCalendar from '~icons/app/icon-calendar.svg';
 import IconUser from '~icons/app/icon-user.svg';
 import IconBrowse from '~icons/app/icon-browse.svg';
-import IconRight from '~icons/app/icon-arrow-right.svg';
+import IconRight from '~icons/app/icon-arrow-left.svg';
 import IconSearch from '~icons/app/icon-search.svg';
 
 import { getTagsData, sortBlogData } from '@/api/api-search';
@@ -31,12 +31,14 @@ const loading = ref(true);
 const sortParams = reactive({
   page: 1,
   pageSize: 9,
-  lang: lang.value,
+  lang: 'en',
+  // lang: lang.value,
   category: 'blog',
 });
 // 标签
 const tagsParams = reactive({
-  lang: lang.value,
+  lang: 'en',
+  // lang: lang.value,
   category: 'blog',
   want: '',
 });
@@ -132,7 +134,8 @@ const selectMethod = () => {
   const params = {
     page: 1,
     pageSize: 9,
-    lang: lang.value,
+    lang: 'en',
+    // lang: lang.value,
     category: 'blog',
     archives: selectTimeVal.value === '' ? undefined : selectTimeVal.value,
     author: selectAuthorVal.value === '' ? undefined : selectAuthorVal.value,
@@ -145,7 +148,8 @@ const changeTime = () => {
   selectMethod();
   if (selectTimeVal.value !== '') {
     const wantauthor = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'blog',
       want: 'author',
       condition: {
@@ -154,7 +158,8 @@ const changeTime = () => {
       },
     };
     const wanttags = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'blog',
       want: 'tags',
       condition: {
@@ -187,7 +192,8 @@ const changeTime = () => {
     getTagsList();
   } else {
     const params = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'blog',
       want: 'archives',
       condition: {
@@ -208,7 +214,8 @@ const changeAuthor = () => {
   selectMethod();
   if (selectAuthorVal.value !== '') {
     const wantarchive = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'blog',
       want: 'archives',
       condition: {
@@ -217,7 +224,8 @@ const changeAuthor = () => {
       },
     };
     const wanttags = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'blog',
       want: 'tags',
       condition: {
@@ -249,7 +257,8 @@ const changeAuthor = () => {
     getTagsList();
   } else {
     const params = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'blog',
       want: 'author',
       condition: {
@@ -269,7 +278,8 @@ const changeTags = () => {
   selectMethod();
   if (selectTagsVal.value !== '') {
     const wantarchive = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'blog',
       want: 'archives',
       condition: {
@@ -279,7 +289,8 @@ const changeTags = () => {
       },
     };
     const wantauthor = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'blog',
       want: 'author',
       condition: {
@@ -311,7 +322,8 @@ const changeTags = () => {
     getTagsList();
   } else {
     const params = {
-      lang: lang.value,
+      lang: 'en',
+      // lang: lang.value,
       category: 'blog',
       want: 'tags',
       condition: {
@@ -337,7 +349,8 @@ onMounted(() => {
 const changeCurrentPage = (val: number) => {
   const params: ParamsTypeT = {
     category: 'blog',
-    lang: lang.value,
+    lang: 'en',
+    // lang: lang.value,
     page: val,
     pageSize: paginationData.value.pagesize,
   };
@@ -361,187 +374,192 @@ const changeCurrentPageMoblie = (val: number) => {
 </script>
 
 <template>
-  <SeoBox :seo-data="seoConfig[lang]?.blogList" />
-  <BannerLevel2
-    :background-image="banner"
-    background-text="CONNECT"
-    :title="userCaseData.BLOG"
-    :illustration="blogIllustration"
-  >
-    <template #default>
-      <OButton
-        class="post-btn"
-        type="outline"
-        animation
-        size="nomral"
-        @click="goPostBlog"
-      >
-        {{ userCaseData.STRATEGY }}
-        <template #suffixIcon>
-          <OIcon class="right-icon"><IconRight /></OIcon>
-        </template>
-      </OButton>
-    </template>
-  </BannerLevel2>
-  <AppContent :mobile-top="16">
-    <div class="blog-select">
-      <div class="blog-select-item">
-        <span class="blog-select-item-title">{{ userCaseData.TIME }}</span>
-        <ClientOnly>
-          <OSelect
-            v-model="selectTimeVal"
-            filterable
-            clearable
-            :placeholder="userCaseData.ALL"
-            @change="changeTime"
-          >
-            <template #prefix>
-              <OIcon>
-                <IconSearch />
-              </OIcon>
-            </template>
-            <OOption
-              v-for="item in selectData[0].select"
-              :key="item"
-              :label="item"
-              :value="item"
-            />
-          </OSelect>
-        </ClientOnly>
-      </div>
-      <div class="blog-select-item">
-        <span class="blog-select-item-title">{{ userCaseData.AUTHOR }}</span>
-        <ClientOnly>
-          <OSelect
-            v-model="selectAuthorVal"
-            filterable
-            clearable
-            :placeholder="userCaseData.ALL"
-            @change="changeAuthor"
-          >
-            <template #prefix>
-              <OIcon>
-                <IconSearch />
-              </OIcon>
-            </template>
-            <OOption
-              v-for="item in selectData[1].select"
-              :key="item"
-              :label="item"
-              :value="item"
-            />
-          </OSelect>
-        </ClientOnly>
-      </div>
-      <div class="blog-select-item">
-        <span class="blog-select-item-title">{{ userCaseData.TAGS }}</span>
-        <ClientOnly>
-          <OSelect
-            v-model="selectTagsVal"
-            filterable
-            clearable
-            :placeholder="userCaseData.ALL"
-            @change="changeTags"
-          >
-            <template #prefix>
-              <OIcon>
-                <IconSearch />
-              </OIcon>
-            </template>
-            <OOption
-              v-for="item in selectData[2].select"
-              :key="item"
-              :label="item"
-              :value="item"
-            />
-          </OSelect>
-        </ClientOnly>
-      </div>
-    </div>
-    <div
-      v-loading="loading"
-      element-loading-background="transparent"
-      class="blog-body"
+  <div class="the-blog">
+    <SeoBox :seo-data="seoConfig[lang]?.blogList" />
+    <BannerLevel2
+      :background-image="banner"
+      background-text="CONNECT"
+      :title="userCaseData.BLOG"
+      :illustration="blogIllustration"
     >
-      <template v-if="blogCardData.length">
-        <div class="blog-list">
-          <OCard
-            v-for="item in blogCardData"
-            :key="item"
-            shadow="hover"
-            class="blog-list-item"
-            @click="toBlogContent(item.path)"
-          >
-            <p class="blog-list-item-title">
-              {{ item.title }}
-            </p>
-            <div class="blog-list-body">
-              <div
-                class="blog-list-item-info"
-                :class="lang === 'ar' ? 'en-blog-list' : ''"
-              >
-                <div class="info-detail">
-                  <OIcon class="icon"><IconUser /></OIcon>
-                  <p v-for="(aut, index2) in item.author" :key="aut">
-                    {{ aut
-                    }}<span v-show="item.author.length !== index2 + 1">,</span>
-                  </p>
-                </div>
-                <div class="info-detail">
-                  <OIcon class="icon"><IconCalendar /></OIcon>
-                  <p>
-                    {{ item.archives }}
-                  </p>
-                </div>
-                <div v-if="item.views" class="info-detail">
-                  <OIcon class="icon"><IconBrowse /></OIcon>
-                  <p>
-                    {{ userCaseData.BROWSE }} {{ item.views }}
-                    {{ userCaseData.TIMES }}
-                  </p>
-                </div>
-              </div>
-              <p class="blog-list-item-content">
-                {{ item.summary }}
-              </p>
-            </div>
-            <div class="blog-list-item-tags">
-              <OTag
-                v-for="tag in item.tags"
-                :key="tag"
-                type="secondary"
-                class="tag-item"
-                >{{ tag }}</OTag
-              >
-            </div>
-          </OCard>
-        </div>
-        <div class="blog-pagination">
+      <template #default>
+        <OButton
+          class="post-btn"
+          type="outline"
+          animation
+          size="nomral"
+          @click="goPostBlog"
+        >
+          {{ userCaseData.STRATEGY }}
+          <template #suffixIcon>
+            <OIcon class="right-icon"><IconRight /></OIcon>
+          </template>
+        </OButton>
+      </template>
+    </BannerLevel2>
+    <AppContent :mobile-top="16">
+      <div class="blog-select">
+        <div class="blog-select-item">
+          <span class="blog-select-item-title">{{ userCaseData.TIME }}</span>
           <ClientOnly>
-            <OPagination
-              v-model:current-page="paginationData.currentpage"
-              v-model:page-size="paginationData.pagesize"
-              :background="true"
-              layout="sizes, prev, pager, next, slot, jumper"
-              :total="paginationData.total"
-              :page-sizes="[3, 6, 9]"
-              @current-change="changeCurrentPage"
-              @size-change="changeCurrentPage(1)"
-              @jump-page="changeCurrentPageMoblie"
+            <OSelect
+              v-model="selectTimeVal"
+              filterable
+              clearable
+              :placeholder="userCaseData.ALL"
+              @change="changeTime"
             >
-              <span class="pagination-slot"
-                >{{ paginationData.currentpage }}/{{ pageTotal }}</span
-              >
-            </OPagination>
+              <template #prefix>
+                <OIcon>
+                  <IconSearch />
+                </OIcon>
+              </template>
+              <OOption
+                v-for="item in selectData[0].select"
+                :key="item"
+                :label="item"
+                :value="item"
+              />
+            </OSelect>
           </ClientOnly>
         </div>
-      </template>
-      <NotFound v-else-if="!loading" />
-    </div>
-  </AppContent>
+        <div class="blog-select-item">
+          <span class="blog-select-item-title">{{ userCaseData.AUTHOR }}</span>
+          <ClientOnly>
+            <OSelect
+              v-model="selectAuthorVal"
+              filterable
+              clearable
+              :placeholder="userCaseData.ALL"
+              @change="changeAuthor"
+            >
+              <template #prefix>
+                <OIcon>
+                  <IconSearch />
+                </OIcon>
+              </template>
+              <OOption
+                v-for="item in selectData[1].select"
+                :key="item"
+                :label="item"
+                :value="item"
+              />
+            </OSelect>
+          </ClientOnly>
+        </div>
+        <div class="blog-select-item">
+          <span class="blog-select-item-title">{{ userCaseData.TAGS }}</span>
+          <ClientOnly>
+            <OSelect
+              v-model="selectTagsVal"
+              filterable
+              clearable
+              :placeholder="userCaseData.ALL"
+              @change="changeTags"
+            >
+              <template #prefix>
+                <OIcon>
+                  <IconSearch />
+                </OIcon>
+              </template>
+              <OOption
+                v-for="item in selectData[2].select"
+                :key="item"
+                :label="item"
+                :value="item"
+              />
+            </OSelect>
+          </ClientOnly>
+        </div>
+      </div>
+      <div
+        v-loading="loading"
+        element-loading-background="transparent"
+        class="blog-body"
+      >
+        <template v-if="blogCardData.length">
+          <div class="blog-list">
+            <OCard
+              v-for="item in blogCardData"
+              :key="item"
+              shadow="hover"
+              class="blog-list-item"
+              @click="toBlogContent(item.path)"
+            >
+              <p class="blog-list-item-title">
+                {{ item.title }}
+              </p>
+              <div class="blog-list-body">
+                <div
+                  class="blog-list-item-info"
+                  :class="lang === 'ar' ? 'en-blog-list' : ''"
+                >
+                  <div class="info-detail">
+                    <OIcon class="icon"><IconUser /></OIcon>
+                    <p v-for="(aut, index2) in item.author" :key="aut">
+                      {{ aut
+                      }}<span v-show="item.author.length !== index2 + 1">,</span>
+                    </p>
+                  </div>
+                  <div class="info-detail">
+                    <OIcon class="icon"><IconCalendar /></OIcon>
+                    <p>
+                      {{ item.archives }}
+                    </p>
+                  </div>
+                  <div v-if="item.views" class="info-detail">
+                    <OIcon class="icon"><IconBrowse /></OIcon>
+                    <p>
+                      {{ userCaseData.BROWSE }} {{ item.views }}
+                      {{ userCaseData.TIMES }}
+                    </p>
+                  </div>
+                </div>
+                <p class="blog-list-item-content">
+                  {{ item.summary }}
+                </p>
+              </div>
+              <div class="blog-list-item-tags">
+                <OTag
+                  v-for="tag in item.tags"
+                  :key="tag"
+                  type="secondary"
+                  class="tag-item"
+                  >{{ tag }}</OTag
+                >
+              </div>
+            </OCard>
+          </div>
+          <div class="blog-pagination">
+            <ClientOnly>
+              <OPagination
+                v-model:current-page="paginationData.currentpage"
+                v-model:page-size="paginationData.pagesize"
+                :background="true"
+                layout="sizes, prev, pager, next, slot, jumper"
+                :total="paginationData.total"
+                :page-sizes="[3, 6, 9]"
+                @current-change="changeCurrentPage"
+                @size-change="changeCurrentPage(1)"
+                @jump-page="changeCurrentPageMoblie"
+              >
+                <span class="pagination-slot"
+                  >{{ paginationData.currentpage }}/{{ pageTotal }}</span
+                >
+              </OPagination>
+            </ClientOnly>
+          </div>
+        </template>
+        <NotFound v-else-if="!loading" />
+      </div>
+    </AppContent>
+  </div>
 </template>
 
 <style lang="scss" scoped>
+.the-blog {
+  direction: rtl;
+}
 .el-select {
   min-width: 227px;
 }
@@ -576,6 +594,10 @@ const changeCurrentPageMoblie = (val: number) => {
     padding: 3px 16px;
     font-size: var(--e-font-size-text);
     line-height: var(--e-line-height-text);
+  }
+  :deep(.suffix-icon) {
+    margin-right: var(--e-button-icon-margin);
+    margin-left: 0;
   }
   .right-icon {
     color: var(--e-color-brand2);
@@ -617,7 +639,7 @@ const changeCurrentPageMoblie = (val: number) => {
     }
     .blog-select-item-title {
       white-space: nowrap;
-      margin-right: var(--e-spacing-h5);
+      margin-left: var(--e-spacing-h5);
       color: var(--e-color-text1);
       font-size: var(--e-font-size-h7);
       @media (max-width: 1100px) {
@@ -625,6 +647,9 @@ const changeCurrentPageMoblie = (val: number) => {
         font-size: var(--e-font-size-h8);
         line-height: var(--e-line-height-h8);
       }
+    }
+    :deep(.el-select__selected-item) {
+      text-align: right;
     }
   }
 }

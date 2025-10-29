@@ -166,9 +166,6 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
     @include respond-to('phone') {
       margin-top: 12px;
     }
-    :deep(.o-link) {
-      flex-direction: row-reverse;
-    }
   }
 
   .footer-icon {

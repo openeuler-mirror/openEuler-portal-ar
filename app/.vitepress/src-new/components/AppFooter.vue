@@ -187,6 +187,7 @@ $color: #fff;
   @include tip2;
 }
 .footer {
+  direction: rtl;
   &.is-doc {
     margin-left: 300px;
     @media (max-width: 1100px) {
@@ -230,7 +231,6 @@ $color: #fff;
       display: flex;
       justify-content: space-between;
       max-width: 1140px;
-      flex-direction: row-reverse;
       text-align: right;
       @include respond-to('<=pad_v') {
         display: none;
@@ -263,7 +263,6 @@ $color: #fff;
       margin-top: 16px;
       padding-bottom: 12px;
       display: flex;
-      flex-direction: row-reverse;
       @include tip2;
       //TODO: 颜色变量
       border-bottom: 1px solid rgba(229, 229, 229, 0.12);
@@ -302,7 +301,6 @@ $color: #fff;
       justify-content: space-between;
       padding: 8px 0 32px;
       position: relative;
-      flex-direction: row-reverse;
       @include respond-to('<=pad_v') {
         margin: 0 auto;
         padding: 12px 0 24px;
@@ -314,12 +312,11 @@ $color: #fff;
   }
   .footer-logo {
     flex: 1;
-    text-align: right;
     img {
       height: 46px;
     }
     .show-pc {
-      display: inline-block;
+      display: block;
     }
     .show-mo {
       display: none;

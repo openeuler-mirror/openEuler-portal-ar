@@ -52,6 +52,7 @@ const config: UserConfig = {
     } else {
       lookupKey = encodeURI(filePath.slice(0, -2).concat('html'));
     }
+    console.log('lookupKey', lookupKey);
     const locale = 'ar';
     const tdkInfo = tdks[locale]?.[lookupKey];
     pageData.titleTemplate = `:title | ${tdks.titleSuffix[locale]}`;

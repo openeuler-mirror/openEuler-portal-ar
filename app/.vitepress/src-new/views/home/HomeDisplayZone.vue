@@ -49,7 +49,6 @@ const { theme } = storeToRefs(useCommon());
   background: var(--o-color-fill2);
   border-radius: var(--o-radius-xs);
   z-index: 1;
-  direction: rtl;
   @include respond-to('laptop') {
     padding: 16px 54px;
   }

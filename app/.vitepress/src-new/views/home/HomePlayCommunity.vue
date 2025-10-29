@@ -105,21 +105,6 @@ useInViewDuration(container, (duration) => {
             {{ card.intro }}
           </p>
           <div class="btn-box">
-            <OLink
-              v-if="card.textBtn"
-              :href="card.textBtn.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              v-analytics.bubble="{
-                level2: card.title,
-                target: card.textBtn.label,
-              }"
-            >
-              <OIcon>
-                <IconChevronLeft></IconChevronLeft>
-              </OIcon>
-              {{ card.textBtn.label }}
-            </OLink>
             <a :href="card.btn.link" target="_blank" rel="noopener noreferrer">
               <OButton
                 :size="lePadV ? 'medium' : 'large'"
@@ -132,6 +117,21 @@ useInViewDuration(container, (duration) => {
                 {{ card.btn.label }}
               </OButton>
             </a>
+            <OLink
+              v-if="card.textBtn"
+              :href="card.textBtn.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              v-analytics.bubble="{
+                level2: card.title,
+                target: card.textBtn.label,
+              }"
+            >
+              {{ card.textBtn.label }}
+              <OIcon>
+                <IconChevronLeft></IconChevronLeft>
+              </OIcon>
+            </OLink>
           </div>
         </div>
       </div>
@@ -167,12 +167,12 @@ useInViewDuration(container, (duration) => {
           target: t('home.viewDetails'),
         }"
       >
-        <OIcon>
-          <IconChevronLeft></IconChevronLeft>
-        </OIcon>
         {{ $t('home.viewDetails') }}
-        <!-- <template #suffix>
-        </template> -->
+        <template #suffix>
+          <OIcon>
+            <IconChevronLeft></IconChevronLeft>
+          </OIcon>
+        </template>
       </OLink>
     </div>
     <img class="cube" :src="theme === 'light' ? cube : cubeDark" />
@@ -189,8 +189,7 @@ useInViewDuration(container, (duration) => {
     display: flex;
     align-items: center;
     text-align: right;
-    // width: fit-content;
-    flex-direction: row-reverse;
+    width: fit-content;
     .logo {
       padding: 0 16px;
       height: 100%;
@@ -207,6 +206,7 @@ useInViewDuration(container, (duration) => {
       // position: absolute;
       // right: 0;
       // bottom: 0;
+      // transform: translateX(calc(100% + 40px));
       transform: translateX(calc(100% - 70px)) scaleX(-1);
       img {
         height: 66px;
@@ -237,15 +237,14 @@ useInViewDuration(container, (duration) => {
   .play-intro {
     position: relative;
     display: flex;
-    // align-items: flex-end;
+    align-items: flex-end;
     justify-content: space-between;
-    flex-direction: row-reverse;
     margin-top: 8px;
     color: var(--o-color-info2);
     @include text1;
     border-bottom: 4px solid transparent;
     padding-bottom: 24px;
-    border-image: linear-gradient(90deg, #002fa7 0%, #95b2fb 100%) 1;
+    border-image: linear-gradient(90deg, #95b2fb 0%, #002fa7 100%) 1;
 
     @include respond-to('<=laptop') {
       .o-btn {
@@ -356,7 +355,7 @@ useInViewDuration(container, (duration) => {
           @include text1;
           a {
             & + a {
-              margin-left: 16px;
+              margin-right: 16px;
             }
           }
           @include respond-to('<=laptop') {
@@ -369,7 +368,7 @@ useInViewDuration(container, (duration) => {
             margin-top: 12px;
             a {
               & + a {
-                margin-left: 12px;
+                margin-right: 12px;
               }
             }
           }
@@ -380,7 +379,6 @@ useInViewDuration(container, (duration) => {
   .vitality {
     margin-top: 32px;
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
     padding: 22px 32px;
     width: 100%;

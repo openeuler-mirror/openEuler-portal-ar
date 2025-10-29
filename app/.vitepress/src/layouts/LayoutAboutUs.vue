@@ -166,6 +166,7 @@ const handleNodeClick = (node: any) => {
   position: relative;
   display: flex;
   justify-content: space-between;
+  direction: rtl;
 }
 
 .nav-tree {
@@ -300,7 +301,7 @@ const handleNodeClick = (node: any) => {
   width: 100%;
   height: 100%;
   padding: 64px;
-  margin-left: 300px;
+  margin-right: 300px;
   flex: 1;
   background-color: var(--o-color-fill1);
 
@@ -309,7 +310,7 @@ const handleNodeClick = (node: any) => {
   }
 
   @media screen and (max-width: 1100px) {
-    margin-left: 0px;
+    margin-right: 0px;
     padding: 16px 16px 40px 16px;
   }
 

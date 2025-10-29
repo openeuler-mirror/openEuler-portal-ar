@@ -176,10 +176,10 @@ const onClickShortCutLink = (item: any) => {
                                   () => onClickShortCutLink(shortcut)
                                 "
                               >
+                                <span>{{ shortcut.NAME }}</span>
                                 <OIcon v-if="shortcut.ICON">
                                   <component :is="shortcut.ICON" class="icon" />
                                 </OIcon>
-                                <span>{{ shortcut.NAME }}</span>
                               </NavLink>
                             </div>
                           </div>
@@ -245,7 +245,7 @@ const onClickShortCutLink = (item: any) => {
     height: 100%;
     display: flex;
     flex: 1;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 }
 
@@ -257,7 +257,6 @@ const onClickShortCutLink = (item: any) => {
 .header-right {
   display: flex;
   align-items: center;
-  flex-direction: row-reverse;
   gap: 20px;
   height: calc(100% - 10px);
   margin: 5px 0;
@@ -290,14 +289,12 @@ const onClickShortCutLink = (item: any) => {
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    display: flex;
-    flex-direction: row-reverse;
     &::after {
       content: '';
       position: absolute;
       width: 50px;
       height: 100%;
-      right: 0;
+      left: 0;
       top: 0;
       background-image: linear-gradient(
         90deg,
@@ -447,7 +444,6 @@ const onClickShortCutLink = (item: any) => {
 
   .nav-sub-content {
     display: flex;
-    flex-direction: row-reverse;
     flex: 1;
     position: relative;
 
@@ -455,7 +451,7 @@ const onClickShortCutLink = (item: any) => {
       flex: 1;
       padding: 32px 0 40px 24px;
       display: flex;
-      flex-direction: row-reverse;
+
       width: 100%;
 
       @include respond-to('laptop') {
@@ -477,7 +473,6 @@ const onClickShortCutLink = (item: any) => {
       padding-top: var(--o-gap-6);
       padding-bottom: var(--o-gap-6);
       padding-right: var(--o-gap-4);
-      text-align: right;
 
       @include respond-to('laptop') {
         width: 261px;
@@ -499,7 +494,6 @@ const onClickShortCutLink = (item: any) => {
         border-radius: var(--o-radius_control-xs);
         padding: 10px 24px;
         display: flex;
-        justify-content: flex-end;
         text-align: right;
         align-items: center;
         gap: var(--o-gap-3);
@@ -622,9 +616,6 @@ const onClickShortCutLink = (item: any) => {
           }
         }
       }
-    }
-    .item-sub {
-      text-align: right;
     }
     .split-line {
       background: var(--o-color-control4);
