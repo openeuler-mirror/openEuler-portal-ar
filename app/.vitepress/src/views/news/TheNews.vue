@@ -616,6 +616,7 @@ const pageTotal = computed(() =>
     width: 100%;
     height: 100%;
     cursor: pointer;
+    direction: ltr;
     &:hover {
       .news-img img {
         transform: scale(1.05);

@@ -675,6 +675,7 @@ const changeCurrentPageMoblie = (val: number) => {
     background-position: right bottom;
     background-repeat: no-repeat;
     cursor: pointer;
+    direction: ltr;
     @media (max-width: 415px) {
       min-height: 152px;
       max-height: 152px;
