@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 
-import { OCard, OScroller, OTab, OTabPane } from '@opensig/opendesign';
-
+import { OCard, OTab, OTabPane } from '@opensig/opendesign';
+import  OScroller   from '~@/components/opendesign/scrollbar/OScroller.vue';
 import AppSection from '~@/components/AppSection.vue';
 
 import { useScreen } from '~@/composables/useScreen';
@@ -95,9 +95,11 @@ onMounted(() => {
           :show-type="lePadV ? 'never' : 'always'"
           size="small"
           disabled-y
+          :direction="locale === 'ar' ? 'rtl' : 'ltr'"
         >
           <OCard
             v-for="(blog, idx) in blogArr"
+            :key="idx"
             cursor="pointer"
             class="trend-card trend-blog"
             :class="{ 'le-pad_v': lePadV }"
@@ -146,6 +148,7 @@ onMounted(() => {
           :show-type="lePadV ? 'never' : 'always'"
           size="small"
           disabled-y
+          :direction="locale === 'ar' ? 'rtl' : 'ltr'"
         >
           <OCard
             v-for="(news, idx) in newsArr"
@@ -158,7 +161,7 @@ onMounted(() => {
             :title-max-row="2"
             :detail-max-row="2"
             :detail="!lePadV ? news.summary : news.date"
-            :cover="`/${news.banner}`"
+            :cover="`/ar/${news.banner}`"
             :cover-ratio="456 / 188"
             :href="`/${news.path}.html`"
             target="_blank"
@@ -175,11 +178,16 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+:deep(.o-tab-navs) {
+  direction: ltr;
+}
 :deep(.o-tab-nav) {
   margin-right: 0;
   margin-left: var(--tab-nav-gap);
+  direction: rtl;
 }
 .trend-scroller {
+  direction: ltr;
   :deep(.o-scrollbar) {
     --scrollbar-height: 100%;
   }
