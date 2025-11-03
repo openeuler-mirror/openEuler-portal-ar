@@ -234,7 +234,7 @@ export default {
               DESCRIPTION:
                 'موردك الأساسي لسيناريوهات الخدمة المختلفة واستخدام الأدوات.',
               TAG: TAG_TYPE.HOT,
-              URL: `${import.meta.env.VITE_SERVICE_DOCS_URL}/en/`,
+              URL: `/ar/docs/`,
             },
             {
               NAME: 'البدء السريع',

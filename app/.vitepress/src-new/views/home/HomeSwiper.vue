@@ -31,7 +31,6 @@ defineProps({
 });
 
 const { theme } = storeToRefs(useCommon());
-const { isEn } = useLocale();
 </script>
 
 <template>
@@ -39,10 +38,10 @@ const { isEn } = useLocale();
     <div class="swiper-list" :class="{ 'swiper-reverse': reverseDirection }">
       <div v-for="(item, i) in data" :key="i" class="swiper-item">
         <OLink
-          :href="isEn ? (item.href_en ? item.href_en : item.href) : item.href"
+          :href="item.href_en || item.href"
           target="_blank"
           v-analytics.bubble="{
-            target: isEn ? item.href_en ?? item.href : item.href,
+            target: item.href_en || item.href,
           }"
         >
           <div class="swiper-card">
@@ -60,6 +59,7 @@ const { isEn } = useLocale();
   white-space: nowrap;
   overflow: hidden;
   position: relative;
+  direction: ltr;
 }
 .swiper-list {
   display: flex;

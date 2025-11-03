@@ -72,19 +72,19 @@ export const linksData2 = {
   ar: [
     {
       NAME: 'علامة تجارية',
-      URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/ar/other/brand/`,
+      URL: `/ar/other/brand/`,
     },
     {
       NAME: 'سياسة الخصوصية',
-      URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/ar/other/privacy/`,
+      URL: `/ar/other/privacy/`,
     },
     {
       NAME: 'إشعار قانوني',
-      URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/ar/other/legal/`,
+      URL: `/ar/other/legal/`,
     },
     {
       NAME: 'حول ملفات الارتباط التشعبي',
-      URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/ar/other/cookies/`,
+      URL: `/ar/other/cookies/`,
     },
   ],
 };
@@ -155,7 +155,7 @@ export const quickNav = {
       list: [
         {
           title: 'الوثائق',
-          link: `${import.meta.env.VITE_SERVICE_DOCS_URL}/en/`,
+          link: `/ar/docs/`,
         },
         {
           title: 'الأسئلة الشائعة',
