@@ -76,15 +76,15 @@ export const linksData2 = {
     },
     {
       NAME: 'سياسة الخصوصية',
-      URL: `/ar/other/privacy/`,
+      URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/privacy/`,
     },
     {
       NAME: 'إشعار قانوني',
-      URL: `/ar/other/legal/`,
+      URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/legal/`,
     },
     {
       NAME: 'حول ملفات الارتباط التشعبي',
-      URL: `/ar/other/cookies/`,
+      URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/cookies/`,
     },
   ],
 };
@@ -104,7 +104,7 @@ export const quickNav = {
         },
         {
           title: 'مدونة السلوك',
-          link: '/ar/community/charter/',
+          link: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/ar/community/charter/`,
         },
         {
           title: 'الإحصاءات',
@@ -163,7 +163,7 @@ export const quickNav = {
         },
         {
           title: 'تواصل معنا',
-          link: '/ar/contact-us/',
+          link: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/contact-us/`,
         },
         // {
         //   title: '反馈问题',
@@ -180,7 +180,7 @@ export const quickNav = {
         },
         {
           title: 'الأنشطة',
-          link: '/ar/interaction/event-list/',
+          link: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/interaction/event-list/`,
         },
         {
           title: 'المنتدى',
@@ -193,15 +193,15 @@ export const quickNav = {
       list: [
         {
           title: 'مجموعات للاهتمامات الخاصة (SIGs)',
-          link: '/ar/sig/sig-list/',
+          link: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/sig/sig-list/`,
         },
         {
           title: 'دليل المساهمة',
-          link: '/ar/community/contribution/',
+          link: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/community/contribution/`,
         },
         {
           title: 'التدريب',
-          link: '/ar/learn/mooc/',
+          link: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/learn/mooc/`,
         },
       ],
     },

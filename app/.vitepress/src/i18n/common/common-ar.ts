@@ -379,12 +379,12 @@ export default {
               NAME: 'secGear',
               LABEL:
                 'Confidential computing framework for secure application development',
-              PATH: '/ar/other/projects/secgear/',
+              PATH: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/projects/secgear/`,
             },
             {
               NAME: 'StratoVirt',
               LABEL: 'Enterprise-level VMM intended for cloud data centers',
-              PATH: '/ar/other/projects/stratovirt/',
+              PATH: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/projects/stratovirt/`,
             },
           ],
         },

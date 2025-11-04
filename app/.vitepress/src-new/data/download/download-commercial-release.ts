@@ -4,7 +4,7 @@ export default {
       {
         NAME: 'TurboLinux Enterprise server v15',
         DOWNLOAD_URL: 'http://download.turbolinux.com.cn:8013/',
-        DESC: 'Turbolinux Enterprise Server 15 (TLES15) is the enterprise commercial Linux distribution based on the openEuler community, designed for the x86_64 and AArch64 processor architecture.',
+        DESC: 'Turbolinux Enterprise Server 15 (TLES15) هو توزيع Linux التجاري للمؤسسات القائمة على مجتمع openEuler، والمصممة لبنية المعالجات x86_64 وAArch64.',
         MANUFACTURER: 'TurboLinux',
         PUBLISH_DATE: '2022/06',
         DETAILED_LINK: [
@@ -19,8 +19,8 @@ export default {
       {
         NAME: 'RedFlag Asianux Server - 8.1',
         DOWNLOAD_URL: 'http://pan.chinaredflag.cn/d/d3041d958a8d4da1881d/',
-        DESC: 'Red Flag Asianux Server OS (openEuler) is a commercial release based on the secondary development of openEuler 20.03 LTS SP1. The current kernel version is 4.19.',
-        MANUFACTURER: 'Red Flag Asianux Server',
+        DESC: 'إن Red Flag Asianux Server OS (openEuler) هو إصدار تجاري قائم على التطوير الثانوي لـ openEuler 20.03 LTS SP1. إصدار kernel الحالي هو 4.19.',
+        MANUFACTURER: 'خادم Red Flag Asiaux',
         PUBLISH_DATE: '2021/03',
         DETAILED_LINK: [
           {
@@ -32,7 +32,7 @@ export default {
       {
         NAME: 'HopeStage',
         DOWNLOAD_URL: 'http://webapp.hoperun.com:8007/HopeStage/',
-        DESC: 'HopeStage Enterprise Linux is an enterprise-level Linux operating system based on openEuler, which has the advantages of high efficiency, stability and security. HopeStage is committed to providing a safe and stable operating basis for enterprise-level databases, big data, cloud computing and artificial intelligence platforms.',
+        DESC: 'إن HopeStage Enterprise Linux هو نظام تشغيل Linux على مستوى المؤسسات قائم على openEuler، يتمتع بمزايا الكفاءة العالية والاستقرار والأمان. تلتزم HopeStage بتوفير أساس تشغيلي آمن ومستقر لقواعد البيانات على مستوى المؤسسات والبيانات الضخمة والحوسبة السحابية ومنصات الذكاء الاصطناعي.',
         MANUFACTURER: 'HOPERUN',
         PUBLISH_DATE: '2020/09',
         DETAILED_LINK: [
@@ -65,7 +65,7 @@ export default {
       },
       {
         NAME: 'HopeEdge',
-        DESC: 'HopeEdge Linux for Edge Computing is an edge computing operating system based on openEuler, which is oriented to IoT scenarios. It has four key characteristics: lightweight security, independent innovation, efficient interconnection and rapid deployment. HopeEdge also provides equipment management, data acquisition, cloud-edge collaboration, artificial intelligence and other characteristics.',
+        DESC: 'HopeEdge Linux for Edge Computing هو نظام تشغيل للحوسبة الحدية قائم على openEuler، يتم توجيهه إلى سيناريوهات إنترنت الأشياء. يتميز بأربع خصائص رئيسية: الأمان خفيف الوزن والابتكار المستقل والترابط الفعال والنشر السريع. يوفر HopeEdge أيضًا إدارة المعدات والحصول على البيانات والتعاون بين السحابة والحافة والذكاء الاصطناعي وخصائص أخرى.',
         DOWNLOAD_URL: 'http://webapp.hoperun.com:8007/',
         MANUFACTURER: 'HOPERUN',
         PUBLISH_DATE: '2020/07',
@@ -98,9 +98,9 @@ export default {
         ],
       },
       {
-        NAME: 'EulixOS Server',
+        NAME: 'خادم EulixOS',
         DOWNLOAD_URL: 'https://eulixos.com/#/download',
-        DESC: 'The EulixOS is a server OS distribution based on the openEuler OS. The EulixOS supports multiple processor architectures, such as x86_64, AArch64, and RISC-V, and is ideal for various application scenarios, including databases, cloud computing, big data, AI, and distributed computing. It combines high security and reliability with the ultimate performance across platforms, aiming to provide a standard, secure, and reliable operating system and quality services for diverse applications and solutions.',
+        DESC: 'EulixOS هو توزيعة نظام تشغيل خادم قائمة على نظام تشغيل openEuler. يدعم EulixOS بنى معالجات متعددة، مثل x86_64 وAArch64 وRISC-V، وهو نموذجي لسيناريوهات التطبيق المختلفة، بما في ذلك قواعد البيانات والحوسبة السحابية والبيانات الضخمة والذكاء الاصطناعي والحوسبة الموزعة. فهو يجمع بين الأمان والموثوقية العالية والأداء الفائق عبر الأنظمة الأساسية، ويهدف إلى توفير نظام تشغيل قياسي وآمن وموثوق وخدمات عالية الجودة للتطبيقات والحلول المتنوعة.',
         MANUFACTURER: 'ISCAS',
         PUBLISH_DATE: '2020/05',
         DETAILED_LINK: [

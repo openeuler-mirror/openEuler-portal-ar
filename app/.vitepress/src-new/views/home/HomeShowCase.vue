@@ -61,7 +61,7 @@ const pathResolving = (path: string) => {
   path = path.endsWith('index')
     ? '/' + path.replace(/(index)$/g, '')
     : '/' + path + '.html';
-  return path;
+  return `${import.meta.env.VITE_MAIN_DOMAIN_URL}${path}`;
 };
 
 // -------------------- 获取案例数据 --------------------
@@ -271,7 +271,7 @@ useInViewDuration(
   }
 }
 .nav-item-icon {
-  margin-right: 8px;
+  margin-left: 8px;
   @include h2;
 }
 .item-tab-active {

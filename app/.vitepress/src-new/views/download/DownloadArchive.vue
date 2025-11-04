@@ -117,6 +117,10 @@ const queryGetVersionInfo = () => {
     });
 };
 
+const detailPath = computed(() => {
+  return `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/download/archive/detail/`
+})
+
 // ------------ 筛选逻辑 -------------------
 const filterList = computed(() => {
   return allList.value?.filter((item: VersionInfoT) => {
@@ -409,7 +413,7 @@ const onClickLink = (item: any) => {
       </el-table-column>
       <el-table-column
         :label="t('download.eol')"
-        :width="!isPadVToLaptop ? '' : '140'"
+        :width="!isPadVToLaptop ? '' : '160'"
       >
         <template #default="scope">
           {{ scope.row?.plannedEol }}
@@ -417,14 +421,12 @@ const onClickLink = (item: any) => {
       </el-table-column>
       <el-table-column
         :label="t('download.DOWNLOAD_LINK')"
-        :width="!isPadVToLaptop ? '200' : '140'"
+        :width="!isPadVToLaptop ? '200' : '120'"
       >
         <template #default="scope">
           <OLink
             :href="
-              '/' +
-              lang +
-              '/download/archive/detail/?version=' +
+              detailPath+'?version=' +
               scope.row.Version
             "
             @click="onClickLink(scope.row)"
@@ -660,6 +662,7 @@ const onClickLink = (item: any) => {
     }
     .cell {
       color: var(--o-color-info1);
+      text-align: right;
     }
     .header-cell {
       display: flex;

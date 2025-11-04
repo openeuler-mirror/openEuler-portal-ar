@@ -275,9 +275,9 @@ $color: #fff;
       }
       .friendship-link-title {
         color: var(--o-color-white);
-        margin-right: 38px;
+        margin-left: 38px;
         @include respond-to('<=pad') {
-          margin-right: 24px;
+          margin-left: 24px;
           min-width: 48px;
         }
       }

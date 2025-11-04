@@ -56,7 +56,8 @@ const userCaseData = computed(() => i18n.value.interaction);
 const loading = ref(true);
 
 const toNewsContent = (path: string) => {
-  router.go(`/${path}`);
+  window.open(`${import.meta.env.VITE_MAIN_DOMAIN_URL}/${path}`, '_blank', 'noopener, noreferrer');
+  // router.go(`/${path}`);
 };
 
 //筛选数据
@@ -107,7 +108,7 @@ const getListData = (params: ParamsTypeT) => {
           title: 'openEuler 2024 Annual Report',
           summary: 'openEuler 2024 Annual Report',
           tags: ['openEuler'],
-          path: 'ar/annual-report/openEuler-annual-report-2024/',
+          path: 'en/annual-report/openEuler-annual-report-2024/',
         };
         newsCardData.value.unshift(yearData);
       }
@@ -328,6 +329,7 @@ const pageTotal = computed(() =>
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--e-spacing-h4);
+  direction: ltr;
   @media (max-width: 1450px) {
     grid-template-columns: repeat(2, 1fr);
   }

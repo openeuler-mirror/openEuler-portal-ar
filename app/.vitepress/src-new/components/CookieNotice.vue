@@ -420,7 +420,7 @@ watch(
           align-items: center;
           @include tip1;
           color: var(--o-color-info3);
-          margin-left: 24px;
+          margin-right: 24px;
         }
       }
 
@@ -430,6 +430,15 @@ watch(
         margin-top: 12px;
       }
     }
+  }
+}
+</style>
+<style lang="scss">
+.cookie-dlg {
+  direction: rtl;
+  .o-dlg-btn + .o-dlg-btn {
+    margin-right: 16px;
+    margin-left: 0px;
   }
 }
 </style>

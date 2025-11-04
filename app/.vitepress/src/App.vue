@@ -26,7 +26,7 @@ import LayoutWiki from './layouts/LayoutWiki.vue';
 import LayoutFAQ from '@/layouts/LayoutFAQ.vue';
 import LayouWhitePaper from '@/layouts/LayouWhitePaper.vue';
 
-import FloatingButtonEn from '~@/components/FloatingButtonEn.vue';
+// import FloatingButtonEn from '~@/components/FloatingButtonEn.vue';
 import CookieNotice from '~@/components/CookieNotice.vue';
 
 import AppTour from '~@/components/AppTour.vue';
@@ -113,7 +113,7 @@ onMounted(() => {
         <main :class="frontmatter.class ? frontmatter.class : ''">
           <component :is="comp" v-if="isCustomLayout" ></component>
           <Content v-else />
-          <FloatingButtonEn v-if="!isReport && showNss" />
+          <!-- <FloatingButtonEn v-if="!isReport && showNss" /> -->
         </main>
       </el-config-provider>
     </OConfigProvider>

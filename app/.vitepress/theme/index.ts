@@ -13,6 +13,7 @@ import '~@/assets/style/theme/index.scss';
 import '~@/assets/style/theme/media.token.scss';
 
 import ElementPlus from 'element-plus';
+import ElAr from 'element-plus/es/locale/lang/ar';
 import OpenDesign from 'opendesign';
 import VueDOMPurifyHTML from 'vue-dompurify-html';
 import i18n from '~@/i18n';
@@ -36,7 +37,9 @@ export default {
     app.use(VueDOMPurifyHTML);
     app.use(SeoBox as any);
     app.use(createPinia());
-    app.use(ElementPlus);
+    app.use(ElementPlus,{
+      locale: ElAr,
+    });
     app.use(OpenDesign);
     app.use(i18n);
   },

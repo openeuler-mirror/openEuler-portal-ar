@@ -11,7 +11,7 @@ export default [
     ar: {
       title: 'الأسئلة الشائعة',
       label: 'العثور على إجابات عن الأسئلة الشائعة حول openEuler',
-      href: '/ar/faq/',
+      href: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/faq/`,
     },
   },
   {

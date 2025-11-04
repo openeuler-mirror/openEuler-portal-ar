@@ -50,7 +50,7 @@ export default [
       ar: 'تعرّف على كيفية الانتقال إلى openEuler.',
     },
     link: {
-      ar: '/ar/migration/',
+      ar: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/migration/`,
     },
   },
   {
@@ -65,7 +65,7 @@ export default [
       ar: 'ابق على اطلاع بأحدث مستجدات openEuler.',
     },
     link: {
-      ar: '/ar/interaction/event-list/',
+      ar: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/interaction/event-list/`,
     },
   },
 ];

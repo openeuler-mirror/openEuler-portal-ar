@@ -654,7 +654,7 @@ html[lang='en'],html[lang='ar'] {
           color: var(--o-color-info1);
           .class-title {
             flex-shrink: 0;
-            margin-right: 16px;
+            margin-left: 16px;
           }
           .label {
             color: var(--o-color-info2);
@@ -684,10 +684,10 @@ html[lang='en'],html[lang='ar'] {
           @include respond-to('<=pad_v') {
             display: none;
           }
-        }
-        :deep(.o-btn-prefix) {
-          margin-left: var(--btn-gap);
-          margin-right: 0;
+          :deep(.o-btn-prefix) {
+            margin-right: 0;
+            margin-left: var(--btn-gap);
+          }
         }
         .btn-mo {
           display: none;

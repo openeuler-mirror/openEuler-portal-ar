@@ -124,12 +124,17 @@ function jumpPage(page: number) {
       background-size: cover;
       position: relative;
       display: flex;
+      direction: ltr;
       @media (max-width: 768px) {
         height: 144px;
         padding: 16px 16px 14px 12px;
       }
+      :deep(.el-card__body) {
+        justify-content: center !important;
+      }
       .card-content-text {
         color: var(--e-color-white);
+        text-align: center;
         h4 {
           font-size: var(--e-font-size-h7);
           line-height: var(--e-line-height-h7);
@@ -162,6 +167,8 @@ function jumpPage(page: number) {
         a {
           position: absolute;
           bottom: 40px;
+          left: 50%;
+          transform: translateX(-50%);
           @media (max-width: 768px) {
             bottom: 14px;
           }

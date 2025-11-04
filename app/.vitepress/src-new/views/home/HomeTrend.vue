@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 
-import { OCard, OTab, OTabPane } from '@opensig/opendesign';
-import  OScroller   from '~@/components/opendesign/scrollbar/OScroller.vue';
+import { OCard, OTab, OScroller, OTabPane } from '@opensig/opendesign';
+// import  OScroller   from '~@/components/opendesign/scrollbar/OScroller.vue';
 import AppSection from '~@/components/AppSection.vue';
 
 import { useScreen } from '~@/composables/useScreen';
@@ -54,19 +54,19 @@ const calcBlogStyle = (idx: number) => {
   }
 };
 
+const domain = computed(() => import.meta.env.VITE_MAIN_DOMAIN_URL);
+
 // -------------------- 获取新闻、博客 --------------------
 const newsArr = ref([]);
 const blogArr = ref([]);
 const getData = () => {
-  getHomeBlog('en').then((blogRes) => {
-  // getHomeBlog(locale.value).then((blogRes) => {
-    if (blogRes && blogRes.obj && blogRes.obj.records) {
-      blogArr.value = normalizeData(blogRes.obj.records);
+  getHomeNews('en').then((newsRes) => {
+    if (newsRes && newsRes.obj && newsRes.obj.records) {
+      newsArr.value = normalizeData(newsRes.obj.records);
 
-      getHomeNews('en').then((newsRes) => {
-      // getHomeNews(locale.value).then((newsRes) => {
-        if (newsRes && newsRes.obj && newsRes.obj.records) {
-          newsArr.value = normalizeData(newsRes.obj.records);
+      getHomeBlog('en').then((blogRes) => {
+        if (blogRes && blogRes.obj && blogRes.obj.records) {
+          blogArr.value = normalizeData(blogRes.obj.records);
         }
       });
     }
@@ -88,6 +88,38 @@ onMounted(() => {
     :data-v-analytics-title="$t('home.trend')"
   >
     <OTab v-model="activeTab" variant="text" :line="false">
+      <!-- 新闻 -->
+      <OTabPane v-if="newsArr.length" value="news" :label="t('home.news')">
+        <OScroller
+          class="trend-scroller"
+          :show-type="lePadV ? 'never' : 'always'"
+          size="small"
+          disabled-y
+          :direction="locale === 'ar' ? 'rtl' : 'ltr'"
+        >
+          <OCard
+            v-for="(news, idx) in newsArr"
+            :key="idx"
+            cursor="pointer"
+            class="trend-card"
+            hoverable
+            :title="news.title"
+            :title-row="2"
+            :title-max-row="2"
+            :detail-max-row="2"
+            :detail="!lePadV ? news.summary : news.date"
+            :cover="`/ar/${news.banner}`"
+            :cover-ratio="456 / 188"
+            :href="`${domain}/${news.path}.html`"
+            target="_blank"
+            v-analytics.bubble="{
+              level2: $t('home.news'),
+              target: news.title,
+            }"
+          >
+          </OCard>
+        </OScroller>
+      </OTabPane>
       <!-- 博客 -->
       <OTabPane v-if="blogArr.length" value="blog" :label="$t('home.blog')">
         <OScroller
@@ -122,7 +154,7 @@ onMounted(() => {
                 ? 292 / 238
                 : 165 / 162
             "
-            :href="`/${blog.path}.html`"
+            :href="`${domain}/${blog.path}.html`"
             target="_blank"
             v-analytics.bubble="{
               level2: $t('home.blog'),
@@ -138,38 +170,6 @@ onMounted(() => {
                 {{ blog.author && blog.author[0] }}
               </p>
             </div>
-          </OCard>
-        </OScroller>
-      </OTabPane>
-      <!-- 新闻 -->
-      <OTabPane v-if="newsArr.length" value="news" :label="t('home.news')">
-        <OScroller
-          class="trend-scroller"
-          :show-type="lePadV ? 'never' : 'always'"
-          size="small"
-          disabled-y
-          :direction="locale === 'ar' ? 'rtl' : 'ltr'"
-        >
-          <OCard
-            v-for="(news, idx) in newsArr"
-            :key="idx"
-            cursor="pointer"
-            class="trend-card"
-            hoverable
-            :title="news.title"
-            :title-row="2"
-            :title-max-row="2"
-            :detail-max-row="2"
-            :detail="!lePadV ? news.summary : news.date"
-            :cover="`/ar/${news.banner}`"
-            :cover-ratio="456 / 188"
-            :href="`/${news.path}.html`"
-            target="_blank"
-            v-analytics.bubble="{
-              level2: $t('home.news'),
-              target: news.title,
-            }"
-          >
           </OCard>
         </OScroller>
       </OTabPane>

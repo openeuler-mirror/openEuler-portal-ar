@@ -49,7 +49,9 @@ defineProps({
   @include respond-to('<=pad') {
     height: 86px;
   }
-
+  .o-figure-img {
+    transform: scaleX(-1);
+  }
   .o-figure-main {
     padding: 24px;
 

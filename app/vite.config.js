@@ -123,6 +123,7 @@ export default defineConfig({
     replaceUrlPlugin(),
   ],
   server: {
+    host: '172.20.20.62',
     proxy: {
       '/api-certification/': {
         target: 'https://certification.openeuler.org/',
@@ -130,12 +131,12 @@ export default defineConfig({
         rewrite: (url) => url.replace(/^\/api-certification/, ''),
       },
       '/api-search/': {
-        target: 'https://openeuler-ar.test.osinfra.cn',
-        // target: 'https://www.openeuler.org',
+        // target: 'https://openeuler-ar.test.osinfra.cn',
+        target: 'https://www.openeuler.org',
         // target: 'https://doc-search.test.osinfra.cn',
         changeOrigin: true,
         headers: {
-          Referer: '',
+          Referer: 'https://www.openeuler.org',
         },
         // rewrite: (path) => path.replace(/^\/api-search/, ''),
       },

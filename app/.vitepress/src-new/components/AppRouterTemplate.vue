@@ -112,7 +112,7 @@ const activeRoute = computed(() => {
     }
   }
   .o-icon {
-    margin-right: 16px;
+    margin-left: 16px;
     font-size: var(--o-icon_size-xl);
   }
   .info {

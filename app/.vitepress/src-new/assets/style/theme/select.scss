@@ -9,3 +9,21 @@
 .o-option-list {
   --option-list-padding: 8px 6px;
 }
+.el-select-dropdown {
+  direction: rtl;
+}
+.el-select__placeholder {
+  text-align: right;
+}
+.el-pagination > *.is-last {
+  margin-left: 0 !important;
+  margin-right: var(--el-pagination-item-gap)!important;
+}
+.el-pagination__jump {
+  margin-right: var(--el-pagination-item-gap);
+  margin-left: 0;
+}
+.el-pagination__goto {
+  margin-left: 8px;
+  margin-right: 0px;
+}

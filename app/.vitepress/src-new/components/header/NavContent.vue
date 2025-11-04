@@ -148,7 +148,7 @@ const onClickNav = (item: any) => {
 
 .icon {
   font-size: var(--o-icon_size-xs);
-  margin-left: var(--o-gap-2);
+  margin-right: var(--o-gap-2);
 }
 
 .content-container {
@@ -187,6 +187,7 @@ const onClickNav = (item: any) => {
     }
     .content-tag {
       margin-right: var(--o-gap-2);
+      border-radius: 4px;
       @include respond-to('<=laptop') {
         display: none;
       }

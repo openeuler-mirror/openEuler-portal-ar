@@ -2,8 +2,9 @@
 import { computed } from 'vue';
 import { useCommon } from '@/stores/common';
 
-import notFoundImg_light from '@/assets/illustrations/404.png';
-import notFoundImg_dark from '@/assets/illustrations/404_dark.png';
+// import notFoundImg_light from '@/assets/illustrations/404.png';
+// import notFoundImg_dark from '@/assets/illustrations/404_dark.png';
+import notFoundImg_light from '@/assets/illustrations/404.svg';
 
 defineProps({
   docs: {
@@ -15,7 +16,8 @@ defineProps({
 const commonStore = useCommon();
 
 const notFoundImg = computed(() =>
-  commonStore.theme === 'light' ? notFoundImg_light : notFoundImg_dark
+  // commonStore.theme === 'light' ? notFoundImg_light : notFoundImg_dark
+  commonStore.theme = notFoundImg_light
 );
 </script>
 

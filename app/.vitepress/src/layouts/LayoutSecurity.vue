@@ -23,7 +23,7 @@ const btnDatas = [
       return i18n.value.cve.VULNERABILITY;
     }),
     link: computed(() => {
-      return `/${lang.value}/security/vulnerability-reporting/`;
+      return `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/security/vulnerability-reporting/`;
     }),
   },
   {
@@ -31,7 +31,7 @@ const btnDatas = [
       return i18n.value.cve.CERTIFICATE;
     }),
     link: computed(() => {
-      return `/${lang.value}/security/certificate-center/`;
+      return `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/security/certificate-center/`;
     }),
   },
 ];
@@ -260,7 +260,12 @@ onMounted(() => {
     margin-top: 12px;
   }
   .o-btn + .o-btn {
-    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+@media (max-width: 840px) {
+  .o-tab {
+    --tab-nav-justify: flex-end;
   }
 }
 :deep(.o-tab) {

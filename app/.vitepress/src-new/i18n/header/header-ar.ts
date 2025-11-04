@@ -69,7 +69,7 @@ export default {
             {
               NAME: 'النسخ الاحتياطية',
               DESCRIPTION: 'جميع مواقع النسخ الاحتياطية لـ openEuler.',
-              URL: '/ar/mirror/list/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/list/`,
             },
             {
               NAME: 'مستودع',
@@ -86,7 +86,9 @@ export default {
         },
         {
           NAME: 'دورة حياة openEuler',
-          URL: '/ar/other/lifecycle/',
+          URL: `${
+            import.meta.env.VITE_MAIN_DOMAIN_URL
+          }/en/other/lifecycle/`,
         },
         {
           NAME: 'دليل تثبيت openEuler 24.03 LTS SP2',
@@ -116,7 +118,7 @@ export default {
             {
               NAME: 'مجموعات للاهتمامات الخاصة (SIGs)',
               DESCRIPTION: 'استكشف مجموعات للاهتمامات الخاصة (SIGs) المتنوعة.',
-              URL: '/ar/sig/sig-list/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/sig/sig-list/`,
             },
             {
               NAME: 'CLA',
@@ -129,7 +131,7 @@ export default {
               NAME: 'دليل المساهمة',
               DESCRIPTION:
                 'تعرف على كيفية المشاركة والتأثير في مجتمعنا.',
-              URL: '/ar/community/contribution/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/community/contribution/`,
             },
           ],
         },
@@ -188,35 +190,35 @@ export default {
             {
               NAME: 'A-Tune',
               DESCRIPTION: 'محرك موالفة ذكي يعمل بالذكاء الاصطناعي.',
-              URL: '/ar/other/projects/atune/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/projects/atune/`,
             },
             {
               NAME: 'iSula',
               DESCRIPTION: 'حل الحاوية.',
-              URL: '/ar/other/projects/isula/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/projects/isula/`,
             },
             {
               NAME: 'secGear',
               DESCRIPTION:
                 'إطار عمل حوسبة سرية لبناء تطبيقات آمنة.',
-              URL: '/ar/other/projects/secgear/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/projects/secgear/`,
             },
-            {
-              NAME: 'StratoVirt',
-              DESCRIPTION:
-                'شاشة جهاز افتراضي من فئة المؤسسات لمراكز البيانات السحابية.',
-              URL: '/ar/other/projects/stratovirt/',
-            },
-            {
-              NAME: 'BiSheng JDK',
-              DESCRIPTION: 'جهاز Java افتراضي عالي الأداء.',
-              URL: '/ar/other/projects/bishengjdk/',
-            },
-            {
-              NAME: 'openEuler Intelligence',
-              DESCRIPTION: 'منصة نموذج لغة كبيرة مدعومة بواسطة openEuler.',
-              URL: '/ar/projects/intelligence/',
-            },
+            // {
+            //   NAME: 'StratoVirt',
+            //   DESCRIPTION:
+            //     'شاشة جهاز افتراضي من فئة المؤسسات لمراكز البيانات السحابية.',
+            //   URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/projects/stratovirt/`,
+            // },
+            // {
+            //   NAME: 'BiSheng JDK',
+            //   DESCRIPTION: 'جهاز Java افتراضي عالي الأداء.',
+            //   URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/projects/bishengjdk/`,
+            // },
+            // {
+            //   NAME: 'openEuler Intelligence',
+            //   DESCRIPTION: 'منصة نموذج لغة كبيرة مدعومة بواسطة openEuler.',
+            //   URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/projects/intelligence/`,
+            // },
           ],
         },
       ],
@@ -275,7 +277,7 @@ export default {
               NAME: 'إرشادات تعليمية',
               DESCRIPTION:
                 'سلسلة من برامج الفيديو التعليمية لـ openEuler لمساعدتك على البدء.',
-              URL: '/ar/learn/mooc/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/learn/mooc/`,
             },
           ],
         },
@@ -293,7 +295,7 @@ export default {
               NAME: 'قائمة التوافق',
               DESCRIPTION:
                 'تحقق من توافق الأجهزة والبرامج مع openEuler.',
-              URL: '/ar/compatibility/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/compatibility/`,
             },
           ],
         },
@@ -303,7 +305,7 @@ export default {
             {
               NAME: 'الترحيل إلى openEuler',
               DESCRIPTION: 'Gأدلة للترحيل إلى openEuler.',
-              URL: '/ar/migration/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/migration/`,
             },
           ],
         },
@@ -319,7 +321,7 @@ export default {
             {
               NAME: 'مركز الأخطاء',
               DESCRIPTION: 'اكتشف إصلاحات الأخطاء.',
-              URL: '/ar/security/bug-bulletins/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/security/bug-bulletins/`,
             },
           ],
         },
@@ -327,19 +329,19 @@ export default {
       SHORTCUT: [
         {
           NAME: 'مقدمة شاملة لاختبار توافق أجهزة openEuler',
-          URL: '/ar/compatibility/hardware/',
+          URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/compatibility/hardware/`,
         },
         {
           NAME: 'الحصول على x2openEuler',
-          URL: '/ar/migration/download/',
+          URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/migration/download/`,
         },
         {
           NAME: 'ممارسات الترحيل',
-          URL: '/ar/migration/user-cases/',
+          URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/migration/user-cases/`,
         },
         {
           NAME: 'الأسئلة الشائعة',
-          URL: '/ar/faq/',
+          URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/faq/`,
         },
       ],
     },
@@ -358,7 +360,7 @@ export default {
             {
               NAME: 'مدونة السلوك',
               DESCRIPTION: "مدونة سلوك openEuler.",
-              URL: '/ar/community/conduct/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/community/conduct/`,
             },
             {
               NAME: 'الأعضاء',
@@ -375,7 +377,7 @@ export default {
             {
               NAME: 'تواصل معنا',
               DESCRIPTION: 'تواصل معنا عبر البريد الإلكتروني أو تابعنا على وسائل التواصل الاجتماعي.',
-              URL: '/ar/contact-us/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/contact-us/`,
             },
             {
               NAME: 'قصص النجاح',
@@ -428,19 +430,19 @@ export default {
               NAME: 'تقويم المجتمع',
               DESCRIPTION:
                 "ابق على اطلاع بالأحداث والمؤتمرات والإصدارات الرئيسية لـ openEuler.",
-              URL: '/ar/interaction/event-list/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/interaction/event-list/`,
             },
             {
               NAME: 'الأحداث',
               DESCRIPTION:
                 'قابل openEuler وتواصل مع المجتمع في كل حدث رئيسي.',
-              URL: '/ar/interaction/summit-list/summit2024/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/interaction/summit-list/summit2025/`,
             },
             {
               NAME: 'دعوة لبرنامج X',
               DESCRIPTION:
                 'كن من محترفي openEuler القيّمين أو ساهم في الدروس التقنية!',
-              URL: '/ar/community/program/',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/community/program/`,
             },
           ],
         },
@@ -469,13 +471,13 @@ export default {
       ],
       SHORTCUT: [
         {
-          NAME: 'مؤتمر نظام التشغيل وقمة openEuler لعام 2024',
+          NAME: 'مؤتمر نظام التشغيل وقمة openEuler لعام 2025',
           PICTURE: Summit,
           DESCRIPTION:
             'Operating systems form the backbone of digital and intelligent industry transformation. openEuler, an open source operating system born in China for digital infrastructure, has emerged as a key player in the global open source landscape. Over the past five years, its market presence was steadily increasing. And openEuler has been continuously driving innovations in OS for AI and AI for OS, accelerating digital transformation, and fostering a thriving ecosystem though industry-wide collaboration.',
-          REMARK: '15-16 نوفمبر 2024 | بكين',
+          REMARK: '14-15 نوفمبر 2025 | بكين',
           TYPE: 'PICTURE',
-          URL: '/ar/interaction/summit-list/summit2024/',
+          URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/interaction/summit-list/summit2025/`,
         },
       ],
     },

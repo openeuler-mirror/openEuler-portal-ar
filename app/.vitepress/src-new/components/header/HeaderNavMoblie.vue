@@ -191,7 +191,7 @@ const linkClick = () => {
   </div>
   <!-- 搜索 -->
   <!-- <HeaderSearch /> -->
-  <HeaderLogin />
+  <!-- <HeaderLogin /> -->
 </template>
 
 <style lang="scss" scoped>

@@ -46,7 +46,7 @@ const itemChange = (data: any) => {
 <style lang="scss" scoped>
 .icon {
   font-size: var(--o-icon_size_control-xs);
-  margin-left: var(--o-gap-1);
+  margin-right: var(--o-gap-1);
 }
 
 .header-code {
