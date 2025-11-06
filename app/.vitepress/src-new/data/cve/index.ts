@@ -144,7 +144,7 @@ export const glossaryList = [
     },
   },
   {
-    status: 'متأثر',
+    status: 'Affected',
     description: {
       ar: 'This vulnerability affects openEuler releases, and a fix is being prepared.',
     },
@@ -185,7 +185,7 @@ export const glossaryList = [
     ],
   },
   {
-    status: 'غير متأثر',
+    status: 'Unaffected',
     description: {
       ar: 'This vulnerability does not affect openEuler releases and does not need to be fixed or updated.',
     },

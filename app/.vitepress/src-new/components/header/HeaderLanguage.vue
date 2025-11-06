@@ -34,11 +34,11 @@ const changeLanguageMobile = (newlang: string) => {
 
 function changeLanguage(newlang: string) {
   if (lang.value === newlang) return;
+
   const { pathname, search } = window.location;
   const newHref = pathname.replace(`/${lang.value}/`, `/${newlang}/`);
-  console.log(newHref + search);
-  // router.go(newHref + search);
-  window.location.href = newHref + search;
+  let url= `${import.meta.env.VITE_MAIN_DOMAIN_URL}${newHref}${search}`
+  window.location.href = url;
 }
 
 interface LangType {

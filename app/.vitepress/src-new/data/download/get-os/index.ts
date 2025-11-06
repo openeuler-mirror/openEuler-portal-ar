@@ -42,28 +42,28 @@ export default {
       intro:
         'أصدرت openEuler صورًا رسمية على منصات السحابة العامة الرئيسية.',
       intro1: 'دليل التثبيت',
-      introLink: '/ar/wiki/install/cloud/',
+      introLink: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/wiki/install/cloud/`,
       links: [
         {
-          href: '/ar/wiki/install/cloud/#obtaining-the-openeuler-image-on-aws',
+          href: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/wiki/install/cloud/#obtaining-the-openeuler-image-on-aws`,
           label: 'AWS',
           introduce:
             'إن Amazon Web Services (AWS) هي أكبر موفر للخدمات السحابية في العالم. يقدم AWS Marketplace الآن صور سحابة openEuler بإصدارات متعددة. انشر بيئاتك القائمة على openEuler على AWS اليوم!',
         },
         {
-          href: '/ar/wiki/install/cloud/#obtaining-the-openeuler-shared-image-on-azure',
+          href: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/wiki/install/cloud/#obtaining-the-openeuler-shared-image-on-azure`,
           label: 'Azure',
           introduce:
             "اكتسبت Microsoft Azure—منصة خدمات السحابة العامة من Microsoft—سمعة طيبة بخصوص خدمات الذكاء الاصطناعي المتطورة والقوية. ابدأ باستخدام صور سحابة openEuler في صور Azure Community وانشرها على Azure الآن!",
         },
         {
-          href: '/ar/wiki/install/cloud/#obtaining-the-openeuler-image-on-alibaba-cloud',
+          href: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/wiki/install/cloud/#obtaining-the-openeuler-image-on-alibaba-cloud`,
           label: 'Alibaba Cloud',
           introduce:
             "تقدم Alibaba Cloud، منصة الحوسبة السحابية من Alibaba، مجموعة واسعة من المنتجات والخدمات. تتوفر صور سحابة openEuler الآن في سوق Alibaba Cloud Marketplace، ما يوفر أداءً غير عادي وقابلية للتوسع في بيئة السحابة الخاصة بك.",
         },
         {
-          href: '/ar/wiki/install/cloud/#obtaining-the-openeuler-image-on-huawei-cloud',
+          href: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/wiki/install/cloud/#obtaining-the-openeuler-image-on-huawei-cloud`,
           label: 'Huawei Cloud',
           introduce:
             'توفر Huawei Cloud مجموعة واسعة من خدمات الحوسبة السحابية، بما في ذلك خادم السحابة المرنة (ECS) وخدمة تخزين الكائنات (OBS). اعثر على صور سحابة openEuler في متجر Huawei Cloud Marketplace وأطلق العنان لإمكانات نظام التشغيل مفتوح المصدر هذا!',
@@ -83,7 +83,7 @@ export default {
       title: 'صور الحاوية',
       intro: 'يوفر openEuler صور حاويات رسمية.',
       intro1: 'دليل التثبيت',
-      introLink: '/ar/wiki/install/image/',
+      introLink: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/wiki/install/image/`,
       links: [
         {
           href: 'https://hub.docker.com/r/openeuler/openeuler',
@@ -126,7 +126,7 @@ export default {
       repeat: 1,
       links: [
         {
-          href: '/ar/wiki/install/wsl/',
+          href: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/wiki/install/wsl/`,
           label: 'نظام Windows الفرعي لنظام التشغيل Linux (WSL)',
           introduce:
             'نظام Windows الفرعي لنظام التشغيل Linux (WSL) هو عرض Microsoft الذي يتيح لبيئات نظام التشغيل Linux العمل مباشرة على نظام التشغيل Windows. قم بتنزيل تطبيق openEuler لـ WSL على متجر Microsoft للاستمتاع ببيئة تطوير openEuler من دون مغادرة إعداد Windows.',
@@ -148,7 +148,7 @@ export default {
       repeat: 1,
       links: [
         {
-          href: '/ar/wiki/install/macos/',
+          href: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/wiki/install/macos/`,
           label: 'OrbStack',
           introduce:
             'OrbStack هي منصة افتراضية سريعة وخفيفة الوزن مصممة لتشغيل حاويات Docker وأجهزة Linux الافتراضية على macOS. اعثر على صور الحاوية بواسطة مجتمع openEuler على OrbStack هنا.',
@@ -170,7 +170,7 @@ export default {
       repeat: 1,
       links: [
         {
-          href: '/ar/wiki/install/virtualization/',
+          href: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/wiki/install/virtualization/`,
           label: 'تثبيت openEuler في VirtualBox',
           introduce:
             'Oracle VirtualBox هو برنامج محاكاة افتراضية تم تطويره في الأصل بواسطة برامج InnoTek وتتم صيانته الآن بواسطة Oracle كجزء من نظام Oracle xVM الأساسي. لاستخدام أجهزة openEuler الافتراضية على VirtualBox، ما عليك سوى تنزيل صور أجهزة openEuler الافتراضية من مستودع برامج openEuler الرسمي وتثبيتها.',
@@ -192,7 +192,7 @@ export default {
       repeat: 1,
       links: [
         {
-          href: '/ar/wiki/install/raspberry-pi/',
+          href: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/wiki/install/raspberry-pi/`,
           label: 'Raspberry Pi ',
           introduce:
             'Raspberry Pi هو حاسوب مدمج أحادي اللوحة تم تطويره من قبل مؤسسة Raspberry Pi Foundation. بعد الإشادة بانخفاض تكلفة صور Raspberry Pi ومرونتها، أصبحت متاحة الآن في مستودع برامج openEuler الرسمي.',

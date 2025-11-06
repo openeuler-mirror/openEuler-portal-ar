@@ -48,7 +48,7 @@ const userCaseData = computed(() => i18n.value.interaction);
 const loading = ref(true);
 
 const toNewsContent = (path: string) => {
-  window.open(`/${path}.html`, '_blank', 'noopener, noreferrer');
+  window.open(`${import.meta.env.VITE_MAIN_DOMAIN_URL}/${path}.html`, '_blank', 'noopener, noreferrer');
 };
 
 //筛选数据
@@ -593,6 +593,7 @@ const pageTotal = computed(() =>
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--e-spacing-h4);
+  direction: ltr;
   @media (max-width: 1450px) {
     grid-template-columns: repeat(2, 1fr);
   }

@@ -85,6 +85,8 @@ const handleUrlCopy = (value: string, e: MouseEvent) => {
   });
 };
 
+const domain = computed(() => import.meta.env.VITE_MAIN_DOMAIN_URL);
+
 // tag筛选
 const activeArch = ref('');
 const activeScenario = ref('');
@@ -332,7 +334,7 @@ const onClickDownload = (row: any) => {
       <template v-for="(linkData, index) in linkConfigs">
         <a
           v-if="contentData[linkData.urlKey]"
-          :href="contentData[linkData.urlKey]"
+          :href="contentData[linkData.urlKey].startsWith('http') ? contentData[linkData.urlKey] : domain + contentData[linkData.urlKey]"
           target="_blank"
           rel="noopener noreferrer"
         >

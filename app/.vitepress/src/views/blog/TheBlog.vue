@@ -71,7 +71,7 @@ const paginationData = ref({
 });
 
 const toBlogContent = (path: string) => {
-  window.open(`/${path}.html`, '_blank', 'noopener, noreferrer');
+  window.open(`${import.meta.env.VITE_MAIN_DOMAIN_URL}/${path}.html`, '_blank', 'noopener, noreferrer');
 };
 // 获取标签数据
 const getTagsList = () => {
@@ -361,7 +361,7 @@ const changeCurrentPage = (val: number) => {
 };
 
 const goPostBlog = () => {
-  router.go(`/${lang.value}/interaction/post-blog/`);
+  window.location.href = `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/interaction/post-blog/`
 };
 // 计算总页数
 const pageTotal = computed(() =>

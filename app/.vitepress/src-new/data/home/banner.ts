@@ -14,7 +14,7 @@ export default {
       title: 'الحصول على openEuler',
       subtitle: 'اعثر على جميع الموارد في مكان واحد.',
       btn: 'عرض المزيد',
-      href: '/ar/download',
+      href: '/ar/download/',
       isBlank: true,
       pc_text_width: '658px',
       pc_text_height: '158px',

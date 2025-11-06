@@ -227,7 +227,7 @@ const onClickShortCutLink = (item: any) => {
       <HeaderCode />
       <HeaderLanguage :show="langOptions" />
       <HeaderTheme />
-      <HeaderLogin />
+      <!-- <HeaderLogin /> -->
     </div>
   </div>
 </template>
@@ -576,7 +576,7 @@ const onClickShortCutLink = (item: any) => {
           }
         }
         .review-content {
-          margin-left: var(--o-gap-2);
+          margin-right: var(--o-gap-2);
           flex: 1;
           max-width: 212px;
           height: 68px;
@@ -586,7 +586,7 @@ const onClickShortCutLink = (item: any) => {
           white-space: normal;
 
           @include respond-to('<=laptop') {
-            margin-left: unset;
+            margin-right: unset;
             height: auto;
           }
 

@@ -286,7 +286,7 @@ const handleNodeClick = (node: any) => {
 .wiki-wrapper {
   height: 100%;
   padding: 64px 120px;
-  margin-left: 300px;
+  margin-right: 300px;
   background-color: var(--o-color-fill1);
 
   @media screen and (max-width: 1280px) {
@@ -294,7 +294,7 @@ const handleNodeClick = (node: any) => {
   }
 
   @media screen and (max-width: 1100px) {
-    margin-left: 0px;
+    margin-right: 0px;
     padding: 16px 16px 40px 16px;
   }
 
@@ -312,11 +312,11 @@ const handleNodeClick = (node: any) => {
   }
   .wiki-content {
     max-width: 1380px;
-    padding-right: 200px;
+    padding-left: 200px;
     margin: 0 auto;
 
     @media screen and (max-width: 1100px) {
-      padding-right: 0;
+      padding-left: 0;
     }
     @media screen and (max-width: 768px) {
       background-color: var(--e-color-bg2);

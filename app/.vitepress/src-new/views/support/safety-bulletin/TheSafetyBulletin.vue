@@ -218,6 +218,10 @@ const searchComponent = (keyword: string, data: string[]) => {
   componentSearchList.value = results;
 };
 
+const detailPath = computed(() => {
+  return `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/security/security-bulletins/detail/`
+})
+
 // 组件搜索
 const componentKeyWords = ref('');
 const updataComponent = (val: string) => {
@@ -489,7 +493,7 @@ onUnmounted(() => {
                         <p class="radio-item">{{ item }}</p>
                       </ORadio>
                     </ORadioGroup>
-                    <div v-else class="no-data">No Data</div>
+                    <div v-else class="no-data">{{ t('safetyBulletin.nodata') }}</div>
                   </OScroller>
                 </div>
                 <ODivider class="product-divider" />
@@ -516,7 +520,7 @@ onUnmounted(() => {
           <OLink
             color="primary"
             variant="text"
-            :href="`${route.path}detail/?id=${row.securityNoticeNo}`"
+            :href="`${detailPath}?id=${row.securityNoticeNo}`"
             >{{ row.securityNoticeNo }}</OLink
           >
         </template>
@@ -707,10 +711,15 @@ onUnmounted(() => {
   table {
     table-layout: fixed;
     width: 100%;
+    td {
+      direction: ltr;
+      text-align: center;
+    }
   }
 
   th {
     width: 10%;
+    text-align: right;
 
     &:nth-of-type(1) {
       width: 19%;
@@ -939,6 +948,8 @@ onUnmounted(() => {
   .type-tag {
     :deep(.o-tag-label) {
       .o-icon {
+        margin-left: 4px;
+        margin-right: 0;
         @include text2;
       }
     }

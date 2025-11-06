@@ -75,7 +75,7 @@ watch(
 .md-anchor {
   position: fixed;
   top: calc(10% + 80px);
-  right: 0;
+  left: 0;
   width: 200px;
   z-index: 10;
   &::after {
@@ -83,7 +83,7 @@ watch(
     content: '';
     width: 1px;
     height: 100%;
-    left: 0;
+    right: 0;
     bottom: -50%;
     background-color: var(--e-color-bg4);
     z-index: 0;
@@ -98,7 +98,7 @@ watch(
     color: var(--e-color-text4);
     line-height: var(--e-line-height-text);
     font-size: var(--e-font-size-text);
-    border-left: 1px solid var(--e-color-bg4);
+    border-right: 1px solid var(--e-color-bg4);
     z-index: 1;
     &:hover {
       color: var(--e-color-brand1);
@@ -109,7 +109,7 @@ watch(
   }
   .active-link {
     color: var(--e-color-brand1);
-    border-left: 1px solid var(--e-color-brand1);
+    border-right: 1px solid var(--e-color-brand1);
   }
 }
 </style>

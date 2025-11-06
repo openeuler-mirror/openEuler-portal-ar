@@ -10,7 +10,7 @@ export default [
     ar: {
       title: 'النسخ الاحتياطية',
       label: 'جميع النسخ الاحتياطية لـ openEuler',
-      href: '/ar/mirror/list/',
+      href: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/list/`,
     },
   },
   {

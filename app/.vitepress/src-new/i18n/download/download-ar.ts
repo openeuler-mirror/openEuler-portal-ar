@@ -14,7 +14,7 @@ export default {
   communityIntro:
     'تُصنَّف إصدارات مجتمع openEuler إلى إصدارات الدعم طويل الأمد (LTS) وإصدارات الابتكار. يدعم openEuler البُنى x86 وAArch وArm وRISC-V.',
   lts: 'الإصدارات ذات الدعم طويل الأمد',
-  innovation: 'Innovation Versions',
+  innovation: 'إصدارات الابتكار',
   COPY_SUCCESS: 'copied successfully.',
   RELEASE_DESC: 'ملاحظات الإصدار',
   SERVER_IMAGE: 'Server Image',
@@ -36,7 +36,7 @@ export default {
   DETAIL3:
     'تعتمد المواقع المرآة الموصى بها على عنوان IP الخاص بك. يمكنك العثور على موقع مرآة محدد أو إنشاء موقع مرآة عام لمجتمع openEuler {link}',
   CLICK_LIST: ' هنا',
-  MIRROR_LIST_LINK: '/ar/mirror/list/',
+  MIRROR_LIST_LINK: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/list/`,
   HISTORY: 'All Versions',
   ARCHITECTURE2: 'البنية',
   SCENARIO2: 'السيناريو',
@@ -79,11 +79,11 @@ export default {
   DOWNLOADGO: 'تنزيل',
   CLICK_DOWNLOAD: 'تنزيل',
   PUBLISH_FACTURER: 'المورد:',
-  APPROVE_ARCH: 'Architecture：',
+  APPROVE_ARCH: 'البنية:',
   PLACEHOLDER: 'الإصدار',
-  APPROVE_MIRROR: 'Recommended',
-  MORE_MIRROR: 'Other',
-  ALL_MIRROR: 'View All',
+  APPROVE_MIRROR: 'مقترح',
+  MORE_MIRROR: 'أخرى',
+  ALL_MIRROR: 'عرض الكل',
   EMPTY_TIP: 'NotFound',
   PUBLISH_DATE1: 'تاريخ الإصدار:',
   // 新增 end

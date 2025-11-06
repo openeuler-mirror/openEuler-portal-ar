@@ -117,7 +117,7 @@ const levelOptions = ref<OptionT[]>([]);
 levelOptions.value.push({
   value: '0.0',
   label: {
-    ar: 'غير متوفر',
+    ar: 'N/A',
   },
 });
 typeMap.forEach((item) => {
@@ -160,7 +160,7 @@ const levelShow = (cvsssCoreOE: string) => {
     };
   }
   return {
-    label: 'غير متوفر',
+    label: 'N/A',
     calss: 'norating',
   };
 };
@@ -211,6 +211,9 @@ const getCveLists = (data: CveQueryT) => {
       isLoadingMore.value = false;
     });
 };
+const detailPath = computed(() => {
+  return `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/security/cve/detail/`
+})
 
 // -------------------- 分页 --------------------
 const onPaginationChange = (val: { page: number; pageSize: number }) => {
@@ -335,7 +338,7 @@ onUnmounted(() => {
         <OLink
           color="primary"
           variant="text"
-          :href="`${route.path}detail/?cveId=${row.cveId}&packageName=${row.packageName}`"
+          :href="`${detailPath}?cveId=${row.cveId}&packageName=${row.packageName}`"
           >{{ row.cveId }}</OLink
         >
       </template>
@@ -523,7 +526,7 @@ onUnmounted(() => {
     :size="lePadV ? 'medium' : 'large'"
   >
     <template #header>
-      <span class="del-title">{{ t('cve.glossary') }}</span>
+      <span class="del-title">{{ t('cve.glossarytable') }}</span>
     </template>
     <div class="dlg-body">
       <OTable
@@ -605,6 +608,10 @@ onUnmounted(() => {
   table {
     table-layout: fixed;
     width: 100%;
+    td {
+      direction: ltr;
+      text-align: center;
+    }
   }
 
   th {
@@ -687,7 +694,7 @@ onUnmounted(() => {
 
 .input-search-mb {
   width: 100%;
-  margin-left: 0;
+  margin-right: 0;
   :deep(.o_box) {
     width: 100%;
     @include text2;
@@ -789,11 +796,13 @@ ul {
   .item-label {
     font-weight: 500;
     min-width: 48px;
-    margin-right: 16px;
+    margin-left: 16px;
   }
   .type-tag {
     :deep(.o-tag-label) {
       .o-icon {
+        margin-left: 4px;
+        margin-right: 0;
         @include text2;
       }
     }
@@ -852,6 +861,10 @@ ul {
 .glossary-body {
   --dlg-radius: var(--o-radius-xs);
   --dlg-width: 1170px;
+  .o-table th {
+    text-align: left;
+  }
+
 }
 .glossary-body-dark {
   --dlg-bg-color: #3f3f43;

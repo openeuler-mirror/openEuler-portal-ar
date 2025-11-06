@@ -168,6 +168,9 @@ onMounted(() => {
   :deep(.section-body) {
     margin-top: 16px;
   }
+  :deep(.el-table thead tr:first-child th.el-table__cell:last-child) {
+    border-radius: 0;
+  }
 }
 :deep(.o-tab-nav) {
   margin-left: var(--tab-nav-gap);

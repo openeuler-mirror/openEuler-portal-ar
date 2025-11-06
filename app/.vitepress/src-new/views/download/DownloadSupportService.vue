@@ -57,4 +57,9 @@ const onClickCard = (item: any) => {
   </AppSection>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+:deep(.o-card-layout-h .o-card-icon) {
+  margin-left: var(--card-icon-gap);
+  margin-right: 0;
+}
+</style>

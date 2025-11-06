@@ -47,14 +47,17 @@ function clickTab(val: string) {
 }
 </script>
 <template>
-  <div>
+  <div class="layout-white-paper">
     <AppRouterTemplate
       :banner-data="bannerData"
-      :tabs-data="tabsData"
       @click-tab="clickTab"
     />
     <Content />
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.layout-white-paper {
+  direction: rtl;
+}
+</style>

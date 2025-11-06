@@ -114,7 +114,7 @@ onMounted(() => {
 
 .section-bg-icon {
   position: absolute;
-  right: -8px;
+  left: -8px;
   bottom: -8px;
   width: 70px;
 

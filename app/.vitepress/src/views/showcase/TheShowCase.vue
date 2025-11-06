@@ -141,7 +141,7 @@ function goDetail(link: string, item: any, index: number) {
   if (cookieStore.isAllAgreed) {
     reportSelectSearchResult(search_result_url, item, index);
   }
-  window.open(search_result_url);
+  window.open(`${import.meta.env.VITE_MAIN_DOMAIN_URL}/${search_result_url}`, '_blank', 'noopener, noreferrer');
 }
 
 // ----------------------- 埋点相关 ----------------------------
@@ -316,7 +316,7 @@ onMounted(() => {
               </a>
             </div>
             <div class="card-type-img">
-              <img :src="item.img" alt="" />
+              <img :src="item.img.startsWith('http') ? item.img : '/ar/' + item.img" alt="" />
               <p class="type">{{ item.industry }}</p>
             </div>
           </OCard>

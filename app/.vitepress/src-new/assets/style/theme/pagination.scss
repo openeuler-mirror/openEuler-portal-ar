@@ -8,3 +8,21 @@
 .o_box-main {
   --box-radius: var(--o-radius_control-xs);
 }
+.o-pagination-wrap > *:not(:first-child) {
+  margin-left: 0;
+  margin-right: var(--pagination-item-gap);
+}
+.o-pagination-goto .o-pagination-input {
+  margin-left: 0px;
+  margin-right: 8px;
+}
+.o-pagination-next,
+.o-pagination-prev,
+.el-pagination .btn-prev,
+.el-pagination .btn-next {
+  transform: scaleX(-1);
+}
+.el-pagination .btn-prev {
+  margin-left: 4px !important;
+  margin-right: var(--el-pagination-item-gap) !important;
+}

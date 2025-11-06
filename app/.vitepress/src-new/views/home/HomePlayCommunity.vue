@@ -153,12 +153,12 @@ useInViewDuration(container, (duration) => {
             {{ vitalityData[item.vitalityKey] }}
           </div>
           <div class="label">
-            {{ item.vitalityLabel[locale] }}
+            {{ item.vitalityLabel.fn(vitalityData?.[item.vitalityKey] || 0) }}
           </div>
         </div>
       </div>
       <OLink
-        :href="`https://datastat.openeuler.org/${locale}/overview`"
+        :href="`https://datastat.openeuler.org/en/overview`"
         :style="{ '--link-color': 'rgba(255, 255, 255, 0.8)' }"
         class="vitality-btn"
         target="_blank"
