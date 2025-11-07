@@ -179,7 +179,7 @@ watch(
             alt="404"
           />
           <p class="empty-text">
-            {{ lang === 'ar' ? 'لم يتم العثور عليه!' : 'NotFound !' }}
+            {{ lang === 'ar' ? ' لم يتم العثور على نتيجة' : 'NotFound !' }}
           </p>
         </div>
       </div>

@@ -1,5 +1,5 @@
 export default {
-  empty: 'لم يتم العثور عليه!',
+  empty: ' لم يتم العثور على نتيجة',
   reset: 'Reset',
   search: 'Search',
   confirm: 'Confirm',
