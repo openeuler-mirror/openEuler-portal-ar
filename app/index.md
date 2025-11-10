@@ -1,5 +1,5 @@
 ---
-title: 'openEuler'
+title: ' نظام تشغيل البنية الأساسية الرقمية'
 ---
 
 <script setup lang="ts">

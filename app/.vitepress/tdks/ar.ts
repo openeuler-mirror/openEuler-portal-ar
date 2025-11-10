@@ -2,7 +2,7 @@ const tdks: {
   [path: string]: { title: string; description: string; keywords?: string };
 } = {
   'showcase': {
-    title: 'Success Stories',
+    title: 'قصص النجاح',
     description:
       'Success stories and case studies of projects launched with openEuler.',
     keywords: 'success stories, case studies, open source, Linux os',
@@ -122,13 +122,13 @@ const tdks: {
     keywords: 'bug reporting, Linux os, open source',
   },
   'interaction/news-list': {
-    title: 'News',
+    title: 'الأخبار',
     description:
       'Catch up with the latest developments, releases, and community updates from openEuler.',
     keywords: 'update, Linux os, news, open source, monthly bulletin',
   },
   'interaction/blog-list': {
-    title: 'Blogs',
+    title: 'المدونات',
     description:
       'Gain in-depth knowledge and fresh perspectives on openEuler through our insightful blogs.',
     keywords: 'blogs, insight, Linux os, open source',
@@ -155,13 +155,13 @@ const tdks: {
       'open source event, developer event, open source conference, open source summit, meetup',
   },
   'monthly-bulletins': {
-    title: 'Monthly Newsletter',
+    title: 'النشرة الإخبارية الشهرية',
     description:
       "Stay connected with openEuler's monthly newsletter. Get the latest updates, news, and insights from the community delivered straight to you each month.",
     keywords: 'monthly bulletin, update, news, insight, open source',
   },
   'community/mailing-list': {
-    title: 'Mailing Lists',
+    title: 'القوائم البريدية',
     description:
       'Discuss and stay updated on Linux, cloud computing, and open source innovation through our mailing lists.',
     keywords: 'Linux, mailing list, cloud computing, open source, OS',
@@ -209,13 +209,13 @@ const tdks: {
     keywords: 'OS, Linux, open source community, contributor, maintainer',
   },
   'community/organization': {
-    title: 'Governance Structure',
+    title: 'بنية الحوكمة',
     description:
       "Explore the openEuler community's organizational structure, committees, and code of conduct.",
     keywords: 'OS, Linux, leadership, committee, open source community',
   },
   'community/member': {
-    title: 'Members',
+    title: 'الأعضاء',
     description:
       'Discover the companies and organizations actively contributing code and shaping the future of openEuler.',
     keywords: 'OS, Linux, open source community, cloud, edge computing',
@@ -282,7 +282,7 @@ const tdks: {
     keywords: 'OS, Linux, cloud, open source software, server Linux',
   },
   'download/commercial-release': {
-    title: 'Download Commercial Edition',
+    title: 'تنزيل الإصدار التجاري',
     description:
       'Get the openEuler commercial editions. Download ISOs, find supported architectures, and explore vendor options.',
     keywords: 'OS, Linux, commercial, cloud, server Linux',
@@ -300,7 +300,7 @@ const tdks: {
     keywords: 'OS, download, mirror, Linux, ISO',
   },
   'other/brand': {
-    title: 'Brand Resources',
+    title: 'العلامات التجارية',
     description:
       'Download openEuler logos and access brand guidelines. Get the resources you need to use and represent our open source OS.',
     keywords: 'OS, logo, trademark, brand, open source software',
@@ -1085,7 +1085,7 @@ const tdks: {
       'application development, FAQ, openEuler, frequently asked questions',
   },
   'download': {
-    title: 'Download Community Release',
+    title: 'تنزيل إصدار المنتدى',
     description:
       'Download the latest openEuler community release. Find the next go-to Linux distro for your deployments.',
     keywords: 'download, community, release, Linux distro, openEuler',
@@ -1109,8 +1109,8 @@ const tdks: {
       'Get answers to frequently asked questions about system management on openEuler.',
     keywords: 'openEuler, system management, FAQ, Linux',
   },
-  ar: {
-    title: 'openEuler | OS for Digital Infrastructure',
+  '/': {
+    title: 'openEuler | نظام تشغيل البنية الأساسية الرقمية',
     description:
       'An open source OS run by the OpenAtom Foundation that builds a global community to enhance digital infrastructure and support diverse architectures.',
     keywords: 'openEuler, community, projects, developments, resources',
@@ -1170,7 +1170,7 @@ const tdks: {
     keywords: 'search, information, resources, updates, openEuler',
   },
   'security/cve': {
-    title: 'CVEs | Security',
+    title: 'الثغرات الأمنية ونقاط التعرض الشائعة | الأمان',
     description:
       'The list of Common Vulnerabilities and Exposures (CVEs) relevant to openEuler, helping you stay updated on security issues.',
     keywords: 'openEuler, CVE, security',
@@ -1229,7 +1229,7 @@ const tdks: {
     keywords: 'openEuler, WSL, Linux, Windows, operating system',
   },
   'docs': {
-    title: 'Docs | openEuler',
+    title: 'مركز المستندات | المستندات',
     description:
       'openEuler docs',
     keywords: 'openEuler docs',

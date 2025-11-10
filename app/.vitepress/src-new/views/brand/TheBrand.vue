@@ -60,7 +60,7 @@ const gap = computed(() => {
             <div class="text">
               <span>{{ t('brand.desc1') }}</span>
               <OLink color="primary" variant="text" :href="guide" target="_blank" hover-underline>{{ t('brand.guide') }}</OLink>
-              <span v-if="locale === 'ar'"> and </span>
+              <span v-if="locale === 'ar'"> و </span>
               <OLink color="primary" variant="text" :href="`/${locale}/other/brand/specification/`" target="_blank" hover-underline>{{ t('brand.specification') }}</OLink>
               <span>{{ t('brand.desc2') }}</span>
             </div>

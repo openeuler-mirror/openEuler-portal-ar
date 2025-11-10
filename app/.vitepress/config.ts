@@ -55,6 +55,8 @@ const config: UserConfig = {
     console.log('lookupKey', lookupKey);
     const locale = 'ar';
     const tdkInfo = tdks[locale]?.[lookupKey];
+    console.log('tdkInfo', tdkInfo,lookupKey);
+
     pageData.titleTemplate = `:title | ${tdks.titleSuffix[locale]}`;
     if (!tdkInfo) {
       if (isBlog.test(lookupKey)) {

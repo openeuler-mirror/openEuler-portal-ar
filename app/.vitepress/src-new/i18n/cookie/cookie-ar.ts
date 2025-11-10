@@ -8,7 +8,7 @@ export default {
   necessaryCookie: 'ملفات الارتباط التشعبي الضرورية بشدة',
   necessaryCookieTip: 'نشط دائمًا',
   necessaryCookieDetail:
-    'These cookies are necessary for the site to work properly and cannot be switched off. They are usually only set in response to actions made by you which amount to a request for services, such as logging in or filling in forms. You can set the browser to block these cookies, but that can make parts of the site not work. These cookies do not store any personally identifiable information.',
+    'ملفات الارتباط التشعبي هذه ضرورية لكي يعمل الموقع على النحو الصحيحح ولا يمكن إيقاف تشغيلها. وعادةً ما يتم تعيينها فقط استجابةً للإجراءات التي اتخذتها والتي ترقى إلى مستوى طلب خدمات، مثل تسجيل الدخول أو ملء النماذج. يمكنك ضبط المتصفح لحظر ملفات الارتباط التشعبي هذه، ولكن ذلك قد يؤدي إلى عدم عمل أجزاء من الموقع. لا تخزن ملفات الارتباط التشعبي هذه أي معلومات شخصية تدلّ على هوية الشخص.',
   analyticalCookie: 'ملفات الارتباط التشعبي التحليلية',
   analyticalCookieDetail:
     'لن نستخدم ملفات الارتباط التشعبي هذه إلا بموافقتك. تساعدنا ملفات الارتباط التشعبي هذه على إجراء تحسينات من خلال جمع إحصاءات مثل عدد الزيارات ومصادر حركة المرور.',

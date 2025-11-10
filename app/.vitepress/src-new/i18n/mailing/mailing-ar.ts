@@ -1,6 +1,6 @@
 export default {
   title: 'القوائم البريدية',
-  subscriptionProcessTitle: 'Subscribe to a SIG',
+  subscriptionProcessTitle: 'الاشتراك في SIG',
   name: 'SIG Name',
   describe: 'الوصف',
   mailingAddress: 'القائمة البريدية',

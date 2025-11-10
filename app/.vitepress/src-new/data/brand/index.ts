@@ -175,7 +175,7 @@ export const INNOVATION_LOGO_DOWNLOAD = [
 ];
 export const PPT_LIST_AR = [
   {
-    title: 'قالب',
+    title: 'القالب',
     img: eulerppt,
     url: 'https://openeuler-website-beijing.obs.cn-north-4.myhuaweicloud.com/openEuler_PPT%20Template_en.pptx ',
   },

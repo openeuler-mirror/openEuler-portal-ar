@@ -142,8 +142,8 @@ export const HOME_CONFIG = {
           "href": "https://www.openeuler.org/en/docs/25.09/tools/security/index.html"
         },
         {
-          "title": "Application",
-          "desc": "Get the complete guide to using ROS and other essential extensions.",
+          "title": "التطبيق",
+          "desc": "احصل على الدليل الكامل لاستخدام نظام التشغيل الروبوتي (ROS) والملحقات الأساسية الأخرى.",
           "href": "https://www.openeuler.org/en/docs/25.09/tools/application/index.html"
         }
       ]

@@ -58,8 +58,7 @@ function jumpPage(page: number) {
         class="case-card"
       >
         <div class="card-content-text">
-          <p class="detail" :title="item.summary">
-            {{ item.summary }}
+          <p class="detail" :title="item.summary" v-html="item.summary">
           </p>
           <a :href="item.path">
             <OButton type="primary" size="mini" class="confirm-btn">{{
@@ -124,7 +123,6 @@ function jumpPage(page: number) {
       background-size: cover;
       position: relative;
       display: flex;
-      direction: ltr;
       @media (max-width: 768px) {
         height: 144px;
         padding: 16px 16px 14px 12px;
