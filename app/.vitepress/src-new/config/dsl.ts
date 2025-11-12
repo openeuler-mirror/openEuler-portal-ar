@@ -1,10 +1,25 @@
 export const HOME_CONFIG = {
   "hots": [
-    "Installation guide",
-    "Administrator guide",
-    "x2openEuler migration",
-    "Application development guide",
-    "UKUI user guide"
+    {
+      'en': 'Installation guide',
+      'ar': 'دليل التثبيت'
+    },
+    {
+      'en': 'Administrator guide',
+      'ar': 'دليل المسؤول'
+    }, 
+    {
+      'en': 'x2openEuler migration',
+      'ar': 'ترحيل x2openEuler'
+    },
+    {
+      'en': 'Application development guide',
+      'ar': 'دليل تطوير التطبيقات'
+    },
+    {
+      'en': 'UKUI user guide',
+      'ar': 'دليل مستخدم UKUI'
+    },
   ],
   "recommend": {
     "title": "أخرى",

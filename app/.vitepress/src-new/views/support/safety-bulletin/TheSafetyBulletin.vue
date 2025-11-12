@@ -339,6 +339,7 @@ onUnmounted(() => {
               value-format="YYYY-MM-DD"
               :default-time="[new Date(), new Date()]"
               size="small"
+              popper-class="el-popper-rtl"
             />
           </ClientOnly>
         </div>
@@ -594,7 +595,7 @@ onUnmounted(() => {
       <ORow gap="0 16px" wrap="wrap">
         <OCol flex="0 0 100%" v-for="(item, i) in tableDataMb" :key="i">
           <OCard
-            :href="`${route.path}detail/?id=${item.securityNoticeNo}`"
+            :href="`${detailPath}?id=${item.securityNoticeNo}`"
             :title="item.securityNoticeNo"
             class="safety-bulletin-item"
           >
@@ -684,6 +685,7 @@ onUnmounted(() => {
     }
   }
 }
+
 .input-search {
   width: 320px;
   :deep(.o_box) {
@@ -943,7 +945,7 @@ onUnmounted(() => {
   .item-label {
     font-weight: 500;
     min-width: 48px;
-    margin-right: 16px;
+    margin-left: 16px;
   }
   .type-tag {
     :deep(.o-tag-label) {
@@ -972,6 +974,26 @@ onUnmounted(() => {
   --dropdown-list-bg-color: #3f3f43;
   .type-active {
     background-color: #2b2b2f;
+  }
+}
+</style>
+<style lang="scss">
+.el-popper-rtl {
+  .el-picker-panel__body {
+    display: flex;
+  }
+  .is-right {
+    .el-date-range-picker__header [class*=arrow-right] {
+      float: left;
+    }
+  }
+  .is-left {
+    .el-date-range-picker__header [class*=arrow-left] {
+      float: right;
+    }
+  }
+  .el-date-range-picker__header button {
+    transform: scaleX(-1);
   }
 }
 </style>

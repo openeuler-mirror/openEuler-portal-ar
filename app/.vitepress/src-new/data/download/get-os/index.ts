@@ -38,7 +38,7 @@ export default {
         light: cloudImgMo,
         dark: cloudImgDarkMo,
       },
-      title: 'Cصور السحابة',
+      title: 'صور السحابة',
       intro:
         'أصدرت openEuler صورًا رسمية على منصات السحابة العامة الرئيسية.',
       intro1: 'دليل التثبيت',

@@ -58,6 +58,7 @@ const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
 
 interface LabelT {
   ar: string;
+  en: string;
 }
 interface OptionT {
   value: string;
@@ -117,7 +118,8 @@ const levelOptions = ref<OptionT[]>([]);
 levelOptions.value.push({
   value: '0.0',
   label: {
-    ar: 'N/A',
+    ar: 'غير متوفر',
+    en : 'N/A',
   },
 });
 typeMap.forEach((item) => {
@@ -140,22 +142,22 @@ const levelShow = (cvsssCoreOE: string) => {
   const val = parseFloat(cvsssCoreOE);
   if (val >= 9.0) {
     return {
-      label: typeMap.get('Critical')?.label[locale.value],
+      label: typeMap.get('Critical')?.label['en'],
       calss: 'critical',
     };
   } else if (val >= 7.0) {
     return {
-      label: typeMap.get('High')?.label[locale.value],
+      label: typeMap.get('High')?.label['en'],
       calss: 'high',
     };
   } else if (val >= 4.0) {
     return {
-      label: typeMap.get('Medium')?.label[locale.value],
+      label: typeMap.get('Medium')?.label['en'],
       calss: 'medium',
     };
   } else if (val > 0) {
     return {
-      label: typeMap.get('Low')?.label[locale.value],
+      label: typeMap.get('Low')?.label['en'],
       calss: 'low',
     };
   }
@@ -434,7 +436,7 @@ onUnmounted(() => {
     <ORow gap="0 16px" wrap="wrap">
       <OCol flex="0 0 100%" v-for="(item, i) in tableDataMb" :key="i">
         <OCard
-          :href="`${route.path}detail/?cveId=${item.cveId}&packageName=${item.packageName}`"
+          :href="`${detailPath}?cveId=${item.cveId}&packageName=${item.packageName}`"
           :title="item.cveId"
           class="cve-item"
         >
@@ -636,6 +638,7 @@ onUnmounted(() => {
 }
 .summary {
   @include text-truncate(2);
+  word-break: break-all;
 }
 .packageName {
   @include text-truncate(2);
@@ -778,6 +781,9 @@ ul {
   }
   .o-row {
     margin-top: 24px;
+  }
+  .o-col {
+    width: 100%;
   }
   .o-card {
     --card-content-gap: 12px;

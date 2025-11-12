@@ -26,3 +26,16 @@
   margin-left: 4px !important;
   margin-right: var(--el-pagination-item-gap) !important;
 }
+
+.pagination-mobile {
+  .icon-prev {
+    margin-left: 8px!important;
+    margin-right: 0px!important;
+    transform: scaleX(-1);
+  }
+  .icon-next {
+    margin-left: 0px!important;
+    margin-right: 8px!important;
+    transform: scaleX(-1);
+  }
+}

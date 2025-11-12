@@ -4,7 +4,8 @@ export const typeMap = new Map([
     {
       value: 'Low',
       label: {
-        ar: 'Low',
+        ar: 'منخفض',
+        en : 'Low',
       },
       score: '0.01-3.9',
     },
@@ -14,7 +15,8 @@ export const typeMap = new Map([
     {
       value: 'Medium',
       label: {
-        ar: 'Medium',
+        ar: 'متوسط',
+        en : 'Medium',
       },
       score: '4.0-6.9',
     },
@@ -24,7 +26,8 @@ export const typeMap = new Map([
     {
       value: 'High',
       label: {
-        ar: 'High',
+        ar: 'مرتفع',
+        en : 'High',
       },
       score: '7.0-8.9',
     },
@@ -34,7 +37,8 @@ export const typeMap = new Map([
     {
       value: 'Critical',
       label: {
-        ar: 'Critical',
+        ar: 'حرج',
+        en : 'Critical',
       },
       score: '9.0-10.0',
     },

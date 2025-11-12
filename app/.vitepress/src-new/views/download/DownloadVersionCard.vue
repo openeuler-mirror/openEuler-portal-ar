@@ -194,7 +194,8 @@ function setActiveMirror() {
     tableData.value?.forEach(() => {
       const temp = JSON.parse(JSON.stringify(mirrorList.value));
       temp[0].NameSpend =
-        temp[0].Name + ' (' + temp[0].NetworkBandwidth + 'Mb/s)';
+        temp[0].Name + ' (' + temp[0].NetworkBandwidth + 'ميجابت/ثانية)';
+        // temp[0].Name + ' (' + temp[0].NetworkBandwidth + 'Mb/s)';
 
       selectMirror.value?.push({
         downloadLink: temp[0].HttpURL,
@@ -220,7 +221,8 @@ function getTableData() {
 async function getMirrorList() {
   moreMirrorList.value = [];
   mirrorList.value.forEach((item: MirrorLsitT, index: number) => {
-    item.NameSpend = item.Name + ' (' + item.NetworkBandwidth + 'Mb/s)';
+    item.NameSpend = item.Name + ' (' + item.NetworkBandwidth + 'ميجابت/ثانية)';
+    // item.NameSpend = item.Name + ' (' + item.NetworkBandwidth + 'Mb/s)';
     if (index >= 3) {
       moreMirrorList.value.push(item);
     }
@@ -285,7 +287,7 @@ function setMirrorLink(row: any) {
   });
   return '';
 }
-const devStation = ['24.03-LTS-SP2', '25.03', '24.03-LTS-SP1'];
+const devStation = ['24.03-LTS-SP2', '25.09', '24.03-LTS-SP1'];
 
 //------------------------ 改版代码 ------------------------------
 // 筛选配置信息
@@ -319,6 +321,15 @@ const onClickDownload = (row: any) => {
     ...currentArchAndScenario.value,
   });
 };
+const handleSizeAr = (size: string) => {
+  if(size.indexOf("GiB") != -1) {
+    return size.replace("GiB", "غيبي بايت");
+  } else if(size.indexOf("MiB") != -1) {
+    return size.replace("MiB", "ميغابايت");
+  } else {
+    return size;
+  }
+}
 </script>
 
 <template>
@@ -431,7 +442,7 @@ const onClickDownload = (row: any) => {
       </template>
       <template #td_size="{ row }">
         <div class="size">
-          {{ row.Size || '-' }}
+          {{ handleSizeAr(row.Size) || '-' }}
         </div>
       </template>
       <template #td_recommend="{ row }">
@@ -451,8 +462,8 @@ const onClickDownload = (row: any) => {
             v-for="(item, index) in mirrorList"
             v-show="Number(index) < 3"
             :key="item.Name"
-            :label="item.Name + ' (' + item.NetworkBandwidth + 'Mb/s)'"
-            :value="item.Name + ' (' + item.NetworkBandwidth + 'Mb/s)'"
+            :label="item.Name + ' (' + item.NetworkBandwidth + 'ميجابت/ثانية)'"
+            :value="item.Name + ' (' + item.NetworkBandwidth + 'ميجابت/ثانية)'"
           >
           </OOption>
           <ODivider :style="{ '--o-divider-gap': '4px' }" />
@@ -464,8 +475,8 @@ const onClickDownload = (row: any) => {
           <OOption
             v-for="item in moreMirrorList"
             :key="item.Name"
-            :label="item.Name + ' (' + item.NetworkBandwidth + 'Mb/s)'"
-            :value="item.Name + ' (' + item.NetworkBandwidth + 'Mb/s)'"
+            :label="item.Name + ' (' + item.NetworkBandwidth + 'ميجابت/ثانية)'"
+            :value="item.Name + ' (' + item.NetworkBandwidth + 'ميجابت/ثانية)'"
           >
           </OOption>
           <ODivider
@@ -575,8 +586,8 @@ const onClickDownload = (row: any) => {
                 v-for="(item, index) in mirrorList"
                 v-show="Number(index) < 3"
                 :key="item.Name"
-                :label="item.Name + ' (' + item.NetworkBandwidth + 'Mb/s)'"
-                :value="item.Name + ' (' + item.NetworkBandwidth + 'Mb/s)'"
+                :label="item.Name + ' (' + item.NetworkBandwidth + 'ميجابت/ثانية)'"
+                :value="item.Name + ' (' + item.NetworkBandwidth + 'ميجابت/ثانية)'"
               >
               </OOption>
               <ODivider :style="{ '--o-divider-gap': '4px' }" />
@@ -588,8 +599,8 @@ const onClickDownload = (row: any) => {
               <OOption
                 v-for="item in moreMirrorList"
                 :key="item.Name"
-                :label="item.Name + ' (' + item.NetworkBandwidth + 'Mb/s)'"
-                :value="item.Name + ' (' + item.NetworkBandwidth + 'Mb/s)'"
+                :label="item.Name + ' (' + item.NetworkBandwidth + 'ميجابت/ثانية)'"
+                :value="item.Name + ' (' + item.NetworkBandwidth + 'ميجابت/ثانية)'"
               >
               </OOption>
               <ODivider :style="{ '--o-divider-gap': '4px' }" />
@@ -710,7 +721,7 @@ const onClickDownload = (row: any) => {
           margin-right: 8px;
           @include respond-to('<=pad_v') {
             margin-left: 0;
-            margin-right: 0;
+            margin-right: 8px;
           }
         }
         @include respond-to('<=pad_v') {
@@ -806,7 +817,7 @@ html[lang='en'],html[lang='ar'] {
         display: flex;
         align-items: center;
         .o-icon {
-          margin-left: 8px;
+          margin-right: 8px;
           color: var(--o-color-primary1);
           font-size: var(--o-font_size-text1);
         }
