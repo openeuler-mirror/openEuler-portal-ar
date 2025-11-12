@@ -123,7 +123,7 @@ export default defineConfig({
     replaceUrlPlugin(),
   ],
   server: {
-    host: '172.20.20.62',
+    host: '172.20.20.184',
     proxy: {
       '/api-certification/': {
         target: 'https://certification.openeuler.org/',

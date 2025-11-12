@@ -4,7 +4,7 @@ export default {
   search: 'Search',
   confirm: 'Confirm',
   filter: 'Filter',
-  all: 'All',
+  all: 'الكل',
   expand: 'Expand',
   collapse: 'Collapse',
   more: 'View More',

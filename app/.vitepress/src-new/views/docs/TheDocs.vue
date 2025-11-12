@@ -213,7 +213,7 @@ const getBannerCardBg = (item: DocsBannerItemT) => {
           <p class="hot-title">{{ t('docs.topSearch') }}</p>
           <ORow gap="16px 0" wrap="wrap">
             <OCol flex="0 0 auto" v-for="(item, i) in config.hots" :key="i">
-              <OLink color="primary" :href="getSearchUrl(item)" target="_blank" rel="noopener noreferrer" @click="onClikHotWord">{{ item }}</OLink>
+              <OLink color="primary" :href="getSearchUrl(item['en'])" target="_blank" rel="noopener noreferrer" @click="onClikHotWord">{{ item['ar'] }}</OLink>
             </OCol>
           </ORow>
         </div>
@@ -310,7 +310,7 @@ const getBannerCardBg = (item: DocsBannerItemT) => {
   @include text1;
 }
 .hot-title {
-  margin-right: 12px;
+  margin-left: 12px;
   flex-shrink: 0;
   color: var(--o-color-info2);
 }

@@ -263,6 +263,7 @@ $color: #fff;
       margin-top: 16px;
       padding-bottom: 12px;
       display: flex;
+      word-break: break-all;
       @include tip2;
       //TODO: 颜色变量
       border-bottom: 1px solid rgba(229, 229, 229, 0.12);
@@ -284,9 +285,9 @@ $color: #fff;
       .friendship-link-item {
         white-space: nowrap;
         &:not(:last-of-type) {
-          margin-right: 24px;
+          margin-left: 24px;
           @include respond-to('<=pad') {
-            margin-right: 12px;
+            margin-left: 12px;
           }
         }
         color: rgba(255, 255, 255, 0.6);

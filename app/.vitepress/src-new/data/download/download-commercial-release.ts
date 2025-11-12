@@ -19,8 +19,8 @@ export default {
       {
         NAME: 'RedFlag Asianux Server - 8.1',
         DOWNLOAD_URL: 'http://pan.chinaredflag.cn/d/d3041d958a8d4da1881d/',
-        DESC: 'إن Red Flag Asianux Server OS (openEuler) هو إصدار تجاري قائم على التطوير الثانوي لـ openEuler 20.03 LTS SP1. إصدار kernel الحالي هو 4.19.',
-        MANUFACTURER: 'خادم Red Flag Asiaux',
+        DESC: 'إن RedFlag Asianux Server OS (openEuler) هو إصدار تجاري قائم على التطوير الثانوي لـ openEuler 20.03 LTS SP1. إصدار kernel الحالي هو 4.19.',
+        MANUFACTURER: 'خادم RedFlag Asiaux',
         PUBLISH_DATE: '2021/03',
         DETAILED_LINK: [
           {

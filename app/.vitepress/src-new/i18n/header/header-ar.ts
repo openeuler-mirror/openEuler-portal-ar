@@ -3,6 +3,7 @@ import { markRaw } from 'vue';
 import Summit from '~@/assets/category/header/summit.png';
 import IconOutLink from '~icons/app/icon-out-link.svg';
 import IconArrowRight from '~icons/app-new/icon-header-next.svg';
+import IconChevronLeft from '~icons/app-new/icon-chevron-left.svg';
 
 import annualReport2024 from '~@/assets/category/header/annual-report-2024.jpg';
 
@@ -203,6 +204,12 @@ export default {
                 'إطار عمل حوسبة سرية لبناء تطبيقات آمنة.',
               URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/projects/secgear/`,
             },
+            {
+              NAME: 'All projects',
+              DESCRIPTION: '',
+              URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/projects/`,
+              ICON: IconChevronLeft,
+            }
             // {
             //   NAME: 'StratoVirt',
             //   DESCRIPTION:
