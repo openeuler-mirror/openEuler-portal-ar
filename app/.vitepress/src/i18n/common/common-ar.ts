@@ -548,8 +548,8 @@ export default {
     PLEACHOLDER: 'Please enter...',
     PLEACHOLDER_EXTEND: 'Please enter the content',
   },
-  PREV: 'pre',
-  NEXT: 'next',
+  PREV: 'السابق',
+  NEXT: 'التالي',
   EXPAND: 'Expand',
   RETRACT: 'Collapse',
 };

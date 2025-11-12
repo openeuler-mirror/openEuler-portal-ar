@@ -113,8 +113,8 @@ const onChange = (option: FilterOptionT) => {
 
 @include respond-to('<=pad_v') {
   .filter-title {
-    min-width: 48px;
-    margin-right: 16px;
+    min-width: 62px;
+    margin-left: 12px;
     margin-top: 5px;
   }
   .o-toggle {

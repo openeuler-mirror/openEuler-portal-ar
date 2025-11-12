@@ -498,7 +498,7 @@ useInViewDuration(
     padding: 0;
     cursor: pointer;
     margin-left: 16px;
-    &:first-of-type {
+    &:last-of-type {
       margin-left: 0;
     }
   }

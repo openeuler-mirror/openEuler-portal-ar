@@ -23,6 +23,7 @@ const { lePadV } = useScreen();
 const langOptions = [
   { id: 'ar', label: 'AR' },
   { id: 'en', label: 'EN' },
+  { id: 'zh', label: 'ZH' },
 ];
 
 // 选择语言
@@ -66,7 +67,7 @@ watch(
 );
 
 const getLang = (lang: String, simple?: boolean) => {
-  return lang === 'ar' ? 'AR' : 'EN';
+  return lang === 'ar' ? 'AR' : lang === 'en' ? 'EN' : (!!simple ? '中' : '简体中文');
 };
 </script>
 
@@ -94,7 +95,7 @@ const getLang = (lang: String, simple?: boolean) => {
           :key="item.id"
           :class="['list', { 'is-active': lang === item.id }]"
         >
-          {{ getLang(item.id) }}
+          {{ getLang(item.id, false) }}
         </ODropdownItem>
       </template>
     </ODropdown>
@@ -109,7 +110,7 @@ const getLang = (lang: String, simple?: boolean) => {
       :key="item.id"
       :class="{ active: lang === item.id }"
       @click.stop="changeLanguageMobile(item.id)"
-      >{{ getLang(item.id) }}</span
+      >{{ getLang(item.id, true) }}</span
     >
   </div>
 </template>
@@ -198,7 +199,7 @@ const getLang = (lang: String, simple?: boolean) => {
   height: 36px;
   span {
     color: var(--o-color-info1);
-    margin-right: var(--o-gap-3);
+    margin-right: var(--o-gap-1);
     text-align: center;
     @include text1;
     cursor: pointer;
@@ -209,7 +210,7 @@ const getLang = (lang: String, simple?: boolean) => {
     &:not(:last-child) {
       &:after {
         content: '|';
-        margin-left: var(--o-gap-3);
+        margin-right: var(--o-gap-1);
         color: var(--o-color-info1);
       }
     }

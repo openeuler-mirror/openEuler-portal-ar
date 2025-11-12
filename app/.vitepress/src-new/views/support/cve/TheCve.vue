@@ -639,6 +639,7 @@ onUnmounted(() => {
 .summary {
   @include text-truncate(2);
   word-break: break-all;
+  direction: ltr
 }
 .packageName {
   @include text-truncate(2);

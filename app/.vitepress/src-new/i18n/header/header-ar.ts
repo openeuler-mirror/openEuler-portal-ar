@@ -179,7 +179,7 @@ export default {
             {
               NAME: 'Pkgship',
               DESCRIPTION:
-                'Aأداة للاستعلام عن معلومات حزمة نظام التشغيل والتبعيات بسهولة.',
+                'أداة للاستعلام عن معلومات حزمة نظام التشغيل والتبعيات بسهولة.',
               URL: import.meta.env.VITE_SERVICE_PKGMANAGE_URL,
               ANALYTICSNAME: 'pkgship',
             },
@@ -205,7 +205,7 @@ export default {
               URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/projects/secgear/`,
             },
             {
-              NAME: 'All projects',
+              NAME: 'جميع المشاريع',
               DESCRIPTION: '',
               URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/projects/`,
               ICON: IconChevronLeft,
@@ -311,7 +311,7 @@ export default {
           CHILDREN: [
             {
               NAME: 'الترحيل إلى openEuler',
-              DESCRIPTION: 'Gأدلة للترحيل إلى openEuler.',
+              DESCRIPTION: 'أدلة للترحيل إلى openEuler.',
               URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/migration/`,
             },
           ],

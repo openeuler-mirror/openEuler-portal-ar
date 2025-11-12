@@ -24,7 +24,7 @@ export default {
   INSTALL_GUIDENCE: 'دليل التثبيت',
   SEEK_HELP: 'Seek Help',
   GET_ISO: 'Get ISO',
-  SELECT: 'Filter',
+  SELECT: 'التصفية',
   // 新增 start
   COMMUNITY: 'إصدارات المجتمع',
   BUSINESS: 'الإصدارات التجارية',

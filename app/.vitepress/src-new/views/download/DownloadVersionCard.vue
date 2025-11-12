@@ -34,6 +34,7 @@ import IconCopy from '~icons/app-new/icon-copy.svg';
 import IconDownload from '~icons/app/icon-download.svg';
 import IconTips from '~icons/app-new/icon-help.svg';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
+import IconArrowLeft from '~icons/app/icon-arrow-left.svg';
 import { computed } from 'vue';
 
 const props = defineProps({
@@ -487,7 +488,7 @@ const handleSizeAr = (size: string) => {
             <OLink :href="'/' + locale + '/mirror/list/'">
               {{ t('download.ALL_MIRROR') }}
               <template #suffix>
-                <OIcon><IconArrowRight class="download-button-icon" /></OIcon>
+                <OIcon><IconArrowLeft class="download-button-icon" /></OIcon>
               </template>
             </OLink>
           </div>
@@ -550,7 +551,7 @@ const handleSizeAr = (size: string) => {
             {{ t('download.DOWNLOADGO') }}
             <template #suffix>
               <OIcon>
-                <IconArrowRight />
+                <IconArrowLeft />
               </OIcon>
             </template>
           </OButton>
@@ -565,7 +566,7 @@ const handleSizeAr = (size: string) => {
         <div v-if="item.Tips" class="tip">{{ item.Tips }}</div>
         <div class="size info-line">
           <div class="label">{{ t('download.TABLE_HEAD_1') }}</div>
-          <div class="value">{{ item.Size }}</div>
+          <div class="value">{{ handleSizeAr(item.Size) }}</div>
         </div>
         <div class="recommend info-line">
           <div class="label">{{ t('download.TABLE_HEAD_2') }}</div>
@@ -609,7 +610,7 @@ const handleSizeAr = (size: string) => {
                   {{ t('download.ALL_MIRROR') }}
                   <template #suffix>
                     <OIcon
-                      ><IconArrowRight class="download-button-icon"
+                      ><IconArrowLeft class="download-button-icon"
                     /></OIcon>
                   </template>
                 </OLink>
@@ -710,7 +711,8 @@ const handleSizeAr = (size: string) => {
         @include text1;
         color: var(--o-color-info1);
         min-width: 32px;
-        margin-right: 32px;
+        margin-left: 32px;
+        font-weight: 600;
         @include respond-to('<=pad_v') {
           min-width: auto;
         }
@@ -791,6 +793,7 @@ html[lang='en'],html[lang='ar'] {
       color: var(--o-color-info2);
       margin-bottom: 16px;
       @include tip1;
+      direction: ltr;
     }
     .info-line {
       margin-top: 12px;
@@ -799,7 +802,8 @@ html[lang='en'],html[lang='ar'] {
       color: var(--o-color-info1);
       .label {
         color: var(--o-color-info2);
-        margin-right: 16px;
+        margin-left: 16px;
+        font-weight: 600;
       }
     }
     .recommend {
@@ -862,6 +866,7 @@ html[lang='en'],html[lang='ar'] {
 .popup-tip {
   max-width: 230px;
   --popup-padding: 18px 8px;
+  direction: ltr;
 }
 .o-popup {
   direction: rtl;

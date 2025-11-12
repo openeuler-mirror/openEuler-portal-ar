@@ -25,7 +25,7 @@ import { VERSION_LIST, SCENARIO_LIST } from '~@/data/download/download';
 
 import type { VersionInfoT } from '@/shared/@types/type-download';
 
-import IconArrowRight from '~icons/app/icon-arrow-right.svg';
+import IconArrowLeft from '~icons/app/icon-arrow-left.svg';
 
 import { useLocale } from '~@/composables/useLocale';
 import { useScreen } from '~@/composables/useScreen';
@@ -421,7 +421,7 @@ const onClickLink = (item: any) => {
       </el-table-column>
       <el-table-column
         :label="t('download.DOWNLOAD_LINK')"
-        :width="!isPadVToLaptop ? '200' : '120'"
+        :width="!isPadVToLaptop ? '120' : '120'"
       >
         <template #default="scope">
           <OLink
@@ -433,7 +433,7 @@ const onClickLink = (item: any) => {
           >
             <span>{{ t('download.DOWNLOADGO') }}</span>
             <template #suffix>
-              <OIcon><IconArrowRight class="download-button-icon" /></OIcon>
+              <OIcon><IconArrowLeft class="download-button-icon" /></OIcon>
             </template>
           </OLink>
         </template>
@@ -533,7 +533,7 @@ const onClickLink = (item: any) => {
                   <span>{{ t('download.DOWNLOADGO') }}</span>
                   <template #suffix>
                     <OIcon
-                      ><IconArrowRight class="download-button-icon"
+                      ><IconArrowLeft class="download-button-icon"
                     /></OIcon>
                   </template>
                 </OLink>

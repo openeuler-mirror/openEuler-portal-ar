@@ -336,7 +336,7 @@ const linkClick = () => {
       }
 
       .icon {
-        margin-left: var(--o-gap-2);
+        margin-right: var(--o-gap-2);
       }
     }
 

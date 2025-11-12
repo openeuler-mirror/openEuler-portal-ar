@@ -9,75 +9,35 @@ export const vitalityConfig = [
     vitalityValue: 0,
     vitalityKey: 'contributors',
     vitalityLabel: {
-      ar: {
-        'one': 'مساهم واحد',
-        'zero': 'لا مساهمين',
-        'two': 'مساهمان',
-        'few': 'مساهمين',
-        'many': 'مساهمًا',
-        'other': 'مساهم',
-      },
-      fn: (n) => getArabicPluralFormFn(n,0)
+      ar: 'من المساهمين',
     },
   },
   {
     vitalityValue: 0,
     vitalityKey: 'repos',
     vitalityLabel: {
-      ar: {
-        'one': 'مستوعد واحد',
-        'zero': 'لا مستوعدين',
-        'two': 'مستوعدان',
-        'few': 'مستوعدين',
-        'many': 'مستوعدًا',
-        'other': 'مستوعد',
-      },
-      fn: (n) => getArabicPluralFormFn(n,1)
+      ar: 'من المستودعات'
     },
   },
   {
     vitalityValue: 0,
     vitalityKey: 'sigs',
     vitalityLabel: {
-      ar: {
-        'one': 'مجموعة واحدة للاهتمامات الخاصة',
-        'zero': 'لا مجموعات للاهتمامات الخاصة',
-        'two': 'مجموعتان للاهتمامات الخاصة',
-        'few': 'مجموعات للاهتمامات الخاصة',
-        'many': 'مجموعة للاهتمامات الخاصة',
-        'other': 'مجموعة للاهتمامات الخاصة',
-      },
-      fn: (n) => getArabicPluralFormFn(n,2)
+      ar: 'من مجموعات الاهتمامات الخاصة'
     },
   },
   {
     vitalityValue: 0,
     vitalityKey: 'users',
     vitalityLabel: {
-      ar: {
-        'one': 'مستخدم واحد',
-        'zero': 'لا مستخدمين',
-        'two': 'مستخدمان',
-        'few': 'مستخدمين',
-        'many': 'مستخدمًا',
-        'other': 'مستخدم',
-      },
-      fn: (n) => getArabicPluralFormFn(n,3)
+      ar: 'من المستخدمين'
     },
   },
   {
     vitalityValue: 0,
     vitalityKey: 'businessosv',
     vitalityLabel: {
-      ar: {
-        'one': 'مورد واحد',
-        'zero': 'لا موردين',
-        'two': 'موردان',
-        'few': 'موردين',
-        'many': 'موردًا',
-        'other': 'مورد',
-      },
-      fn: (n) => getArabicPluralFormFn(n,4)
+      ar: 'من موردي أنظمة التشغيل'
     },
   },
 ];
