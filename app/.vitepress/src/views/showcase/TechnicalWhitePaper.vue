@@ -81,7 +81,7 @@ function jumpPage(page: number) {
           :total="total"
           @jump-page="jumpPage"
         >
-          <span class="pagination-slot">{{ currentPage }}/{{ totalPage }}</span>
+          <span class="pagination-slot">{{ totalPage }}/{{ currentPage }}</span>
         </OPagination>
       </ClientOnly>
     </div>

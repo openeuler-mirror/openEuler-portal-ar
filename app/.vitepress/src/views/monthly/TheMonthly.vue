@@ -215,7 +215,7 @@ const pageTotal = computed(() =>
                 @jump-page="changeCurrent"
               >
                 <span class="pagination-slot"
-                  >{{ paginationData.currentpage }}/{{ pageTotal }}</span
+                  >{{ pageTotal }}/{{ paginationData.currentpage }}</span
                 >
               </OPagination>
             </ClientOnly>

@@ -84,7 +84,7 @@ export default {
   APPROVE_MIRROR: 'مقترح',
   MORE_MIRROR: 'أخرى',
   ALL_MIRROR: 'عرض الكل',
-  EMPTY_TIP: 'NotFound',
+  EMPTY_TIP: 'لم يتم العثور على نتيجة',
   PUBLISH_DATE1: 'تاريخ الإصدار:',
   // 新增 end
 
@@ -105,7 +105,8 @@ export default {
   GUIDANCE_CLASS: 'Community Guides: ',
   PUBLISH_DATE: 'Date of Release',
   WEBSITE_SELECT: 'Selected Mirrors',
-  COPY_SUCCESSFULLY: 'copied successfully.',
+  COPY_SUCCESSFULLY: 'تم النسخ بنجاح',
+  COPY_FAILED: 'فشل النسخ',
   BTNSURE: 'Confirm',
   BTNRESET: 'Reset',
   MIRROR_SELECT: {

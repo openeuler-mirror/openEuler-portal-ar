@@ -92,16 +92,16 @@ export default {
           }/en/other/lifecycle/`,
         },
         {
+          NAME: 'دليل تثبيت openEuler 25.09',
+          URL: `${
+            import.meta.env.VITE_SERVICE_DOCS_URL
+          }/en/docs/25.09/server/installation_upgrade/installation/installation_preparations.html`,
+        },
+        {
           NAME: 'دليل تثبيت openEuler 24.03 LTS SP2',
           URL: `${
             import.meta.env.VITE_SERVICE_DOCS_URL
           }/en/docs/24.03_LTS_SP2/server/installation_upgrade/installation/installation_preparations.html`,
-        },
-        {
-          NAME: 'دليل تثبيت openEuler 25.03',
-          URL: `${
-            import.meta.env.VITE_SERVICE_DOCS_URL
-          }/en/docs/25.03/server/installation_upgrade/installation/installation-preparations.html`,
         },
         {
           NAME: 'المستندات التقنية الفنية',

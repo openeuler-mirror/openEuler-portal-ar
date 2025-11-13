@@ -177,6 +177,7 @@ onMounted(() => {
       color: var(--e-color-text4);
       text-align: center;
       line-height: var(--e-line-height-tip);
+      direction: ltr;
       + .personal-post {
         margin-top: 0;
       }

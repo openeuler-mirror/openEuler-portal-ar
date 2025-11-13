@@ -83,6 +83,11 @@ const handleUrlCopy = (value: string, e: MouseEvent) => {
         content: t('download.COPY_SUCCESSFULLY'),
       });
     },
+    error: () => {
+      message.warning({
+        content: t('download.COPY_FAILED'),
+      });
+    },
   });
 };
 

@@ -165,12 +165,11 @@ watch(
               @jump-page="jumpPage"
             >
               <span class="pagination-slot"
-                >{{
+                >{{ total }} / {{
                   params.pageSize * params.currentPage < total
                     ? params.pageSize * params.currentPage
                     : total
-                }}
-                / {{ total }}</span
+                }}</span
               >
             </OPagination>
           </ClientOnly>

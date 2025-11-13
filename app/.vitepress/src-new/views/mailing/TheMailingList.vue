@@ -96,12 +96,14 @@ const colFlex = computed(() => {
     </AppSection>
     <AppSection :title="t('mailing.title')" class="mailing-list-section">
       <OTable v-if="!isPhone" :columns="columns" :data="tableData" class="mailing-list">
-        <template #td_display_name="{ row }">{{ row.display_name }}</template>
+        <template #td_display_name="{ row }">
+          <div class="name-td">{{ row.display_name }}</div>
+        </template>
         <template #td_description="{ row }">
           <div class="description-td">{{ row.description || '-' }}</div>
         </template>
         <template #td_fqdn_listname="{ row }">
-          <OLink color="primary" size="small" variant="text" :href="`mailto:${row.fqdn_listname}`" target="_blank" hover-underline>{{ row.fqdn_listname }}</OLink>
+          <div class="email-td"><OLink color="primary" size="small" variant="text" :href="`mailto:${row.fqdn_listname}`" target="_blank" hover-underline>{{ row.fqdn_listname }}</OLink></div>
         </template>
         <template #td_mail_file="{ row }">
           <OLink color="primary" size="small" variant="text" :href="`https://mailweb.openeuler.org/hyperkitty/list/${row.display_name.toLowerCase()}@openeuler.org/`" target="_blank" hover-underline class="view-archive">{{ t('mailing.viewArchive') }}</OLink>
@@ -301,8 +303,13 @@ const colFlex = computed(() => {
     color: var(--o-color-info1);
     @include tip1;
   }
+  .name-td,
+  .email-td {
+    direction: ltr;
+  }
   .description-td {
     @include text-truncate(2);
+    direction: ltr;
   }
   .view-archive {
     word-break: keep-all;
@@ -343,15 +350,18 @@ const colFlex = computed(() => {
 
     .item-title {
       font-weight: 500;
+      direction: ltr;
       @include h4;
     }
     .item-desc {
       color: var(--o-color-info2);
       margin-top:8px;
+      direction: ltr;
       @include tip1;
     }
     .item-mail {
       margin-top: 12px;
+      direction: ltr;
       @include text-truncate(1);
       @include text1;
     }

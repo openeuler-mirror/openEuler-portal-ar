@@ -244,6 +244,9 @@ useInViewDuration(
 </template>
 
 <style scoped lang="scss">
+.dark .case-img {
+  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+}
 .tab {
   text-align: center;
 }

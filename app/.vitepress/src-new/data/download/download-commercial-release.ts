@@ -49,7 +49,7 @@ export default {
       {
         NAME: 'Kylinsec',
         DOWNLOAD_URL: 'https://mirrors.kylinsec.com.cn/V3.4-4/',
-        DESC: 'No description available',
+        DESC: '',
         MANUFACTURER: 'Kylinsec',
         PUBLISH_DATE: '',
         DETAILED_LINK: [
@@ -83,7 +83,7 @@ export default {
       {
         NAME: 'iSoftServerOS-Kunpeng-5.1',
         DOWNLOAD_URL: 'http://www.i-soft.com.cn/type/4/714.jhtml',
-        DESC: 'No description available',
+        DESC: '',
         MANUFACTURER: 'iSoft',
         PUBLISH_DATE: '',
         DETAILED_LINK: [

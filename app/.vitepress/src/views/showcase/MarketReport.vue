@@ -97,7 +97,7 @@ const handleCurrentChange = (val: number) => {
           @current-change="handleCurrentChange"
           @jump-page="handleCurrentChange"
         >
-          <span class="pagination-slot">{{ currentPage }}/{{ totalPage }}</span>
+          <span class="pagination-slot">{{ totalPage }}/{{ currentPage }}</span>
         </OPagination>
       </ClientOnly>
     </div>

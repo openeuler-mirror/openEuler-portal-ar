@@ -55,7 +55,7 @@ const { isEn } = useLocale();
   padding: 24px 115px;
   display: grid;
   justify-content: space-between;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   row-gap: 72px;
 
   .community {
@@ -75,6 +75,32 @@ const { isEn } = useLocale();
   .community-logo {
     width: 270px;
     height: 90px;
+  }
+  
+  @include respond-to('>pad') {
+    /* 情况1：最后一行只有1个元素 */
+    .community:nth-last-child(1):nth-child(4n + 1) {
+      grid-column: 2 / 4; /* 让单个元素占据第2-3列中间位置 */
+    }
+
+    /* 情况2：最后一行有2个元素 */
+    .community:nth-last-child(2):nth-child(4n + 3) {
+      grid-column: 2 / 3; /* 第一个元素放第2列 */
+    }
+    .community:nth-last-child(1):nth-child(4n + 4) {
+      grid-column: 3 / 4; /* 第二个元素放第3列 */
+    }
+
+    /* 情况3：最后一行有3个元素 */
+    .community:nth-last-child(3):nth-child(4n + 2) {
+      grid-column: 1 / 2; /* 第一个元素放第1列 */
+    }
+    .community:nth-last-child(2):nth-child(4n + 3) {
+      grid-column: 2 / 3; /* 第二个元素放第2列 */
+    }
+    .community:nth-last-child(1):nth-child(4n + 4) {
+      grid-column: 3 / 4; /* 第三个元素放第3列 */
+    }
   }
 
   @include respond-to('pad_v-laptop') {
