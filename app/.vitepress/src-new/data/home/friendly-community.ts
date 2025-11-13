@@ -5,6 +5,8 @@ import openhpc from '~@/assets/category/home/friendly-community/light/OpenHPC.pn
 import openinfra from '~@/assets/category/home/friendly-community/light/OpenInfra.png'
 import riscv from '~@/assets/category/home/friendly-community/light/RISC-V.png'
 import opea from '~@/assets/category/home/friendly-community/light/opea.png'
+import aiData from '~@/assets/category/home/friendly-community/light/ai-data.png'
+import zephyr from '~@/assets/category/home/friendly-community/light/Zephyr.png'
 
 import linaro_dark from '~@/assets/category/home/friendly-community/dark/linaro.png'
 import linuxFoundation_dark from '~@/assets/category/home/friendly-community/dark/linux foundation.png'
@@ -13,6 +15,8 @@ import openhpc_dark from '~@/assets/category/home/friendly-community/dark/OpenHP
 import openinfra_dark from '~@/assets/category/home/friendly-community/dark/OpenInfra.png'
 import riscv_dark from '~@/assets/category/home/friendly-community/dark/RISC-V.png'
 import opea_dark from '~@/assets/category/home/friendly-community/dark/opea.png'
+import aiData_dark from '~@/assets/category/home/friendly-community/dark/ai-data.png'
+import zephyr_dark from '~@/assets/category/home/friendly-community/dark/Zephyr.png'
 
 export const friendlyCommunityConfig = [
   {
@@ -65,5 +69,19 @@ export const friendlyCommunityConfig = [
       dark: riscv_dark,
     },
     url: 'https://riscv.org/',
+  },
+  {
+    logo: {
+      light: aiData,
+      dark: aiData_dark,
+    },
+    url: 'https://lfaidata.foundation/',
+  },
+  {
+    logo: {
+      light: zephyr,
+      dark: zephyr_dark,
+    },
+    url: 'https://zephyrproject.org/',
   },
 ]

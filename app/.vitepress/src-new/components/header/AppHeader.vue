@@ -26,7 +26,7 @@ const { lePadV } = useScreen();
 const headerStore = useHeaderTitle();
 
 const routerPath = ref(router.route.path);
-const langShow = ref(['ar', 'en', 'zh']);
+const langShow = ref(['zh', 'en', 'ar']);
 const isNewsorBlog = computed(() =>
   /^\/(ar)\/(news|blog)\//g.test(router.route.path)
 );
@@ -57,7 +57,7 @@ watch(
   () => router.route.path,
   (val: string) => {
     routerPath.value = val;
-    langShow.value = ['ar', 'en', 'zh'];
+    langShow.value = ['zh', 'en', 'ar'];
 
     // 首页
     if (isHome.value) {

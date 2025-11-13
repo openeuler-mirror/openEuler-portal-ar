@@ -150,7 +150,7 @@ const liveStyleMo = ref({
               @jump-page="jumpPage"
             >
               <span class="pagination-slot">{{
-                currentPage * pageSize4 + '/' + total
+                total + '/' + currentPage * pageSize4
               }}</span>
             </OPagination>
           </ClientOnly>

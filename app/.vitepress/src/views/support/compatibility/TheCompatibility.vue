@@ -1040,9 +1040,9 @@ onMounted(() => {
             @current-change="handleCurrentChange"
           >
             <span class="pagination-slot">
-              {{ currentPage }}/{{
+              {{
                 Math.ceil(total / queryData.pages.size)
-              }}</span
+              }}/{{ currentPage }}</span
             >
           </OPagination>
         </ClientOnly>

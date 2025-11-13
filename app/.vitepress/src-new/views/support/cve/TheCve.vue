@@ -726,6 +726,7 @@ onUnmounted(() => {
   --table-cell-padding: 9px 24px;
   --table-edge-padding: 24px;
   --table-cell-height: auto;
+  direction: ltr;
   :deep(th) {
     color: var(--o-color-info1);
     @include tip1;
@@ -733,6 +734,7 @@ onUnmounted(() => {
   :deep(tr) {
     td {
       vertical-align: top;
+      text-align: left;
       @include tip1;
       &:nth-of-type(1) {
         color: var(--o-color-info2);
@@ -845,6 +847,7 @@ ul {
 <style lang="scss">
 .status-popover,
 .status-popover-dark {
+  direction: ltr;
   width: 326px;
   .o-popup-body {
     border-radius: var(--o-radius-xs);

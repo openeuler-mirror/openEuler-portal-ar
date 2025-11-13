@@ -461,7 +461,7 @@ function convertMd(data: string) {
                 :total="totalRepositoryList.length"
               >
                 <span class="pagination-slot"
-                  >{{ currentPage }}/{{ totalPage }}</span
+                  >{{ totalPage }}/{{ currentPage }}</span
                 >
               </OPagination>
             </ClientOnly>

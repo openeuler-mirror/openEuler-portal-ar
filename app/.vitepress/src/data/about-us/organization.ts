@@ -82,6 +82,7 @@ import rongtao from '@/assets/category/organization/user/rongtao.png';
 import xutianyuan from '@/assets/category/organization/user/xutianyuan.png';
 import dushaohui from '@/assets/category/organization/user/dushaohui.png';
 import shiguangyin from '@/assets/category/organization/user/shiguangyin.png';
+import lirongqing from '@/assets/category/organization/user/lirongqing.png';
 
 // 业务发展工作组
 import huangweixu from '@/assets/category/organization/user/huangweixu.png';
@@ -147,6 +148,7 @@ import heshoucheng from '@/assets/category/organization/ai/heshoucheng.png';
 import jiangyiwen from '@/assets/category/organization/ai/jiangyiwen.png';
 import qinbinjuan from '@/assets/category/organization/ai/qinbinjuan.png';
 import wubin from '@/assets/category/organization/ai/wubin.png';
+import huangjun from '@/assets/category/organization/ai/huangjun.png';
 
 export default {
   ar: {
@@ -617,6 +619,12 @@ export default {
             name: 'Li Chenbin',
             position: ['عضو اللجنة'],
             email: 'cbli@linx-info.com',
+          },
+          {
+            img: lirongqing,
+            name: 'Li Rongqing',
+            position: ['عضو اللجنة'],
+            email: 'lirongqing@baidu.com',
           },
           {
             img: rongtao,

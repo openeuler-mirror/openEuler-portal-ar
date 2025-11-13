@@ -21,9 +21,9 @@ const { lePadV } = useScreen();
 
 // 选择语言;
 const langOptions = [
-  { id: 'ar', label: 'AR' },
-  { id: 'en', label: 'EN' },
   { id: 'zh', label: 'ZH' },
+  { id: 'en', label: 'EN' },
+  { id: 'ar', label: 'AR' },
 ];
 
 // 选择语言

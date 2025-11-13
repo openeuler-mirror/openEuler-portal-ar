@@ -335,7 +335,7 @@ onMounted(() => {
             :total="total"
             @jump-page="jumpPage"
           >
-            <span class="pagination-slot">{{ parmes.page }}/{{ totalPage }}</span>
+            <span class="pagination-slot">{{ totalPage }}/{{ parmes.page }}</span>
           </OPagination>
         </ClientOnly>
       </div>
@@ -531,12 +531,11 @@ onMounted(() => {
             bottom: 14px;
           }
           :deep(.confirm-btn) {
-            width: 96px;
+            width: 100px;
             display: flex;
             justify-content: center;
 
             @media (max-width: 768px) {
-              width: 88px;
               font-size: var(--e-font-size-tip);
             }
           }

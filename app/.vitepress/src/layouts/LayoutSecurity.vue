@@ -270,5 +270,8 @@ onMounted(() => {
 }
 :deep(.o-tab) {
   direction: ltr;
+  .o-tab-nav {
+    direction: rtl;
+  }
 }
 </style>

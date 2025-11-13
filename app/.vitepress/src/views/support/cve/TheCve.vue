@@ -316,7 +316,7 @@ watch(queryData, () => getCveLists(queryData));
           @jump-page="handleCurrentChange"
         >
           <span class="pagination-slot">
-            {{ currentPage }}/{{ totalPage }}</span
+            {{ totalPage }}/{{ currentPage }}</span
           >
         </OPagination>
       </ClientOnly>

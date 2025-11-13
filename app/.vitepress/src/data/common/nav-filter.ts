@@ -3,262 +3,262 @@
 export default [
   {
     name: 'download',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'lifecycle',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'mirror',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'docs',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'showcase',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'mooc',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'internship',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'news',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'blog',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'live',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'salon',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'summit',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'wiki/**',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'contribution',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'conduct',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'mailing-list',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'certification-services',
-    lang: ['en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'statistics',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'sig-list',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'sig-guidance',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'role-description',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'sig-detail',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'meeting-guide',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'atune',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'bishengjdk',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'isula',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'secGear',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'stratovirt',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'vulnerability-reporting',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'security-bulletins',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'cve',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'bug-bulletins',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'compatibility',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'migration',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'brand',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'privacy',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'legal',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'approve/**',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'search',
-    lang: ['zh','ar', 'en', 'ru'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'charter/**',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'vote',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'member',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'organization',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'honor',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'meetup-form',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'specification',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'technical-white-paper',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'white-paper',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'market-report',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'event-list/**',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'program/**',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'user-group/**',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'om',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'monthly-bulletins',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'approve-step',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'live-list',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'certificate-center',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'universities',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'summit2023',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'sig-gathering-2024',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'summit2024',
-    lang: ['zh','ar', 'en'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'summit-list/**',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'talent-assessment',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'nestos',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
   {
     name: 'meeting',
-    lang: ['zh', 'ar'],
+    lang: ['zh', 'en', 'ar'],
   },
 ];
