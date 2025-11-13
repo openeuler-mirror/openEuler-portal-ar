@@ -67,7 +67,11 @@ watch(
 );
 
 const getLang = (lang: String, simple?: boolean) => {
-  return lang === 'ar' ? 'AR' : lang === 'en' ? 'EN' : (!!simple ? '中' : '简体中文');
+  return lang === 'ar' ? 
+    (!!simple ? 'AR' :'العربية') : 
+    lang === 'en' ? 
+      (!!simple ? 'EN':'English') : 
+      (!!simple ? '中' : '简体中文');
 };
 </script>
 
@@ -93,7 +97,7 @@ const getLang = (lang: String, simple?: boolean) => {
           v-for="item in langList"
           @click="changeLanguage(item.id)"
           :key="item.id"
-          :class="['list', { 'is-active': lang === item.id }]"
+          :class="['list', { 'is-active': lang === item.id, 'is-ar': item.id === 'ar' }]"
         >
           {{ getLang(item.id, false) }}
         </ODropdownItem>
@@ -187,6 +191,9 @@ const getLang = (lang: String, simple?: boolean) => {
   &.is-active {
     color: var(--o-color-primary1);
     background: var(--o-color-control3-light);
+  }
+  &.is-ar {
+    direction: rtl;
   }
 }
 .dropdown {
