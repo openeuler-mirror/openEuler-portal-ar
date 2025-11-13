@@ -24,7 +24,7 @@ export default {
   reset: 'إعادة الضبط',
   nodata: 'لا توجد بيانات',
   confirm: 'موافق',
-  loading: 'Loading',
+  loading: 'رٍ التحميل',
   overview: 'Overview',
   brief_introduction: 'BriefIntroduction',
   theme: 'السمة',

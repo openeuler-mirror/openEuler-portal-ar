@@ -342,7 +342,7 @@ const reset = () => {
   }
 
   .confirm-link {
-    margin-left: 24px;
+    margin-right: 24px;
   }
 }
 

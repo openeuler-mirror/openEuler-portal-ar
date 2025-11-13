@@ -267,10 +267,14 @@ $color: #fff;
       @include tip2;
       //TODO: 颜色变量
       border-bottom: 1px solid rgba(229, 229, 229, 0.12);
+      .friendship-link-box {
+        display: flex;
+      }
       @include respond-to('<=pad_v') {
         flex-direction: column;
         padding-bottom: 16px;
         .friendship-link-box {
+          flex-wrap: wrap;
           margin-top: 12px;
         }
       }

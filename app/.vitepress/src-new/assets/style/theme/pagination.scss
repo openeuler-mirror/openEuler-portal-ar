@@ -26,6 +26,13 @@
   margin-left: 4px !important;
   margin-right: var(--el-pagination-item-gap) !important;
 }
+.el-pagination__goto {
+  font-size: 0px;
+  &::after {
+    content: 'انتقال إلى';
+    font-size: var(--el-pagination-font-size);
+  }
+}
 
 .pagination-mobile {
   .icon-prev {
@@ -37,5 +44,8 @@
     margin-left: 0px!important;
     margin-right: 8px!important;
     transform: scaleX(-1);
+  }
+  .current-page {
+    text-align: left !important;
   }
 }

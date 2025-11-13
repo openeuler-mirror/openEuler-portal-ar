@@ -33,7 +33,7 @@ import {
 
 import IconOutLink from '~icons/app-new/icon-outlink.svg';
 import IconSearch from '~icons/app-new/icon-header-search.svg';
-import IconChevronRight from '~icons/app-new/icon-chevron-right.svg';
+import IconChevronLeft from '~icons/app-new/icon-chevron-left.svg';
 import { oaReport } from '@/shared/analytics';
 import { useDebounceFn } from '@vueuse/core';
 
@@ -433,7 +433,7 @@ const COUNT_PER_PAGE = [12, 18, 24, 36];
               <div class="btn-mo">
                 <div class="text">{{ t('download.DOWNLOADGO') }}</div>
                 <OIcon>
-                  <IconChevronRight />
+                  <IconChevronLeft />
                 </OIcon>
               </div>
             </a>

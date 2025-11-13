@@ -12,7 +12,7 @@ import { useLocale } from '~@/composables/useLocale';
 import { useScreen } from '~@/composables/useScreen';
 
 import IconOutLink from '~icons/app-new/icon-outlink.svg';
-import IconChevronRight from '~icons/app-new/icon-chevron-right.svg';
+import IconChevronLeft from '~icons/app-new/icon-chevron-left.svg';
 
 const { locale, t } = useLocale();
 const { lePadV } = useScreen();
@@ -86,7 +86,7 @@ const onClickLink = (link: any, container: any) => {
                 {{ link.introduce }}
               </div>
             </div>
-            <OIcon class="icon-right"> <IconChevronRight /></OIcon>
+            <OIcon class="icon-right"> <IconChevronLeft /></OIcon>
           </div>
         </div>
       </div>

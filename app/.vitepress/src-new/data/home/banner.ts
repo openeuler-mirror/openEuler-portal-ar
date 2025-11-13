@@ -1,6 +1,6 @@
 import download_pc from '~@/assets/category/home/banner/download/pc.jpg';
 import download_pad from '~@/assets/category/home/banner/download/pad.jpg';
-import download_mb_en from '~@/assets/category/home/banner/download/banner-mb-en.jpg';
+import download_mb_ar from '~@/assets/category/home/banner/download/banner-mb-ar.png';
 import { argv } from 'node:process';
 
 export default {
@@ -8,7 +8,7 @@ export default {
     {
       bg_pc: download_pc,
       bg_pad: download_pad,
-      bg_mb: download_mb_en,
+      bg_mb: download_mb_ar,
       bg_text: '',
       bg_theme: 'light',
       title: 'الحصول على openEuler',

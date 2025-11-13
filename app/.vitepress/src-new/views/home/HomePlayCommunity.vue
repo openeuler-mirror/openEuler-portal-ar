@@ -153,7 +153,7 @@ useInViewDuration(container, (duration) => {
             {{ vitalityData[item.vitalityKey] }}
           </div>
           <div class="label">
-            {{ item.vitalityLabel.fn(vitalityData?.[item.vitalityKey] || 0) }}
+            {{ item.vitalityLabel?.['ar'] }}
           </div>
         </div>
       </div>
@@ -477,7 +477,7 @@ useInViewDuration(container, (duration) => {
             right: -2px;
           }
         }
-        @media (min-width: 627px) and (max-width: 658px) {
+        @media (min-width: 640px) and (max-width: 781px) {
           margin-right: 24px;
           &:nth-child(4) {
             margin-left: 40px;
@@ -492,7 +492,7 @@ useInViewDuration(container, (duration) => {
             }
           }
         }
-        @media (min-width: 601px) and (max-width: 626px) {
+        @media (min-width: 627px) and (max-width: 639px) {
           margin-right: 24px;
           &:nth-child(5) {
             margin-right: 0;
@@ -504,51 +504,51 @@ useInViewDuration(container, (duration) => {
             }
           }
         }
-        @media (min-width: 591px) and (max-width: 500px) {
-
-        }
-        @media (min-width: 550px) and (max-width: 590px) {
+        @media (min-width: 557px) and (max-width: 626px) {
           margin-right: 24px;
+          &:nth-child(5) {
+            margin-right: 0;
+            padding-right: 0;
+            margin-left: 40px;
+            margin-top: 12px;
+            &::before {
+              display: none;
+            }
+          }
+        }
+        @media (min-width: 517px) and (max-width: 556px) {
+          margin-right: 24px;
+          &:nth-child(5) {
+            margin-right: 0;
+            padding-right: 0;
+            margin-left: 40px;
+            margin-top: 12px;
+            &::before {
+              display: none;
+            }
+          }
+        }
+        @media (min-width: 488px) and (max-width: 516px) {
+          margin-right: 24px;
+          &:nth-child(2) {
+            margin-right: 42px;
+          }
+          &:nth-child(3) {
+            margin-left: 40px;
+          }
           &:nth-child(4) {
-            margin-left: 40px;
-          }
-          &:nth-child(5) {
             margin-right: 0;
             padding-right: 0;
-            margin-left: 40px;
             margin-top: 12px;
             &::before {
               display: none;
             }
           }
-        }
-        @media (min-width: 488px) and (max-width: 549px) {
-          margin-right: 24px;
-          &:nth-child(5) {
-            margin-right: 0;
-            padding-right: 0;
-            margin-left: 40px;
+          &:nth-child(n+4) {
             margin-top: 12px;
-            &::before {
-              display: none;
-            }
           }
-          // &:nth-child(4) {
-          //   margin-left: 50px;
-          // }
-          // &:nth-child(5) {
-          //   margin-top: 12px;
-          // }
-          // &:nth-child(1),
-          // &:nth-child(5) {
-          //   margin-right: 0;
-          //   padding-right: 0;
-          //   &::before {
-          //     display: none;
-          //   }
-          // }
         }
-        @media (min-width: 464px) and (max-width: 487px) {
+        @media (min-width: 467px) and (max-width: 487px) {
           margin-right: 24px;
           &:nth-child(2) {
             margin-right: 45px;
@@ -567,9 +567,10 @@ useInViewDuration(container, (duration) => {
             margin-top: 12px;
           }
         }
-        @media (min-width: 415px) and (max-width: 463px) {
+        @media (min-width: 427px) and (max-width: 466px) {
+          margin-right: 24px;
           &:nth-child(2) {
-            margin-right: 53px;
+            margin-right: 45px;
           }
           &:nth-child(4) {
             margin-right: 0;
@@ -581,68 +582,14 @@ useInViewDuration(container, (duration) => {
           &:nth-child(n+4) {
             margin-top: 12px;
           }
-          // &:nth-child(4) {
-          //   margin-left: 30px;
-          // }
-          // &:nth-child(5) {
-          //   margin-top: 12px;
-          // }
-          // &:nth-child(1),
-          // &:nth-child(5) {
-          //   margin-right: 0;
-          //   padding-right: 0;
-          //   &::before {
-          //     display: none;
-          //   }
-          // }
         }
-        @media (min-width: 392px) and (max-width: 414px) {
+        @media screen and (max-width: 426px) {
+          margin-right: 24px;
           &:nth-child(2) {
-            margin-right: 101px;
+            margin-right: 103px;
+            margin-left: 40px;
           }
-          &:nth-child(3) {
-            margin-right: 0;
-            padding-right: 0;
-            &::before {
-              display: none;
-            }
-          }
-          &:nth-child(4) {
-            margin-right: 34px;
-          }
-          &:nth-child(n+4) {
-            margin-top: 12px;
-          }
-          // &:nth-child(4) {
-          //   margin-left: 0;
-          // }
-          // &:nth-child(5) {
-          //   margin-top: 12px;
-          // }
-          // &:nth-child(1),
-          // &:nth-child(5) {
-          //   margin-right: 0;
-          //   padding-right: 0;
-          //   &::before {
-          //     display: none;
-          //   }
-          // }
-        }
-        @media screen and (max-width: 391px) {
-          &:nth-child(2) {
-            margin-right: 101px;
-          }
-          &:nth-child(3) {
-            margin-right: 0;
-            padding-right: 0;
-            &::before {
-              display: none;
-            }
-          }
-          &:nth-child(4) {
-            margin-right: 34px;
-            margin-left: 50px;
-          }
+          &:nth-child(3),
           &:nth-child(5) {
             margin-right: 0;
             padding-right: 0;
@@ -650,45 +597,25 @@ useInViewDuration(container, (duration) => {
               display: none;
             }
           }
+          &:nth-child(5) {
+            margin-left: 40px;
+          }
           &:nth-child(n+4) {
             margin-top: 12px;
+          }
+        }
+        @media screen and (max-width: 391px) {
+          &:nth-child(2),
+          &:nth-child(5) {
+            margin-left: 0;
           }
 
         }
-        @media screen and (max-width: 374px) {
-          &:nth-child(4) {
-            margin-left: 0;
-          }
-          &:nth-child(5) {
-            margin-left: 50px;
-          }
-          // &:nth-child(4),
-          // &:nth-child(5) {
-          //   margin-top: 12px;
-          // }
-          // &:nth-child(3) {
-          //   margin-left: 40px;
-          // }
-          // &:nth-child(4) {
-          //   margin-right: 0;
-          //   padding-right: 0;
-          //   &::before {
-          //     display: none;
-          //   }
-          // }
-        }
         @media screen and (max-width: 369px) {
-          // &:nth-child(4),
-          // &:nth-child(5) {
-          //   margin-top: 12px;
-          // }
-          // &:nth-child(4) {
-          //   margin-right: 0;
-          //   padding-right: 0;
-          //   &::before {
-          //     display: none;
-          //   }
-          // }
+          margin-right: 12px;
+          &:nth-child(2) {
+            margin-right: 90px;
+          }
         }
         .value {
           color: var(--o-color-primary2);
