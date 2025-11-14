@@ -1,12 +1,12 @@
 
 
-import computingArch_ar_pc from '~@/assets/category/home/intro/computing-arch_ar_pc.png';
-import coverAll_ar_pc from '~@/assets/category/home/intro/cover-all_ar_pc.png';
-import developmentTool_ar_pc from '~@/assets/category/home/intro/development-tool_ar_pc.png';
+import computingArch_ar_pc from '~@/assets/category/home/intro/computing-arch_ar_pc.jpg';
+import coverAll_ar_pc from '~@/assets/category/home/intro/cover-all_ar_pc.jpg';
+import developmentTool_ar_pc from '~@/assets/category/home/intro/development-tool_ar_pc.jpg';
 
-import computingArch_ar_mo from '~@/assets/category/home/intro/computing-arch_ar_mo.png';
-import coverAll_ar_mo from '~@/assets/category/home/intro/cover-all_ar_mo.png';
-import developmentTool_ar_mo from '~@/assets/category/home/intro/development-tool_ar_mo.png';
+import computingArch_ar_mo from '~@/assets/category/home/intro/computing-arch_ar_mo.jpg';
+import coverAll_ar_mo from '~@/assets/category/home/intro/cover-all_ar_mo.jpg';
+import developmentTool_ar_mo from '~@/assets/category/home/intro/development-tool_ar_mo.jpg';
 
 // 左侧icon
 import computingArch_icon_light from '~@/assets/category/home/intro/computing-arch_light.png';
