@@ -20,6 +20,8 @@ import { vAnalytics } from '~@/directive/analytics';
 const { t, locale } = useLocale();
 const { gtLaptop, gtPad, gtPadV, gtPhone, lePadV } = useScreen();
 
+const enDomain = import.meta.env.VITE_MAIN_DOMAIN_URL;
+
 // -------------------- 选中tab页 --------------------
 const activeTab = ref('blog');
 
@@ -108,7 +110,7 @@ onMounted(() => {
             :title-max-row="2"
             :detail-max-row="2"
             :detail="!lePadV ? news.summary : news.date"
-            :cover="`/ar/${news.banner}`"
+            :cover="`${enDomain}/${news.banner}`"
             :cover-ratio="456 / 188"
             :href="`${domain}/${news.path}.html`"
             target="_blank"

@@ -6,7 +6,6 @@ import { useScreen } from '~@/composables/useScreen';
 import navFilterConfig from '@/data/common/nav-filter';
 
 import HeaderNav from './HeaderNav.vue';
-import SearchHeaderMo from '~@/views/search/SearchHeaderMo.vue';
 
 import HeaderNavMoblie from './HeaderNavMoblie.vue';
 import ContentWrapper from '~@/components/ContentWrapper.vue';
@@ -150,7 +149,6 @@ const mobileClick = () => {
           {{ headerStore.headerTitle || frontmatter.backTitle }}
         </span>
       </div>
-      <SearchHeaderMo v-if="isSearchPage && lePadV" />
       <img
         v-if="(!isSimpleHeader && !isSearchPage) || !lePadV"
         class="logo"

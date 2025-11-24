@@ -51,7 +51,7 @@ export default {
         SEEK_HELP_URL: 'https://gitee.com/openeuler/community-issue',
         GET_ISO_URL: 'https://repo.openeuler.org/',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=25.03',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=25.03`,
         WHITE_PAPER:
         '/whitepaper/en/openEuler 25.03 Technical White Paper.pdf',
         PUBLISH_DATE: '2025/03',
@@ -89,7 +89,7 @@ export default {
         SEEK_HELP_URL: 'https://gitee.com/openeuler/community-issue',
         GET_ISO_URL: 'https://repo.openeuler.org/',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=24.09',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=24.09`,
         PUBLISH_DATE: '2024/09',
         LTS: false,
         VERSION: '24.09',
@@ -108,7 +108,7 @@ export default {
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
         WHITE_PAPER:
           '/whitepaper/en/openEuler 22.03 LTS SP4 Technical White Paper.pdf',
-        WEBSITE_SELECT: '/ar/mirror/select/?version=22.03-LTS-SP4',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=22.03-LTS-SP4`,
         PUBLISH_DATE: '2024/06',
         LTS: true,
         VERSION: '22.03-LTS-SP4',
@@ -127,7 +127,7 @@ export default {
         WHITE_PAPER:
           '/whitepaper/en/openEuler 24.03 LTS Technical White Paper.pdf',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=24.03-LTS',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=24.03-LTS`,
         PUBLISH_DATE: '2024/05',
         LTS: true,
         VERSION: '24.03-LTS',
@@ -146,7 +146,7 @@ export default {
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
         WHITE_PAPER:
           '/whitepaper/en/openEuler 22.03 LTS SP3 Technical White Paper.pdf',
-        WEBSITE_SELECT: '/ar/mirror/select/?version=22.03-LTS-SP3',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=22.03-LTS-SP3`,
         CLOUD_IMAGE:
           'https://repo.openeuler.org/openEuler-22.03-LTS-SP3/virtual_machine_img/',
         EDGE_IMAGE:
@@ -170,7 +170,7 @@ export default {
         GET_ISO_URL: 'https://repo.openeuler.org/',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
         WHITE_PAPER: '/whitepaper/en/openEuler 23.09 Technical White Paper.pdf',
-        WEBSITE_SELECT: '/ar/mirror/select/?version=23.09',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=23.09`,
         CLOUD_IMAGE:
           'https://repo.openeuler.org/openEuler-23.09/virtual_machine_img/',
         EDGE_IMAGE: 'https://repo.openeuler.org/openEuler-23.09/edge_img/',
@@ -194,7 +194,7 @@ export default {
         SEEK_HELP_URL: 'https://gitee.com/openeuler/community-issue',
         GET_ISO_URL: 'https://repo.openeuler.org/',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=22.03-LTS-SP2',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=22.03-LTS-SP2`,
         CLOUD_IMAGE:
           'https://repo.openeuler.org/openEuler-22.03-LTS-SP2/virtual_machine_img/',
         EDGE_IMAGE:
@@ -218,7 +218,7 @@ export default {
         GET_ISO_URL: 'https://repo.openeuler.org/',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
         WHITE_PAPER: '/whitepaper/en/openEuler 23.03 Technical White Paper.pdf',
-        WEBSITE_SELECT: '/ar/mirror/select/?version=23.03',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=23.03`,
         CLOUD_IMAGE:
           'https://repo.openeuler.org/openEuler-23.03/virtual_machine_img/',
         EDGE_IMAGE: 'https://repo.openeuler.org/openEuler-23.03/edge_img/',
@@ -240,7 +240,7 @@ export default {
         SEEK_HELP_URL: 'https://gitee.com/openeuler/community-issue',
         GET_ISO_URL: 'https://repo.openeuler.org/',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=22.03-LTS-SP1',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=22.03-LTS-SP1`,
         CLOUD_IMAGE:
           'https://repo.openeuler.org/openEuler-22.03-LTS-SP1/virtual_machine_img/',
         EDGE_IMAGE:
@@ -263,7 +263,7 @@ export default {
         SEEK_HELP_URL: 'https://gitee.com/openeuler/community-issue',
         GET_ISO_URL: 'https://repo.openeuler.org/',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=22.09',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=22.09`,
         SERVER_IMAGE: 'https://repo.openeuler.org/openEuler-22.09/ISO/',
         WHITE_PAPER: '/whitepaper/en/openEuler-22.09 Technical White Paper.pdf',
         CLOUD_IMAGE:
@@ -287,7 +287,7 @@ export default {
         SEEK_HELP_URL:
           'https://gitee.com/openeuler/community-issue/blob/master/README.md',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=22.03-LTS',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=22.03-LTS`,
         GET_ISO_URL: 'https://repo.openeuler.org/',
         CLOUD_IMAGE:
           'https://repo.openeuler.org/openEuler-22.03-LTS/virtual_machine_img/',
@@ -309,8 +309,8 @@ export default {
           'https://docs.openeuler.org/en/docs/20.03_LTS_SP4/docs/Installation/Installation.html',
         SEEK_HELP_URL: 'https://gitee.com/openeuler/community-issue',
         GET_ISO_URL: 'https://repo.openeuler.org/',
-        LIFE_CYCLE_URL: '/zh/other/lifecycle/',
-        WEBSITE_SELECT: '/zh/mirror/select/?version=20.03-LTS-SP4',
+        LIFE_CYCLE_URL: '/en/other/lifecycle/',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=20.03-LTS-SP4`,
         PUBLISH_DATE: '2023/12',
         LTS: true,
         VERSION: '20.03-LTS-SP4',
@@ -328,7 +328,7 @@ export default {
           'https://gitee.com/openeuler/community-issue/blob/master/README.md',
         GET_ISO_URL: 'https://repo.openeuler.org/',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=20.03-LTS-SP3',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=20.03-LTS-SP3`,
         PUBLISH_DATE: '2021/12',
         LTS: true,
         VERSION: '20.03-LTS-SP3',
@@ -348,7 +348,7 @@ export default {
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
         WHITE_PAPER:
           '/whitepaper/en/openEuler%2021.09%20%E6%8A%80%E6%9C%AF%E7%99%BD%E7%9A%AE%E4%B9%A6-en.pdf',
-        WEBSITE_SELECT: '/ar/mirror/select/?version=21.09',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=21.09`,
         PUBLISH_DATE: '2021/09',
         LTS: false,
         VERSION: '21.09',
@@ -366,7 +366,7 @@ export default {
           'https://gitee.com/openeuler/community-issue/blob/master/README.md',
         GET_ISO_URL: 'https://repo.openeuler.org/',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=20.03-LTS-SP2',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=20.03-LTS-SP2`,
         PUBLISH_DATE: '2021/07',
         LTS: true,
         VERSION: '20.03-LTS-SP2',
@@ -385,7 +385,7 @@ export default {
         GET_ISO_URL: 'https://archives.openeuler.openatom.cn/',
         WHITE_PAPER: '/whitepaper/en/openEuler-21.03-Technical-White-Paper.pdf',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=21.03',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=21.03`,
         PUBLISH_DATE: '2021/03',
         LTS: false,
         VERSION: '21.03',
@@ -403,7 +403,7 @@ export default {
           'https://gitee.com/openeuler/community-issue/blob/master/README.md',
         GET_ISO_URL: 'https://repo.openeuler.org/',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=20.03-LTS-SP1',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=20.03-LTS-SP1`,
         PUBLISH_DATE: '2020/12',
         LTS: true,
         VERSION: '20.03-LTS-SP1',
@@ -421,7 +421,7 @@ export default {
           'https://gitee.com/openeuler/community-issue/blob/master/README.md',
         GET_ISO_URL: 'https://archives.openeuler.openatom.cn/',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=20.09',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=20.09`,
         PUBLISH_DATE: '2020/09',
         LTS: false,
         VERSION: '20.09',
@@ -439,7 +439,7 @@ export default {
           'https://gitee.com/openeuler/community-issue/blob/master/README.md',
         GET_ISO_URL: 'https://repo.openeuler.org/',
         LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
-        WEBSITE_SELECT: '/ar/mirror/select/?version=20.03-LTS',
+        WEBSITE_SELECT: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/select/?version=20.03-LTS`,
         PUBLISH_DATE: '2020/03',
         LTS: true,
         VERSION: '20.03-LTS',
