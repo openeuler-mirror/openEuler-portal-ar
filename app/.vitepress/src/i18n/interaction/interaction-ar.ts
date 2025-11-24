@@ -1,4 +1,3 @@
-import meetupsdata from './meetups/meetups';
 export default {
   BLOG: 'المدونة',
   TAG: 'Tag filter',
@@ -19,5 +18,4 @@ export default {
     'license. Please note the text and keep the original link and author information when reproducing the article.',
   NEXT: 'Next: ',
   STRATEGY: 'نشر مدونتك',
-  MEETUPSLIST: meetupsdata.ar.MEETUPS,
 };

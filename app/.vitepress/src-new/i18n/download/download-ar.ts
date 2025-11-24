@@ -125,7 +125,7 @@ export default {
     ],
   },
   GET_IMAGES: 'Mالنسخ الاحتياطيةirrors',
-  GET_IMAGES_LINK: '/ar/mirror/list/',
+  GET_IMAGES_LINK: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/list/`,
   GET_OPENEULER_OS1: 'Get openEuler OS',
   GET_OPENEULER_OS2: 'Get openEuler OS',
   GET_OPENEULER_OS_DOC: 'View the openEuler documentation',

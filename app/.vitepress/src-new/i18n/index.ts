@@ -8,21 +8,12 @@ import cookie from './cookie';
 import header from './header';
 import footer from './footer';
 import common from './common';
-import search from './search';
 // 业务
-import talentAssessment from './talent-assessment';
-import contactUs from './contact-us';
 import home from './home';
 import download from './download';
 import safetyBulletin from './safety-bulletin';
 import cve from './cve';
-import eventOverview from './event-overview';
-import usergroup from './user-group';
-import intelligence from './intelligence';
-import sig from './sig';
 import mailing from './mailing';
-import onlineMeeting from './online-meeting';
-import defectCenter from './defect-center';
 import brand from './brand'
 import docs from './docs'
 
@@ -54,22 +45,13 @@ const messages = {
     header: header.ar,
     footer: footer.ar,
     common: common.ar,
-    search: search.ar,
 
     // 业务
-    talent: talentAssessment.ar,
-    contact: contactUs.ar,
     home: home.ar,
     download: download.ar,
     safetyBulletin: safetyBulletin.ar,
     cve: cve.ar,
-    eventOverview: eventOverview.ar,
-    usergroup: usergroup.ar,
-    intelligence: intelligence.ar,
-    sig: sig.ar,
     mailing: mailing.ar,
-    onlineMeeting: onlineMeeting.ar,
-    defectCenter: defectCenter.ar,
     brand: brand.ar,
     docs: docs.ar,
   }

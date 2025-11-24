@@ -1,6 +1,6 @@
-# openEuler-portal
+# openEuler-portal-ar
 
-[openEuler 社区官网](https://openeuler.openatom.cn)的源码仓库
+[openEuler 阿语社区官网](https://ar.openeuler.org/ar/)的源码仓库
 
 ## 目录结构
 
@@ -50,7 +50,7 @@
 5. CSS 使用`kebab-case`命名
 6. Icon 组件引入时增加 Icon 前缀，eg:`import IconDownload from '~icons/app/download'`
 
-### 开发规范
+### 系统架构设计文档
 
 1. 所有接口类方法请写在`app/.vitepress/src/api`中，并按照[jsdoc 注释规范](https://www.shouce.ren/api/view/a/13232)给出注释，不同模块接口请按文件进行区分, eg: `api-cve.ts`
 2. 公共 utils 方法请按[jsdoc 注释规范](https://www.shouce.ren/api/view/a/13232)给出注释
@@ -61,3 +61,31 @@
 7. 提交之前请先进行 eslint 检查： 执行脚本，运行`pnpm lint`。确认无问题后提交。项目工程的git hooks 已配置相关校验，如`git commit`不成功，请查看相关错误信息，并进行修改
 8. `git commit`信息请尽量参照[相关规范](https://zhuanlan.zhihu.com/p/182553920)
 9. 其他注意事项请参考业界相关通用[开发规范说明](https://github.com/airbnb/javascript)
+10. 阿语设计复用英语站点的接口设计方式
+
+
+### 部署手册
+
+通过项目流水线功能构建并发布项目，
+
+首先读取 [Dockerfile](https://gitee.com/openeuler/openEuler-portal-ar/blob/master/Dockerfile) 文件，根据其中配置 拉取依赖 打包项目并构建镜像，最后将镜像推送到华为云。
+
+
+### 维护手册
+
+阿语化域名为：
+https://ar.openeuler.org/ar/
+https://ar.openeuler.org/ar/download/
+https://ar.openeuler.org/ar/download/commercial-release/
+https://ar.openeuler.org/ar/docs/
+https://ar.openeuler.org/ar/security/security-bulletins/
+https://ar.openeuler.org/ar/community/member/
+https://ar.openeuler.org/ar/community/organization/
+https://ar.openeuler.org/ar/community/mailing-list/
+https://ar.openeuler.org/ar/showcase/
+https://ar.openeuler.org/ar/showcase/technical-white-paper/
+https://ar.openeuler.org/ar/interaction/news-list/
+https://ar.openeuler.org/ar/interaction/blog-list/
+https://ar.openeuler.org/ar/monthly-bulletins/
+https://ar.openeuler.org/ar/other/brand/
+其他地址均跳转EN页面

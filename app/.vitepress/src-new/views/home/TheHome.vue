@@ -16,7 +16,6 @@ import HomeIntro from './HomeIntro.vue';
 import HomePlayCommunity from './HomePlayCommunity.vue';
 import HomeShowCase from './HomeShowCase.vue';
 import HomePartner from './HomePartner.vue';
-import HomeCalendar from './HomeCalendar.vue';
 import HomeTrend from './HomeTrend.vue';
 import HomeFriendlyCommunity from './HomeFriendlyCommunity.vue';
 import { oaReport } from '@/shared/analytics';
@@ -129,12 +128,6 @@ if (typeof document !== 'undefined') {
     <ContentWrapper :vertical-padding="['0', '0']">
       <HomePlayCommunity ref="playCommunityRef" data-aos="fade-up" />
     </ContentWrapper>
-    <HomeCalendar
-      ref="calendarRef"
-      data-aos="fade-up"
-      v-if="isZh && calendarData.length"
-      :table-data="calendarData"
-    />
     <HomeShowCase ref="showcaseRef" data-aos="fade-up" />
     <HomeTrend ref="trendRef" data-aos="fade-up" />
     <HomeFriendlyCommunity ref="friendlyCommunityRef" data-aos="fade-up" />

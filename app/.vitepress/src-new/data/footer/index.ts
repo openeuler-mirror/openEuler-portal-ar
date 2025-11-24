@@ -104,7 +104,7 @@ export const quickNav = {
         },
         {
           title: 'مدونة السلوك',
-          link: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/ar/community/charter/`,
+          link: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/community/charter/`,
         },
         {
           title: 'الإحصاءات',

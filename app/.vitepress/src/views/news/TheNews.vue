@@ -47,6 +47,7 @@ const userCaseData = computed(() => i18n.value.interaction);
 
 const loading = ref(true);
 
+const enDomain = import.meta.env.VITE_MAIN_DOMAIN_URL;
 const toNewsContent = (path: string) => {
   window.open(`${import.meta.env.VITE_MAIN_DOMAIN_URL}/${path}.html`, '_blank', 'noopener, noreferrer');
 };
@@ -455,7 +456,7 @@ const pageTotal = computed(() =>
               @click="toNewsContent(item.path)"
             >
               <div class="news-img">
-                <img :src="item.banner.startsWith('http') ? item.banner : '/ar'+item.banner" :alt="item.banner" />
+                <img :src="enDomain + item.banner" :alt="item.banner" />
               </div>
               <div class="news-info">
                 <p class="news-title">{{ item.title }}</p>

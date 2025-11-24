@@ -490,7 +490,7 @@ export default {
           CHILDREN: [
             {
               NAME: 'Mirrors',
-              PATH: '/ar/mirror/list/',
+              PATH: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/list/`,
             },
           ],
         },

@@ -13,17 +13,10 @@ import { isClient, OScroller, OConfigProvider } from '@opensig/opendesign';
 import AppHeader from '~@/components/header/AppHeader.vue';
 // import AppHeader from '@/components/AppHeader.vue';
 import AppFooter from '~@/components/AppFooter.vue';
-import LayoutBlog from '@/layouts/LayoutBlog.vue';
-import LayoutNews from '@/layouts/LayoutNews.vue';
 import LayoutShowcase from '@/layouts/LayoutShowcase.vue';
-import LayoutMigration from '@/layouts/LayoutMigration.vue';
 import LayoutAboutUs from '@/layouts/LayoutAboutUs.vue';
-import LayoutAboutUsArchived from '@/layouts/LayoutAboutUsArchived.vue';
 import LayoutDownload from './layouts/LayoutDownload.vue';
-import LayoutEvent from './layouts/LayoutEvent.vue';
 import LayoutSecurity from './layouts/LayoutSecurity.vue';
-import LayoutWiki from './layouts/LayoutWiki.vue';
-import LayoutFAQ from '@/layouts/LayoutFAQ.vue';
 import LayouWhitePaper from '@/layouts/LayouWhitePaper.vue';
 
 // import FloatingButtonEn from '~@/components/FloatingButtonEn.vue';
@@ -47,17 +40,10 @@ const elLocale = computed(() => {
 const compMapping: {
   [name: string]: Component;
 } = {
-  blog: LayoutBlog,
-  news: LayoutNews,
   showcase: LayoutShowcase,
-  migration: LayoutMigration,
   'about-us': LayoutAboutUs,
-  'about-us-archived': LayoutAboutUsArchived,
   download: LayoutDownload,
-  event: LayoutEvent,
   security: LayoutSecurity,
-  faq: LayoutFAQ,
-  wiki: LayoutWiki,
   'white-paper': LayouWhitePaper,
 };
 
@@ -75,7 +61,6 @@ const comp = computed(() => {
 // 是否添加footer 边距
 const isDocs = computed(() => {
   return (
-    frontmatter.value.category === 'migration' ||
     frontmatter.value.category === 'about-us' ||
     frontmatter.value.category === 'wiki'
   );
@@ -119,9 +104,6 @@ onMounted(() => {
     </OConfigProvider>
     <CookieNotice />
     <AppFooter :class="{ 'is-docs': isDocs }" :lang="lang" />
-    <ClientOnly>
-      <AppTour />
-    </ClientOnly>
   </template>
   <ClientOnly v-else>
     <Content v-if="isReport" />

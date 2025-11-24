@@ -72,6 +72,10 @@ const { lePadV } = useScreen();
 
 const message = useMessage();
 const shaText = 'SHA256';
+const mirrorListPath = computed(() => {
+  return `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/mirror/list/`
+})
+
 // 复制
 
 const handleUrlCopy = (value: string, e: MouseEvent) => {
@@ -490,7 +494,7 @@ const handleSizeAr = (size: string) => {
             :style="{ '--o-divider-gap': '4px' }"
           />
           <div class="mirror-list">
-            <OLink :href="'/' + locale + '/mirror/list/'">
+            <OLink :href="mirrorListPath">
               {{ t('download.ALL_MIRROR') }}
               <template #suffix>
                 <OIcon><IconArrowLeft class="download-button-icon" /></OIcon>
@@ -611,7 +615,7 @@ const handleSizeAr = (size: string) => {
               </OOption>
               <ODivider :style="{ '--o-divider-gap': '4px' }" />
               <div class="mirror-list">
-                <OLink :href="'/' + locale + '/mirror/list/'">
+                <OLink :href="mirrorListPath">
                   {{ t('download.ALL_MIRROR') }}
                   <template #suffix>
                     <OIcon
