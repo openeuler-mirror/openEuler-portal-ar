@@ -1,7 +1,6 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
-import { getUserAuth } from '@/shared/login';
 import type {
   SortObjT,
   TimeTagsT,
@@ -150,12 +149,11 @@ export function meetupApplyForm(params: any): Promise<{
   msg: string;
 }> {
   const url = `/api-dsapi/query/meetupApplyForm?community=openeuler`;
-  const { token } = getUserAuth();
   return request
     .post(url, params, {
       showLoading: true,
       headers: {
-        token,
+        token: '',
       },
     })
     .then((res: AxiosResponse) => res.data);

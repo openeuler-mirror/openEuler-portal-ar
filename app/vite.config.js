@@ -6,7 +6,6 @@ import Icons from 'unplugin-icons/vite';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 
 import { viteStaticCopy } from 'vite-plugin-static-copy';
-import replaceUrlPlugin from './.vitepress/plugins/replace-url-plugin';
 
 export default defineConfig({
   ignoreDeadLinks: true,
@@ -108,19 +107,6 @@ export default defineConfig({
         ),
       },
     }),
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'other/privacy/index.md',
-          dest: 'file/zh/privacy',
-        },
-        {
-          src: 'other/legal/index.md',
-          dest: 'file/zh/legal',
-        },
-      ],
-    }),
-    replaceUrlPlugin(),
   ],
   server: {
     host: '172.20.20.184',

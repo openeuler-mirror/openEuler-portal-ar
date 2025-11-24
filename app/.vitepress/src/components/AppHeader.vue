@@ -8,10 +8,8 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import navFilterConfig from '@/data/common/nav-filter';
 
 import HeaderNavNew from './HeaderNavNew.vue';
-import HeaderSearch from './HeaderSearch.vue';
 import AppTheme from './AppTheme.vue';
 import AppLanguage from './AppLanguage.vue';
-import AppLogin from './AppLogin.vue';
 
 import logo_light from '@/assets/common/header/logo.svg';
 import logo_dark from '@/assets/common/header/logo_dark.svg';
@@ -136,10 +134,6 @@ const activeNav = ref<string>();
 
 const isShowBox = ref(false);
 
-const searchControl = (val: boolean) => {
-  isShowBox.value = val;
-};
-
 const navItemClick = () => {
   mobileMenuIcon.value = false;
   document.documentElement.classList.remove('overflow');
@@ -189,16 +183,13 @@ const navItemClick = () => {
             </div>
           </div>
         </div>
-        <!-- 搜索 -->
-        <!-- <HeaderSearch @search-click="searchControl" /> -->
         <!-- 切换语言、网站风格 -->
         <div v-if="!isMobile" class="header-tool">
           <AppLanguage :show="langShow" />
           <AppTheme />
         </div>
 
-        <!-- 登录 -->
-        <AppLogin />
+
       </ClientOnly>
     </div>
   </header>

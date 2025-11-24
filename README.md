@@ -52,7 +52,7 @@
 
 ### 系统架构设计文档
 
-1. 所有接口类方法请写在`app/.vitepress/src/api`中，并按照[jsdoc 注释规范](https://www.shouce.ren/api/view/a/13232)给出注释，不同模块接口请按文件进行区分, eg: `api-cve.ts`
+1. 所有接口类方法请写在`app/.vitepress/src/api`中，并按照[jsdoc 注释规范](https://www.shouce.ren/api/view/a/13232)给出注释，不同模块接口请按文件进行区分, eg: `api-search.ts`
 2. 公共 utils 方法请按[jsdoc 注释规范](https://www.shouce.ren/api/view/a/13232)给出注释
 3. 变量命名做到见名知义，方法命名使用动词或动宾结构, eg: `import warningImg from '@/assets/icons/warning.png`, `const getUserEmail=()=>{}`
 4. 调用接口获取数据请使用`try {} catch(error) {}`进行校验
@@ -73,19 +73,34 @@
 
 ### 维护手册
 
-阿语化域名为：
+阿语页面为：
+
 https://ar.openeuler.org/ar/
+
 https://ar.openeuler.org/ar/download/
+
 https://ar.openeuler.org/ar/download/commercial-release/
+
 https://ar.openeuler.org/ar/docs/
+
 https://ar.openeuler.org/ar/security/security-bulletins/
+
 https://ar.openeuler.org/ar/community/member/
+
 https://ar.openeuler.org/ar/community/organization/
+
 https://ar.openeuler.org/ar/community/mailing-list/
+
 https://ar.openeuler.org/ar/showcase/
+
 https://ar.openeuler.org/ar/showcase/technical-white-paper/
+
 https://ar.openeuler.org/ar/interaction/news-list/
+
 https://ar.openeuler.org/ar/interaction/blog-list/
+
 https://ar.openeuler.org/ar/monthly-bulletins/
+
 https://ar.openeuler.org/ar/other/brand/
+
 其他地址均跳转EN页面

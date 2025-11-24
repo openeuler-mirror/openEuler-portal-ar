@@ -19,13 +19,11 @@ import LayoutDownload from './layouts/LayoutDownload.vue';
 import LayoutSecurity from './layouts/LayoutSecurity.vue';
 import LayouWhitePaper from '@/layouts/LayouWhitePaper.vue';
 
-// import FloatingButtonEn from '~@/components/FloatingButtonEn.vue';
 import CookieNotice from '~@/components/CookieNotice.vue';
 
 import AppTour from '~@/components/AppTour.vue';
 
 import categories from '@/data/common/category';
-import { setStoreData } from './shared/login';
 import { useLocale } from '~@/composables/useLocale';
 import { hideNssRoutes } from './data/common/nss';
 
@@ -86,7 +84,6 @@ watch(
 );
 
 onMounted(() => {
-  setStoreData();
 });
 </script>
 
@@ -98,7 +95,6 @@ onMounted(() => {
         <main :class="frontmatter.class ? frontmatter.class : ''">
           <component :is="comp" v-if="isCustomLayout" ></component>
           <Content v-else />
-          <!-- <FloatingButtonEn v-if="!isReport && showNss" /> -->
         </main>
       </el-config-provider>
     </OConfigProvider>

@@ -7,9 +7,7 @@ import { useCommon } from '@/stores/common';
 
 import HeaderTheme from './HeaderTheme.vue';
 import HeaderLanguage from './HeaderLanguage.vue';
-import HeaderLogin from './HeaderLogin.vue';
 import NavContent from './NavContent.vue';
-import HeaderSearch from './HeaderSearch.vue';
 import NavLink from './NavLink.vue';
 
 import IconOutLink from '~icons/app/icon-out-link.svg';
@@ -190,8 +188,6 @@ const linkClick = () => {
     </div>
   </div>
   <!-- 搜索 -->
-  <!-- <HeaderSearch /> -->
-  <!-- <HeaderLogin /> -->
 </template>
 
 <style lang="scss" scoped>

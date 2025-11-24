@@ -11,8 +11,6 @@ import NavContent from './NavContent.vue';
 import HeaderTheme from './HeaderTheme.vue';
 import HeaderLanguage from './HeaderLanguage.vue';
 import HeaderCode from './HeaderCode.vue';
-import HeaderLogin from './HeaderLogin.vue';
-import HeaderSearch from './HeaderSearch.vue';
 import NavLink from './NavLink.vue';
 import { useLocale } from '~@/composables/useLocale';
 import { vAnalytics } from '~@/directive/analytics';
@@ -222,12 +220,10 @@ const onClickShortCutLink = (item: any) => {
   </div>
 
   <div class="header-tool">
-    <!-- <HeaderSearch /> -->
     <div id="tour_headerNav_tool" class="header-right">
       <HeaderCode />
       <HeaderLanguage :show="langOptions" />
       <HeaderTheme />
-      <!-- <HeaderLogin /> -->
     </div>
   </div>
 </template>
