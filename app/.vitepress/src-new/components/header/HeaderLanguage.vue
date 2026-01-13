@@ -35,10 +35,15 @@ const changeLanguageMobile = (newlang: string) => {
 
 function changeLanguage(newlang: string) {
   if (lang.value === newlang) return;
+  let url = ""
 
   const { pathname, search } = window.location;
-  const newHref = pathname.replace(`/${lang.value}/`, `/${newlang}/`);
-  let url= `${import.meta.env.VITE_MAIN_DOMAIN_URL}${newHref}${search}`
+  if(pathname == '/ar/docs/') {
+    url= `${import.meta.env.VITE_SERVICE_DOCS_URL}/${newlang}/`
+  } else {
+    const newHref = pathname.replace(`/${lang.value}/`, `/${newlang}/`);
+    url= `${import.meta.env.VITE_MAIN_DOMAIN_URL}${newHref}${search}`
+  }
   window.location.href = url;
 }
 

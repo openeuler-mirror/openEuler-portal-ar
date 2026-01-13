@@ -196,7 +196,7 @@ export default {
             {
               NAME: 'CLA',
               LABEL: '',
-              PATH: 'https://clasign.osinfra.cn/sign/gitee_openeuler-1611298811283968340',
+              PATH: 'https://clasign.osinfra.cn/sign/6946817fe1b3f3e542b4e2d9',
               OUTLINK: true,
             },
           ],
@@ -246,12 +246,12 @@ export default {
             {
               NAME: 'EulerMaker',
               LABEL: 'Build service platform',
-              PATH: 'https://eulermaker.compass-ci.openeuler.openatom.cn/',
+              PATH: 'https://eulermaker.openeuler.openatom.cn/',
             },
             {
               NAME: 'oecp',
               LABEL: 'Os compare anlyze tool',
-              PATH: 'https://gitee.com/openeuler/oecp',
+              PATH: 'https://atomgit.com/openeuler/oecp',
               OUTLINK: true,
             },
           ],
@@ -275,13 +275,13 @@ export default {
             {
               NAME: 'Code Sources',
               LABEL: '',
-              PATH: 'https://gitee.com/openeuler',
+              PATH: 'https://atomgit.com/openeuler',
               OUTLINK: true,
             },
             {
               NAME: 'Package Sources',
               LABEL: '',
-              PATH: 'https://gitee.com/src-openeuler',
+              PATH: 'https://atomgit.com/src-openeuler',
               OUTLINK: true,
             },
             {

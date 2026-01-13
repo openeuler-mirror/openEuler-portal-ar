@@ -55,7 +55,7 @@ export const moduleMap = new Map([
     'gitee',
     {
       label: {
-        ar: 'GITEE',
+        ar: 'AtomGit',
       },
     },
   ],

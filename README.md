@@ -68,7 +68,7 @@
 
 通过项目流水线功能构建并发布项目，
 
-首先读取 [Dockerfile](https://gitee.com/openeuler/openEuler-portal-ar/blob/master/Dockerfile) 文件，根据其中配置 拉取依赖 打包项目并构建镜像，最后将镜像推送到华为云。
+首先读取 [Dockerfile](https://atomgit.com/openeuler/openEuler-portal-ar/blob/master/Dockerfile) 文件，根据其中配置 拉取依赖 打包项目并构建镜像，最后将镜像推送到华为云。
 
 
 ### 维护手册

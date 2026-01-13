@@ -227,7 +227,7 @@ onMounted(() => {
       <template #default>
         <a
           v-if="userCaseData.guideline"
-          href="https://gitee.com/openeuler/community/blob/master/zh/contributors/user-story-guideline.md"
+          href="https://atomgit.com/openeuler/community/blob/master/zh/contributors/user-story-guideline.md"
           target="_blank"
           rel="noopener noreferrer"
         >

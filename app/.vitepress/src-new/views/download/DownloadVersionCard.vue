@@ -297,7 +297,7 @@ function setMirrorLink(row: any) {
   });
   return '';
 }
-const devStation = ['24.03-LTS-SP2', '25.09', '24.03-LTS-SP1'];
+const devStation = ['24.03-LTS-SP3', '24.03-LTS-SP2', '24.03-LTS-SP1'];
 
 //------------------------ 改版代码 ------------------------------
 // 筛选配置信息

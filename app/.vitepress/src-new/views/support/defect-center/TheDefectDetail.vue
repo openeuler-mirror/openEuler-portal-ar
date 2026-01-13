@@ -125,7 +125,7 @@ const generateIssueUrl = (issue: String) => {
     detailData.value.affectedComponent === 'kernel'
       ? 'openeuler'
       : 'src-openeuler';
-  return `https://gitee.com/${origin}/${
+  return `https://atomgit.com/${origin}/${
     detailData.value.affectedComponent
   }/issues/${issue?.split('-')?.at(-1)}`;
 };

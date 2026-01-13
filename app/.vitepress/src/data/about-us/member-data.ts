@@ -26,13 +26,9 @@ import ruantong_dark from '@/assets/category/member/ruantong_dark.png';
 import dianxing_dark from '@/assets/category/member/dianxing_dark.png';
 import liantong_dark from '@/assets/category/member/liantong_dark.png';
 import yidong_dark from '@/assets/category/member/yidong_dark.png';
-import zhongruan_dark from '@/assets/category/member/zhongruan_dark.png';
-import zhongruan_light from '@/assets/category/member/zhongruan_light.png';
 
 import zhaoxin_dark from '@/assets/category/member/zhaoxin_dark.png';
 import zhaoxin_light from '@/assets/category/member/zhaoxin_light.png';
-import guangfa_dark from '@/assets/category/member/guangfa_dark.png';
-import guangfa_light from '@/assets/category/member/guangfa_light.png';
 import intel_light from '@/assets/category/member/intel_light.png';
 import intel_dark from '@/assets/category/member/intel_dark.png';
 
@@ -61,6 +57,10 @@ import langchaoyun_dark from '@/assets/category/member/langchaoyun_dark.png';
 import langchaoyun_light from '@/assets/category/member/langchaoyun_light.png';
 import shenzhoushuma_dark from '@/assets/category/member/shenzhoushuma_dark.png';
 import shenzhoushuma_light from '@/assets/category/member/shenzhoushuma_light.png';
+import AMD_dark from '@/assets/category/member/AMD_dark.png';
+import AMD_light from '@/assets/category/member/AMD_light.png';
+import zhongkehaiguang_dark from '@/assets/category/member/zhongkehaiguang_dark.png';
+import zhongkehaiguang_light from '@/assets/category/member/zhongkehaiguang_light.png';
 
 export default [
   {
@@ -106,13 +106,8 @@ export default [
     ID: 'Gold-Donors',
     logoList: [
       {
-        img_light: afusion_light,
-        img_dark: afusion_dark,
-        noIcon: true,
-      },
-      {
-        img_light: runhe_light,
-        img_dark: runhe_dark,
+        img_light: intel_light,
+        img_dark: intel_dark,
         noIcon: true,
       },
       {
@@ -121,13 +116,23 @@ export default [
         noIcon: true,
       },
       {
-        img_light: intel_light,
-        img_dark: intel_dark,
+        img_light: runhe_light,
+        img_dark: runhe_dark,
+        noIcon: true,
+      },
+      {
+        img_light: afusion_light,
+        img_dark: afusion_dark,
         noIcon: true,
       },
       {
         img_light: nanfangdianwang_light,
         img_dark: nanfangdianwang_dark,
+        noIcon: true,
+      },
+      {
+        img_light: zhongkehaiguang_light,
+        img_dark: zhongkehaiguang_dark,
         noIcon: true,
       },
       {
@@ -151,6 +156,11 @@ export default [
     ID: 'Silver-Donors',
     logoList: [
       {
+        img_light: aosiwei_light,
+        img_dark: aosiwei_dark,
+        noIcon: true,
+      },
+      {
         img_light: arm_light,
         img_dark: arm_dark,
         noIcon: true,
@@ -161,28 +171,8 @@ export default [
         noIcon: true,
       },
       {
-        img_light: aosiwei_light,
-        img_dark: aosiwei_dark,
-        noIcon: true,
-      },
-      {
-        img_light: yinke_light,
-        img_dark: yinke_dark,
-        noIcon: true,
-      },
-      {
-        img_light: ningsi_light,
-        img_dark: ningsi_dark,
-        noIcon: true,
-      },
-      {
         img_light: boyun_light,
         img_dark: boyun_dark,
-        noIcon: true,
-      },
-      {
-        img_light: shenzhoushuma_light,
-        img_dark: shenzhoushuma_dark,
         noIcon: true,
       },
       {
@@ -191,19 +181,34 @@ export default [
         noIcon: true,
       },
       {
-        img_light: dianziyun_light,
-        img_dark: dianziyun_dark,
-        noIcon: true,
-      },
-      {
-        img_light: zhongruan_light,
-        img_dark: zhongruan_dark,
+        img_light: yinke_light,
+        img_dark: yinke_dark,
         noIcon: true,
       },
       {
         img_light: langchaoyun_light,
         img_dark: langchaoyun_dark,
         noIcon: true,
+      },
+      {
+        img_light: ningsi_light,
+        img_dark: ningsi_dark,
+        noIcon: true,
+      },
+      {
+        img_light: shenzhoushuma_light,
+        img_dark: shenzhoushuma_dark,
+        noIcon: true,
+      },
+      {
+        img_light: dianziyun_light,
+        img_dark: dianziyun_dark,
+        noIcon: true,
+      },
+      {
+        img_light: AMD_light,
+        img_dark: AMD_dark,
+        noIcon: false,
       },
     ],
   },
@@ -219,11 +224,6 @@ export default [
       {
         img_light: feiten_light,
         img_dark: feiten_dark,
-        noIcon: true,
-      },
-      {
-        img_light: guangfa_light,
-        img_dark: guangfa_dark,
         noIcon: true,
       },
       {
