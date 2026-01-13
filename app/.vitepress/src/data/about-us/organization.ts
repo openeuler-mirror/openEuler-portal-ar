@@ -58,7 +58,6 @@ import xulu from '@/assets/category/organization/brand/xulu.png';
 import lizhenning from '@/assets/category/organization/brand/lizhenning.png';
 import zhengli from '@/assets/category/organization/brand/zhengli.png';
 import wendan from '@/assets/category/organization/brand/wendan.png';
-import zhangyin from '@/assets/category/organization/brand/zhangyin.png';
 import humingyue from '@/assets/category/organization/brand/humingyu.png';
 import pengyaying from '@/assets/category/organization/brand/pengyaying.png';
 
@@ -548,12 +547,6 @@ export default {
             name: 'Xu Lu',
             position: ['عضو اللجنة'],
             email: 'xu_lu2@hoperun.com',
-          },
-          {
-            img: zhangyin,
-            name: 'Zhang Ying',
-            position: ['عضو اللجنة'],
-            email: 'zhangy1317@chinaunicom.cn',
           },
           {
             img: zhengchuanrong,

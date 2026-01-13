@@ -25,12 +25,12 @@ export default {
           NAME: 'الحصول على openEuler',
           CHILDREN: [
             {
-              NAME: 'openEuler 25.09',
-              DESCRIPTION:
-                'جرب الابتكارات المضمنة للخادم والسحابة والحافة القائمة على نظام Linux kernel 6.6.',
-              TAG: TAG_TYPE.NEW,
-              URL: '/ar/download/#openEuler 25.09',
-            },
+                NAME: 'openEuler 24.03 LTS SP3',
+                DESCRIPTION:
+                  'استكشف بنية UnifiedBus SuperPoD على نظام openEuler.',
+                TAG: TAG_TYPE.NEW,
+                URL: '/ar/download/#openEuler 24.03 LTS SP3',
+              },
             {
               NAME: 'openEuler 24.03 LTS SP2',
               DESCRIPTION:
@@ -92,17 +92,23 @@ export default {
           }/en/other/lifecycle/`,
         },
         {
+          NAME: 'openEuler 24.03 LTS SP3 Installation Guide',
+          URL: `${
+            import.meta.env.VITE_SERVICE_DOCS_URL
+          }/en/docs/24.03_LTS_SP3/server/installation_upgrade/installation/installation_preparations.html`,
+        },
+        {
           NAME: 'دليل تثبيت openEuler 25.09',
           URL: `${
             import.meta.env.VITE_SERVICE_DOCS_URL
           }/en/docs/25.09/server/installation_upgrade/installation/installation_preparations.html`,
         },
-        {
-          NAME: 'دليل تثبيت openEuler 24.03 LTS SP2',
-          URL: `${
-            import.meta.env.VITE_SERVICE_DOCS_URL
-          }/en/docs/24.03_LTS_SP2/server/installation_upgrade/installation/installation_preparations.html`,
-        },
+        // {
+        //   NAME: 'دليل تثبيت openEuler 24.03 LTS SP2',
+        //   URL: `${
+        //     import.meta.env.VITE_SERVICE_DOCS_URL
+        //   }/en/docs/24.03_LTS_SP2/server/installation_upgrade/installation/installation_preparations.html`,
+        // },
         {
           NAME: 'المستندات التقنية الفنية',
           URL: '/ar/showcase/technical-white-paper/',
@@ -125,7 +131,7 @@ export default {
               NAME: 'CLA',
               DESCRIPTION:
                 'وقع اتفاقية CLA لحماية عملك—تتوفر خيارات متعددة!',
-              URL: 'https://clasign.osinfra.cn/sign/gitee_openeuler-1611298811283968340',
+              URL: 'https://clasign.osinfra.cn/sign/6946817fe1b3f3e542b4e2d9',
               ICON: OutLink,
             },
             {
@@ -143,7 +149,7 @@ export default {
               NAME: 'EulerMaker',
               DESCRIPTION:
                 'خدمة إنشاء مفتوحة وموحدة للتطوير المبسط.',
-              URL: 'https://eulermaker.compass-ci.openeuler.openatom.cn/',
+              URL: 'https://eulermaker.openeuler.openatom.cn/',
               ANALYTICSNAME: 'eulermaker',
             },
             {
@@ -250,13 +256,13 @@ export default {
               DESCRIPTION:
                 'تعلّم أساسيات المجتمع في 10 دقائق، وابنِ وانمُ بسرعة.',
               TAG: TAG_TYPE.HOT,
-              URL: `${import.meta.env.VITE_SERVICE_DOCS_URL}/en/docs/24.03_LTS_SP2/server/quickstart/quickstart/quick_start.html`,
+              URL: `${import.meta.env.VITE_SERVICE_DOCS_URL}/en/docs/24.03_LTS_SP3/server/quickstart/quickstart/quick_start.html`,
             },
             {
               NAME: 'دليل التثبيت',
               DESCRIPTION:
                 'تعليمات تفصيلية لتثبيت openEuler.',
-              URL: `${import.meta.env.VITE_SERVICE_DOCS_URL}/en/docs/24.03_LTS_SP2/server/installation_upgrade/installation/installation_preparations.html`,
+              URL: `${import.meta.env.VITE_SERVICE_DOCS_URL}/en/docs/24.03_LTS_SP3/server/installation_upgrade/installation/installation_preparations.html`,
             },
             {
               NAME: 'الأسئلة الشائعة',
@@ -506,12 +512,12 @@ export default {
   SOURCE_CODE: [
     {
       NAME: 'مصادر التعليمات البرمجية',
-      PATH: 'https://gitee.com/openeuler',
+      PATH: 'https://atomgit.com/openeuler',
       ICON: OutLink,
     },
     {
       NAME: 'مصادر الحزمة',
-      PATH: 'https://gitee.com/src-openeuler',
+      PATH: 'https://atomgit.com/src-openeuler',
       ICON: OutLink,
     },
     {
