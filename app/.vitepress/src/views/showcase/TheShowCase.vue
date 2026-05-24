@@ -4,7 +4,6 @@ import { useData } from 'vitepress';
 
 import { isNull, isUndefined } from '@opensig/opendesign';
 
-import { oaReport } from '@/shared/analytics';
 import { getUserCaseData } from '@/api/api-showcase';
 import { useI18n } from '@/i18n';
 
@@ -55,9 +54,6 @@ const parmes = reactive({
 });
 
 const handleSearchChange = (val: string) => {
-  if (cookieStore.isAllAgreed && val) {
-    reportSearch(val);
-  }
   parmes.keyword = val;
 };
 
@@ -138,44 +134,8 @@ const pathResolving = (path: string) => {
 // 点击跳转案例详情页面
 function goDetail(link: string, item: any, index: number) {
   const search_result_url = pathResolving(link);
-  if (cookieStore.isAllAgreed) {
-    reportSelectSearchResult(search_result_url, item, index);
-  }
   window.open(`${import.meta.env.VITE_MAIN_DOMAIN_URL}/${search_result_url}`, '_blank', 'noopener, noreferrer');
 }
-
-// ----------------------- 埋点相关 ----------------------------
-let SEARCH_EVENT_ID = uniqueId();
-const reportSearch = (keyword: string) => {
-  SEARCH_EVENT_ID = uniqueId();
-  oaReport(
-    'searchValue',
-    {
-      search_event_id: SEARCH_EVENT_ID,
-      search_key: keyword,
-    },
-    'search_portal'
-  );
-};
-const reportSelectSearchResult = (link: string, item: any, index: number) => {
-  const searchKeyObj = {
-    search_tag: parmes.industry,
-    search_rank_num: parmes.pageSize * (parmes.page - 1) + (index + 1),
-    search_result_total_num: total.value,
-    search_result_url: location.origin + link,
-  };
-
-  oaReport(
-    'selectSearchResult',
-    {
-      search_event_id: SEARCH_EVENT_ID,
-      search_key: parmes.keyword,
-      ...(item || {}),
-      ...searchKeyObj,
-    },
-    'search_portal'
-  );
-};
 
 // 设置当前tag的所有案例
 function getCaseData() {

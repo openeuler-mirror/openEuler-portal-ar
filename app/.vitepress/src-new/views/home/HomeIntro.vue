@@ -4,7 +4,7 @@ import { ref, computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useCommon } from '@/stores/common';
 
-import { OButton, OIcon, OCollapse, OCollapseItem } from '@opensig/opendesign';
+import { OCollapse, OCollapseItem } from '@opensig/opendesign';
 import { useLocale } from '~@/composables/useLocale';
 import { useScreen } from '~@/composables/useScreen';
 
@@ -16,13 +16,10 @@ import line from '~@/assets/category/home/intro/line.png';
 import circle from '~@/assets/category/home/intro/circle.png';
 import lineDark from '~@/assets/category/home/intro/line_dark.png';
 import circleDark from '~@/assets/category/home/intro/circle_dark.png';
-import { vAnalytics } from '~@/directive/analytics';
-import useInViewDuration from '~@/composables/useInViewDuration';
-import { oaReport } from '@/shared/analytics';
 import { useI18n } from 'vue-i18n';
 
-const { locale, isZh } = useLocale();
-const { isPhone, lePadV } = useScreen();
+const { locale } = useLocale();
+const { lePadV } = useScreen();
 const { theme } = storeToRefs(useCommon());
 
 const active = ref(0);
@@ -48,19 +45,6 @@ const handleChangeActiveMobile = (activeValues: number[]) => {
 
 // ------------埋点------------
 const { t } = useI18n();
-const container = ref();
-
-// 元素可视停留时间
-useInViewDuration(
-  container,
-  (duration) => {
-    oaReport('ElementExposure', {
-      module: 'homepage',
-      level1: t('home.introTitle'),
-      duration,
-    });
-  }
-);
 </script>
 
 <template>
@@ -69,10 +53,8 @@ useInViewDuration(
     class="home-intro"
     :footer="$t('home.getOpenEuler')"
     :footer-href="`/${locale}/download/#get-openeuler`"
-    v-analytics.bubble.noTrigger="{ level1: t('home.introTitle') }"
-    :data-v-analytics-title="t('home.introTitle')"
   >
-    <div class="intro-container" :level-index="1" ref="container">
+    <div class="intro-container" :level-index="1">
       <div v-if="!lePadV" class="intro-pc">
         <div class="intro-card-pc">
           <div class="intro-content-pc">
@@ -84,7 +66,6 @@ useInViewDuration(
                 v-for="(item, index) in introData"
                 :key="item.title[locale]"
                 class="intro-list-item"
-                v-analytics.bubble="{ target: item.title[locale] }"
               >
                 <div class="intro-list-icon">
                   <img :src="item.icon[theme]" alt="" />

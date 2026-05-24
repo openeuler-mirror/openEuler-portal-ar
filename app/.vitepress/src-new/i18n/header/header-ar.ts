@@ -150,7 +150,6 @@ export default {
               DESCRIPTION:
                 'خدمة إنشاء مفتوحة وموحدة للتطوير المبسط.',
               URL: 'https://eulermaker.openeuler.openatom.cn/',
-              ANALYTICSNAME: 'eulermaker',
             },
             {
               NAME: 'مستودع مستخدم openEuler',
@@ -187,7 +186,6 @@ export default {
               DESCRIPTION:
                 'أداة للاستعلام عن معلومات حزمة نظام التشغيل والتبعيات بسهولة.',
               URL: import.meta.env.VITE_SERVICE_PKGMANAGE_URL,
-              ANALYTICSNAME: 'pkgship',
             },
           ],
         },

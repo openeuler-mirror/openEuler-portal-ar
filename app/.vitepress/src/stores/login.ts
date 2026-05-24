@@ -1,4 +1,3 @@
-import { oa } from '@/shared/analytics';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 
@@ -14,7 +13,7 @@ export const useLogin = defineStore('login', () => {
   const loginStateChecked = ref(false);
   const setGuardAuthClient = (data: any) => {
     if (Object.prototype.toString.call(data) === '[object Object]') {
-      oa.setHeader({ uId: data.username });
+      (window as any)?.__OA_INSTANCE__?.setHeader({ uId: data.username });
       Object.keys(guardAuthClient.value).forEach((key) => {
         guardAuthClient.value[key] = data[key] || '';
       });

@@ -22,9 +22,6 @@ import IconChevronRight from '~icons/app-new/icon-chevron-right.svg';
 import { casesAr } from '~@/data/home/case';
 
 import { getHomeShowCases } from '~@/api/api-search';
-import { vAnalytics } from '~@/directive/analytics';
-import useInViewDuration from '~@/composables/useInViewDuration';
-import { oaReport } from '@/shared/analytics';
 
 const emit = defineEmits(['result']);
 
@@ -156,33 +153,15 @@ onUnmounted(() => {
   userCase.value?.removeEventListener('mouseover', clearCaseInterval);
   userCase.value?.removeEventListener('mouseout', setCaseInterval);
 });
-
-// ------------埋点------------
-const container = ref();
-
-// 元素可视停留时间
-useInViewDuration(
-  container,
-  (duration) => {
-    oaReport('ElementExposure', {
-      module: 'homepage',
-      level1: t('home.case'),
-      duration,
-    });
-  }
-);
 </script>
 <template>
   <AppSection
-    ref="container"
     :title="t('home.case')"
     class="user-case"
     :footer="t('home.more')"
     :footer-href="
       `showcase/?industry=${activeTab + 1}`.replace(/(index)$/g, '')
     "
-    v-analytics.bubble.noTrigger="{ level1: t('home.case') }"
-    :data-v-analytics-title="t('home.case')"
   >
     <div ref="userCase">
       <OScroller id="scrollTab" show-type="never">
@@ -194,7 +173,6 @@ useInViewDuration(
               class="item-tab"
               :class="{ 'item-tab-active-mb': activeTab === i }"
               @click="changeTab(i)"
-              v-analytics.bubble="{ target: tab.label }"
             >
               <OIcon class="nav-item-icon">
                 <component :is="tab.icon"> </component>
@@ -222,7 +200,6 @@ useInViewDuration(
                   :href="pathResolving(item.path)"
                   target="_blank"
                   class="item-link"
-                  v-analytics.bubble="{ level2: cases[activeTab].label,  target: item.company }"
                 >
                   <div class="item-title">
                     <p class="company">{{ item.company }}</p>

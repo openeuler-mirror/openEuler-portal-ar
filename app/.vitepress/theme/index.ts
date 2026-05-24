@@ -19,9 +19,11 @@ import VueDOMPurifyHTML from 'vue-dompurify-html';
 import i18n from '~@/i18n';
 import scrollBottomDirective from '~@/directive/scroll-bottom';
 import clampTextDirective from '~@/directive/clamp-text';
+import { initOpenDesignAnalytics } from '@opendesign-plus/plugins/analytics';
 
 import Layout from '@/App.vue';
 import NotFound from '@/NotFound.vue';
+import { reporAnalytics } from '@/api/api-analytics';
 
 export default {
   Layout,
@@ -32,6 +34,16 @@ export default {
       global.window = {};
       global.__VUE_PROD_DEVTOOLS__ = false;
     }
+    app.use(initOpenDesignAnalytics, {
+      appKey: 'openEuler',
+      service: 'ar',
+      isCookieAgreed() {
+        return document.cookie.includes('agreed-cookiepolicy=1');
+      },
+      request(data) {
+        reporAnalytics(data)
+      },
+    });
     app.directive('clamp-text', clampTextDirective);
     app.directive('scroll-bottom', scrollBottomDirective);
     app.use(VueDOMPurifyHTML);

@@ -15,7 +15,6 @@ import { useScreen } from '~@/composables/useScreen';
 // TODO:风格切换代码待整改
 import { useCommon } from '@/stores/common';
 import ContentWrapper from '~@/components/ContentWrapper.vue';
-import { vAnalytics } from '~@/directive/analytics';
 
 const commonStore = useCommon();
 const isLight = computed(() => {
@@ -128,7 +127,7 @@ const onClick = (href: string, hasBtn: boolean | undefined) => {
                 }"
               ></div>
               <!-- 操作按钮 -->
-              <div v-if="info.btn" class="banner-opts" v-analytics.bubble="{ target: info.href }">
+              <div v-if="info.btn" class="banner-opts">
                 <OButton
                   :href="info.href"
                   target="_blank"

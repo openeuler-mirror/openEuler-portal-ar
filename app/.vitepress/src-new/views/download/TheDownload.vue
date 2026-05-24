@@ -12,7 +12,6 @@ import DownloadGetResource from './DownloadGetResource.vue';
 import DownloadSupportService from './DownloadSupportService.vue';
 
 import { anchorList } from '~@/data/download/download';
-import { oaReport } from '@/shared/analytics';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
@@ -22,17 +21,6 @@ const showAnchor = ref(false);
 useIntersectionObserver(target, ([entry]) => {
   showAnchor.value = !entry?.isIntersecting;
 });
-
-const reportDownload = (data: Record<string, any>) => {
-  oaReport(
-    'click',
-    {
-      module: t('download.COMMUNITY'),
-      ...data,
-    },
-    'download'
-  );
-};
 </script>
 <template>
   <div v-show="showAnchor" class="anchor-header">
@@ -58,19 +46,10 @@ const reportDownload = (data: Record<string, any>) => {
     </ContentWrapper>
   </div>
   <div ref="target"></div>
-  <DownloadCommunity
-    @report-download="reportDownload"
-    id="community-releases"
-  />
-  <DownloadGetOs @report-download="reportDownload" id="get-openeuler" />
-  <DownloadGetResource
-    @report-download="reportDownload"
-    id="related-resources"
-  />
-  <DownloadSupportService
-    @report-download="reportDownload"
-    id="services-resources"
-  />
+  <DownloadCommunity id="community-releases" />
+  <DownloadGetOs id="get-openeuler" />
+  <DownloadGetResource id="related-resources" />
+  <DownloadSupportService id="services-resources" />
 </template>
 
 <style lang="scss" scoped>

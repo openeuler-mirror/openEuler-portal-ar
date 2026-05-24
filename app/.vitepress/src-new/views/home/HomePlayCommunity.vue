@@ -23,12 +23,9 @@ import vitality from '~@/assets/category/home/play-community/vitality.svg';
 import blue from '~@/assets/category/home/play-community/blue_light.png';
 import blueDark from '~@/assets/category/home/play-community/blue_dark.png';
 import IconChevronLeft from '~icons/app-new/icon-chevron-left.svg';
-import { vAnalytics } from '~@/directive/analytics';
 
 import { type VitalityValueT } from '~@/@type/type-home';
 import { useI18n } from 'vue-i18n';
-import useInViewDuration from '~@/composables/useInViewDuration';
-import { oaReport } from '@/shared/analytics';
 
 const { locale } = useLocale();
 const { isPhone, lePadV, leLaptop } = useScreen();
@@ -57,27 +54,10 @@ onMounted(async () => {
 
 // ------------埋点------------
 const { t } = useI18n();
-const container = ref();
-
-// 元素可视停留时间
-useInViewDuration(container, (duration) => {
-  oaReport('ElementExposure', {
-    module: 'homepage',
-    level1: t('home.playCommunity', { openEuler: 'openEuler' }),
-    duration,
-  });
-});
 </script>
 
 <template>
-  <div
-    class="home-play-community"
-    ref="container"
-    v-analytics.bubble.noTrigger="{
-      level1: $t('home.playCommunity', { openEuler: 'openEuler' }),
-    }"
-    :data-v-analytics-title="$t('home.playCommunity', { openEuler: 'openEuler' })"
-  >
+  <div class="home-play-community">
     <i18n-t class="play-community-title" keypath="home.playCommunity" tag="h3">
       <template #openEuler>
         <img class="logo" :src="logo" />
@@ -109,10 +89,6 @@ useInViewDuration(container, (duration) => {
               <OButton
                 :size="lePadV ? 'medium' : 'large'"
                 color="primary"
-                v-analytics.bubble="{
-                  level2: card.title,
-                  target: card.btn.label,
-                }"
               >
                 {{ card.btn.label }}
               </OButton>
@@ -122,10 +98,6 @@ useInViewDuration(container, (duration) => {
               :href="card.textBtn.link"
               target="_blank"
               rel="noopener noreferrer"
-              v-analytics.bubble="{
-                level2: card.title,
-                target: card.textBtn.label,
-              }"
             >
               {{ card.textBtn.label }}
               <OIcon>
@@ -163,9 +135,6 @@ useInViewDuration(container, (duration) => {
         class="vitality-btn"
         target="_blank"
         rel="noopener noreferrer"
-        v-analytics.bubble="{
-          target: t('home.viewDetails'),
-        }"
       >
         {{ $t('home.viewDetails') }}
         <template #suffix>

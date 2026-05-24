@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { useData } from 'vitepress';
 import { useI18n } from '~@/i18n';
 import { useCommon } from '@/stores/common';
 import { useDebounceFn } from '@vueuse/core';
@@ -13,7 +12,6 @@ import HeaderLanguage from './HeaderLanguage.vue';
 import HeaderCode from './HeaderCode.vue';
 import NavLink from './NavLink.vue';
 import { useLocale } from '~@/composables/useLocale';
-import { vAnalytics } from '~@/directive/analytics';
 
 let lang = ref('ar');
 const { t } = useLocale();
@@ -57,49 +55,6 @@ const linkClick = () => {
   navActive.value = '';
   isShow.value = false;
 };
-
-// ------------导航埋点------------
-// 首次hover时间
-let hoverTime = 0;
-// 最终点击导航所用步骤
-let steps = 0;
-
-const onHoverHeader = () => (steps = 0);
-
-const onHoverNav = (name: string) => {
-  if (steps > 0) return void steps++;
-  steps++;
-  hoverTime = Date.now();
-  return {
-    event: 'hover',
-    properties: {
-      module: 'navigation',
-      level1: name,
-    },
-  };
-};
-
-const onClickNav = () => {
-  steps++;
-  return {
-    properties: {
-      steps,
-      module: 'navigation',
-      time_used: Date.now() - hoverTime,
-    },
-  };
-};
-
-const onClickShortCutLink = (item: any) => {
-  if (Array.isArray(item._PATH)) {
-    return {
-      ...(item._PATH as string[]).reduce((levels, navName, index) => {
-        levels[`level${index + 1}`] = navName;
-        return levels;
-      }, {} as Record<string, string>),
-    };
-  }
-};
 </script>
 
 <template>
@@ -115,8 +70,6 @@ const onClickShortCutLink = (item: any) => {
             }"
             @mouseenter="toggleDebounced(item)"
             @mouseleave="toggleDebounced(null)"
-            v-analytics:mouseenter="() => onHoverNav(item.NAME)"
-            v-analytics.catchBubble="onClickNav"
           >
             <span :id="'tour_headerNav_' + item.ID" class="nav-item">{{
               item.NAME
@@ -170,9 +123,6 @@ const onClickShortCutLink = (item: any) => {
                                 :url="shortcut.URL"
                                 @link-click="linkClick"
                                 class="shortcut-link"
-                                v-analytics.bubble="
-                                  () => onClickShortCutLink(shortcut)
-                                "
                               >
                                 <span>{{ shortcut.NAME }}</span>
                                 <OIcon v-if="shortcut.ICON">
@@ -188,9 +138,6 @@ const onClickShortCutLink = (item: any) => {
                               :key="shortcut.NAME"
                               class="review"
                               @link-click="linkClick"
-                              v-analytics.bubble="
-                                () => onClickShortCutLink(shortcut)
-                              "
                             >
                               <img
                                 :src="shortcut.PICTURE"

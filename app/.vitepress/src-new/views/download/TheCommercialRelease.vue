@@ -34,8 +34,6 @@ import {
 import IconOutLink from '~icons/app-new/icon-outlink.svg';
 import IconSearch from '~icons/app-new/icon-header-search.svg';
 import IconChevronLeft from '~icons/app-new/icon-chevron-left.svg';
-import { oaReport } from '@/shared/analytics';
-import { useDebounceFn } from '@vueuse/core';
 
 const { t, locale } = useLocale();
 const { lePadV, isPadV } = useScreen();
@@ -162,20 +160,9 @@ onMounted(() => {
 // 搜索功能
 const searchVal = ref('');
 
-const onInput = useDebounceFn((val: string) => {
-  reportAnalytics(
-    {
-      content: val.trim(),
-      ...checkboxValues.value,
-    },
-    'input'
-  );
-}, 300);
-
 const changeSearchVal = (val: string) => {
   if (val.trim()) {
     history.replaceState(null, '', `?q=${encodeURIComponent(val)}`);
-    onInput(val);
   } else {
     history.replaceState(null, '', window.location.pathname);
   }
@@ -190,17 +177,6 @@ const getItemArchList = (link: DetailedLinkCommercialItemT[]) => {
     }
   });
   return itemArchList;
-};
-
-const reportAnalytics = (item: any, event: 'click' | 'input' = 'click') => {
-  oaReport(
-    event,
-    {
-      module: t('download.commercaial'),
-      ...item,
-    },
-    'download'
-  );
 };
 
 //---------------------- 厂商筛选 --------------------
@@ -219,10 +195,6 @@ const handleManufacturerChange = (
       (option) => option !== ''
     );
   }
-  reportAnalytics({
-    type: 'vendor',
-    target: isAll ? t('download.ALL_DATA') : activeManufacturer.value,
-  });
 };
 //---------------------- 架构筛选 --------------------
 const handleArchClick = (
@@ -238,10 +210,6 @@ const handleArchClick = (
     // 如果选中其他选项，取消“全部”
     activeArch.value = activeArch.value.filter((option) => option !== '');
   }
-  reportAnalytics({
-    type: 'architecture',
-    target: isAll ? t('download.ALL_DATA') : activeArch.value,
-  });
 };
 
 const checkboxValues = computed(() => {
@@ -258,14 +226,6 @@ const checkboxValues = computed(() => {
     vendor,
   };
 });
-
-const onClickDownload = (data: any) => {
-  reportAnalytics({
-    ...checkboxValues.value,
-    level1: data.NAME,
-    target: t('download.DOWNLOADGO'),
-  });
-};
 
 const COUNT_PER_PAGE = [12, 18, 24, 36];
 </script>
@@ -423,7 +383,6 @@ const COUNT_PER_PAGE = [12, 18, 24, 36];
               <OButton
                 variant="outline"
                 color="primary"
-                @click="onClickDownload(download)"
               >
                 <template #icon>
                   <OIcon><IconOutLink class="download-button-icon" /></OIcon>
