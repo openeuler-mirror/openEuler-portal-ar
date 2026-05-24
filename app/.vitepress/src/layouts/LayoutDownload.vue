@@ -12,7 +12,6 @@ import AppRouterTemplateMo from '~@/components/AppRouterTemplateMo.vue';
 import banner from '~@/assets/category/download/download-banner.png';
 import IconCommunityReleases from '~icons/download/community-releases.svg';
 import IconCommercaialReleases from '~icons/download/commercaial-releases.svg';
-import { oaReport } from '@/shared/analytics';
 
 let lang = ref('ar');
 
@@ -43,23 +42,6 @@ const tabsData = computed(() => [
 ]);
 
 const route = useRoute();
-
-watch(
-  () => route.path,
-  (val) => {
-    const module = /\/download\/?$/.test(val)
-      ? tabsData.value[0].title
-      : tabsData.value[1].title;
-    oaReport(
-      'click',
-      {
-        target: module,
-        module,
-      },
-      'download'
-    );
-  }
-);
 </script>
 <template>
   <div class="layout-download">

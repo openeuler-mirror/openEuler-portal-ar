@@ -30,10 +30,6 @@ import IconArrowLeft from '~icons/app/icon-arrow-left.svg';
 import { useLocale } from '~@/composables/useLocale';
 import { useScreen } from '~@/composables/useScreen';
 
-const emits = defineEmits<{
-  (e: 'reportDownload', val: Record<string, string>): void;
-}>();
-
 let lang = ref('ar');
 const { t, locale } = useLocale();
 const { lePadV, isPadVToLaptop } = useScreen();
@@ -71,10 +67,6 @@ const onRadioChange = (val: string | number | boolean, type: string) => {
     default:
       return;
   }
-  emits('reportDownload', {
-    target: unref(targetVal),
-    type,
-  });
 };
 
 const setTagArch = () => {
@@ -258,13 +250,6 @@ const versionNameList = computed(() => {
 });
 const searchVal = ref('');
 
-const onClickLink = (item: any) => {
-  emits('reportDownload', {
-    ...radioData.value,
-    level2: item.Version,
-    target: t('download.DOWNLOADGO'),
-  });
-};
 </script>
 
 <template>
@@ -429,7 +414,6 @@ const onClickLink = (item: any) => {
               detailPath+'?version=' +
               scope.row.Version
             "
-            @click="onClickLink(scope.row)"
           >
             <span>{{ t('download.DOWNLOADGO') }}</span>
             <template #suffix>

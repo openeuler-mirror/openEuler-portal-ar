@@ -20,7 +20,6 @@ import { useLocale } from '~@/composables/useLocale';
 import type { SearchRecommendT } from '~@/@types/type-search';
 import type { DocsBannerItemT } from '~@/@types/type-docs';
 import DocsSectionCard from './components/DocsSectionCard.vue';
-import { oaReport } from '@/shared/analytics';
 
 const appearanceStore = useAppearance();
 const searchStore = useSearchingStore();
@@ -52,7 +51,6 @@ const getSearchUrl = (val: string) => {
 };
 
 const enterSearchDoc = (val: string) => {
-  reportSearch(val);
   clearTimeout(timer);
   if (!val.trim()) {
     return;
@@ -71,17 +69,6 @@ const onClikHotWord = () => {
     lastRecommendCanceler('cancel');
   }
   showSearchWord.value = false;
-};
-
-const reportSearch = (val: string) => {
-  if (!val.trim()) {
-    return;
-  }
-  oaReport('input', {
-    keyword: val.trim(),
-    lang: locale.value,
-    version: searchStore.version,
-  }, 'search_docs');
 };
 
 // -------------------- 联想关键词 --------------------

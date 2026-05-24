@@ -3,7 +3,6 @@ import { ref } from 'vue';
 import { OTag, OIcon } from '@opensig/opendesign';
 
 import NavLink from './NavLink.vue';
-import { vAnalytics } from '~@/directive/analytics';
 import { PropType } from 'vue';
 
 const props = defineProps({
@@ -32,18 +31,6 @@ const descMouseenter = (e: MouseEvent) => {
   if (!e || !e.target) return;
   showDesc.value = e.target.clientHeight < e.target.scrollHeight;
 };
-
-// ------------导航埋点------------
-const onClickNav = (item: any) => {
-  if (Array.isArray(item._PATH)) {
-    return {
-      ...(item._PATH as string[]).reduce((levels, navName, index) => {
-        levels[`level${index + 1}`] = navName;
-        return levels;
-      }, {} as Record<string, string>),
-    };
-  }
-};
 </script>
 
 <template>
@@ -52,7 +39,6 @@ const onClickNav = (item: any) => {
       v-for="subItem in navContent"
       :key="subItem.NAME"
       class="content-container-mobile"
-      v-analytics.bubble="() => onClickNav(subItem)"
     >
       <NavLink
         :url="subItem.URL"
@@ -80,7 +66,6 @@ const onClickNav = (item: any) => {
           :url="system.URL"
           class="system"
           @link-click="linkClick"
-          v-analytics.bubble="() => onClickNav(system)"
         >
           {{ system.NAME }}
           <OIcon v-if="system.ICON">
@@ -93,7 +78,7 @@ const onClickNav = (item: any) => {
 
   <div v-else class="content-container">
     <div v-for="subItem in navContent" :key="subItem.NAME" class="content-item">
-      <div class="item-title" v-analytics.bubble="() => onClickNav(subItem)">
+      <div class="item-title">
         <NavLink :url="subItem.URL" class="item-name" @link-click="linkClick">
           {{ subItem.NAME }}
           <OIcon v-if="subItem.ICON">
@@ -124,7 +109,6 @@ const onClickNav = (item: any) => {
           :url="system.URL"
           class="system"
           @link-click="linkClick"
-          v-analytics.bubble="() => onClickNav(system)"
         >
           {{ system.NAME }}
           <OIcon v-if="system.ICON">

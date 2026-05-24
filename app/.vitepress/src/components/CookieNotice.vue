@@ -1,14 +1,7 @@
 <script lang="ts" setup>
-import { ref, watch, computed } from 'vue';
-import { useRoute, useData, inBrowser } from 'vitepress';
+import { ref, watch } from 'vue';
+import { useRoute, inBrowser } from 'vitepress';
 import { ElDialog, ElSwitch } from 'element-plus';
-
-import {
-  enableOA,
-  disableOA,
-  reportPV,
-  reportPerformance,
-} from '@/shared/analytics';
 
 import {
   setCustomCookie,
@@ -95,22 +88,6 @@ const isAllAgreed = () => {
   return getUserCookieStatus() === COOKIE_AGREED_STATUS.ALL_AGREED;
 };
 
-// 埋点
-const initSensor = () => {
-  // 百度统计
-  (function () {
-    const hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?ab8d86daab9a8e98cf8faa239aefcd3c';
-    const s = document.getElementsByTagName('HEAD')[0];
-    s.appendChild(hm);
-  })();
-
-  // 分析埋点
-  enableOA();
-  reportPV();
-  reportPerformance();
-};
-
 // 用户同意所有cookie
 const acceptAll = () => {
   cookieStore.status = COOKIE_AGREED_STATUS.ALL_AGREED;
@@ -122,7 +99,6 @@ const acceptAll = () => {
     import.meta.env.VITE_COOKIE_DOMAIN
   );
   toggleNoticeVisible(false);
-  initSensor();
 };
 
 // 用户拒绝所有cookie，即仅同意必要cookie
@@ -173,9 +149,6 @@ if (inBrowser) {
   if (isAllAgreed()) {
     cookieStore.status = COOKIE_AGREED_STATUS.ALL_AGREED;
     analysisAllowed.value = true;
-    initSensor();
-  } else {
-    disableOA();
   }
 }
 
@@ -185,8 +158,6 @@ watch(
     if (isNotSigned()) {
       toggleNoticeVisible(true);
     }
-
-    reportPV();
   }
 );
 </script>

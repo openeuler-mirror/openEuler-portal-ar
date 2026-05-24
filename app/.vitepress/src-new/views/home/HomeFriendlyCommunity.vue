@@ -4,11 +4,9 @@ import { OFigure, OLink } from '@opensig/opendesign';
 import { storeToRefs } from 'pinia';
 import { useLocale } from '~@/composables/useLocale';
 import { useCommon } from '@/stores/common';
-import { vAnalytics } from '~@/directive/analytics';
 import { friendlyCommunityConfig } from '~@/data/home/friendly-community';
 
 const { theme } = storeToRefs(useCommon());
-const { isEn } = useLocale();
 </script>
 
 <template>
@@ -22,10 +20,6 @@ const { isEn } = useLocale();
         <OLink
           :href="community.url"
           target="_blank"
-          v-analytics.bubble="{
-            target: community.url,
-            level1: $t('home.friendlyCommunity')
-          }"
         >
           <div class="community-logo">
             <OFigure :src="community.logo[theme]" />

@@ -15,7 +15,6 @@ import blogBg2 from '~@/assets/category/home/trend/blog-bg2.jpg';
 import blogBg3 from '~@/assets/category/home/trend/blog-bg3.jpg';
 
 import IconUser from '~icons/app-new/icon-user.svg';
-import { vAnalytics } from '~@/directive/analytics';
 
 const { t, locale } = useLocale();
 const { gtLaptop, gtPad, gtPadV, gtPhone, lePadV } = useScreen();
@@ -86,8 +85,6 @@ onMounted(() => {
     :footer="t('home.more')"
     :footer-href="`/${locale}/interaction/${activeTab}-list/`"
     :full="lePadV"
-    v-analytics.bubble="{ level1: $t('home.trend') }"
-    :data-v-analytics-title="$t('home.trend')"
   >
     <OTab v-model="activeTab" variant="text" :line="false">
       <!-- 新闻 -->
@@ -114,10 +111,6 @@ onMounted(() => {
             :cover-ratio="456 / 188"
             :href="`${domain}/${news.path}.html`"
             target="_blank"
-            v-analytics.bubble="{
-              level2: $t('home.news'),
-              target: news.title,
-            }"
           >
           </OCard>
         </OScroller>
@@ -158,10 +151,6 @@ onMounted(() => {
             "
             :href="`${domain}/${blog.path}.html`"
             target="_blank"
-            v-analytics.bubble="{
-              level2: $t('home.blog'),
-              target: blog.title,
-            }"
           >
             <div class="blog-bottom">
               <p class="blog-date">{{ blog.date }}</p>

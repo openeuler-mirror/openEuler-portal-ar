@@ -17,10 +17,6 @@ import DownloadVersionCard from './DownloadVersionCard.vue';
 import DownloadArchive from './DownloadArchive.vue';
 import { getUrlParam } from '~@/utils/common';
 
-const emits = defineEmits<{
-  (e: 'reportDownload', val: Record<string, string>): void;
-}>();
-
 const { locale, t } = useLocale();
 
 const activeTab = ref('latest');
@@ -87,19 +83,11 @@ shownNameList.forEach((version: string) => {
 });
 
 const handleTabChange = (val: string | number | undefined) => {
-  reportDownload({ target: t(`download.${val}`) });
   if (val === 'archive') {
     history.replaceState(null, '', window.location.pathname + '?archive=true');
   } else {
     history.replaceState(null, '', window.location.pathname);
   }
-};
-
-const reportDownload = (value: any) => {
-  emits('reportDownload', {
-    level1: t(`download.${activeTab.value}`),
-    ...value,
-  });
 };
 
 onMounted(() => {
@@ -137,13 +125,12 @@ onMounted(() => {
             :version-data="latestVersion.versionData"
             :mirror-list="latestVersion.mirrorList"
             :content-data="latestVersion.latestCommunityVersionData"
-            @report-download="reportDownload"
           />
         </template>
       </OTabPane>
       <!-- 历史版本 -->
       <OTabPane value="archive" :label="$t('download.archive')">
-        <DownloadArchive @report-download="reportDownload"
+        <DownloadArchive
       /></OTabPane>
     </OTab>
   </AppSection>

@@ -3,7 +3,6 @@ import { isArray, OLink } from '@opensig/opendesign';
 
 import OIcon from 'opendesign/icon/OIcon.vue';
 import IconChevronLeft from '~icons/app-new/icon-chevron-left.svg';
-import { vAnalytics } from '~@/directive/analytics';
 
 interface SectionPropsT {
   title?: string | Array<string>;
@@ -64,7 +63,7 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
         <!-- footer -->
         <div v-if="$slots.footer || props.footer" class="section-footer" >
           <slot name="footer">
-            <OLink :href="props.footerHref" target="_blank" v-analytics.bubble="{ target: props.footer }">
+            <OLink :href="props.footerHref" target="_blank">
               {{ props.footer }}
               <template #suffix>
                 <OIcon class="footer-icon"><IconChevronLeft /> </OIcon>

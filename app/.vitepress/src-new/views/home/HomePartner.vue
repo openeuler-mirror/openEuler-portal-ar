@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import AppSection from '~@/components/AppSection.vue';
 import HomeSwiper from './HomeSwiper.vue';
-import { vAnalytics } from '~@/directive/analytics';
 
 import { publisher } from '~@/data/home/publisher';
 
@@ -15,8 +14,6 @@ const publisher3 = Array(5).fill(publisher.slice(16)).flat();
     class="home-partner"
     :title="$t('home.publisher')"
     :full="true"
-    v-analytics.bubble="{ level1: $t('home.publisher') }"
-    :data-v-analytics-title="$t('home.publisher')"
   >
     <HomeSwiper :data="publisher1" class="partner-swiper"></HomeSwiper>
     <HomeSwiper

@@ -5,21 +5,19 @@ import { useCommon } from '@/stores/common';
 import { useLocale } from '~@/composables/useLocale';
 
 import displayZoneData from '~@/data/home/display-zone';
-import { vAnalytics } from '~@/directive/analytics';
 
 const { locale } = useLocale();
 const { theme } = storeToRefs(useCommon());
 </script>
 
 <template>
-  <div class="home-display-zone" v-analytics.bubble.noTrigger="{ level1: 'QuickLink' }">
+  <div class="home-display-zone">
     <a
       v-for="item in displayZoneData"
       :key="item.link[locale]"
       :href="item.link[locale]"
       target="_blank"
       class="display-zone-item"
-      v-analytics.bubble="{ target: item.title[locale] }"
     >
       <div class="display-zone-icon">
         <img

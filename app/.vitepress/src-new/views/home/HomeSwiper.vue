@@ -4,8 +4,6 @@ import type { PropType } from 'vue';
 
 import { storeToRefs } from 'pinia';
 import { useCommon } from '@/stores/common';
-import { useLocale } from '~@/composables/useLocale';
-import { vAnalytics } from '~@/directive/analytics';
 
 export interface PublisherT {
   logo: {
@@ -40,9 +38,6 @@ const { theme } = storeToRefs(useCommon());
         <OLink
           :href="item.href_en || item.href"
           target="_blank"
-          v-analytics.bubble="{
-            target: item.href_en || item.href,
-          }"
         >
           <div class="swiper-card">
             <OFigure :src="item.logo[theme]" />

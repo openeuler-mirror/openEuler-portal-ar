@@ -109,7 +109,6 @@ export default defineConfig({
     }),
   ],
   server: {
-    host: '172.20.21.33',
     proxy: {
       '/api-certification/': {
         target: 'https://certification.openeuler.org/',
