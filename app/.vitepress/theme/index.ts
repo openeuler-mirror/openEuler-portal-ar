@@ -38,7 +38,7 @@ export default {
       appKey: 'openEuler',
       service: 'ar',
       isCookieAgreed() {
-        return document.cookie.includes('agreed-cookiepolicy=1');
+        return document.cookie.includes('agreed-cookiepolicy-ar=1');
       },
       request(data) {
         reporAnalytics(data)
