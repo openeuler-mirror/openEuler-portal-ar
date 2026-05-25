@@ -17,7 +17,7 @@ export const COOKIE_AGREED_STATUS = {
   NECCESSARY_AGREED: '2', // 仅同意必要cookie
 };
 
-export const COOKIE_KEY = 'agreed-cookiepolicy';
+export const COOKIE_KEY = 'agreed-cookiepolicy-ar';
 
 /**
  * cookie版本

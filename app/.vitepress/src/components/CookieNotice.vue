@@ -29,7 +29,7 @@ const COOKIE_AGREED_STATUS = {
   NECCESSARY_AGREED: '2', // 仅同意必要cookie
 };
 
-const COOKEY_KEY = 'agreed-cookiepolicy';
+const COOKEY_KEY = 'agreed-cookiepolicy-ar';
 
 // 是否允许分析cookie
 const analysisAllowed = ref(false);
