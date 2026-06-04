@@ -6,7 +6,7 @@ const isBlog = /.+\/(?:news|blog|showcase)\/.+$/;
 const config: UserConfig = {
   ignoreDeadLinks: true,
   sitemap: {
-    hostname: 'https://www.openeuler.org',
+    hostname: 'https://ar.openeuler.org',
     transformItems: (items) =>
       items.filter((item) => !item.url.startsWith('/ar/approve')),
   },
@@ -38,6 +38,29 @@ const config: UserConfig = {
       {
         name: 'baidu-site-verification',
         content: 'code-EWzbQRssNU',
+      },
+    ],
+    [
+      'link',
+      {
+        rel: 'canonical',
+        href: 'https://ar.openeuler.org/ar/',
+      },
+    ],
+    [
+      'link',
+      {
+        rel: 'alternate',
+        hreflang: 'ar',
+        href: 'https://ar.openeuler.org/ar/',
+      },
+    ],
+    [
+      'link',
+      {
+        rel: 'alternate',
+        hreflang: 'x-default',
+        href: 'https://ar.openeuler.org/ar/',
       },
     ],
   ],
