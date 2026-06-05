@@ -6,7 +6,7 @@ const isBlog = /.+\/(?:news|blog|showcase)\/.+$/;
 const config: UserConfig = {
   ignoreDeadLinks: true,
   sitemap: {
-    hostname: 'https://ar.openeuler.org',
+    hostname: 'https://ar.openeuler.org/ar/',
     transformItems: (items) =>
       items.filter((item) => !item.url.startsWith('/ar/approve')),
   },
