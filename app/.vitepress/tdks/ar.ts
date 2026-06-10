@@ -4,43 +4,43 @@ const tdks: {
   'showcase': {
     title: 'قصص النجاح',
     description:
-      'Success stories and case studies of projects launched with openEuler.',
+      'قصص النجاح ودراسات الحالة للمشاريع التي تم إطلاقها باستخدام openEuler.',
     keywords: 'success stories, case studies, open source, Linux os',
   },
   'showcase/technical-white-paper': {
-    title: 'Technical White Papers',
+    title: 'الأوراق البيضاء التقنية',
     description:
-      'Explore the key features and advancements of each openEuler realease.',
+      'استكشف الميزات الرئيسية والتطورات في كل إصدار من إصدارات openEuler.',
     keywords: 'white paper, Linux os, digital infrastructure, open source',
   },
   'security/security-bulletins': {
-    title: 'CVEs | Security',
+    title: 'CVEs | الأمان',
     description:
-      'Get the latest CVE details and security patches. Stay protected with the openEuler vulnerability bulletin.',
+      'احصل على أحدث تفاصيل الثغرات الأمنية (CVEs) والتصحيحات الأمنية. ابقَ محميًا من خلال نشرة نقاط الضعف في openEuler.',
     keywords: 'security advisories, CVE, vulnerability, Linux os, open source',
   },
   'interaction/news-list': {
     title: 'الأخبار',
     description:
-      'Catch up with the latest developments, releases, and community updates from openEuler.',
+      'اطلع على أحدث التطورات والإصدارات وتحديثات المجتمع من openEuler.',
     keywords: 'update, Linux os, news, open source, monthly bulletin',
   },
   'interaction/blog-list': {
     title: 'المدونات',
     description:
-      'Gain in-depth knowledge and fresh perspectives on openEuler through our insightful blogs.',
+      'اكتسب معرفة متعمقة ووجهات نظر جديدة حول openEuler من خلال مدوناتنا الثاقبة.',
     keywords: 'blogs, insight, Linux os, open source',
   },
   'monthly-bulletins': {
-    title: 'النشرة الإخبارية الشهرية',
+    title: 'النشرة الشهرية',
     description:
-      "Stay connected with openEuler's monthly newsletter. Get the latest updates, news, and insights from the community delivered straight to you each month.",
+      'ابقَ على تواصل عبر النشرة الشهرية لـ openEuler. احصل على أحدث التحديثات والأخبار والرؤى من المجتمع، تُرسل إليك مباشرةً كل شهر.',
     keywords: 'monthly bulletin, update, news, insight, open source',
   },
   'community/mailing-list': {
     title: 'القوائم البريدية',
     description:
-      'Discuss and stay updated on Linux, cloud computing, and open source innovation through our mailing lists.',
+      'ناقش وابقَ على اطلاع على أحدث التطورات في Linux والحوسبة السحابية والابتكار مفتوح المصدر من خلال القائمة البريدية لموقع openEuler في الشرق الأوسط.',
     keywords: 'Linux, mailing list, cloud computing, open source, OS',
   },
   '#footer': {
@@ -50,51 +50,51 @@ const tdks: {
     keywords: 'Linux, cloud, open source, social media, OS',
   },
   'community/organization': {
-    title: 'بنية الحوكمة',
+    title: 'الهيكل الإداري',
     description:
-      "Explore the openEuler community's organizational structure, committees, and code of conduct.",
+      'استكشف الهيكل التنظيمي لمجتمع openEuler، ولجانه، ومدونة قواعد السلوك.',
     keywords: 'OS, Linux, leadership, committee, open source community',
   },
   'community/member': {
     title: 'الأعضاء',
     description:
-      'Discover the companies and organizations actively contributing code and shaping the future of openEuler.',
+      'اكتشف الشركات والمؤسسات التي تساهم بنشاط في الشفرة البرمجية وتشكّل مستقبل openEuler.',
     keywords: 'OS, Linux, open source community, cloud, edge computing',
   },
   'download/?version=openEuler%2024.03%20LTS': {
-    title: 'Download Community Edition',
+    title: 'تنزيل إصدار المجتمع',
     description:
-      'Download the latest openEuler community edition. Find the perfect Linux distro for your deployments.',
+      'قم بتنزيل أحدث إصدار لمجتمع openEuler. ابحث عن توزيعة لينكس الرئيسية التالية لعمليات النشر لديك.',
     keywords: 'OS, Linux, cloud, open source software, server Linux',
   },
   'download/commercial-release': {
-    title: 'تنزيل الإصدار التجاري',
+    title: 'تحميل الإصدار التجاري',
     description:
-      'Get the openEuler commercial editions. Download ISOs, find supported architectures, and explore vendor options.',
+      'احصل على الإصدارات التجارية من openEuler. قم بتنزيل ملفات ISO، واكتشف البنى المدعومة، واستكشف خيارات البائعين.',
     keywords: 'OS, Linux, commercial, cloud, server Linux',
   },
   'other/brand': {
     title: 'العلامات التجارية',
     description:
-      'Download openEuler logos and access brand guidelines. Get the resources you need to use and represent our open source OS.',
+      'قم بتنزيل شعارات openEuler والوصول إلى إرشادات العلامة التجارية. احصل على الموارد التي تحتاجها لاستخدام نظام التشغيل مفتوح المصدر الخاص بنا وتمثيله.',
     keywords: 'OS, logo, trademark, brand, open source software',
   },
   'download': {
-    title: 'تنزيل إصدار المنتدى',
+    title: 'تنزيل إصدار المجتمع',
     description:
-      'Download the latest openEuler community release. Find the next go-to Linux distro for your deployments.',
+      'قم بتنزيل أحدث إصدار لمجتمع openEuler. ابحث عن توزيعة لينكس الرئيسية التالية لعمليات النشر لديك.',
     keywords: 'download, community, release, Linux distro, openEuler',
   },
   '/': {
-    title: 'openEuler | نظام تشغيل البنية الأساسية الرقمية',
+    title: 'نظام تشغيل البنية التحتية الرقمية',
     description:
-      'An open source OS run by the OpenAtom Foundation that builds a global community to enhance digital infrastructure and support diverse architectures.',
+      'openEuler هو نظام تشغيل مفتوح المصدر تُديره مؤسسة OpenAtom، ويبني مجتمعًا عالميًا لتعزيز البنية التحتية الرقمية ودعم البنى المتنوعة.',
     keywords: 'openEuler, community, projects, developments, resources',
   },
   'security/cve': {
-    title: 'الثغرات الأمنية ونقاط التعرض الشائعة | الأمان',
+    title: 'CVEs | الأمان',
     description:
-      'The list of Common Vulnerabilities and Exposures (CVEs) relevant to openEuler, helping you stay updated on security issues.',
+      'قائمة الثغرات والتعرضات الشائعة (CVEs) ذات الصلة بـ openEuler، مما يساعدك على البقاء على اطلاع دائم بالقضايا الأمنية.',
     keywords: 'openEuler, CVE, security',
   },
   'security/cve/detail': {
@@ -104,9 +104,9 @@ const tdks: {
     keywords: 'CVEs, security, openEuler',
   },
   'docs': {
-    title: 'مركز المستندات | المستندات',
+    title: 'مركز التوثيق | الوثائق',
     description:
-      'openEuler docs',
+      'وثائق openEuler',
     keywords: 'openEuler docs',
   },
 };
