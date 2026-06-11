@@ -71,9 +71,9 @@ const config: UserConfig = {
     console.log('filePath', filePath);
     let lookupKey: string;
     if (filePath.endsWith('index.md')) {
-      lookupKey = encodeURI(filePath.slice(0, -9));
+      lookupKey = encodeURI(filePath.slice(0, -9)) || '/';
     } else {
-      lookupKey = encodeURI(filePath.slice(0, -2).concat('html'));
+      lookupKey = encodeURI(filePath.slice(0, -2).concat('html')) || '/';
     }
     console.log('lookupKey', lookupKey);
     const locale = 'ar';
