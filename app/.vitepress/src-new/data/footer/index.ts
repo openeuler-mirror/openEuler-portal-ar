@@ -76,7 +76,7 @@ export const linksData2 = {
     },
     {
       NAME: 'سياسة الخصوصية',
-      URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/privacy/`,
+      URL: `/ar/other/privacy/`,
     },
     {
       NAME: 'إشعار قانوني',
@@ -84,7 +84,7 @@ export const linksData2 = {
     },
     {
       NAME: 'حول ملفات الارتباط التشعبي',
-      URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/cookies/`,
+      URL: `/ar/other/cookies/`,
     },
   ],
 };

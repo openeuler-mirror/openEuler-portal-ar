@@ -174,7 +174,7 @@ watch(
           <p class="cookie-desc">
             {{ t('cookie.desc') }}
             <a
-              href="/other/cookies/"
+              href="/ar/other/cookies/"
               target="_blank"
               rel="noopener noreferrer"
             >
