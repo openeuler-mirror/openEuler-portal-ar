@@ -27,7 +27,7 @@ const commonStore = useCommon();
           <img
             :src="commonStore.theme === 'light' ? img.img_light : img.img_dark"
             loading="lazy"
-            alt=""
+            :alt="img.alt"
           />
         </span>
       </div>
@@ -35,15 +35,6 @@ const commonStore = useCommon();
     <div class="tip">
       <p>{{ i18n.about.TIP1 }}</p>
       <p>{{ i18n.about.TIP2 }}</p>
-      <div v-if="lang === 'zh'" class="contact">
-        <p>资金捐赠，请联系开放原子开源基金会。</p>
-        <p>
-          联系人：高飞；手机：13717810108；邮箱：<a
-            href="mailto:gaofei@openatom.org"
-            >gaofei@openatom.org</a
-          >。
-        </p>
-      </div>
     </div>
   </div>
 </template>

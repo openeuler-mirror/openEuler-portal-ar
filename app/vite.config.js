@@ -18,11 +18,14 @@ export default defineConfig({
     alias: {
       '@/': `${path.resolve(__dirname, './.vitepress/src')}/`,
       '~@/': `${path.resolve(__dirname, './.vitepress/src-new')}/`,
+      '#content': path.resolve(__dirname, '../.content'),
     },
   },
   css: {
     preprocessorOptions: {
       scss: {
+        api: 'modern-compiler',
+        silenceDeprecations: ['legacy-js-api', 'import', 'if-function'],
         charset: false,
         additionalData: `
         @use "~@/assets/style/mixin/screen.scss" as *;

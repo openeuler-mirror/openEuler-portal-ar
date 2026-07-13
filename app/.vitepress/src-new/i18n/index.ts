@@ -16,6 +16,8 @@ import cve from './cve';
 import mailing from './mailing';
 import brand from './brand'
 import docs from './docs'
+import news from './news';
+import blog from './blog';
 
 import { getCurrentLocale } from '~@/utils/locale';
 
@@ -54,6 +56,8 @@ const messages = {
     mailing: mailing.ar,
     brand: brand.ar,
     docs: docs.ar,
+    news: news.ar,
+    blog: blog.ar,
   }
 };
 

@@ -40,6 +40,7 @@ export default {
   HISTORY: 'All Versions',
   ARCHITECTURE2: 'البنية',
   SCENARIO2: 'السيناريو',
+  INSTRUCTION_SET: 'مجموعة التعليمات',
   ARCHITECTUREList: ['x86_64', 'AArch64', 'ARM32'],
   SCENARIOS: ['الخادم', 'سحابة الحافة', 'الحوسبة السحابية', 'مضمن'],
   SCENARIOS_ISO: 'الخادم',

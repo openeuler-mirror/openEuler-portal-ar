@@ -15,6 +15,8 @@ import IconSearch from '~icons/app/icon-search.svg';
 import { getSortData, getTagsData } from '@/api/api-search';
 import type { NewsDataT, ParamsTypeT } from '@/shared/@types/type-news';
 
+import pdfData from '@/data/monthly';
+
 const router = useRouter();
 let lang = ref('ar');
 
@@ -98,20 +100,8 @@ const getListData = (params: ParamsTypeT) => {
           newsCardData.value[i].banner = '/' + newsCardData.value[i].banner;
         }
 
-        // TODO:特殊处理24年年报，待后续年报单独作为一个栏目
-        
-        const yearData = {
-          banner: '/img/banners/annual-report-2024-en.jpg',
-          archives: '2025-01',
-          author: ['openEuler'],
-          date: '2025-01-24',
-          lang: 'ar',
-          title: 'openEuler 2024 Annual Report',
-          summary: 'openEuler 2024 Annual Report',
-          tags: ['openEuler'],
-          path: 'en/annual-report/openEuler-annual-report-2024/',
-        };
-        newsCardData.value.unshift(yearData);
+        // TODO:特殊处理年报及运营需求的特殊PDF文档，待后续单独作为一个栏目
+        newsCardData.value.unshift(...pdfData['en']);
       }
     })
     .finally(() => {
