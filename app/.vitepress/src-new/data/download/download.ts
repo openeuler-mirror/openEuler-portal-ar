@@ -6,6 +6,39 @@ export default {
   ar: {
     COMMUNITY_LIST: [
       {
+        NAME: 'openEuler 24.03 LTS SP4',
+        DOWNLOAD_URL: 'https://repo.openeuler.org/24.03 LTS SP4/',
+        DESC: 'openEuler 24.03 LTS SP4، المعتمد على kernel 6.6، هو امتداد محسّن مصمم خصيصًا لسيناريوهات الخادم والسحابة والذكاء الاصطناعي. يقدم هذا الإصدار ميزات وتحسينات جديدة، بما في ذلك التحسينات على النواة، وموثوقية UnifiedBus SuperPoD وإمكانية استخدامها، وتقسيم وحدات المعالجة العصبية، والاسترداد السريع لخدمات الاستدلال، وبيئات الحماية المعزولة E2B، والتشغيل والصيانة الذكيين (التشخيص والتعديل)، والمُجمِّعات، والآلات الافتراضية السرية (CVM). ويوفر تجربة جديدة تمامًا للمطورين والمستخدمين، ما يوسع نطاقه ليشمل مجالات أوسع.',
+        RELEASE_DESC_URL:
+          `${import.meta.env.VITE_SERVICE_DOCS_URL}/en/docs/24.03_LTS_SP4/server/releasenotes/releasenotes/introduction.html`,
+        INSTALL_GUIDENCE_URL:
+          `${import.meta.env.VITE_SERVICE_DOCS_URL}/en/docs/24.03_LTS_SP4/server/installation_upgrade/installation/installation_preparations.html`,
+        SEEK_HELP_URL: 'https://atomgit.com/openeuler/community-issue',
+        GET_ISO_URL: 'https://repo.openeuler.org/',
+        WHITE_PAPER: '/whitepaper/en/openEuler 24.03 LTS SP4 Technical White Paper.pdf',
+        LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
+        PUBLISH_DATE: '2026/06',
+        LTS: true,
+        VERSION: '24.03-LTS-SP4',
+        PLANNED_EOL: '2027/03',
+      },
+      {
+        NAME: 'openEuler Embedded 26.03',
+        DOWNLOAD_URL: '',
+        DESC: 'يُصدر openEuler Embedded 26.03، المدعوم من بنية الذكاء المتجسد IB-Robot الشاملة، صورًا لـ Hi3403 وHi3591 والأجهزة الأخرى. يقدم هذا الإصدار مخلبًا متجسدًا للتحكم الذاتي عالي الدقة، ويوحّد التكامل بين الكاميرات، وأجهزة LiDAR، والميكروفونات، وأجهزة الإدراك الأخرى عبر برنامج تشغيل ROS 2. وهو يدعم جمع بيانات التشغيل عن بُعد باستخدام وحدات تحكم الواقع الافتراضي والأجهزة المحمولة، ويستخدم tensormsg للتحويل الآمن بين الرسائل ومصفوفات متعددة الأبعاد لتشغيل خدمات الاستدلال على نموذج VLA والسياسة. بالإضافة إلى ذلك، يتولى مشغل موحد جدولة الحركة وتنفيذ المسار مع دعم التخطيط MoveIt 2. يتيح النظام، مدعومًا بتكوينات YAML، التبديل السلس بنقرة واحدة بين المحاكاة والبيئات المادية.',
+        RELEASE_DESC_URL: '',
+        INSTALL_GUIDENCE_URL: '',
+        SEEK_HELP_URL: '',
+        GET_ISO_URL: '',
+        WHITE_PAPER: '',
+        LIFE_CYCLE_URL: '',
+        PUBLISH_DATE: '',
+        LTS: true,
+        VERSION: '26.03',
+        PLANNED_EOL: '',
+        notTag: true,
+      },
+      {
         NAME: 'openEuler 24.03 LTS SP3',
         DOWNLOAD_URL: 'https://repo.openeuler.org/24.03 LTS SP3/',
         DESC: 'إن openEuler 24.03 LTS SP3، القائم على Linux Kernel 6.6، يقدم الدعم لبنية UnifiedBus SuperPoD الرائدة. وبفضل تصميمه المخصص ليلائم أحمال تشغيل الخوادم والسحابة والذكاء الاصطناعي، فإنه يوفر أداءً فائقًا وقابلية تطوير للبنية الأساسية الرقمية من الجيل المتطور.',
@@ -16,7 +49,7 @@ export default {
         SEEK_HELP_URL: 'https://atomgit.com/openeuler/community-issue',
         GET_ISO_URL: 'https://repo.openeuler.org/',
         WHITE_PAPER: '',
-        LIFE_CYCLE_URL: '/en/other/lifecycle/',
+        LIFE_CYCLE_URL: `${import.meta.env.VITE_MAIN_DOMAIN_URL}/en/other/lifecycle/`,
         PUBLISH_DATE: '2025/12',
         LTS: true,
         VERSION: '24.03-LTS-SP3',

@@ -1,0 +1,98 @@
+# 委员会 / openEuler Committee
+#
+# 这个委员会的特点:按职位分子组渲染(用 groups:),不是平铺。
+#   - 加新人:找到对应子组,在它的 members: 下复制一个块
+#   - 加新子组:在 groups: 下复制一段
+#
+# 注:田俊同时是技术委员会成员,两边共用同一张图(直接引用同一个文件名即可)。
+
+title: openEuler 委员会
+title_ar: لجنة openEuler
+
+groups:
+  - title: 主席
+    title_ar: رئيس مجلس الإدارة
+    members:
+      - name: 熊伟
+        name_ar: Xiong Wei
+        image: ./images/xiongwei.png
+        position: 华为技术有限公司
+        position_ar: Huawei Technologies Co., Ltd.
+
+  - title: 常务委员会委员
+    title_ar: أعضاء اللجنة الدائمة
+    members:
+      - name: 韩乃平
+        name_ar: Han Naiping
+        image: ./images/hannaiping.png
+        position: 麒麟软件有限公司
+        position_ar: Kylinsoft Co., Ltd.
+
+      - name: 刘文清
+        name_ar: Liu Wenqing
+        image: ./images/liuwenqing.png
+        position: 湖南麒麟信安科技股份有限公司
+        position_ar: Hunan Kylinsec Technology Co., Ltd.
+
+      - name: 屈晟
+        name_ar: Qu Sheng
+        image: ./images/qusheng.png
+        position: 中国科学院软件研究所
+        position_ar: Institute of Software, Chinese Academy of Sciences
+
+      - name: 张磊
+        name_ar: Zhang Lei
+        image: ./images/zhanglei.png
+        position: 统信软件技术有限公司
+        position_ar: UnionTech Software Technology Co., Ltd.
+
+  - title: 委员
+    title_ar: أعضاء اللجنة
+    members:
+      - name: 高培
+        name_ar: Gao Pei
+        image: ./images/gaopei.png
+        position: 软通动力信息技术（集团）股份有限公司
+        position_ar: "iSoftStone Information Technology (Group) Co., Ltd."
+
+      - name: 田俊
+        name_ar: Tian Jun
+        image: ./images/tianjun.png
+        position: 英特尔（中国）有限公司
+        position_ar: Intel China Ltd.
+
+      - name: 杨继国
+        name_ar: Yang Jiguo
+        image: ./images/yangjiguo.png
+        position: 海光信息技术股份有限公司
+        position_ar: Hygon Information Technology Co., Ltd.
+
+      - name: 于力
+        name_ar: Yu Li
+        image: ./images/yuli.png
+        position: 南方电网数字电网科技有限（广东）公司
+        position_ar: China Southern Power Grid
+
+      - name: 于萍
+        name_ar: Yu Ping
+        image: ./images/yuping.png
+        position: 江苏润和软件股份有限公司
+        position_ar: Jiangsu HopeRun Software Co., Ltd.
+
+  - title: 执行总监
+    title_ar: المدير التنفيذي
+    members:
+      - name: 刘飞
+        name_ar: Liu Fei
+        image: ./images/liufei.png
+        position: 华为技术有限公司
+        position_ar: Huawei Technologies Co., Ltd.
+
+  - title: 执行秘书
+    title_ar: السكرتير التنفيذي
+    members:
+      - name: 刘彦飞
+        name_ar: Liu Yanfei
+        image: ./images/liuyanfei.png
+        position: 开放原子开源基金会
+        position_ar: OpenAtom Foundation
