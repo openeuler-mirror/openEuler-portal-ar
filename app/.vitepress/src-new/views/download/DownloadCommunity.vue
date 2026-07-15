@@ -5,6 +5,7 @@ import { OTab, OTabPane } from '@opensig/opendesign';
 import AppSection from '~@/components/AppSection.vue';
 
 import communityVersionData from '~@/data/download/download';
+import { fileTree, mirrorList } from '~@/data/download/download-new';
 
 import { useLocale } from '~@/composables/useLocale';
 import { useDownload } from '~@/stores/download';
@@ -16,6 +17,10 @@ import { constructDownloadData } from '@/shared/download';
 import DownloadVersionCard from './DownloadVersionCard.vue';
 import DownloadArchive from './DownloadArchive.vue';
 import { getUrlParam } from '~@/utils/common';
+
+const emits = defineEmits<{
+  (e: 'reportDownload', val: Record<string, string>): void;
+}>();
 
 const { locale, t } = useLocale();
 
@@ -57,6 +62,19 @@ const queryGetDownloadLink = (version: string, scenario?: string) => {
   });
 };
 
+const queryGetDownloadLinkNew = (version: string, scenario?: string) => {
+  const versionData = constructDownloadData(fileTree, version, t);
+  latestVersions.value.map((item) => {
+    if (
+      item.latestCommunityVersionData.NAME === version.replaceAll('-', ' ')
+    ) {
+      item.latestCommunityVersionData.scenario = scenario || '';
+      item.mirrorList = mirrorList;
+      item.versionData = versionData;
+    }
+  });
+};
+
 downloadStore.$subscribe((mutation, state) => {
   latestVersions.value.forEach((item) => {
     item.latestCommunityVersionData.scenario = '';
@@ -84,11 +102,19 @@ shownNameList.forEach((version: string) => {
 });
 
 const handleTabChange = (val: string | number | undefined) => {
+  reportDownload({ target: t(`download.${val}`) });
   if (val === 'archive') {
     history.replaceState(null, '', window.location.pathname + '?archive=true');
   } else {
     history.replaceState(null, '', window.location.pathname);
   }
+};
+
+const reportDownload = (value: any) => {
+  emits('reportDownload', {
+    level1: t(`download.${activeTab.value}`),
+    ...value,
+  });
 };
 
 onMounted(() => {
@@ -103,7 +129,11 @@ onMounted(() => {
     if (decodeURIComponent(hash) === version.replaceAll('-', ' ')) {
       scenario.value = decodeURIComponent(getUrlParam('scenario'));
     }
-    queryGetDownloadLink(version, scenario.value);
+    if (version !== 'openEuler Embedded 26.03') {
+      queryGetDownloadLink(version, scenario.value);
+    } else {
+      queryGetDownloadLinkNew(version, 'embedded_img');
+    }
   });
 });
 </script>
@@ -126,12 +156,13 @@ onMounted(() => {
             :version-data="latestVersion.versionData"
             :mirror-list="latestVersion.mirrorList"
             :content-data="latestVersion.latestCommunityVersionData"
+            @report-download="reportDownload"
           />
         </template>
       </OTabPane>
       <!-- 历史版本 -->
       <OTabPane value="archive" :label="$t('download.archive')">
-        <DownloadArchive
+        <DownloadArchive @report-download="reportDownload"
       /></OTabPane>
     </OTab>
   </AppSection>
@@ -139,9 +170,9 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .intro {
-  @include text1;
   color: var(--o-color-info2);
   text-align: center;
+  @include text1;
 }
 .download-community {
   :deep(.section-wrapper) {

@@ -764,12 +764,12 @@ const handleSizeAr = (size: string) => {
     @include h1;
     .o-tag {
       color: var(--o-color-white);
-      margin-left: 16px;
+      margin-right: 16px;
       --tag-padding: 3px 12px;
       border: none;
       @include tip2;
       @include respond-to('<=pad_v') {
-        margin-left: 8px;
+        margin-right: 8px;
       }
     }
   }
@@ -957,6 +957,10 @@ html[lang='en'],html[lang='ar'] {
 .download-link .o-btn-prefix {
   margin-right: 0;
   margin-left: 8px;
+}
+.download-link .o-btn-suffix {
+  margin-right: 8px;
+  margin-left: 0;
 }
 .down-action .o-btn-suffix {
   margin-right: 8px;
