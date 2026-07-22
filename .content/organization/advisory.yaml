@@ -3,7 +3,7 @@
 # 文件名 advisory 就是这个 section 的 slug,在页面侧的 SECTIONS 数组里被引用。
 # 平铺成员列表用 members:,每个成员一个块,看起来像一张张名片。
 
-title: openEuler 委员会顾问专家委员会
+title: Advisory Committee of the openEuler Committee
 title_ar: اللجنة الاستشارية للجنة openEuler
 
 members:

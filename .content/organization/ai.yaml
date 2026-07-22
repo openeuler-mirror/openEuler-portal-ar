@@ -4,7 +4,7 @@
 # 平铺成员列表用 members:,每个成员一个块,看起来像一张张名片。
 # 注:含英文姓名的成员头像文件名带空格或特殊格式,需加引号。
 
-title: openEuler AI联合工作组
+title: openEuler AI Joint Working Group
 title_ar: مجموعة العمل المشتركة للذكاء الاصطناعي في openEuler
 
 members:
@@ -12,7 +12,7 @@ members:
     name_ar: Hu Xinwei
     image: ./images/huxinwei-technical.png
     position: 组长
-    position_ar: القائد
+    position_ar: قائد
 
   - name: Andrew Wafaa
     name_ar: Andrew Wafaa

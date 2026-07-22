@@ -6,7 +6,7 @@
 # 一般工作组用平铺的 members: 就够,不需要 rows。
 # 只有「同一个 section 在视觉上要分块呈现」时才用 rows。
 
-title: openEuler 全球化工作组
+title: openEuler Globalization Working Group
 title_ar: مجموعة عمل العولمة في openEuler
 
 rows:
@@ -15,7 +15,7 @@ rows:
       name_ar: Zhou Nan
       image: ./images/zhounan.png
       position: 组长
-      position_ar: القائد
+      position_ar: قائد
 
     - name: 蔡镌洋
       name_ar: Cai Juanyang

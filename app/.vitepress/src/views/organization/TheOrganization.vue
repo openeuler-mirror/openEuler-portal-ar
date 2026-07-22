@@ -34,9 +34,8 @@ const i18n = useI18n();
 // anchor 在 foldI18n 之前注入,才读得到 title_en。
 const sections = computed<OrgT[]>(() =>
   SECTIONS.map((slug) => {
-    console.log("organizationRaw==",organizationRaw);
     const raw = organizationRaw[slug];
-    const enriched = { ...raw, anchor: deriveAnchor(raw.title_ar) };
+    const enriched = { ...raw, anchor: deriveAnchor(raw.title) };
     return foldI18n(enriched, lang.value as Lang) as unknown as OrgT;
   }),
 );

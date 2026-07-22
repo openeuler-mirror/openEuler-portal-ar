@@ -3,7 +3,7 @@
 # 文件名 marketing 就是这个 section 的 slug,在页面侧的 SECTIONS 数组里被引用。
 # 平铺成员列表用 members:,每个成员一个块,看起来像一张张名片。
 
-title: openEuler 品牌委员会
+title: openEuler Marketing Committee
 title_ar: لجنة openEuler التسويقية
 
 members:

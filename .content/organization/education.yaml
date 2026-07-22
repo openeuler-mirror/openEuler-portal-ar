@@ -3,7 +3,7 @@
 # 文件名 education 就是这个 section 的 slug,在页面侧的 SECTIONS 数组里被引用。
 # 平铺成员列表用 members:,每个成员一个块,看起来像一张张名片。
 
-title: openEuler 教育工作组
+title: openEuler Education Working Group
 title_ar: مجموعة عمل التعليم في openEuler
 
 members:
@@ -11,7 +11,7 @@ members:
     name_ar: Zhao Lichao
     image: ./images/zhaolichao.png
     position: 组长
-    position_ar: القائد
+    position_ar: قائد
 
   - name: 杨东杰
     name_ar: Yang Dongjie

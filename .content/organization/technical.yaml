@@ -7,7 +7,7 @@
 #
 # 加新人:在 members: 下复制一个块,改 name / name_ar / photo / post / post_ar / email / gitee
 
-title: openEuler 技术委员会
+title: openEuler Technical Committee
 title_ar: لجنة openEuler الفنية
 
 members:
