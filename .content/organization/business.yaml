@@ -1,0 +1,62 @@
+# 业务发展工作组 / Service Development Working Group
+#
+# 文件名 business 就是这个 section 的 slug,在页面侧的 SECTIONS 数组里被引用。
+# 平铺成员列表用 members:,每个成员一个块,看起来像一张张名片。
+
+title: openEuler Service Development Working Group
+title_ar: مجموعة عمل تطوير خدمة openEuler
+
+members:
+  - name: 李扬
+    name_ar: Li Yang
+    image: ./images/liyang.png
+    position: 组长
+    position_ar: قائد
+
+  - name: 黄伟旭
+    name_ar: Huang Weixu
+    image: ./images/huangweixu.png
+    position: 副组长
+    position_ar: قائد مشترك
+
+  - name: 张木梁
+    name_ar: Zhang Muliang
+    image: ./images/zhangmuliang.png
+    position: 副组长
+    position_ar: قائد مشترك
+
+  - name: 李成鹏
+    name_ar: Li Chengpeng
+    image: ./images/lichengpeng-development.png
+    position: 组员
+    position_ar: عضو
+
+  - name: 刘华杰
+    name_ar: Liu Huajie
+    image: ./images/liuhuajie.png
+    position: 组员
+    position_ar: عضو
+
+  - name: 刘明杰
+    name_ar: Liu Mingjie
+    image: ./images/liumingjie-operation.png
+    position: 组员
+    position_ar: عضو
+
+  - name: 刘胜航
+    name_ar: Liu Shenghang
+    image: ./images/liushenghang.png
+    position: 组员
+    position_ar: عضو
+
+  - name: 张剑
+    name_ar: Zhang Jian
+    image: ./images/zhangjian.png
+    position: 组员
+    position_ar: عضو
+
+  - name: 朱文玉
+    name_ar: Zhu Wenyu
+    image: ./images/zuwenyu.png
+    position: 组员
+    position_ar: عضو

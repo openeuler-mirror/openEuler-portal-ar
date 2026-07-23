@@ -1,0 +1,78 @@
+# 品牌委员会 / Marketing Committee
+#
+# 文件名 marketing 就是这个 section 的 slug,在页面侧的 SECTIONS 数组里被引用。
+# 平铺成员列表用 members:,每个成员一个块,看起来像一张张名片。
+
+title: openEuler Marketing Committee
+title_ar: لجنة openEuler التسويقية
+
+members:
+  - name: 梁冰
+    name_ar: Liang Bing
+    image: ./images/liangbin.png
+    position: 主席
+    position_ar: رئيس مجلس الإدارة
+    email: liangbing11@huawei.com
+
+  - name: 胡明月
+    name_ar: Hu Mingyue
+    image: ./images/humingyu.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: Ming.yue.hu@intel.com
+
+  - name: 李明
+    name_ar: Li Ming
+    image: ./images/liming-marketing.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: liming107@huawei.com
+
+  - name: 李伟
+    name_ar: Li Wei
+    image: ./images/liwei.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: allenli@hygon.cn
+
+  - name: 李震宁
+    name_ar: Li Zhenning
+    image: ./images/lizhenning.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: lizhenning@kylinos.cn
+
+  - name: 彭雅莹
+    name_ar: Peng Yaying
+    image: ./images/pengyaying.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: 260060281@qq.com
+
+  - name: 文丹
+    name_ar: Wen Dan
+    image: ./images/wendan.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: wendan@kylinsec.com.cn
+
+  - name: 徐露
+    name_ar: Xu Lu
+    image: ./images/xulu.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: xu_lu2@hoperun.com
+
+  - name: 徐嫣莉
+    name_ar: Xu Yanli
+    image: ./images/xuyanli.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: xuyanli@uniontech.com
+
+  - name: 郑莉
+    name_ar: Zheng Li
+    image: ./images/zhengli.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: lizhengq@isoftstone.com

@@ -1,0 +1,49 @@
+# 全球化工作组 / Globalization Working Group
+#
+# 这个组的特点:页面上分两行展示(主组 + 全球生态官),用 rows: 表达。
+# rows 是「数组的数组」:外层每个元素是一行,内层是这一行的成员。
+#
+# 一般工作组用平铺的 members: 就够,不需要 rows。
+# 只有「同一个 section 在视觉上要分块呈现」时才用 rows。
+
+title: openEuler Globalization Working Group
+title_ar: مجموعة عمل العولمة في openEuler
+
+rows:
+  # 第一行:主组成员
+  - - name: 周楠
+      name_ar: Zhou Nan
+      image: ./images/zhounan.png
+      position: 组长
+      position_ar: قائد
+
+    - name: 蔡镌洋
+      name_ar: Cai Juanyang
+      image: ./images/caijuanyang.png
+      position: 组员
+      position_ar: عضو
+
+    - name: 李成鹏
+      name_ar: Li Chengpeng
+      image: ./images/lichengpeng-globalization.png
+      position: 组员
+      position_ar: عضو
+
+    - name: 刘明杰
+      name_ar: Liu Mingjie
+      image: ./images/liumingjie-globalization.png
+      position: 组员
+      position_ar: عضو
+
+    - name: 任紫东
+      name_ar: Ren Zidong
+      image: ./images/renzidong.png
+      position: 组员
+      position_ar: عضو
+
+  # 第二行:全球生态官
+  - - name: 胡正策
+      name_ar: Hu Zhengce
+      image: ./images/huzhengce.png
+      position: 开源欧拉全球生态官
+      position_ar: المدافع العالمي لـ openEuler

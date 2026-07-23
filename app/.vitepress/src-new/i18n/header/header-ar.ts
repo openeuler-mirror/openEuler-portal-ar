@@ -25,19 +25,26 @@ export default {
           NAME: 'الحصول على openEuler',
           CHILDREN: [
             {
-                NAME: 'openEuler 24.03 LTS SP3',
-                DESCRIPTION:
-                  'استكشف بنية UnifiedBus SuperPoD على نظام openEuler.',
-                TAG: TAG_TYPE.NEW,
-                URL: '/ar/download/#openEuler 24.03 LTS SP3',
-              },
-            {
-              NAME: 'openEuler 24.03 LTS SP2',
+              NAME: 'openEuler 24.03 LTS SP4',
               DESCRIPTION:
-                'إصدار 24.03 LTS SP2 المحسن على نظام kernel 6.6. تجربة أفضل للمستخدمين والمطورين.',
+                'عزّز أحمال عمل الخوادم والسحابة والذكاء الاصطناعي بموثوقية أعلى، وقدرات استدلال محسّنة، وتشغيل وصيانة أكثر ذكاءً، وأمان أقوى.',
               TAG: TAG_TYPE.NEW,
-              URL: '/ar/download/#openEuler 24.03 LTS SP2',
+              URL: '/ar/download/#openEuler 24.03 LTS SP4',
             },
+            {
+              NAME: 'openEuler 24.03 LTS SP3',
+              DESCRIPTION:
+                'استكشف بنية UnifiedBus SuperPoD على نظام openEuler.',
+              TAG: null,
+              URL: '/ar/download/#openEuler 24.03 LTS SP3',
+            },
+            // {
+            //   NAME: 'openEuler 24.03 LTS SP2',
+            //   DESCRIPTION:
+            //     'إصدار 24.03 LTS SP2 المحسن على نظام kernel 6.6. تجربة أفضل للمستخدمين والمطورين.',
+            //   TAG: TAG_TYPE.NEW,
+            //   URL: '/ar/download/#openEuler 24.03 LTS SP2',
+            // },
             {
               NAME: 'openEuler 24.03 LTS SP1',
               DESCRIPTION:

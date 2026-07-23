@@ -1,0 +1,142 @@
+# 用户委员会 / User Committee
+#
+# 文件名 user 就是这个 section 的 slug,在页面侧的 SECTIONS 数组里被引用。
+# 平铺成员列表用 members:,每个成员一个块,看起来像一张张名片。
+# 注:李伟同时在品牌委员会任职,两边共用同一张 liwei.png。
+
+title: openEuler User Committee
+title_ar: لجنة مستخدم openEuler
+
+members:
+  - name: 王军
+    name_ar: Wang Jun
+    image: ./images/wangjun.png
+    position: 主席
+    position_ar: رئيس مجلس الإدارة
+    email: junwangs@isoftstone.com
+
+  - name: 蔡镌洋
+    name_ar: Cai Juanyang
+    image: ./images/caijuanyang.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: cai_juanyang@hoperun.com
+
+  - name: 陈静
+    name_ar: Chen Jing
+    image: ./images/chenjin.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: chenjingc@uniontech.com
+
+  - name: 崔骥
+    name_ar: Cui Ji
+    image: ./images/cuiji.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: cuiji@beyondcent.com
+
+  - name: 杜韶辉
+    name_ar: Du Shaohui
+    image: ./images/dushaohui.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: dush1@csg.cn
+
+  - name: 冯伟
+    name_ar: Feng Wei
+    image: ./images/fengwei.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: f.fengwei@huawei.com
+
+  - name: 龚鹏程
+    name_ar: Gong Chenpeng
+    image: ./images/gongchengpeng.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: 4705317@QQ.com
+
+  - name: 高洪鹤
+    name_ar: Gao Honghe
+    image: ./images/gaohonghe.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: gaohonghe@kylinsec.com.cn
+
+  - name: 胡勇
+    name_ar: Hu Yong
+    image: ./images/huyong.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: yong.hu@intel.com
+
+  - name: 李晨斌
+    name_ar: Li Chenbin
+    image: ./images/lichenbing.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: cbli@linx-info.com
+
+  - name: 李荣青
+    name_ar: Li Rongqing
+    image: ./images/lirongqing.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: lirongqing@baidu.com
+
+  - name: 李伟
+    name_ar: Li Wei
+    image: ./images/liwei.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: allenli@hygon.cn
+
+  - name: 荣涛
+    name_ar: Rong Tao
+    image: ./images/rongtao.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: rongtao@cestc.cn
+
+  - name: 石光银
+    name_ar: Shi Guangyin
+    image: ./images/shiguangyin.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: shiguangyin@inspur.com
+
+  - name: 徐磊
+    name_ar: Xu Lei
+    image: ./images/xulei.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: stone.xulei@xfusion.com
+
+  - name: 徐田原
+    name_ar: Xu Tianyuan
+    image: ./images/xutianyuan.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: xu.tianyuan@h3c.com
+
+  - name: 张庆南
+    name_ar: Zhang Qingnan
+    image: ./images/zhangqingnan.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: zhangqingnan001@chinasofti.com
+
+  - name: 郑振宇
+    name_ar: Zheng Zhenyu
+    image: ./images/zhenzhenyu.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: zhengzhenyu@openeuler.sh
+
+  - name: 朱晨
+    name_ar: Zhu Chen
+    image: ./images/zuchen.png
+    position: 委员
+    position_ar: عضو اللجنة
+    email: zhuchen@kylinos.cn

@@ -1,0 +1,48 @@
+# 峰会数据 / Summit Entities
+#
+# 字段说明：
+#   id            唯一键，前端拼接 /summit-list/${id}/
+#   title_zh/en   中英文标题
+#   start_date    开始日期 YYYY-MM-DD（可选）
+#   end_date      结束日期（可选）
+#   address_zh/en 地址（可选）
+#   format        offline | online | hybrid（可选）
+
+- id: summit2025
+  title_zh: openEuler Summit 2025
+  title_en: openEuler Summit 2025
+  start_date: '2025-11-14'
+  end_date: '2025-11-15'
+  address_zh: 北京中关村国际创新中心
+  address_en: Beijing Zhongguancun International Innovation Center
+  format: hybrid
+
+- id: devday2025
+  title_zh: openEuler Developer Day 2025
+  title_en: openEuler Developer Day 2025
+  start_date: '2025-04-11'
+  end_date: '2025-04-11'
+  address_zh: 杭州萧山万怡酒店
+  address_en: Courtyard by Marriott, Xiaoshan, Hangzhou
+  format: hybrid
+
+- id: summit2024
+  title_zh: openEuler Summit 2024
+  title_en: openEuler Summit 2024
+  start_date: '2024-11-15'
+  end_date: '2024-11-16'
+  address_zh: 北京中关村国际创新中心
+  address_en: Beijing Zhongguancun International Innovation Center
+  format: hybrid
+
+- id: summit2023
+  title_zh: openEuler Summit 2023
+  title_en: openEuler Summit 2023
+
+- id: devday2023
+  title_zh: openEuler Developer Day 2023
+  title_en: openEuler Developer Day 2023
+
+- id: summit2022
+  title_zh: openEuler Summit 2022
+  title_en: openEuler Summit 2022

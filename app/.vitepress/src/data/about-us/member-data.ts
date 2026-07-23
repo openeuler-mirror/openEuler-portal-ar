@@ -121,11 +121,6 @@ export default [
         noIcon: true,
       },
       {
-        img_light: afusion_light,
-        img_dark: afusion_dark,
-        noIcon: true,
-      },
-      {
         img_light: nanfangdianwang_light,
         img_dark: nanfangdianwang_dark,
         noIcon: true,
@@ -158,6 +153,11 @@ export default [
       {
         img_light: aosiwei_light,
         img_dark: aosiwei_dark,
+        noIcon: true,
+      },
+      {
+        img_light: AMD_light,
+        img_dark: AMD_dark,
         noIcon: true,
       },
       {
@@ -201,14 +201,14 @@ export default [
         noIcon: true,
       },
       {
-        img_light: dianziyun_light,
-        img_dark: dianziyun_dark,
+        img_light: afusion_light,
+        img_dark: afusion_dark,
         noIcon: true,
       },
       {
-        img_light: AMD_light,
-        img_dark: AMD_dark,
-        noIcon: false,
+        img_light: dianziyun_light,
+        img_dark: dianziyun_dark,
+        noIcon: true,
       },
     ],
   },

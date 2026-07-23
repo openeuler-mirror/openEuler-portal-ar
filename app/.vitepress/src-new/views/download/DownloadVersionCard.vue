@@ -100,6 +100,25 @@ const domain = computed(() => import.meta.env.VITE_MAIN_DOMAIN_URL);
 // tag筛选
 const activeArch = ref('');
 const activeScenario = ref('');
+const activeInstructionSet = ref('rva23');
+
+const RISCV_INSTRUCTION_SCENARIOS = ['ISO', 'edge_img'];
+
+const showInstructionSetFilter = computed(() => {
+  if (activeArch.value !== 'riscv64') return false;
+  if (!RISCV_INSTRUCTION_SCENARIOS.includes(activeScenario.value)) return false;
+  const matched = versionData.value.find(
+    (item: DetailedLinkItemT) =>
+      item.Arch === activeArch.value &&
+      item.Scenario === activeScenario.value
+  );
+  if (!matched || !matched.Tree.length) return false;
+  return matched.Tree.some(
+    (treeItem) => treeItem.Type === 'dir' && Array.isArray(treeItem.Sub)
+  );
+});
+
+const instructionSetOptions = ['rva23', 'rva20'];
 
 const architectureList: Ref<string[]> = ref([]);
 const scenarioList = ref<{ value: string; label: ComputedRef<string> }[]>(
@@ -199,40 +218,86 @@ const selectMirror = ref<SelectMirrorT[]>([]);
 
 const moreMirrorList: Ref<MirrorLsitT[]> = ref([]);
 function setActiveMirror() {
-  selectMirror.value = [];
+  selectMirror.value = buildSelectMirror(tableData.value.length);
+}
+function buildSelectMirror(dataLength: number) {
+  const result: SelectMirrorT[] = [];
   if (mirrorList.value?.length) {
-    tableData.value?.forEach(() => {
+    for (let i = 0; i < dataLength; i++) {
       const temp = JSON.parse(JSON.stringify(mirrorList.value));
       temp[0].NameSpend =
         temp[0].Name + ' (' + temp[0].NetworkBandwidth + 'ميجابت/ثانية)';
-        // temp[0].Name + ' (' + temp[0].NetworkBandwidth + 'Mb/s)';
-
-      selectMirror.value?.push({
+      result.push({
         downloadLink: temp[0].HttpURL,
         bandwidth: temp[0].NameSpend,
       });
-    });
+    }
   }
+  return result;
 }
+
+function processSubItems(subs: LinkListItemT[]): LinkListItemT[] {
+  const arch = activeArch.value;
+  return subs
+    .filter((item) => !item.Name.includes('debug'))
+    .map((item) => {
+      const processed = { ...item };
+      if (processed.Tips) return processed;
+      if (processed.Name.includes('everything')) {
+        processed.Tips = t('download.OFFLINE_EVERYTHING', { arch });
+        processed.Order = 2;
+      } else if (processed.Name.includes('netinst')) {
+        processed.Order = 3;
+      } else if (processed.Name.includes('edge')) {
+        processed.Tips = t('download.EDGE_OFFLINE_STANDARD', { arch });
+      } else if (processed.Name.endsWith(`-${arch}-dvd.iso`)) {
+        processed.Tips = t('download.OFFLINE_STANDARD', { arch });
+        processed.Order = 1;
+      }
+      return processed;
+    })
+    .sort((a, b) => {
+      if (a.Order && b.Order) return a.Order - b.Order;
+      if (a.Order) return -1;
+      if (b.Order) return 1;
+      return 0;
+    })
+    .map((item, index) => ({ ...item, index }));
+}
+
 function getTableData() {
-  tableData.value = [];
-  versionData.value.forEach((item: DetailedLinkItemT) => {
-    if (
+  const matchedItem = versionData.value.find(
+    (item: DetailedLinkItemT) =>
       item.Arch === activeArch.value &&
       item.Scenario === activeScenario.value
-    ) {
-      tableData.value = item.Tree;
-    }
-  });
-  if (!selectMirror.value[0] && tableData.value?.length) {
-    setActiveMirror();
+  );
+  if (!matchedItem) {
+    selectMirror.value = [];
+    tableData.value = [];
+    return;
   }
+  let newTableData: LinkListItemT[];
+  if (showInstructionSetFilter.value) {
+    const subDirs = matchedItem.Tree.filter(
+      (treeItem) => treeItem.Type === 'dir' && Array.isArray(treeItem.Sub)
+    );
+    const matchedDir =
+      subDirs.find((dir) => dir.Name === activeInstructionSet.value) ||
+      subDirs[0];
+    newTableData = processSubItems(matchedDir?.Sub || []);
+  } else {
+    newTableData = matchedItem.Tree.map((tree, idx) => ({
+      ...tree,
+      index: idx,
+    }));
+  }
+  selectMirror.value = buildSelectMirror(newTableData.length);
+  tableData.value = newTableData;
 }
 async function getMirrorList() {
   moreMirrorList.value = [];
   mirrorList.value.forEach((item: MirrorLsitT, index: number) => {
     item.NameSpend = item.Name + ' (' + item.NetworkBandwidth + 'ميجابت/ثانية)';
-    // item.NameSpend = item.Name + ' (' + item.NetworkBandwidth + 'Mb/s)';
     if (index >= 3) {
       moreMirrorList.value.push(item);
     }
@@ -263,14 +328,20 @@ watch(
 );
 onMounted(async () => {
   watch(activeArch, function () {
+    if (showInstructionSetFilter.value) {
+      activeInstructionSet.value = 'rva23';
+    }
     getTableData();
     setTempTag();
   });
   watch(activeScenario, function () {
+    if (showInstructionSetFilter.value) {
+      activeInstructionSet.value = 'rva23';
+    }
     getTableData();
   });
-  watch(tableData, function () {
-    setActiveMirror();
+  watch(activeInstructionSet, function () {
+    getTableData();
   });
 });
 
@@ -297,7 +368,7 @@ function setMirrorLink(row: any) {
   });
   return '';
 }
-const devStation = ['24.03-LTS-SP3', '24.03-LTS-SP2', '24.03-LTS-SP1'];
+const devStation = ['24.03-LTS-SP3', '24.03-LTS-SP1'];
 
 //------------------------ 改版代码 ------------------------------
 // 筛选配置信息
@@ -347,10 +418,10 @@ const handleSizeAr = (size: string) => {
     <!-------------- 版本基本信息 -------------->
     <h2 class="title">
       {{ contentData?.NAME }}
-      <OTag v-if="contentData?.LTS" class="lts">{{ $t('download.lts') }}</OTag>
-      <OTag v-else class="innovation"> {{ $t('download.innovation') }}</OTag>
+      <OTag v-if="contentData?.LTS && !contentData?.notTag" class="lts">{{ $t('download.lts') }}</OTag>
+      <OTag v-if="!contentData?.LTS && !contentData?.notTag" class="innovation"> {{ $t('download.innovation') }}</OTag>
     </h2>
-    <p class="subtitle">نهاية العمر الافتراضي المخطط لها: {{ contentData?.PLANNED_EOL }}</p>
+    <p v-if="contentData?.PLANNED_EOL" class="subtitle">نهاية العمر الافتراضي المخطط لها: {{ contentData?.PLANNED_EOL }}</p>
     <div class="other-link">
       <template v-for="(linkData, index) in linkConfigs">
         <a
@@ -392,7 +463,23 @@ const handleSizeAr = (size: string) => {
           </ORadio>
         </ORadioGroup>
       </div>
-      <div class="filter-card">
+      <div v-if="showInstructionSetFilter" class="filter-card">
+        <div class="label">{{ $t('download.INSTRUCTION_SET') }}</div>
+        <ORadioGroup v-model="activeInstructionSet">
+          <ORadio
+            v-for="option in instructionSetOptions"
+            :key="option"
+            :value="option"
+          >
+            <template #radio="{ checked }">
+              <OToggle :checked="checked">{{
+                option.toUpperCase()
+              }}</OToggle>
+            </template>
+          </ORadio>
+        </ORadioGroup>
+      </div>
+      <div v-if="contentData?.NAME !== 'openEuler Embedded 26.03'" class="filter-card">
         <div class="label">
           {{ $t('download.SCENARIO2') }}
         </div>
@@ -639,7 +726,7 @@ const handleSizeAr = (size: string) => {
         <div class="download info-line">
           <div class="label">{{ t('download.TABLE_HEAD_4') }}</div>
           <div class="value">
-            <a :href="selectMirror[item.index].downloadLink + item.Path">
+            <a :href="(selectMirror[item.index]?.downloadLink || '') + item.Path">
               {{ t('download.DOWNLOAD_BTN_NAME') }}
             </a>
           </div>
@@ -672,15 +759,15 @@ const handleSizeAr = (size: string) => {
   .title {
     display: flex;
     align-items: center;
-    @include h1;
     color: var(--o-color-info1);
     font-weight: 500;
+    @include h1;
     .o-tag {
       color: var(--o-color-white);
       margin-right: 16px;
       --tag-padding: 3px 12px;
-      @include tip2;
       border: none;
+      @include tip2;
       @include respond-to('<=pad_v') {
         margin-right: 8px;
       }
@@ -727,6 +814,8 @@ const handleSizeAr = (size: string) => {
         }
       }
       .o-radio-group {
+        display: flex;
+        align-items: center;
         .o-radio + .o-radio {
           margin-left: 0;
           margin-right: 8px;
@@ -736,6 +825,7 @@ const handleSizeAr = (size: string) => {
           }
         }
         @include respond-to('<=pad_v') {
+          flex-wrap: wrap;
           .o-radio {
             margin: 8px 8px 0 0;
           }
@@ -759,8 +849,8 @@ const handleSizeAr = (size: string) => {
     }
   }
   .download-table-pc {
-    @include text1;
     color: var(--o-color-info1);
+    @include text1;
     .name-info {
       display: flex;
       align-items: center;
@@ -807,8 +897,8 @@ html[lang='en'],html[lang='ar'] {
     .info-line {
       margin-top: 12px;
       display: flex;
-      @include h4;
       color: var(--o-color-info1);
+      @include h4;
       .label {
         color: var(--o-color-info2);
         margin-left: 16px;
@@ -849,10 +939,10 @@ html[lang='en'],html[lang='ar'] {
     max-height: max-content;
     // padding: 8px;
     .select-text {
-      @include tip2;
       color: var(--o-color-info4);
       margin-bottom: 4px;
       padding: 0 12px;
+      @include tip2;
     }
     .mirror-list {
       display: flex;
@@ -868,6 +958,10 @@ html[lang='en'],html[lang='ar'] {
   margin-right: 0;
   margin-left: 8px;
 }
+.download-link .o-btn-suffix {
+  margin-right: 8px;
+  margin-left: 0;
+}
 .down-action .o-btn-suffix {
   margin-right: 8px;
   margin-left: 0px;
@@ -875,7 +969,7 @@ html[lang='en'],html[lang='ar'] {
 .popup-tip {
   max-width: 230px;
   --popup-padding: 18px 8px;
-  direction: ltr;
+    direction: ltr;
 }
 .o-popup {
   direction: rtl;
