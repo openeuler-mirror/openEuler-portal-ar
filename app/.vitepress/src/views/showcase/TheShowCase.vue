@@ -91,7 +91,10 @@ const totalPage = computed(() => {
 const filterEmptyParmes = (params: any) => {
   if (params) {
     params.industry =
-      params.industry === userCaseData.value.tags[0] ? '' : params.industry;
+      params.industry === userCaseData.value.tags[0] ||
+      params.industry === userCaseData.value.tagsEn[0]
+        ? ''
+        : params.industry;
     Object.keys(params).forEach((key) => {
       if (
         params[key] === '' ||
@@ -134,7 +137,7 @@ const pathResolving = (path: string) => {
 // 点击跳转案例详情页面
 function goDetail(link: string, item: any, index: number) {
   const search_result_url = pathResolving(link);
-  window.open(`${import.meta.env.VITE_MAIN_DOMAIN_URL}/${search_result_url}`, '_blank', 'noopener, noreferrer');
+  window.open(`${import.meta.env.VITE_MAIN_DOMAIN_URL}${search_result_url}`, '_blank', 'noopener, noreferrer');
 }
 
 // 设置当前tag的所有案例
